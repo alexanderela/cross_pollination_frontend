@@ -2,12 +2,12 @@
 [Group DTR]('assets/Cross_Pollination_DTR_Memo.md')
 
 ## GitHub Repos
-[Frontend Repo](https://github.com/alexanderela/cross_pollination_frontend)
-[Backend Repo](https://github.com/Tobin-jn/Flags-Backend)
+* [Frontend Repo](https://github.com/alexanderela/cross_pollination_frontend)
+* [Backend Repo](https://github.com/Tobin-jn/Flags-Backend)
 
 ## Trello SCRUM board with user stories
-[Frontend Trello](https://trello.com/b/ppUdNp6Q/cross-pollination-fe)
-[Backend Trello](https://trello.com/b/4U7aCk62/flagz4u-gang)
+* [Frontend Trello](https://trello.com/b/ppUdNp6Q/cross-pollination-fe)
+* [Backend Trello](https://trello.com/b/4U7aCk62/flagz4u-gang)
 
 ## Student Goals
 * Ben Hayek: How to build a user profile/login in BE and to save their info.
