@@ -19,15 +19,17 @@ Extension
 * Dropdown menu for country names
 
 #### Backend Stack
-Express.js
-Knex.js
-Postgres Database
+* Express.js
+* Knex.js
+* Postgres Database
 
 #### Frontend Stack
-React/Redux
+* React/Redux
+* React Router
+* Enzyme/Jest
 
-##### Schema
+### Schema
 <img src='assets/schema.png' alt='Wireframe' width='700' >
 
-##### Wireframe
+### Wireframe
 <img src='images/schema.png' alt='Wireframe' width='700' >
