@@ -27,7 +27,7 @@ Postgres Database
 React/Redux
 
 ##### Schema
-<img src='https://github.com/Tobin-jn/Flags-Backend/tree/master/images/schema.png' alt='Wireframe' width='700' >
+<img src='https://github.com/Tobin-jn/Flags-Backend/blob/master/images/schema.png' alt='Wireframe' width='700' >
 
 ##### Wireframe
 <img src='images/schema.png' alt='Wireframe' width='700' >
