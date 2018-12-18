@@ -1,0 +1,18 @@
+.profile-image-container {
+  // background: grey;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  height: 10rem;
+  margin: 4rem auto;
+  width: 10rem;
+}
+
+.profile-image {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+.user-data {
+  width: 90%;
+}
