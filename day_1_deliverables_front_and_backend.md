@@ -50,7 +50,7 @@
 * Enzyme/Jest
 
 ### Schema
-<img src='assets/schema.png' alt='Wireframe' width='700' >
+<img src='assets/schema.png' alt='Schema wireframe' width='700' >
 
-### Wireframe
-
+### Wireframes
+<img src='assets/schema.png' alt='Wireframes' width='700' >
