@@ -53,4 +53,4 @@
 <img src='assets/schema.png' alt='Schema wireframe' width='700' >
 
 ### Wireframes
-<img src='assets/schema.png' alt='Wireframes' width='700' >
+<img src='assets/wireframes.png' alt='Wireframes' width='700' >
