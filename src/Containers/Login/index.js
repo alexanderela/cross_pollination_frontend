@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
-// import './Login.css';
+import './Login.scss';
 
 class Login extends Component {
   render() {

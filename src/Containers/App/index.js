@@ -4,7 +4,7 @@ import Game from '../Game';
 import Account from '../Account';
 import Login from '../Login';
 import Results from '../Results';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   render() {

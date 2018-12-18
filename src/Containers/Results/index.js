@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
-// import './Results.css';
+import './Results.scss';
 
 class Results extends Component {
   render() {
     return (
       <div className='Results'>
+        <div className='account-button'>
+          <h5 className='account-text'>Alex <strong>25</strong></h5>
+        </div>
       </div>
     );
   }
