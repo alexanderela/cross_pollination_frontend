@@ -1,6 +1,12 @@
+$btn-white: #e2e2e2;
+
 .flag-main {
   background: gainsboro;
   height: 210px;
-  margin: 5rem auto;
+  margin: 4.5rem auto;
   width: 350px;
+}
+
+.option-button {
+  background: $btn-white;
 }

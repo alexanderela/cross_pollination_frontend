@@ -6,7 +6,7 @@ class Results extends Component {
   render() {
     return (
       <div className='Results'>
-        <div className='account-button'>
+        <div className='account-area'>
           <h5 className='account-text'>Alex <strong>25</strong></h5>
         </div>
       </div>

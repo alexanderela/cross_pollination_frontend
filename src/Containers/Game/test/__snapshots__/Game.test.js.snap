@@ -1,0 +1,481 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game should render like the snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Game />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="top-container"
+        >
+          <div
+            className="account-area"
+          >
+            <div
+              className="back-button"
+            />
+            <h5
+              className="account-text"
+            >
+              Alex 
+              <strong>
+                25
+              </strong>
+            </h5>
+          </div>
+        </div>,
+        <div
+          className="flag-main"
+        />,
+        <div
+          className="hint-button"
+        >
+          Hints: 2
+        </div>,
+        <div
+          className="option-button button option1"
+        >
+          Option 1
+        </div>,
+        <div
+          className="option-button button option2"
+        >
+          Option 2
+        </div>,
+        <div
+          className="option-button button option3"
+        >
+          Option 3
+        </div>,
+        <div
+          className="option-button button option4"
+        >
+          Option 4
+        </div>,
+      ],
+      "className": "Game",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="account-area"
+          >
+            <div
+              className="back-button"
+            />
+            <h5
+              className="account-text"
+            >
+              Alex 
+              <strong>
+                25
+              </strong>
+            </h5>
+          </div>,
+          "className": "top-container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="back-button"
+              />,
+              <h5
+                className="account-text"
+              >
+                Alex 
+                <strong>
+                  25
+                </strong>
+              </h5>,
+            ],
+            "className": "account-area",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "back-button",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Alex ",
+                  <strong>
+                    25
+                  </strong>,
+                ],
+                "className": "account-text",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Alex ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "25",
+                  },
+                  "ref": null,
+                  "rendered": "25",
+                  "type": "strong",
+                },
+              ],
+              "type": "h5",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "flag-main",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Hints: 2",
+          "className": "hint-button",
+        },
+        "ref": null,
+        "rendered": "Hints: 2",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Option 1",
+          "className": "option-button button option1",
+        },
+        "ref": null,
+        "rendered": "Option 1",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Option 2",
+          "className": "option-button button option2",
+        },
+        "ref": null,
+        "rendered": "Option 2",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Option 3",
+          "className": "option-button button option3",
+        },
+        "ref": null,
+        "rendered": "Option 3",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Option 4",
+          "className": "option-button button option4",
+        },
+        "ref": null,
+        "rendered": "Option 4",
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="top-container"
+          >
+            <div
+              className="account-area"
+            >
+              <div
+                className="back-button"
+              />
+              <h5
+                className="account-text"
+              >
+                Alex 
+                <strong>
+                  25
+                </strong>
+              </h5>
+            </div>
+          </div>,
+          <div
+            className="flag-main"
+          />,
+          <div
+            className="hint-button"
+          >
+            Hints: 2
+          </div>,
+          <div
+            className="option-button button option1"
+          >
+            Option 1
+          </div>,
+          <div
+            className="option-button button option2"
+          >
+            Option 2
+          </div>,
+          <div
+            className="option-button button option3"
+          >
+            Option 3
+          </div>,
+          <div
+            className="option-button button option4"
+          >
+            Option 4
+          </div>,
+        ],
+        "className": "Game",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="account-area"
+            >
+              <div
+                className="back-button"
+              />
+              <h5
+                className="account-text"
+              >
+                Alex 
+                <strong>
+                  25
+                </strong>
+              </h5>
+            </div>,
+            "className": "top-container",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="back-button"
+                />,
+                <h5
+                  className="account-text"
+                >
+                  Alex 
+                  <strong>
+                    25
+                  </strong>
+                </h5>,
+              ],
+              "className": "account-area",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "back-button",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Alex ",
+                    <strong>
+                      25
+                    </strong>,
+                  ],
+                  "className": "account-text",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Alex ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "25",
+                    },
+                    "ref": null,
+                    "rendered": "25",
+                    "type": "strong",
+                  },
+                ],
+                "type": "h5",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "flag-main",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Hints: 2",
+            "className": "hint-button",
+          },
+          "ref": null,
+          "rendered": "Hints: 2",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Option 1",
+            "className": "option-button button option1",
+          },
+          "ref": null,
+          "rendered": "Option 1",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Option 2",
+            "className": "option-button button option2",
+          },
+          "ref": null,
+          "rendered": "Option 2",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Option 3",
+            "className": "option-button button option3",
+          },
+          "ref": null,
+          "rendered": "Option 3",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Option 4",
+            "className": "option-button button option4",
+          },
+          "ref": null,
+          "rendered": "Option 4",
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

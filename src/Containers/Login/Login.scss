@@ -1,0 +1,27 @@
+$fb-blue: #3b5998;
+$tw-blue: #1dcaff;
+$btn-white: #e2e2e2;
+
+.Login {
+  height: 100vh;
+}
+
+.login-title {
+  margin: 0;
+  padding: 40% 0 20%;
+  text-align: center;
+  width: 100%;
+}
+
+.login-button-facebook {
+  background-color: $fb-blue;
+  color: $btn-white;
+}
+
+.login-button-twitter {
+  background-color: $tw-blue;
+}
+
+.login-button-email {
+  background-color: $btn-white;
+}

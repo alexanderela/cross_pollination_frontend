@@ -1,14 +1,48 @@
+$btn-white: #e2e2e2;
+
+* {
+  font-family: 'Thasadith', sans-serif;
+}
+
 .App {
-  background: linear-gradient(to bottom, #84D2F6, cornflowerblue);
+  // background: linear-gradient(to bottom, #84D2F6, cornflowerblue);
+  background: #c6c6c6;
   height: 100vh;
   margin: 0;
   width: 100vw;
 }
 
-.account-text {
-  font-weight: 300;
-  font-size: 1rem;
-  margin: 0 8px;
-  padding: 4px 0;
-  text-align: right;
+.account-area {
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 1rem 8px;
+  width: calc(100% - 1rem);
+  .back-button {
+    height: 2rem;
+    width: 2rem;
+  }
+  .account-text {
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: right;
+  }
+}
+
+.hint-button {
+  background-color: #e2e2e2;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  margin: 1.25rem auto;
+  padding: 12px 0;
+  text-align: center;
+  width: 40%;
+}
+
+.button {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+  font-weight: 700;
+  margin: 1.25rem auto;
+  padding: 12px 0;
+  text-align: center;
+  width: 80%;
 }
