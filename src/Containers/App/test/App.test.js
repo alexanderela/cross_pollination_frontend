@@ -10,6 +10,9 @@ describe('App', () => {
     wrapper = shallow(<App />)
   });
 
+  it('should display a randomly selected country', () => {
+  });
+
   it('should render like the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   })  

@@ -3,7 +3,61 @@
 exports[`Game should render like the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Game />,
+  Symbol(enzyme.__unrendered__): <Game
+    choices={
+      Array [
+        Object {
+          "flag": "./images/flags/Mexico.png",
+          "name": "Mexico",
+          "outline": "./images/outlines/Mexico.png",
+          "questions": Array [
+            "Tabasco Hoy",
+            "El Financiero & The Oaxaca Times",
+            "Oaxaca,Durango,Nayarit",
+          ],
+        },
+        Object {
+          "flag": "./images/flags/Hungary.png",
+          "name": "Hungary",
+          "outline": "./images/outlines/Hungary.png",
+          "questions": Array [
+            "Magyar Nemzet",
+            "Its first king is known in English as St. Stephen & locally as Szent Istvan",
+            "Nograd,Pest,Somogy",
+          ],
+        },
+        Object {
+          "flag": "./images/flags/Ireland.png",
+          "name": "Ireland",
+          "outline": "./images/outlines/Ireland.png",
+          "questions": Array [
+            "The Connaught Telegraph & The Galway Advertiser",
+            "In this country's parliament, the Dail has 166 seats, the Seanad, 60",
+          ],
+        },
+        Object {
+          "flag": "./images/flags/Sweden.png",
+          "name": "Sweden",
+          "outline": "./images/outlines/Sweden.png",
+          "questions": Array [
+            "Svenska Dagbladet & Sundsvalls Tidning",
+            "Ostergotland,Vasterbotten,Uppsala",
+          ],
+        },
+      ]
+    }
+    correctChoice={
+      Object {
+        "flag": "./images/flags/Sweden.png",
+        "name": "Sweden",
+        "outline": "./images/outlines/Sweden.png",
+        "questions": Array [
+          "Svenska Dagbladet & Sundsvalls Tidning",
+          "Ostergotland,Vasterbotten,Uppsala",
+        ],
+      }
+    }
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
