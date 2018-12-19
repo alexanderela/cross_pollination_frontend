@@ -10,14 +10,24 @@ describe('App', () => {
     wrapper = shallow(<App />)
   });
 
-  // it('renders without crashing', () => {
-  //   const div = document.createElement('div');
-  //   ReactDOM.render(<App />, div);
-  //   ReactDOM.unmountComponentAtNode(div);
-  // });
-
   it('should render like the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   })  
+
+  describe('mapStateToProps', () => {
+    it('should create the correct props object', () => {
+    
+    });
+  });
+  
+  describe('mapDispatchToProps', () => {
+    it('should map a key of setCountries', () => {
+   
+    });
+    
+    it('setCountries should call dispatch', () => {
+    
+    });
+  });
 })  
 

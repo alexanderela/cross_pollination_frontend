@@ -13,6 +13,10 @@ describe('Game', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  // it('should display a randomly selected country', () => {
+    
+  // })
+
   describe('checkAnswer', () => {
     it('should set state if the answer is correct', () => {
     });
