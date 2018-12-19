@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import './Game.scss';
 import Hint from '../../Components/Hint';
+import Results from '../../Components/Results';
 let backArrow = require('../../Images/back.svg');
 
 
@@ -26,6 +27,7 @@ class Game extends Component {
         <div className='option-button button option3'>Option 3</div>
         <div className='option-button button option4'>Option 4</div>
         {/* <Hint /> */}
+        {/* <Results /> */}
       </div>
     );
   }

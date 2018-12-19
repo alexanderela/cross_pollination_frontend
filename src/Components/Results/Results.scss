@@ -1,0 +1,43 @@
+.Results {
+  background: rgba(240, 240, 240, .99);
+  border-radius: 8px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .3);
+  display: inline-flex;
+  flex-direction: column;
+  height: 55%;
+  justify-content: space-between;
+  left: 2%;
+  padding: 5rem 0;
+  position: absolute;
+  text-align: center;
+  top: 8rem;
+  width: 96%;
+  z-index: 2;
+}
+
+p {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.results-title {
+  font-size: 3rem;
+}
+
+.points-gained {
+  font-size: 2.5rem;
+  // margin-bottom: 2rem;
+}
+
+.results-divider {
+  background-color: #c2c2c2;
+  height: 1px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.total-points-count {
+  font-size: 3rem;
+  font-weight: 700;
+  // margin-bottom: 1rem;
+}

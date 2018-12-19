@@ -1,10 +1,25 @@
 .Hint {
   background: rgba(240, 240, 240, .99);
   border-radius: 8px;
-  height: 75%;
-  left: 5%;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .3);
+  display: inline-flex;
+  flex-direction: column;
+  height: 55%;
+  justify-content: space-between;
+  left: 2%;
+  padding: 5rem 0;
   position: absolute;
-  top: 10rem;
-  width: 90%;
+  text-align: center;
+  top: 8rem;
+  width: 96%;
   z-index: 2;
+}
+
+p {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.hint-title {
+  font-size: 3rem;
 }
