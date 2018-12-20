@@ -1,4 +1,4 @@
-let data = [ 
+let mockData = [ 
   { name: 'Mexico',
    flag: './images/flags/Mexico.png',
    outline: './images/outlines/Mexico.png',
@@ -47,4 +47,4 @@ let data = [
       'Western Plateau,Great Victoria Desert,Great Artesian Basin' ] }
 ]
 
-export default data;
+export default mockData;

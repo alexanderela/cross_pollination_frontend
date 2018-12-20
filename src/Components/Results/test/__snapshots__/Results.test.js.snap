@@ -17,69 +17,130 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <div
-        className="account-area"
-      >
-        <h5
-          className="account-text"
+      "children": Array [
+        <p
+          className="results-title"
         >
-          Alex 
+          Correct!
+        </p>,
+        <p
+          className="points-gained"
+        >
           <strong>
-            25
+            +3
           </strong>
-        </h5>
-      </div>,
+           pts
+        </p>,
+        <div
+          className="results-divider"
+        />,
+        <p>
+          Total
+        </p>,
+        <p
+          className="total-points-count"
+        >
+          25
+        </p>,
+        <div
+          className="button results-continue"
+        >
+          Continue
+        </div>,
+      ],
       "className": "Results",
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <h5
-          className="account-text"
-        >
-          Alex 
-          <strong>
-            25
-          </strong>
-        </h5>,
-        "className": "account-area",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Correct!",
+          "className": "results-title",
+        },
+        "ref": null,
+        "rendered": "Correct!",
+        "type": "p",
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "Alex ",
             <strong>
-              25
+              +3
             </strong>,
+            " pts",
           ],
-          "className": "account-text",
+          "className": "points-gained",
         },
         "ref": null,
         "rendered": Array [
-          "Alex ",
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "25",
+              "children": "+3",
             },
             "ref": null,
-            "rendered": "25",
+            "rendered": "+3",
             "type": "strong",
           },
+          " pts",
         ],
-        "type": "h5",
+        "type": "p",
       },
-      "type": "div",
-    },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "results-divider",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Total",
+        },
+        "ref": null,
+        "rendered": "Total",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "25",
+          "className": "total-points-count",
+        },
+        "ref": null,
+        "rendered": "25",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Continue",
+          "className": "button results-continue",
+        },
+        "ref": null,
+        "rendered": "Continue",
+        "type": "div",
+      },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -88,69 +149,130 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <div
-          className="account-area"
-        >
-          <h5
-            className="account-text"
+        "children": Array [
+          <p
+            className="results-title"
           >
-            Alex 
+            Correct!
+          </p>,
+          <p
+            className="points-gained"
+          >
             <strong>
-              25
+              +3
             </strong>
-          </h5>
-        </div>,
+             pts
+          </p>,
+          <div
+            className="results-divider"
+          />,
+          <p>
+            Total
+          </p>,
+          <p
+            className="total-points-count"
+          >
+            25
+          </p>,
+          <div
+            className="button results-continue"
+          >
+            Continue
+          </div>,
+        ],
         "className": "Results",
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <h5
-            className="account-text"
-          >
-            Alex 
-            <strong>
-              25
-            </strong>
-          </h5>,
-          "className": "account-area",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Correct!",
+            "className": "results-title",
+          },
+          "ref": null,
+          "rendered": "Correct!",
+          "type": "p",
         },
-        "ref": null,
-        "rendered": Object {
+        Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "Alex ",
               <strong>
-                25
+                +3
               </strong>,
+              " pts",
             ],
-            "className": "account-text",
+            "className": "points-gained",
           },
           "ref": null,
           "rendered": Array [
-            "Alex ",
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "25",
+                "children": "+3",
               },
               "ref": null,
-              "rendered": "25",
+              "rendered": "+3",
               "type": "strong",
             },
+            " pts",
           ],
-          "type": "h5",
+          "type": "p",
         },
-        "type": "div",
-      },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "results-divider",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Total",
+          },
+          "ref": null,
+          "rendered": "Total",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "25",
+            "className": "total-points-count",
+          },
+          "ref": null,
+          "rendered": "25",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Continue",
+            "className": "button results-continue",
+          },
+          "ref": null,
+          "rendered": "Continue",
+          "type": "div",
+        },
+      ],
       "type": "div",
     },
   ],

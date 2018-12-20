@@ -46,6 +46,7 @@ ShallowWrapper {
         },
       ]
     }
+    compilePoints={[MockFunction]}
     correctChoice={
       Object {
         "flag": "./images/flags/Sweden.png",

@@ -3,6 +3,12 @@ import { Route, NavLink } from 'react-router-dom';
 import './Results.scss';
 
 class Results extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      
+    }
+  }
   render() {
     return (
       <div className='Results'>
