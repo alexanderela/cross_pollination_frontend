@@ -3,7 +3,9 @@
 exports[`Login should render like the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Login />,
+  Symbol(enzyme.__unrendered__): <Login
+    loginUser={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -38,6 +40,25 @@ ShallowWrapper {
         >
           Email
         </div>,
+        <form
+          className="login-form"
+        >
+          <input
+            className="login-input login-name"
+            name="name"
+            placeholder="Name"
+          />
+          <input
+            className="login-input login-email"
+            name="email"
+            placeholder="Email"
+          />
+          <input
+            className="login-input login-password"
+            name="password"
+            placeholder="Password"
+          />
+        </form>,
       ],
       "className": "Login",
     },
@@ -91,6 +112,74 @@ ShallowWrapper {
         "rendered": "Email",
         "type": "div",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              className="login-input login-name"
+              name="name"
+              placeholder="Name"
+            />,
+            <input
+              className="login-input login-email"
+              name="email"
+              placeholder="Email"
+            />,
+            <input
+              className="login-input login-password"
+              name="password"
+              placeholder="Password"
+            />,
+          ],
+          "className": "login-form",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "login-input login-name",
+              "name": "name",
+              "placeholder": "Name",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "login-input login-email",
+              "name": "email",
+              "placeholder": "Email",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "login-input login-password",
+              "name": "password",
+              "placeholder": "Password",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+        ],
+        "type": "form",
+      },
     ],
     "type": "div",
   },
@@ -121,6 +210,25 @@ ShallowWrapper {
           >
             Email
           </div>,
+          <form
+            className="login-form"
+          >
+            <input
+              className="login-input login-name"
+              name="name"
+              placeholder="Name"
+            />
+            <input
+              className="login-input login-email"
+              name="email"
+              placeholder="Email"
+            />
+            <input
+              className="login-input login-password"
+              name="password"
+              placeholder="Password"
+            />
+          </form>,
         ],
         "className": "Login",
       },
@@ -173,6 +281,74 @@ ShallowWrapper {
           "ref": null,
           "rendered": "Email",
           "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                className="login-input login-name"
+                name="name"
+                placeholder="Name"
+              />,
+              <input
+                className="login-input login-email"
+                name="email"
+                placeholder="Email"
+              />,
+              <input
+                className="login-input login-password"
+                name="password"
+                placeholder="Password"
+              />,
+            ],
+            "className": "login-form",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "login-input login-name",
+                "name": "name",
+                "placeholder": "Name",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "login-input login-email",
+                "name": "email",
+                "placeholder": "Email",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "login-input login-password",
+                "name": "password",
+                "placeholder": "Password",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+          ],
+          "type": "form",
         },
       ],
       "type": "div",
