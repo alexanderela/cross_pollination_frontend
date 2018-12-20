@@ -3,12 +3,21 @@ import { Route, NavLink } from 'react-router-dom';
 import './Results.scss';
 
 class Results extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      
+    }
+  }
   render() {
     return (
       <div className='Results'>
-        <div className='account-area'>
-          <h5 className='account-text'>Alex <strong>25</strong></h5>
-        </div>
+        <p className='results-title'>Correct!</p>
+        <p className='points-gained'><strong>+3</strong> pts</p>
+        <div className='results-divider'></div>
+        <p>Total</p>
+        <p className='total-points-count'>25</p>
+        <div className='button results-continue'>Continue</div>
       </div>
     );
   }

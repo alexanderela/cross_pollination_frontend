@@ -5,6 +5,8 @@ import './Hint.scss';
 const Hint = () => {
   return(
     <div className='Hint'>
+      <p className='hint-title'>Hint</p>
+      <div className='button hint-continue'>Continue</div>
     </div>
   )
 }

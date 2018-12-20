@@ -1,4 +1,4 @@
-[ 
+let mockData = [ 
   { name: 'Mexico',
    flag: './images/flags/Mexico.png',
    outline: './images/outlines/Mexico.png',
@@ -46,3 +46,5 @@
       'The Bunyip &The Alice Springs News',
       'Western Plateau,Great Victoria Desert,Great Artesian Basin' ] }
 ]
+
+export default mockData;

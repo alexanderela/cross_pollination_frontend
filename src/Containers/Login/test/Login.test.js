@@ -4,9 +4,19 @@ import Login from '../index';
 
 describe('Login', () => {
   let wrapper;
+  let mockEvent;
+  let mockFunc;
   
   beforeEach(() => {
-    wrapper = shallow(<Login />)
+    mockFunc = jest.fn();
+    mockEvent = {
+      preventDefault: mockFunc,
+      target: {
+        name: 'name',
+        value: 'Alex'
+      }
+    }
+    wrapper = shallow(<Login loginUser={jest.fn()} />);
   });
   
     it('should render like the snapshot', () => {
@@ -15,14 +25,18 @@ describe('Login', () => {
   
   describe('handleChange', () => {
     it('should set state upon invocaton of handleChange', () => {
+      wrapper.instance().handleChange(mockEvent);
+      expect(wrapper.state().name).toEqual('Alex')
     });
   });
 
   describe('submitLogin', () => {
-    it('should invoke loginUser if loginAttempt is successful', () => {
+    it.skip('should invoke loginUser if loginAttempt is successful', async () => {
+      await wrapper.instance().submitLogin(mockEvent);
+      expect(wrapper.instance().props.loginUser).toHaveBeenCalled();
     });
 
-    it('should set errorState if loginAttempt fails', () => {
+    it('should set errorState if loginAttempt fails', async () => {
     });
   });
 
@@ -46,7 +60,16 @@ describe('Login', () => {
   });
   
   describe('clearInputs', () => {
-    it('should clear inputs', () => {
+    it('should clear inputs on submit', () => {
+      wrapper.setState({
+        name: 'Bruce',
+        email: 'Ela',
+        password: 'Rau',
+      });
+      wrapper.instance().clearInputs();
+      expect(wrapper.state().name).toEqual('');
+      expect(wrapper.state().email).toEqual('');
+      expect(wrapper.state().password).toEqual('');
     });
   });
 
