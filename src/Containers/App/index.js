@@ -34,8 +34,21 @@ class App extends Component {
 
     this.setState({
       countryOptions
-    }, () => this.selectCorrectCountry(this.state.countryOptions));
-   }
+    }, () => this.checkForUsedCountries(this.state.countryOptions));
+   };
+
+  checkForUsedCountries = (countryOptions) => {
+    const { usedCountries } = this.state;
+    const unusedCountries = countryOptions.reduce((filteredCountries, country) => {
+      if (!usedCountries.includes(country)) {
+        filteredCountries.push(country);
+      }
+      return filteredCountries;
+    }, []);
+    
+    this.selectCorrectCountry(unusedCountries);
+    return unusedCountries;
+  };
 
   selectCorrectCountry = (countryOptions) => {
     const { usedCountries } = this.state;
@@ -46,7 +59,7 @@ class App extends Component {
       correctCountry,
       usedCountries: updatedCountries,
     });
-  }
+  };
 
   compilePoints = (newPoints) => {
     const totalPoints = this.state.totalPoints + newPoints

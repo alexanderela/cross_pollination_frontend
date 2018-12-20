@@ -70,12 +70,21 @@ describe('App', () => {
     });
   });
   
+    describe('checkForUsedCountries', () => {
+      it('should return an array of countries not already used', () => {
+        wrapper.instance().selectCorrectCountry(mockCountries);
+        const usedCountries = wrapper.state().usedCountries;
+        const updatedCountryOptions = wrapper.instance().checkForUsedCountries(mockCountries);
+        expect(updatedCountryOptions.length).toEqual(3);
+      });
+    });
+  
   describe('selectCorrectCountry', () => {
     it('should set a country object to state', () => {
       wrapper.instance().selectCorrectCountry(mockCountries);
 
       const actual = Object.keys(wrapper.state().correctCountry);
-      const expected = ['name', 'flag',  'outline', 'questions']
+      const expected = ['name', 'flag', 'outline', 'questions']
 
       expect(actual).toEqual(expected);
     });
@@ -83,7 +92,7 @@ describe('App', () => {
     it('should add countries already guessed to state', () => {
       wrapper.instance().selectCorrectCountry(mockCountries);
       expect(wrapper.state().usedCountries.length).not.toEqual(0);
-    })
+    });
   });
 
   describe('compilePoints', () => {
