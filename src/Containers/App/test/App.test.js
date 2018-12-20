@@ -71,13 +71,18 @@ describe('App', () => {
   });
   
   describe('selectCorrectCountry', () => {
-    it.skip('should set a country object to state', () => {
+    it('should set a country object to state', () => {
       wrapper.instance().selectCorrectCountry(mockCountries);
-      expect(wrapper.state().correctCountry).not.toEqual({});
+
+      const actual = Object.keys(wrapper.state().correctCountry);
+      const expected = ['name', 'flag',  'outline', 'questions']
+
+      expect(actual).toEqual(expected);
     });
 
     it('should add countries already guessed to state', () => {
       wrapper.instance().selectCorrectCountry(mockCountries);
+      expect(wrapper.state().usedCountries.length).not.toEqual(0);
     })
   });
 

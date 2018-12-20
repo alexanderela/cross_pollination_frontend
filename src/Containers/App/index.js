@@ -14,7 +14,7 @@ class App extends Component {
       usedCountries: [],
       countries: [],
       countryOptions: [],
-      correctCountry: {}
+      correctCountry: {},
     };
   };
 
@@ -38,9 +38,14 @@ class App extends Component {
    }
 
   selectCorrectCountry = (countryOptions) => {
-    const { countriesAlreadyGuessed } = this.state;
+    const { usedCountries } = this.state;
     const correctCountry = countryOptions[Math.floor(Math.random() * 4)];
-    this.setState({ correctCountry });
+
+    const updatedCountries = [...usedCountries, correctCountry]
+    this.setState({ 
+      correctCountry,
+      usedCountries: updatedCountries,
+    });
   }
 
   compilePoints = (newPoints) => {
