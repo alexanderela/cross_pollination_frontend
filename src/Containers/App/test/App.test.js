@@ -75,6 +75,10 @@ describe('App', () => {
       wrapper.instance().selectCorrectCountry(mockCountries);
       expect(wrapper.state().correctCountry).not.toEqual({});
     });
+
+    it('should add countries already guessed to state', () => {
+      wrapper.instance().selectCorrectCountry(mockCountries);
+    })
   });
 
   describe('compilePoints', () => {
@@ -86,15 +90,15 @@ describe('App', () => {
   });
 
   describe('mapStateToProps', () => {
-    it('should create the correct props object', () => {
+    it.skip('should create the correct props object', () => {
     });
   });
   
   describe('mapDispatchToProps', () => {
-    it('should map a key of setCountries', () => {
+    it.skip('should map a key of setCountries', () => {
     });
     
-    it('setCountries should call dispatch', () => {
+    it.skip('setCountries should call dispatch', () => {
     });
   });
 });
