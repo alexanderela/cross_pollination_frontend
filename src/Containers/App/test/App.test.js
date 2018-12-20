@@ -63,10 +63,15 @@ describe('App', () => {
       wrapper.instance().createOptions();
       expect(wrapper.instance().selectCorrectCountry).toHaveBeenCalled();
     });
+
+    it('should set an array of 4 countries to state', () => {
+      wrapper.instance().createOptions();
+      expect(wrapper.state().countryOptions.length).toEqual(4);
+    });
   });
   
   describe('selectCorrectCountry', () => {
-    it.skip('should return an object', () => {
+    it.skip('should set a country object to state', () => {
       wrapper.instance().selectCorrectCountry(mockCountries);
       expect(wrapper.state().correctCountry).not.toEqual({});
     });

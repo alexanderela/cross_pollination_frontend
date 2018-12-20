@@ -4,7 +4,6 @@ import Game from '../Game';
 import Account from '../Account';
 import Login from '../Login';
 import './App.scss';
-
 import mockData from '../../mockData/mockData';
 
 class App extends Component {
@@ -19,21 +18,29 @@ class App extends Component {
     };
   };
 
-  async componentDidMount() {
-    this.setState({
-      countries: mockData
-    });
-
-    await this.createOptions();
-  };
+  componentDidMount() {
+     this.setState({
+       countries: mockData
+     }, () => this.createOptions());
+   };
 
   createOptions = () => {
+    let countryOptions = [];
+    const { countries } = this.state;
 
-    this.selectCorrectCountry();
-  };
+    while(countryOptions.length < 4) {
+      countryOptions.push(countries[Math.floor(Math.random() * countries.length - 1)]);
+    };
 
-  selectCorrectCountry = () => {
-  };
+    this.setState({
+      countryOptions
+    }, () => this.selectCorrectCountry(this.state.countryOptions));
+   }
+
+  selectCorrectCountry = (countryOptions) => {
+    const correctCountry = countryOptions[Math.floor(Math.random() * 4)];
+    this.setState({ correctCountry });
+  }
 
   compilePoints = (newPoints) => {
     const totalPoints = this.state.totalPoints + newPoints
