@@ -5,6 +5,7 @@ import Account from '../Account';
 import Login from '../Login';
 import './App.scss';
 import mockData from '../../mockData/mockData';
+import * as API from '../../utilities/API';
 
 class App extends Component {
   constructor() {
@@ -18,9 +19,13 @@ class App extends Component {
     };
   };
 
-  componentDidMount() {
+  async componentDidMount() {
+    const url = 'https://flagz4u.herokuapp.com/api/v1/country';
+    // const url = `${process.env.REACT_APP_BACKEND_URL}/api/v1/country`;
+    const countries = await API.fetchData(url);
+
      this.setState({
-       countries: mockData
+       countries
      }, () => this.createOptions());
    };
 
