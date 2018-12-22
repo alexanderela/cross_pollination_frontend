@@ -4,3 +4,9 @@ export const fetchData = async (url) => {
   return jsonData;
 };
 
+export const fetchCorrectCountry = async (randomId) => {
+  const url = `https://flagz4u.herokuapp.com/api/v1/country/${randomId}`;
+
+  const correctCountry = await fetchData(url);
+  return correctCountry;
+}

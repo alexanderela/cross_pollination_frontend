@@ -3,7 +3,7 @@ import { Route, NavLink } from 'react-router-dom';
 import './Game.scss';
 import Hint from '../../Components/Hint';
 import Results from '../../Components/Results';
-let backArrow = require('../../Images/back.svg');
+// import flag from '../../images/flags/mexico.png';
 
 
 class Game extends Component {
@@ -64,12 +64,13 @@ class Game extends Component {
         <div className='top-container'>
           <div className='account-area'>
             <div className='back-button'>
-              {/* <img alt='' className='back-img' src={backArrow} /> */}
             </div>
             <h5 className='account-text'>Alex <strong>25</strong></h5>
           </div>
         </div>
-        <div className='flag-main'></div>
+        <div className='flag-main'>
+          {/* <img alt='' className='flag-image' src={flag}/> */}
+        </div>
         <div className='hint-button'>
           Hints: 2
         </div>
