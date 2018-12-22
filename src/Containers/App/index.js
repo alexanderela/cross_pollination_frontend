@@ -9,6 +9,7 @@ import * as API from '../../utilities/API';
 import { connect } from 'react-redux';
 import { setCountryNames } from '../../actions/countryActions';
 import countryNames from '../../utilities/countryNames';
+// import allCountries from '../../utilities/allCountriesImagesObject.js'
 
 export class App extends Component {
   constructor() {
@@ -22,9 +23,9 @@ export class App extends Component {
   };
 
   async componentDidMount() {
+
     let randomNumber = Math.floor(Math.random() * (162 - 86) + 86);
     const correctCountry = await API.fetchCorrectCountry(randomNumber);
-    console.log(correctCountry)
     const { usedCountries } = this.state;
       
     this.props.setCountryNames(countryNames);
@@ -85,18 +86,6 @@ shuffleArray = (array) => {
 
   return array;
 }
-
-
-  // selectCorrectCountry = (countryOptions) => {
-  //   const { usedCountries } = this.state;
-  //   const correctCountry = countryOptions[Math.floor(Math.random() * 4)];
-
-  //   const updatedCountries = [...usedCountries, correctCountry]
-  //   // this.setState({ 
-  //   //   correctCountry,
-  //   //   usedCountries: updatedCountries,
-  //   // });
-  // };
 
   compilePoints = (newPoints) => {
     const totalPoints = this.state.totalPoints + newPoints
