@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import './Account.scss';
-let backArrow = require('../../Images/back.svg');
+let backArrow = require('../../images/back.svg');
 
 
 class Account extends Component {

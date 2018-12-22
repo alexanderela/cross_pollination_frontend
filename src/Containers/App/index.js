@@ -6,6 +6,9 @@ import Login from '../Login';
 import './App.scss';
 import mockData from '../../mockData/mockData';
 import * as API from '../../utilities/API';
+import { connect } from 'react-redux';
+import { setCountryNames } from '../../actions/countryActions';
+import countryNames from '../../utilities/countryNames';
 
 class App extends Component {
   constructor() {
@@ -13,20 +16,22 @@ class App extends Component {
     this.state = {
       totalPoints: 0,
       usedCountries: [],
-      countries: [],
       countryOptions: [],
       correctCountry: {},
     };
   };
 
   async componentDidMount() {
-    const url = 'https://flagz4u.herokuapp.com/api/v1/country';
-    // const url = `${process.env.REACT_APP_BACKEND_URL}/api/v1/country`;
-    const countries = await API.fetchData(url);
+    let randomNumber = Math.floor(Math.random() * 78 - 1);
+    const correctCountry = await API.fetchCorrectCountry(randomNumber);
 
      this.setState({
-       countries
-     }, () => this.createOptions());
+       correctCountry: correctCountry[0]
+     }
+    //  ,  () => this.createOptions());
+     )
+
+    this.props.setCountryNames(countryNames);
    };
 
   createOptions = () => {
@@ -60,10 +65,10 @@ class App extends Component {
     const correctCountry = countryOptions[Math.floor(Math.random() * 4)];
 
     const updatedCountries = [...usedCountries, correctCountry]
-    this.setState({ 
-      correctCountry,
-      usedCountries: updatedCountries,
-    });
+    // this.setState({ 
+    //   correctCountry,
+    //   usedCountries: updatedCountries,
+    // });
   };
 
   compilePoints = (newPoints) => {
@@ -72,7 +77,7 @@ class App extends Component {
   };
 
   render() {
-    const { totalPoints } = this.state;
+    const { totalPoints, countries } = this.state;
     return (
       <div className='App'>
         <Switch>
@@ -91,4 +96,10 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapStateToProps = ({ user, countryNames }) => ({ user, countryNames });
+
+export const mapDispatchToProps = (dispatch) => ({
+  setCountryNames: (countryNames) => dispatch(setCountryNames(countryNames))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
