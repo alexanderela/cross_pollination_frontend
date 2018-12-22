@@ -1,5 +1,5 @@
-export const fetchData = jest.fn().mockImplementataion(() => {
-	return { results: [] }
+export const fetchData = jest.fn().mockImplementation(() => {
+  return { results: [] }
 })
 
 export const loginUser = jest.fn().mockImplementationOnce(() => ({

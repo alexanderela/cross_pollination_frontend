@@ -9,8 +9,9 @@ import * as API from '../../utilities/API';
 import { connect } from 'react-redux';
 import { setCountryNames } from '../../actions/countryActions';
 import countryNames from '../../utilities/countryNames';
+// import allCountries from '../../utilities/allCountriesImagesObject.js'
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -22,54 +23,69 @@ class App extends Component {
   };
 
   async componentDidMount() {
-    let randomNumber = Math.floor(Math.random() * 78 - 1);
+
+    let randomNumber = Math.floor(Math.random() * (162 - 86) + 86);
     const correctCountry = await API.fetchCorrectCountry(randomNumber);
+    const { usedCountries } = this.state;
+      
+    this.props.setCountryNames(countryNames);
+    const usedCountriesUpdated = [...usedCountries, correctCountry[0].name]
 
      this.setState({
-       correctCountry: correctCountry[0]
-     }
-    //  ,  () => this.createOptions());
-     )
-
-    this.props.setCountryNames(countryNames);
+       correctCountry: correctCountry[0],
+       usedCountries: usedCountriesUpdated
+     }, () => this.createOptions());
    };
 
-  createOptions = () => {
-    let countryOptions = [];
-    const { countries } = this.state;
+   //change createOptions above to checkForUsedCountries, so that first, checks used countries
 
-    while(countryOptions.length < 4) {
-      countryOptions.push(countries[Math.floor(Math.random() * countries.length - 1)]);
+  // checkForUsedCountries = () => {
+  //   let unusedCountries = [];
+  //   const { usedCountries } = this.state;
+
+  //   if(usedCountries.length) {
+  //     unusedCountries = usedCountries.reduce((filteredCountries, country) => {
+  //       if (!usedCountries.includes(country)) {
+  //         filteredCountries.push(country);
+  //       }
+  //       return filteredCountries;
+  //     }, []);   
+  //   }
+    
+  //   this.createOptions();
+  //   return unusedCountries;
+  // };
+
+  createOptions = () => {
+    let countryOptionsPrelim = [];
+    const { correctCountry } = this.state;
+    const { countryNames } = this.props
+
+    countryOptionsPrelim.push(correctCountry.name)
+    
+    while(countryOptionsPrelim.length < 4) {
+      countryOptionsPrelim.push(countryNames[Math.floor(Math.random() * countryNames.length - 1)]);
     };
+
+    const countryOptions = this.shuffleArray(countryOptionsPrelim)
 
     this.setState({
       countryOptions
-    }, () => this.checkForUsedCountries(this.state.countryOptions));
+    });
    };
 
-  checkForUsedCountries = (countryOptions) => {
-    const { usedCountries } = this.state;
-    const unusedCountries = countryOptions.reduce((filteredCountries, country) => {
-      if (!usedCountries.includes(country)) {
-        filteredCountries.push(country);
-      }
-      return filteredCountries;
-    }, []);
-    
-    this.selectCorrectCountry(unusedCountries);
-    return unusedCountries;
-  };
+shuffleArray = (array) => {
+  let m = array.length, t, i;
 
-  selectCorrectCountry = (countryOptions) => {
-    const { usedCountries } = this.state;
-    const correctCountry = countryOptions[Math.floor(Math.random() * 4)];
+  while (m) {
+    i = Math.floor(Math.random() * m--);
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
 
-    const updatedCountries = [...usedCountries, correctCountry]
-    // this.setState({ 
-    //   correctCountry,
-    //   usedCountries: updatedCountries,
-    // });
-  };
+  return array;
+}
 
   compilePoints = (newPoints) => {
     const totalPoints = this.state.totalPoints + newPoints
@@ -77,12 +93,17 @@ class App extends Component {
   };
 
   render() {
-    const { totalPoints, countries } = this.state;
+    const { totalPoints, countryOptions, correctCountry } = this.state;
     return (
       <div className='App'>
         <Switch>
           <Route exact path='/' render={() => {
-            return <Game compilePoints={this.compilePoints} />
+            return <Game 
+                      compilePoints={this.compilePoints} 
+                      correctChoice={correctCountry}
+                      choices={countryOptions}
+                      totalPoints={totalPoints}
+                    />
           }} />
           <Route path='/login' render={() => {
             return <Login />

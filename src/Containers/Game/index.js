@@ -18,15 +18,32 @@ class Game extends Component {
     }
   }
 
-  checkAnswer = (guess) => {
+  // async componentDidMount(){
+  //   var req = require.context('../../images/flags', false, /.*\.png$/);
+  //   req.keys().forEach(function(key){
+  //     req(key);
+  //   });
+  // }
+
+  getImagePath = () => {
+    const { name } = this.props.correctChoice;
+    return `../../images/flags/${name.toLowerCase()}`
+  }
+
+  checkAnswer = (e) => {
     const { correctChoice } = this.props;
-    if (guess === correctChoice.name) {
+    console.log(e.target.innerText)
+    console.log(correctChoice.name)
+    const { innerText } = e.target
+    if (innerText === correctChoice.name) {
       this.setState({
-        correct: true
+        correct: true,
+        incorrect: false
       })
     } else {
       this.setState({
-        incorrect: true
+        incorrect: true,
+        correct: false
       })
     }
   }
@@ -58,7 +75,23 @@ class Game extends Component {
     });
   }
 
+  showButtons = () => {
+    const { choices } = this.props
+    return choices.map(choice => {
+      return (<div 
+                className='option-button button' 
+                key={choice}
+                name={choice}
+                onClick={this.checkAnswer}
+              >
+                {choice}
+              </div>)  
+    })
+  }
+
   render() {
+    const choiceButtons = this.showButtons()
+
     return (
       <div className='Game'>
         <div className='top-container'>
@@ -69,15 +102,13 @@ class Game extends Component {
           </div>
         </div>
         <div className='flag-main'>
-          {/* <img alt='' className='flag-image' src={flag}/> */}
+          { /*
+            <img alt='' className='flag-image' src={flag}/> */}
         </div>
         <div className='hint-button'>
           Hints: 2
         </div>
-        <div className='option-button button option1'>Option 1</div>
-        <div className='option-button button option2'>Option 2</div>
-        <div className='option-button button option3'>Option 3</div>
-        <div className='option-button button option4'>Option 4</div>
+        { choiceButtons }
         {/* <Hint /> */}
         {/* <Results /> */}
       </div>

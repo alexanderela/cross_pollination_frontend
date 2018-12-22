@@ -58,6 +58,7 @@ ShallowWrapper {
         ],
       }
     }
+    totalPoints={10}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -100,26 +101,112 @@ ShallowWrapper {
         >
           Hints: 2
         </div>,
-        <div
-          className="option-button button option1"
-        >
-          Option 1
-        </div>,
-        <div
-          className="option-button button option2"
-        >
-          Option 2
-        </div>,
-        <div
-          className="option-button button option3"
-        >
-          Option 3
-        </div>,
-        <div
-          className="option-button button option4"
-        >
-          Option 4
-        </div>,
+        Array [
+          <div
+            className="option-button button"
+            name={
+              Object {
+                "flag": "./images/flags/Mexico.png",
+                "name": "Mexico",
+                "outline": "./images/outlines/Mexico.png",
+                "questions": Array [
+                  "Tabasco Hoy",
+                  "El Financiero & The Oaxaca Times",
+                  "Oaxaca,Durango,Nayarit",
+                ],
+              }
+            }
+            onClick={[Function]}
+          >
+            Object {
+              "flag": "./images/flags/Mexico.png",
+              "name": "Mexico",
+              "outline": "./images/outlines/Mexico.png",
+              "questions": Array [
+                "Tabasco Hoy",
+                "El Financiero & The Oaxaca Times",
+                "Oaxaca,Durango,Nayarit",
+              ],
+            }
+          </div>,
+          <div
+            className="option-button button"
+            name={
+              Object {
+                "flag": "./images/flags/Hungary.png",
+                "name": "Hungary",
+                "outline": "./images/outlines/Hungary.png",
+                "questions": Array [
+                  "Magyar Nemzet",
+                  "Its first king is known in English as St. Stephen & locally as Szent Istvan",
+                  "Nograd,Pest,Somogy",
+                ],
+              }
+            }
+            onClick={[Function]}
+          >
+            Object {
+              "flag": "./images/flags/Hungary.png",
+              "name": "Hungary",
+              "outline": "./images/outlines/Hungary.png",
+              "questions": Array [
+                "Magyar Nemzet",
+                "Its first king is known in English as St. Stephen & locally as Szent Istvan",
+                "Nograd,Pest,Somogy",
+              ],
+            }
+          </div>,
+          <div
+            className="option-button button"
+            name={
+              Object {
+                "flag": "./images/flags/Ireland.png",
+                "name": "Ireland",
+                "outline": "./images/outlines/Ireland.png",
+                "questions": Array [
+                  "The Connaught Telegraph & The Galway Advertiser",
+                  "In this country's parliament, the Dail has 166 seats, the Seanad, 60",
+                ],
+              }
+            }
+            onClick={[Function]}
+          >
+            Object {
+              "flag": "./images/flags/Ireland.png",
+              "name": "Ireland",
+              "outline": "./images/outlines/Ireland.png",
+              "questions": Array [
+                "The Connaught Telegraph & The Galway Advertiser",
+                "In this country's parliament, the Dail has 166 seats, the Seanad, 60",
+              ],
+            }
+          </div>,
+          <div
+            className="option-button button"
+            name={
+              Object {
+                "flag": "./images/flags/Sweden.png",
+                "name": "Sweden",
+                "outline": "./images/outlines/Sweden.png",
+                "questions": Array [
+                  "Svenska Dagbladet & Sundsvalls Tidning",
+                  "Ostergotland,Vasterbotten,Uppsala",
+                ],
+              }
+            }
+            onClick={[Function]}
+          >
+            Object {
+              "flag": "./images/flags/Sweden.png",
+              "name": "Sweden",
+              "outline": "./images/outlines/Sweden.png",
+              "questions": Array [
+                "Svenska Dagbladet & Sundsvalls Tidning",
+                "Ostergotland,Vasterbotten,Uppsala",
+              ],
+            }
+          </div>,
+        ],
       ],
       "className": "Game",
     },
@@ -241,50 +328,160 @@ ShallowWrapper {
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "[object Object]",
         "nodeType": "host",
         "props": Object {
-          "children": "Option 1",
-          "className": "option-button button option1",
+          "children": Object {
+            "flag": "./images/flags/Mexico.png",
+            "name": "Mexico",
+            "outline": "./images/outlines/Mexico.png",
+            "questions": Array [
+              "Tabasco Hoy",
+              "El Financiero & The Oaxaca Times",
+              "Oaxaca,Durango,Nayarit",
+            ],
+          },
+          "className": "option-button button",
+          "name": Object {
+            "flag": "./images/flags/Mexico.png",
+            "name": "Mexico",
+            "outline": "./images/outlines/Mexico.png",
+            "questions": Array [
+              "Tabasco Hoy",
+              "El Financiero & The Oaxaca Times",
+              "Oaxaca,Durango,Nayarit",
+            ],
+          },
+          "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Option 1",
+        "rendered": Object {
+          "flag": "./images/flags/Mexico.png",
+          "name": "Mexico",
+          "outline": "./images/outlines/Mexico.png",
+          "questions": Array [
+            "Tabasco Hoy",
+            "El Financiero & The Oaxaca Times",
+            "Oaxaca,Durango,Nayarit",
+          ],
+        },
         "type": "div",
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "[object Object]",
         "nodeType": "host",
         "props": Object {
-          "children": "Option 2",
-          "className": "option-button button option2",
+          "children": Object {
+            "flag": "./images/flags/Hungary.png",
+            "name": "Hungary",
+            "outline": "./images/outlines/Hungary.png",
+            "questions": Array [
+              "Magyar Nemzet",
+              "Its first king is known in English as St. Stephen & locally as Szent Istvan",
+              "Nograd,Pest,Somogy",
+            ],
+          },
+          "className": "option-button button",
+          "name": Object {
+            "flag": "./images/flags/Hungary.png",
+            "name": "Hungary",
+            "outline": "./images/outlines/Hungary.png",
+            "questions": Array [
+              "Magyar Nemzet",
+              "Its first king is known in English as St. Stephen & locally as Szent Istvan",
+              "Nograd,Pest,Somogy",
+            ],
+          },
+          "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Option 2",
+        "rendered": Object {
+          "flag": "./images/flags/Hungary.png",
+          "name": "Hungary",
+          "outline": "./images/outlines/Hungary.png",
+          "questions": Array [
+            "Magyar Nemzet",
+            "Its first king is known in English as St. Stephen & locally as Szent Istvan",
+            "Nograd,Pest,Somogy",
+          ],
+        },
         "type": "div",
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "[object Object]",
         "nodeType": "host",
         "props": Object {
-          "children": "Option 3",
-          "className": "option-button button option3",
+          "children": Object {
+            "flag": "./images/flags/Ireland.png",
+            "name": "Ireland",
+            "outline": "./images/outlines/Ireland.png",
+            "questions": Array [
+              "The Connaught Telegraph & The Galway Advertiser",
+              "In this country's parliament, the Dail has 166 seats, the Seanad, 60",
+            ],
+          },
+          "className": "option-button button",
+          "name": Object {
+            "flag": "./images/flags/Ireland.png",
+            "name": "Ireland",
+            "outline": "./images/outlines/Ireland.png",
+            "questions": Array [
+              "The Connaught Telegraph & The Galway Advertiser",
+              "In this country's parliament, the Dail has 166 seats, the Seanad, 60",
+            ],
+          },
+          "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Option 3",
+        "rendered": Object {
+          "flag": "./images/flags/Ireland.png",
+          "name": "Ireland",
+          "outline": "./images/outlines/Ireland.png",
+          "questions": Array [
+            "The Connaught Telegraph & The Galway Advertiser",
+            "In this country's parliament, the Dail has 166 seats, the Seanad, 60",
+          ],
+        },
         "type": "div",
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "[object Object]",
         "nodeType": "host",
         "props": Object {
-          "children": "Option 4",
-          "className": "option-button button option4",
+          "children": Object {
+            "flag": "./images/flags/Sweden.png",
+            "name": "Sweden",
+            "outline": "./images/outlines/Sweden.png",
+            "questions": Array [
+              "Svenska Dagbladet & Sundsvalls Tidning",
+              "Ostergotland,Vasterbotten,Uppsala",
+            ],
+          },
+          "className": "option-button button",
+          "name": Object {
+            "flag": "./images/flags/Sweden.png",
+            "name": "Sweden",
+            "outline": "./images/outlines/Sweden.png",
+            "questions": Array [
+              "Svenska Dagbladet & Sundsvalls Tidning",
+              "Ostergotland,Vasterbotten,Uppsala",
+            ],
+          },
+          "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Option 4",
+        "rendered": Object {
+          "flag": "./images/flags/Sweden.png",
+          "name": "Sweden",
+          "outline": "./images/outlines/Sweden.png",
+          "questions": Array [
+            "Svenska Dagbladet & Sundsvalls Tidning",
+            "Ostergotland,Vasterbotten,Uppsala",
+          ],
+        },
         "type": "div",
       },
     ],
@@ -324,26 +521,112 @@ ShallowWrapper {
           >
             Hints: 2
           </div>,
-          <div
-            className="option-button button option1"
-          >
-            Option 1
-          </div>,
-          <div
-            className="option-button button option2"
-          >
-            Option 2
-          </div>,
-          <div
-            className="option-button button option3"
-          >
-            Option 3
-          </div>,
-          <div
-            className="option-button button option4"
-          >
-            Option 4
-          </div>,
+          Array [
+            <div
+              className="option-button button"
+              name={
+                Object {
+                  "flag": "./images/flags/Mexico.png",
+                  "name": "Mexico",
+                  "outline": "./images/outlines/Mexico.png",
+                  "questions": Array [
+                    "Tabasco Hoy",
+                    "El Financiero & The Oaxaca Times",
+                    "Oaxaca,Durango,Nayarit",
+                  ],
+                }
+              }
+              onClick={[Function]}
+            >
+              Object {
+                "flag": "./images/flags/Mexico.png",
+                "name": "Mexico",
+                "outline": "./images/outlines/Mexico.png",
+                "questions": Array [
+                  "Tabasco Hoy",
+                  "El Financiero & The Oaxaca Times",
+                  "Oaxaca,Durango,Nayarit",
+                ],
+              }
+            </div>,
+            <div
+              className="option-button button"
+              name={
+                Object {
+                  "flag": "./images/flags/Hungary.png",
+                  "name": "Hungary",
+                  "outline": "./images/outlines/Hungary.png",
+                  "questions": Array [
+                    "Magyar Nemzet",
+                    "Its first king is known in English as St. Stephen & locally as Szent Istvan",
+                    "Nograd,Pest,Somogy",
+                  ],
+                }
+              }
+              onClick={[Function]}
+            >
+              Object {
+                "flag": "./images/flags/Hungary.png",
+                "name": "Hungary",
+                "outline": "./images/outlines/Hungary.png",
+                "questions": Array [
+                  "Magyar Nemzet",
+                  "Its first king is known in English as St. Stephen & locally as Szent Istvan",
+                  "Nograd,Pest,Somogy",
+                ],
+              }
+            </div>,
+            <div
+              className="option-button button"
+              name={
+                Object {
+                  "flag": "./images/flags/Ireland.png",
+                  "name": "Ireland",
+                  "outline": "./images/outlines/Ireland.png",
+                  "questions": Array [
+                    "The Connaught Telegraph & The Galway Advertiser",
+                    "In this country's parliament, the Dail has 166 seats, the Seanad, 60",
+                  ],
+                }
+              }
+              onClick={[Function]}
+            >
+              Object {
+                "flag": "./images/flags/Ireland.png",
+                "name": "Ireland",
+                "outline": "./images/outlines/Ireland.png",
+                "questions": Array [
+                  "The Connaught Telegraph & The Galway Advertiser",
+                  "In this country's parliament, the Dail has 166 seats, the Seanad, 60",
+                ],
+              }
+            </div>,
+            <div
+              className="option-button button"
+              name={
+                Object {
+                  "flag": "./images/flags/Sweden.png",
+                  "name": "Sweden",
+                  "outline": "./images/outlines/Sweden.png",
+                  "questions": Array [
+                    "Svenska Dagbladet & Sundsvalls Tidning",
+                    "Ostergotland,Vasterbotten,Uppsala",
+                  ],
+                }
+              }
+              onClick={[Function]}
+            >
+              Object {
+                "flag": "./images/flags/Sweden.png",
+                "name": "Sweden",
+                "outline": "./images/outlines/Sweden.png",
+                "questions": Array [
+                  "Svenska Dagbladet & Sundsvalls Tidning",
+                  "Ostergotland,Vasterbotten,Uppsala",
+                ],
+              }
+            </div>,
+          ],
         ],
         "className": "Game",
       },
@@ -465,50 +748,160 @@ ShallowWrapper {
         },
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "[object Object]",
           "nodeType": "host",
           "props": Object {
-            "children": "Option 1",
-            "className": "option-button button option1",
+            "children": Object {
+              "flag": "./images/flags/Mexico.png",
+              "name": "Mexico",
+              "outline": "./images/outlines/Mexico.png",
+              "questions": Array [
+                "Tabasco Hoy",
+                "El Financiero & The Oaxaca Times",
+                "Oaxaca,Durango,Nayarit",
+              ],
+            },
+            "className": "option-button button",
+            "name": Object {
+              "flag": "./images/flags/Mexico.png",
+              "name": "Mexico",
+              "outline": "./images/outlines/Mexico.png",
+              "questions": Array [
+                "Tabasco Hoy",
+                "El Financiero & The Oaxaca Times",
+                "Oaxaca,Durango,Nayarit",
+              ],
+            },
+            "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Option 1",
+          "rendered": Object {
+            "flag": "./images/flags/Mexico.png",
+            "name": "Mexico",
+            "outline": "./images/outlines/Mexico.png",
+            "questions": Array [
+              "Tabasco Hoy",
+              "El Financiero & The Oaxaca Times",
+              "Oaxaca,Durango,Nayarit",
+            ],
+          },
           "type": "div",
         },
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "[object Object]",
           "nodeType": "host",
           "props": Object {
-            "children": "Option 2",
-            "className": "option-button button option2",
+            "children": Object {
+              "flag": "./images/flags/Hungary.png",
+              "name": "Hungary",
+              "outline": "./images/outlines/Hungary.png",
+              "questions": Array [
+                "Magyar Nemzet",
+                "Its first king is known in English as St. Stephen & locally as Szent Istvan",
+                "Nograd,Pest,Somogy",
+              ],
+            },
+            "className": "option-button button",
+            "name": Object {
+              "flag": "./images/flags/Hungary.png",
+              "name": "Hungary",
+              "outline": "./images/outlines/Hungary.png",
+              "questions": Array [
+                "Magyar Nemzet",
+                "Its first king is known in English as St. Stephen & locally as Szent Istvan",
+                "Nograd,Pest,Somogy",
+              ],
+            },
+            "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Option 2",
+          "rendered": Object {
+            "flag": "./images/flags/Hungary.png",
+            "name": "Hungary",
+            "outline": "./images/outlines/Hungary.png",
+            "questions": Array [
+              "Magyar Nemzet",
+              "Its first king is known in English as St. Stephen & locally as Szent Istvan",
+              "Nograd,Pest,Somogy",
+            ],
+          },
           "type": "div",
         },
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "[object Object]",
           "nodeType": "host",
           "props": Object {
-            "children": "Option 3",
-            "className": "option-button button option3",
+            "children": Object {
+              "flag": "./images/flags/Ireland.png",
+              "name": "Ireland",
+              "outline": "./images/outlines/Ireland.png",
+              "questions": Array [
+                "The Connaught Telegraph & The Galway Advertiser",
+                "In this country's parliament, the Dail has 166 seats, the Seanad, 60",
+              ],
+            },
+            "className": "option-button button",
+            "name": Object {
+              "flag": "./images/flags/Ireland.png",
+              "name": "Ireland",
+              "outline": "./images/outlines/Ireland.png",
+              "questions": Array [
+                "The Connaught Telegraph & The Galway Advertiser",
+                "In this country's parliament, the Dail has 166 seats, the Seanad, 60",
+              ],
+            },
+            "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Option 3",
+          "rendered": Object {
+            "flag": "./images/flags/Ireland.png",
+            "name": "Ireland",
+            "outline": "./images/outlines/Ireland.png",
+            "questions": Array [
+              "The Connaught Telegraph & The Galway Advertiser",
+              "In this country's parliament, the Dail has 166 seats, the Seanad, 60",
+            ],
+          },
           "type": "div",
         },
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "[object Object]",
           "nodeType": "host",
           "props": Object {
-            "children": "Option 4",
-            "className": "option-button button option4",
+            "children": Object {
+              "flag": "./images/flags/Sweden.png",
+              "name": "Sweden",
+              "outline": "./images/outlines/Sweden.png",
+              "questions": Array [
+                "Svenska Dagbladet & Sundsvalls Tidning",
+                "Ostergotland,Vasterbotten,Uppsala",
+              ],
+            },
+            "className": "option-button button",
+            "name": Object {
+              "flag": "./images/flags/Sweden.png",
+              "name": "Sweden",
+              "outline": "./images/outlines/Sweden.png",
+              "questions": Array [
+                "Svenska Dagbladet & Sundsvalls Tidning",
+                "Ostergotland,Vasterbotten,Uppsala",
+              ],
+            },
+            "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Option 4",
+          "rendered": Object {
+            "flag": "./images/flags/Sweden.png",
+            "name": "Sweden",
+            "outline": "./images/outlines/Sweden.png",
+            "questions": Array [
+              "Svenska Dagbladet & Sundsvalls Tidning",
+              "Ostergotland,Vasterbotten,Uppsala",
+            ],
+          },
           "type": "div",
         },
       ],

@@ -1,4 +1,5 @@
 import * as API from '../API';
+// jest.mock('../API');
 
 describe('API', () => {
  describe('fetchData', () => {
@@ -22,19 +23,30 @@ describe('API', () => {
    });
  });
 
- describe('fetchCountries', () => {
+ describe('fetchCorrectCountry', () => {
      beforeEach(() => {
      })
-     it.skip('should call fetchCountries with the correct URL', () => {})
-     it.skip('should return a resolved array', () => {})
+     it.skip('should call fetchCountries with the correct URL', async () => {})
+     it.skip('should return a resolved object', async () => {})
  })
 
- describe('fetchRandomCountry', () => {
+ describe('fetchAllCountries', () => {
+ 		let url;
      beforeEach(() => {
+				url = 'https://flagz4u.herokuapp.com/api/v1/country';
      })
-     it.skip('should call fetchCountries with the correct URL', () => {})
-     it.skip('should return a resolved object', () => {})
+
+     it.skip('should call fetchCountries with the correct URL', async () => {
+     		API.fetchAllCountries()
+     		expect(API.fetchData).toHaveBeenCalledWith(url)
+     })
+
+     it.skip('should return a resolved array', async () => {
+     		const countries = await API.fetchAllCountries();
+     		expect(countries).toEqual([])
+     })
  })
+
 
  describe('loginUser', () => {
  		let mockUser;
