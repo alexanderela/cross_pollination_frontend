@@ -54,7 +54,12 @@ describe('Game', () => {
           'Ostergotland,Vasterbotten,Uppsala']
     };
 
-    wrapper = shallow(<Game compilePoints={jest.fn()} correctChoice={mockCorrectCountry} choices={mockCountries} />);
+    wrapper = shallow(<Game 
+                        compilePoints={jest.fn()} 
+                        correctChoice={mockCorrectCountry} 
+                        choices={mockCountries} 
+                        totalPoints={10}
+                      />);
   });
 
   it('should render like the snapshot', () => {
