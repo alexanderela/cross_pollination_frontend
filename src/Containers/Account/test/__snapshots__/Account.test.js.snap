@@ -23,19 +23,7 @@ ShallowWrapper {
         >
           <div
             className="back-button"
-          >
-            <img
-              alt=""
-              className="back-img"
-              src={
-                Object {
-                  "ReactComponent": [Function],
-                  "__esModule": true,
-                  "default": "back.svg",
-                }
-              }
-            />
-          </div>
+          />
         </div>,
         <div
           className="profile-image-container"
@@ -83,19 +71,7 @@ ShallowWrapper {
         "props": Object {
           "children": <div
             className="back-button"
-          >
-            <img
-              alt=""
-              className="back-img"
-              src={
-                Object {
-                  "ReactComponent": [Function],
-                  "__esModule": true,
-                  "default": "back.svg",
-                }
-              }
-            />
-          </div>,
+          />,
           "className": "account-area",
         },
         "ref": null,
@@ -104,37 +80,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <img
-              alt=""
-              className="back-img"
-              src={
-                Object {
-                  "ReactComponent": [Function],
-                  "__esModule": true,
-                  "default": "back.svg",
-                }
-              }
-            />,
             "className": "back-button",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "alt": "",
-              "className": "back-img",
-              "src": Object {
-                "ReactComponent": [Function],
-                "__esModule": true,
-                "default": "back.svg",
-              },
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "img",
-          },
+          "rendered": null,
           "type": "div",
         },
         "type": "div",
@@ -287,19 +236,7 @@ ShallowWrapper {
           >
             <div
               className="back-button"
-            >
-              <img
-                alt=""
-                className="back-img"
-                src={
-                  Object {
-                    "ReactComponent": [Function],
-                    "__esModule": true,
-                    "default": "back.svg",
-                  }
-                }
-              />
-            </div>
+            />
           </div>,
           <div
             className="profile-image-container"
@@ -347,19 +284,7 @@ ShallowWrapper {
           "props": Object {
             "children": <div
               className="back-button"
-            >
-              <img
-                alt=""
-                className="back-img"
-                src={
-                  Object {
-                    "ReactComponent": [Function],
-                    "__esModule": true,
-                    "default": "back.svg",
-                  }
-                }
-              />
-            </div>,
+            />,
             "className": "account-area",
           },
           "ref": null,
@@ -368,37 +293,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <img
-                alt=""
-                className="back-img"
-                src={
-                  Object {
-                    "ReactComponent": [Function],
-                    "__esModule": true,
-                    "default": "back.svg",
-                  }
-                }
-              />,
               "className": "back-button",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "alt": "",
-                "className": "back-img",
-                "src": Object {
-                  "ReactComponent": [Function],
-                  "__esModule": true,
-                  "default": "back.svg",
-                },
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "img",
-            },
+            "rendered": null,
             "type": "div",
           },
           "type": "div",

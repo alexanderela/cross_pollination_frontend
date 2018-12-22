@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import './Account.scss';
-let backArrow = require('../../images/back.svg');
 
 
 class Account extends Component {
@@ -10,7 +9,6 @@ class Account extends Component {
       <div className='Account'>
         <div className='account-area'>
           <div className='back-button'>
-            <img alt='' className='back-img' src={backArrow} />
           </div>
         </div>
         <div className='profile-image-container'>
