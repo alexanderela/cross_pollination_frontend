@@ -1,7 +1,10 @@
+$blue-accent: #59DBE6;
+
 .Hint {
-  background: rgba(240, 240, 240, .99);
+  background: #36363D;
   border-radius: 8px;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, .3);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+  color: $blue-accent;
   display: inline-flex;
   flex-direction: column;
   height: 55%;
