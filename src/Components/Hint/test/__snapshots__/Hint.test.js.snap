@@ -25,6 +25,7 @@ ShallowWrapper {
         </p>,
         <div
           className="button hint-continue"
+          onClick={[Function]}
         >
           Continue
         </div>,
@@ -52,6 +53,7 @@ ShallowWrapper {
         "props": Object {
           "children": "Continue",
           "className": "button hint-continue",
+          "onClick": [Function],
         },
         "ref": null,
         "rendered": "Continue",
@@ -74,6 +76,7 @@ ShallowWrapper {
           </p>,
           <div
             className="button hint-continue"
+            onClick={[Function]}
           >
             Continue
           </div>,
@@ -101,6 +104,7 @@ ShallowWrapper {
           "props": Object {
             "children": "Continue",
             "className": "button hint-continue",
+            "onClick": [Function],
           },
           "ref": null,
           "rendered": "Continue",

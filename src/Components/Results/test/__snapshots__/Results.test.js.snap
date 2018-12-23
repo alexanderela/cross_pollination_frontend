@@ -21,13 +21,18 @@ ShallowWrapper {
         <p
           className="results-title"
         >
-          Correct!
+          !
+        </p>,
+        <p
+          className="results-correct-country"
+        >
+           was the correct answer
         </p>,
         <p
           className="points-gained"
         >
           <strong>
-            +3
+            +
           </strong>
            pts
         </p>,
@@ -44,6 +49,7 @@ ShallowWrapper {
         </p>,
         <div
           className="button results-continue"
+          onClick={[Function]}
         >
           Continue
         </div>,
@@ -57,11 +63,35 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Correct!",
+          "children": Array [
+            undefined,
+            "!",
+          ],
           "className": "results-title",
         },
         "ref": null,
-        "rendered": "Correct!",
+        "rendered": Array [
+          undefined,
+          "!",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            undefined,
+            " was the correct answer",
+          ],
+          "className": "results-correct-country",
+        },
+        "ref": null,
+        "rendered": Array [
+          undefined,
+          " was the correct answer",
+        ],
         "type": "p",
       },
       Object {
@@ -71,7 +101,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <strong>
-              +3
+              +
             </strong>,
             " pts",
           ],
@@ -84,10 +114,16 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "+3",
+              "children": Array [
+                "+",
+                undefined,
+              ],
             },
             "ref": null,
-            "rendered": "+3",
+            "rendered": Array [
+              "+",
+              undefined,
+            ],
             "type": "strong",
           },
           " pts",
@@ -135,6 +171,7 @@ ShallowWrapper {
         "props": Object {
           "children": "Continue",
           "className": "button results-continue",
+          "onClick": [Function],
         },
         "ref": null,
         "rendered": "Continue",
@@ -153,13 +190,18 @@ ShallowWrapper {
           <p
             className="results-title"
           >
-            Correct!
+            !
+          </p>,
+          <p
+            className="results-correct-country"
+          >
+             was the correct answer
           </p>,
           <p
             className="points-gained"
           >
             <strong>
-              +3
+              +
             </strong>
              pts
           </p>,
@@ -176,6 +218,7 @@ ShallowWrapper {
           </p>,
           <div
             className="button results-continue"
+            onClick={[Function]}
           >
             Continue
           </div>,
@@ -189,11 +232,35 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Correct!",
+            "children": Array [
+              undefined,
+              "!",
+            ],
             "className": "results-title",
           },
           "ref": null,
-          "rendered": "Correct!",
+          "rendered": Array [
+            undefined,
+            "!",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              undefined,
+              " was the correct answer",
+            ],
+            "className": "results-correct-country",
+          },
+          "ref": null,
+          "rendered": Array [
+            undefined,
+            " was the correct answer",
+          ],
           "type": "p",
         },
         Object {
@@ -203,7 +270,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <strong>
-                +3
+                +
               </strong>,
               " pts",
             ],
@@ -216,10 +283,16 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "+3",
+                "children": Array [
+                  "+",
+                  undefined,
+                ],
               },
               "ref": null,
-              "rendered": "+3",
+              "rendered": Array [
+                "+",
+                undefined,
+              ],
               "type": "strong",
             },
             " pts",
@@ -267,6 +340,7 @@ ShallowWrapper {
           "props": Object {
             "children": "Continue",
             "className": "button results-continue",
+            "onClick": [Function],
           },
           "ref": null,
           "rendered": "Continue",
