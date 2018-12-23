@@ -98,6 +98,7 @@ ShallowWrapper {
         />,
         <div
           className="hint-button"
+          onClick={[Function]}
         >
           Hints: 2
         </div>,
@@ -207,6 +208,9 @@ ShallowWrapper {
             }
           </div>,
         ],
+        false,
+        false,
+        false,
       ],
       "className": "Game",
     },
@@ -321,6 +325,7 @@ ShallowWrapper {
         "props": Object {
           "children": "Hints: 2",
           "className": "hint-button",
+          "onClick": [Function],
         },
         "ref": null,
         "rendered": "Hints: 2",
@@ -484,6 +489,9 @@ ShallowWrapper {
         },
         "type": "div",
       },
+      false,
+      false,
+      false,
     ],
     "type": "div",
   },
@@ -518,6 +526,7 @@ ShallowWrapper {
           />,
           <div
             className="hint-button"
+            onClick={[Function]}
           >
             Hints: 2
           </div>,
@@ -627,6 +636,9 @@ ShallowWrapper {
               }
             </div>,
           ],
+          false,
+          false,
+          false,
         ],
         "className": "Game",
       },
@@ -741,6 +753,7 @@ ShallowWrapper {
           "props": Object {
             "children": "Hints: 2",
             "className": "hint-button",
+            "onClick": [Function],
           },
           "ref": null,
           "rendered": "Hints: 2",
@@ -904,6 +917,9 @@ ShallowWrapper {
           },
           "type": "div",
         },
+        false,
+        false,
+        false,
       ],
       "type": "div",
     },
