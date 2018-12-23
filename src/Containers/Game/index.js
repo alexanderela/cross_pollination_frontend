@@ -133,6 +133,56 @@ class Game extends Component {
         </div>
         { choiceButtons }
 
+
+
+
+
+
+
+        <div
+          className='option-button button'
+          key='choice'
+          name='choice'
+          onClick={this.checkAnswer}
+        >
+          Azerbaijan
+        </div>
+        <div
+          className='option-button button'
+          key='choice'
+          name='choice'
+          onClick={this.checkAnswer}
+        >
+          Azerbaijan
+        </div>
+        <div
+          className='option-button button'
+          key='choice'
+          name='choice'
+          onClick={this.checkAnswer}
+        >
+          Azerbaijan
+        </div>
+        <div
+          className='option-button button'
+          key='choice'
+          name='choice'
+          onClick={this.checkAnswer}
+        >
+          Azerbaijan
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
         { correct &&
           <Results
             status='Correct'

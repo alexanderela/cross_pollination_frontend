@@ -1,21 +1,24 @@
 $btn-white: #e2e2e2;
+$blue-accent: #59DBE6;
+$btn-gray: #555;
 
 * {
   font-family: 'Thasadith', sans-serif;
 }
 
 .App {
-  // background: linear-gradient(to bottom, #84D2F6, cornflowerblue);
-  background: #c6c6c6;
+  background: linear-gradient(#282828, #333);
   height: 100vh;
   margin: 0;
   width: 100vw;
 }
 
 .account-area {
+  color: $blue-accent;
   display: inline-flex;
   justify-content: space-between;
   padding: 1rem 8px;
+  text-shadow: 0 0 1rem black;
   width: calc(100% - 1rem);
   .back-button {
     height: 2rem;
@@ -29,17 +32,25 @@ $btn-white: #e2e2e2;
   }
 }
 
+strong {
+  text-shadow: none;
+}
+
 .hint-button {
-  background-color: #e2e2e2;
+  background-color: $btn-gray;
   box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  color: $blue-accent;
   margin: 1.25rem auto;
   padding: 12px 0;
   text-align: center;
+  text-shadow: 0 0 1rem black;
   width: 40%;
 }
 
 .button {
+  background-color: $btn-gray;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+  color: $blue-accent;
   font-weight: 700;
   margin: 1.25rem auto;
   padding: 12px 0;

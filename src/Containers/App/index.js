@@ -24,17 +24,17 @@ export class App extends Component {
 
   async componentDidMount() {
 
-    let randomNumber = Math.floor(Math.random() * (162 - 86) + 86);
-    const correctCountry = await API.fetchCorrectCountry(randomNumber);
-    const { usedCountries } = this.state;
+    // let randomNumber = Math.floor(Math.random() * (162 - 86) + 86);
+    // const correctCountry = await API.fetchCorrectCountry(randomNumber);
+    // const { usedCountries } = this.state;
       
-    this.props.setCountryNames(countryNames);
-    const usedCountriesUpdated = [...usedCountries, correctCountry[0].name]
+    // this.props.setCountryNames(countryNames);
+    // const usedCountriesUpdated = [...usedCountries, correctCountry[0].name]
 
-     this.setState({
-       correctCountry: correctCountry[0],
-       usedCountries: usedCountriesUpdated
-     }, () => this.createOptions());
+    //  this.setState({
+    //    correctCountry: correctCountry[0],
+    //    usedCountries: usedCountriesUpdated
+    //  }, () => this.createOptions());
    };
 
    //change createOptions above to checkForUsedCountries, so that first, checks used countries
