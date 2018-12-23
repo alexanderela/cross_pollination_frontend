@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import { countryReducer } from './countryReducer';
 import { userReducer } from './userReducer';
+import { usedCountriesReducer } from './usedCountriesReducer';
 
 export const rootReducer = combineReducers({
-  countryNames: countryReducer,
-  user: userReducer
+  currentCountry: countryReducer,
+  usedCountries: usedCountriesReducer,
+  user: userReducer,
 });
