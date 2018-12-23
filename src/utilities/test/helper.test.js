@@ -32,7 +32,7 @@ describe('helper', () => {
 		let expected;
 
 		beforeEach(() => {
- 			const mockCorrectCountry = {
+ 			mockCorrectCountry = {
                           "id": 79,
                           "name": "Turkmenistan",
                           "flag": "/images/flags/turkmenistan.png",
@@ -48,11 +48,11 @@ describe('helper', () => {
                         };
 		})
 
-		it.skip('should return an object with a multipleChoice property', () => {
+		it('should return an object with a multipleChoice property', () => {
 			returnedCountryObject = helper.buildQuestion(mockCorrectCountry);
 			result = Object.keys(returnedCountryObject)
 			expected = 'multipleChoice'
-			expect(result).toEqual(expect.arrayContaining(expected))
+			expect(result).toContain(expected)
 		})
 
 		it.skip('should return an object with a multipleChoice property with a length of 4', () => {})

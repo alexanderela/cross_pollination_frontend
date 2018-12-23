@@ -3,10 +3,11 @@ import { Route, NavLink } from 'react-router-dom';
 import './Game.scss';
 import Hint from '../../Components/Hint';
 import Results from '../../Components/Results';
+import { connect } from 'react-redux';
 // import flag from '../../images/flags/mexico.png';
 
 
-class Game extends Component {
+export class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,11 +27,6 @@ class Game extends Component {
   //     req(key);
   //   });
   // }
-
-  getImagePath = () => {
-    const { name } = this.props.correctChoice;
-    return `../../images/flags/${name.toLowerCase()}`
-  }
 
   checkAnswer = (e) => {
     const { correctChoice } = this.props;
@@ -112,6 +108,11 @@ class Game extends Component {
     });
   }
 
+  getImagePath = () => {
+    const { flag } = this.props.currgetImagePathentCountry;
+    return `https://flagz4u.herokuapp.com${flag}`
+  }
+
   render() {
     const choiceButtons = this.showButtons();
     const { correct, incorrect, pointsPossible, showHint } = this.state;
@@ -127,6 +128,7 @@ class Game extends Component {
           </div>
         </div>
         <div className='flag-main'>
+          <img src={() => this.getImagePath}/>
         </div>
         <div className='hint-button' onClick={this.giveHint}>
           Hints: 2
@@ -158,4 +160,14 @@ class Game extends Component {
   }
 }
 
-export default Game;
+export const mapStateToProps = ({ user, currentCountry, usedCountries  }) => ({
+  user, 
+  currentCountry, 
+  usedCountries,   
+});
+
+export const mapDispatchToProps = (dispatch) => ({
+
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Game);

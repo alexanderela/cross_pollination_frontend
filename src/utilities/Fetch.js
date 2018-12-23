@@ -5,9 +5,9 @@ export const fetchCorrectCountry = async (randomId, usedCountries) => {
   const url = `https://flagz4u.herokuapp.com/api/v1/country/${randomId}`;
 
   const countryArray = await API.fetchData(url);
+  console.log(countryArray)
   //returns as a single object in array, gets rid of array here and pass object
   const correctCountry = countryArray[0]
-  console.log(correctCountry)
   //check if country has been used, if it has make fetch again
   //not sure if this is working --> needs testing!!
   if (checkCountry(correctCountry, usedCountries)) {

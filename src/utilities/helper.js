@@ -12,11 +12,11 @@ export const checkCountry = (country, usedCountries) => {
 
 //this function is building the object for the current question that will ultimately be sent to the global store. 
 export const buildQuestion = (correctCountry) => {
+  console.log(correctCountry)
   
   const questionOptions = getRandomOptions()
 
   checkOptions(correctCountry, questionOptions)
-  
   const multipleChoices = [...questionOptions, correctCountry.name]
   const flagOptions = shuffleMultipleChoice(multipleChoices)
   //Adding the multiple coice array to the correctCountry object
