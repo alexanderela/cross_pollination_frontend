@@ -9,7 +9,7 @@ $tw-blue: #1dcaff;
 }
 
 .login-background-color {
-  background: linear-gradient(#0C00FE70, #00000090, #FF01FE70);
+  background: linear-gradient(#0C00FE50, #00000090, #FF01FE50);
   height: 100%;
   width: 100%;
 }
@@ -119,20 +119,8 @@ $tw-blue: #1dcaff;
   transition-duration: .2s;
 }
 
-.login-name:focus + .name-placeholder {
-  bottom: 4.25rem;
-  color: $fb-blue;
-  font-weight: 700;
-  font-size: 10px;
-}
-
-.login-email:focus + .email-placeholder {
-  bottom: 4.25rem;
-  color: $fb-blue;
-  font-weight: 700;
-  font-size: 10px;
-}
-
+.login-name:focus + .name-placeholder,
+.login-email:focus + .email-placeholder,
 .login-password:focus + .password-placeholder {
   bottom: 4.25rem;
   color: $fb-blue;
