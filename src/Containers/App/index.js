@@ -5,7 +5,7 @@ import Account from '../Account';
 import Login from '../Login';
 import './App.scss';
 import mockData from '../../mockData/mockData';
-import * as API from '../../utilities/Fetch';
+import * as Fetch from '../../utilities/Fetch';
 import { connect } from 'react-redux';
 import { setCurrentCountry } from '../../actions/countryActions';
 import { updateUsedCountries } from '../../actions/usedCountryActions';
@@ -34,7 +34,8 @@ export class App extends Component {
     //rolledback databases, currently 149 countries
     let randomNumber = Math.floor(Math.random() * (149 - 1) + 1);
 
-    const currentCountry = await API.fetchCorrectCountry(randomNumber, this.props.usedCountries); //sending this array to use in a check
+    const currentCountry = await Fetch.fetchCorrectCountry(randomNumber, this.props.usedCountries); //sending this array to use in a check
+    console.log(currentCountry)
     this.props.setCurrentCountry(currentCountry)//send to redux
     this.props.updateUsedCountries(currentCountry.name)//send to redux
   }
