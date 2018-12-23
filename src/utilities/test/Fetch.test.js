@@ -5,21 +5,24 @@ jest.mock('../API');
 describe('Fetch', () => {
 	describe('fetchCorrectCountry', () => {
 		let mockId;
+		let mockUsedCountries;
 		let url;
 
 		beforeEach(() => {
-			mockId = 90;
+			mockId = 5;
+			mockUsedCountries = ['Sweden', 'Denmark', 'Nigeria', 'Australia']
 			url = `https://flagz4u.herokuapp.com/api/v1/country/${mockId}`
 		})
 
 		it('should call fetchCorrectCountry with the correct URL', async () => {
-			Fetch.fetchCorrectCountry(mockId);
+			Fetch.fetchCorrectCountry(mockId, mockUsedCountries);
 			expect(API.fetchData).toHaveBeenCalledWith(url);
 		})
 
 		it('should return a resolved array', async () => {
-			const mockCorrectCountry = await Fetch.fetchCorrectCountry(mockId);
-			expect(mockCorrectCountry.results).toEqual([])
+			const mockCorrectCountry = await Fetch.fetchCorrectCountry(mockId, mockUsedCountries);
+			console.log(mockCorrectCountry)
+			expect(mockCorrectCountry).toEqual([])
 		})
 	})
 

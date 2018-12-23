@@ -7,7 +7,7 @@ export const fetchCorrectCountry = async (randomId, usedCountries) => {
   const countryArray = await API.fetchData(url);
   //returns as a single object in array, gets rid of array here and pass object
   const correctCountry = countryArray[0]
-
+  console.log(correctCountry)
   //check if country has been used, if it has make fetch again
   //not sure if this is working --> needs testing!!
   if (checkCountry(correctCountry, usedCountries)) {

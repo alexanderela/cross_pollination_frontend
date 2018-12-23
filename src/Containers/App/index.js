@@ -31,13 +31,15 @@ export class App extends Component {
 
 //This function handles getting the country, after it filters through all the fetch/helpers, we send the country to the global store and alse update the used countries array to include this current country
   getCountry = async () => {
+    const { usedCountries, setCurrentCountry, updateUsedCountries } = this.props
     //rolledback databases, currently 149 countries
     let randomNumber = Math.floor(Math.random() * (149 - 1) + 1);
+    // const allCountries = await Fetch.fetchAllCountries()
+    // console.log(allCountries)
+    const currentCountry = await Fetch.fetchCorrectCountry(randomNumber, usedCountries); //sending this array to use in a check
 
-    const currentCountry = await Fetch.fetchCorrectCountry(randomNumber, this.props.usedCountries); //sending this array to use in a check
-    console.log(currentCountry)
-    this.props.setCurrentCountry(currentCountry)//send to redux
-    this.props.updateUsedCountries(currentCountry.name)//send to redux
+    setCurrentCountry(currentCountry)//send to redux
+    updateUsedCountries(currentCountry.name)//send to redux
   }
 
 //didn't touch point system...
