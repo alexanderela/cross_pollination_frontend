@@ -12,9 +12,11 @@ class Game extends Component {
     this.state = {
       correct: false,
       incorrect: false,
+      showHint: false,
       hint: '',
       hintsUsed: 0,
       hintsExhausted: false,
+      pointsPossible: 3
     }
   }
 
@@ -49,29 +51,34 @@ class Game extends Component {
   }
 
   giveHint = () => {
-    let { hintsUsed } = this.state;
+    let { hintsUsed, pointsPossible } = this.state;
     const { outline, questions } = this.props.correctChoice;
-    
-    if (hintsUsed === 0) {
-      this.setState({
-        hint: questions[0]
-      });
-    } 
-    
-    if (hintsUsed === 1) {
-      this.setState({
-        hint: outline
-      });
-    }
-
-    if (hintsUsed >= 2) {
-      this.setState({
-        hintsExhausted: true
-      })
-    }
 
     this.setState({
-      hintsUsed: hintsUsed + 1
+      showHint: true
+    });
+    
+    // if (hintsUsed === 0) {
+    //   this.setState({
+    //     hint: questions[0]
+    //   });
+    // } 
+    
+    // if (hintsUsed === 1) {
+    //   this.setState({
+    //     hint: outline
+    //   });
+    // }
+
+    // if (hintsUsed >= 2) {
+    //   this.setState({
+    //     hintsExhausted: true
+    //   })
+    // }
+
+    this.setState({
+      hintsUsed: hintsUsed + 1,
+      pointsPossible: pointsPossible - 1,
     });
   }
 
@@ -89,8 +96,26 @@ class Game extends Component {
     })
   }
 
+  closeResults = () => {
+    this.setState({
+      incorrect: false,
+      correct: false,
+      hintsExhausted: false,
+      hintsUsed: 0,
+      pointsPossible: 3,
+    });
+  }
+
+  hideHint = () => {
+    this.setState({
+      showHint: false
+    });
+  }
+
   render() {
-    const choiceButtons = this.showButtons()
+    const choiceButtons = this.showButtons();
+    const { correct, incorrect, pointsPossible, showHint } = this.state;
+    const { name } = this.props.correctChoice;
 
     return (
       <div className='Game'>
@@ -102,15 +127,32 @@ class Game extends Component {
           </div>
         </div>
         <div className='flag-main'>
-          { /*
-            <img alt='' className='flag-image' src={flag}/> */}
         </div>
-        <div className='hint-button'>
+        <div className='hint-button' onClick={this.giveHint}>
           Hints: 2
         </div>
         { choiceButtons }
+
+        { correct &&
+          <Results
+            status='Correct'
+            closeResults={this.closeResults}
+            correctCountry={name}
+            points={pointsPossible}
+          />
+        }
+        { incorrect &&
+          <Results
+            status='Wrong'
+            closeResults={this.closeResults}
+            correctCountry={name}
+            points={pointsPossible}
+          />
+        }
+        {showHint && 
+          <Hint hideHint={this.hideHint} />
+        }
         {/* <Hint /> */}
-        {/* <Results /> */}
       </div>
     );
   }
