@@ -1,7 +1,7 @@
 import * as helper from '../helper';
 
 describe('helper', () => {
-	describe.skip('checkCountry', () => {
+	describe('checkCountry', () => {
 		let mockCountry;
 		let mockUsedCountries;
 		let url;
@@ -25,7 +25,7 @@ describe('helper', () => {
 		})
 	})
 
-	describe.skip('buildQuestion', () => {
+	describe('buildQuestion', () => {
 		let mockCorrectCountry;
 		let returnedCountryObject;
 		let result;
@@ -69,19 +69,11 @@ describe('helper', () => {
 		})
 	})
 
-	describe.skip('getRandomOptions', () => {
+	describe('getRandomOptions', () => {
 		it('should return an array of 3 country options', () => {
 			const result = helper.getRandomOptions()
 			expect(result.length).toEqual(3)
 		})
-		// it('should call getRandomOptions if any option is the same', () => {
-		// 	const mockMath = Object.create(global.Math);
-		// 	global.Math = mockMath;
-		// 	mockMath.random = () => 0.5;
-
-		// 	const result = helper.getRandomOptions()
-		// 	expect(helper.getRandomOptions).toHaveBeenCalled
-		// })
 	})
 
 	describe('checkOptions', () => {
