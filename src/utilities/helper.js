@@ -42,6 +42,7 @@ export const getRandomOptions = () => {
 //This function checks if any of the 'wrong' options are the corrct answer
 export const checkOptions = (countryName, questionOptions) => {
   if(questionOptions.includes(countryName)){
+    console.log('in')
     getRandomOptions()
   } else {
     return
