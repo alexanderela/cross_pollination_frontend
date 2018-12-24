@@ -79,8 +79,8 @@ export class Game extends Component {
   }
 
   showButtons = () => {
-    const { choices } = this.props
-    return choices.map(choice => {
+    const { multipleChoice } = this.props.currentCountry
+    return multipleChoice.map(choice => {
       return (<div 
                 className='option-button button' 
                 key={choice}
@@ -109,14 +109,17 @@ export class Game extends Component {
   }
 
   getImagePath = () => {
-    const { flag } = this.props.currgetImagePathentCountry;
-    return `https://flagz4u.herokuapp.com${flag}`
+    const { flag } = this.props.currentCountry;
+    const flagUrl = `https://flagz4u.herokuapp.com${flag}`
+    return flagUrl
   }
 
   render() {
-    const choiceButtons = this.showButtons();
+    // const choiceButtons = this.showButtons();
+    const flagImage = this.getImagePath()
+
     const { correct, incorrect, pointsPossible, showHint } = this.state;
-    const { name } = this.props.correctChoice;
+    const { name } = this.props.currentCountry;
 
     return (
       <div className='Game'>
@@ -128,12 +131,14 @@ export class Game extends Component {
           </div>
         </div>
         <div className='flag-main'>
-          <img src={() => this.getImagePath}/>
+          <img src={flagImage} className='flag-image'/>
         </div>
         <div className='hint-button' onClick={this.giveHint}>
           Hints: 2
         </div>
+        
         { choiceButtons }
+
         { correct &&
           <Results
             status='Correct'
