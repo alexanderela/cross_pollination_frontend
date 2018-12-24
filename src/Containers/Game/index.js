@@ -49,7 +49,7 @@ export class Game extends Component {
     
     if (hintsUsed === 0) {
       this.setState({
-        hint: 'question'
+        hint: 'fact'
       });
     } 
     
@@ -61,7 +61,7 @@ export class Game extends Component {
 
     if (hintsUsed >= 2) {
       this.setState({
-        hintsExhausted: true
+        hint: 'out of hints'
       })
     }
 
@@ -73,7 +73,6 @@ export class Game extends Component {
 
   showButtons = () => {
     const { multipleChoice } = this.props.currentCountry
-    const sampleChoices = ['Sweden', 'Georgia', 'Sudan', 'Australia']
 
     if(multipleChoice !== undefined) {
       return multipleChoice.map(choice => {
@@ -116,7 +115,7 @@ export class Game extends Component {
     const flagImage = this.getCountryFlagPath();
 
     const { correct, incorrect, pointsPossible, showHint, hint } = this.state;
-    const { name } = this.props.currentCountry;
+    const { name, facts, country_outline } = this.props.currentCountry;
 
     return (
       <div className='Game'>
@@ -156,6 +155,8 @@ export class Game extends Component {
           <Hint 
             hideHint={this.hideHint} 
             hint={hint}
+            outline={country_outline}
+            fact={facts[0].country_fact}
           />
         }
         {/* <Hint /> */}
