@@ -24,22 +24,17 @@ export class App extends Component {
     };
   };
 
-//Moved all logic out of ComponentDidMount
   componentDidMount() {
     this.getCountry()
   };
 
-//This function handles getting the country, after it filters through all the fetch/helpers, we send the country to the global store and alse update the used countries array to include this current country
   getCountry = async () => {
     const { usedCountries, setCurrentCountry, updateUsedCountries } = this.props
-    //rolledback databases, currently 149 countries
     let randomNumber = Math.floor(Math.random() * (149 - 1) + 1);
-    // const allCountries = await Fetch.fetchAllCountries()
-    // console.log(allCountries)
     const currentCountry = await Fetch.fetchCorrectCountry(randomNumber, usedCountries); //sending this array to use in a check
-
-    setCurrentCountry(currentCountry)//send to redux
-    updateUsedCountries(currentCountry.name)//send to redux
+    
+    setCurrentCountry(currentCountry)
+    updateUsedCountries(currentCountry.name)
   }
 
 //didn't touch point system...
@@ -85,24 +80,4 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-
-   //change createOptions above to checkForUsedCountries, so that first, checks used countries
-
-  // checkForUsedCountries = () => {
-  //   let unusedCountries = [];
-  //   const { usedCountries } = this.state;
-
-  //   if(usedCountries.length) {
-  //     unusedCountries = usedCountries.reduce((filteredCountries, country) => {
-  //       if (!usedCountries.includes(country)) {
-  //         filteredCountries.push(country);
-  //       }
-  //       return filteredCountries;
-  //     }, []);   
-  //   }
-    
-  //   this.createOptions();
-  //   return unusedCountries;
-  // };
 

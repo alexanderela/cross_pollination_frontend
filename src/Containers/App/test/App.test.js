@@ -2,72 +2,90 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {App, mapStateToProps, mapDispatchToProps} from '../index';
 import { shallow, mount } from 'enzyme';
+import * as Fetch from '../../../utilities/Fetch';
+import { setCurrentCountry } from '../../../actions/countryActions'
+import { updateUsedCountries } from '../../../actions/usedCountryActions'
+
 
 describe('App', () => {
   let wrapper;
   let mockNewPoints;
-  let mockCorrectCountry;
-  let mockCountryNames;
+  let mockUsedCountries;
+  let mockCountry;
+
 
   beforeEach(() => {
     mockNewPoints = 3;
-    mockCorrectCountry = {
-        id: 23,
-        name: 'Sweden',
-        flag: './images/flags/Sweden.png',
-        country_outline: './images/outlines/Sweden.png',
-      };
+  
+    mockUsedCountries = ['Mexico', 'Hungary', 'Ireland', 'Sweden']
 
-    mockCountryNames = ['Mexico', 'Hungary', 'Ireland', 'Sweden']
+    mockCountry = {
+      "id": 79,
+      "name": "Turkmenistan",
+      "flag": "/images/flags/turkmenistan.png",
+      "country_outline": "/images/outlines/turkmenistan.png",
+      "created_at": "2018-12-23T16:48:16.005Z",
+      "updated_at": "2018-12-23T16:48:16.005Z",
+      "multipleChoice": [
+        "France",
+        "Nigeria",
+        "Turkmenistan",
+        "Japan"
+      ]
+    };
 
     wrapper = shallow(<App 
-                        countryNames={mockCountryNames}
+                        currentCountry={mockCountry}
                         user={{id: 1, loggedIn: true}}
-                        setCountryNames={() => {}}
+                        usedCountries={mockUsedCountries}
+                        setCurrentCountry = {jest.fn().mockImplementation(() => {})}
+                        updateUsedCountries = {jest.fn().mockImplementation(() => {})}
                       />)
+
+    Math.random = jest.fn().mockImplementation(() => { return .4})
   });
 
- it('should render like the snapshot', () => {
+  it('should render like the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
-  
-  describe('checkForUsedCountries', () => {
-    it.skip('should return an array of countries not already used', () => {
-      // wrapper.instance().selectCorrectCountry(mockCountries);
-      wrapper.setState({ 
-        correctCountry: mockCorrectCountry,
-        usedCountries: mockCorrectCountry.name
-      })
-      console.log('FUCK ' + wrapper.state().usedCountries)
-      const updatedCountryOptions = wrapper.instance().checkForUsedCountries();
-      expect(updatedCountryOptions.length).toEqual(3);
-    });
 
-    it.skip('should invoke createOptions', () => {
-      wrapper.instance().createOptions = jest.fn();
-      wrapper.instance().checkForUsedCountries(mockCountryNames);
-      expect(wrapper.instance().createOptions).toHaveBeenCalled();
-    });
-  });
-  
-  describe('selectCorrectCountry', () => {
-    it.skip('should set a country object to state', () => {
-      wrapper.instance().selectCorrectCountry(mockCountries);
+  describe('getCountry', () => {
+    beforeEach(() => {
+      Fetch.fetchCorrectCountry = jest.fn()
+        .mockImplementation(() => {
+          return mockCountry
+        }
+      );
+    })
 
-      const actual = Object.keys(wrapper.state().correctCountry);
-      const expected = ['name', 'flag', 'outline', 'questions']
+    it('should call fetchCorrectCountry and return a country object', () => {
+      wrapper.instance().getCountry()
 
-      expect(actual).toEqual(expected);
-    });
+      expect(Fetch.fetchCorrectCountry).toHaveBeenCalled()
+      expect(Fetch.fetchCorrectCountry).toHaveBeenCalledWith(60, mockUsedCountries)
+      expect(Fetch.fetchCorrectCountry).toHaveReturnedWith(mockCountry)
+    })
 
-    it.skip('should add countries already guessed to state', () => {
-      wrapper.instance().selectCorrectCountry(mockCountries);
-      expect(wrapper.state().usedCountries.length).not.toEqual(0);
-    });
-  });
+    // it('should call a setCurrentCountry', () => {
+    //   wrapper.instance().getCountry()
+
+    //   expect(wrapper.props().setCurrentCountry).toHaveBeenCalledWith(mockCountry)
+    // })
+
+    // it('should call a updateUsedCountries', () => {
+
+    //   const spy = jest.spyOn(wrapper.props(), 'updateUsedCountries');
+    //   const isCalled = wrapper.props().updateUsedCountries;
+    //   wrapper.instance().getCountry()
+
+    //   expect(wrapper.props().updateUsedCountries).toHaveBeenCalled()
+
+    //   spy.mockRestore();
+    // })
+  })
 
   describe('compilePoints', () => {
-    it.skip('should set points to state', () => {
+    it('should set points to state', () => {
       expect(wrapper.state().totalPoints).toEqual(0);
       wrapper.instance().compilePoints(mockNewPoints);
       expect(wrapper.state().totalPoints).toEqual(3);
@@ -75,16 +93,75 @@ describe('App', () => {
   });
 
   describe('mapStateToProps', () => {
-    it.skip('should create the correct props object', () => {
+    let mockState = {
+      user: {user: 'Bob', email: "bob@bob.com"},
+      currentCountry: {
+        "id": 79,
+        "name": "Turkmenistan",
+        "flag": "/images/flags/turkmenistan.png",
+        "country_outline": "/images/outlines/turkmenistan.png",
+        "multipleChoice": [
+          "France",
+          "Nigeria",
+          "Turkmenistan",
+          "Japan"
+        ]
+      },
+      usedCountries: ['Mexico', 'Hungary', 'Ireland', 'Sweden'],
+    }
+
+    it('should return a user in the props object', () => {
+      const expected = {user: 'Bob', email: "bob@bob.com"}
+        
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps.user).toEqual(expected)
     });
+
+    it("should return a currentCountry in the props object", () => {
+      const expected = {
+        "id": 79,
+        "name": "Turkmenistan",
+        "flag": "/images/flags/turkmenistan.png",
+        "country_outline": "/images/outlines/turkmenistan.png",
+        "multipleChoice": [
+          "France",
+          "Nigeria",
+          "Turkmenistan",
+          "Japan"
+        ]
+      }
+        
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps.currentCountry).toEqual(expected)
+    })
+    it("should return a usedCountries array in the props object", () => {
+      const expected = ['Mexico', 'Hungary', 'Ireland', 'Sweden']
+        
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps.usedCountries).toEqual(expected)
+    })
   });
   
   describe('mapDispatchToProps', () => {
-    it.skip('should map a key of setCountries', () => {
-    });
-    
-    it.skip('setCountries should call dispatch', () => {
-    });
+    const mockDispatch = jest.fn()
+
+    it('should call dispatch with setCurrentCountry action when setCurrentCountry is called', () => {
+      const actionToDispatch = setCurrentCountry(mockCountry)
+
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.setCurrentCountry(mockCountry)
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
+
+    it('should call dispatch with updateUsedCountries action when updateUsedCountries is called', () => {
+      const actionToDispatch = updateUsedCountries(mockCountry.name)
+
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.updateUsedCountries(mockCountry.name)
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
   });
 });
 

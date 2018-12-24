@@ -9,7 +9,7 @@ export const fetchCorrectCountry = async (randomId, usedCountries) => {
 
   if (checkCountry(correctCountry, usedCountries)) {
     let randomNumber = Math.floor(Math.random() * (149 - 1) + 1);
-    fetchCorrectCountry(randomNumber)
+    fetchCorrectCountry(randomNumber, usedCountries)
   } else {
     return buildQuestion(correctCountry) 
   }

@@ -46,10 +46,10 @@ describe('Fetch', () => {
       };
 
       API.fetchData = jest.fn()
-            .mockImplementation(() => {
-              return mockResults
-            }
-          );
+        .mockImplementation(() => {
+          return mockResults
+        }
+      );
 
 		})
 
