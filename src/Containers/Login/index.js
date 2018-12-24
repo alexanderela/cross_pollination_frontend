@@ -101,7 +101,6 @@ class Login extends Component {
               <button className='login-back' onClick={this.closeCredentials}>go back</button>
             </form>
           }
-
         </div>
       </div>
     );
