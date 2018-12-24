@@ -12,15 +12,20 @@ class Account extends Component {
           </div>
         </div>
         <div className='profile-image-container'>
-          <img alt='' className='profile-image' />
+          {/* <img alt='' className='profile-image' /> */}
         </div>
         <div className='user-data'>
-          <p>Alex Ela</p>
+          <p className='profile-name'>Alex Ela</p>
           <div className='points-container'>
-            <p className='points-title'>POINTS</p>
-            <p className='points-number'>25</p>
+            <div className='points-label'>points</div>
+            <div className='points-number'>25</div>
           </div>
-          <p className='account-email'>email@email.com</p>
+          <div className='account-data'>
+            <div className='email-label'>email</div>
+            <div className='email-text'>email@email.com</div>
+          </div>
+          <div className='extra-data'>
+          </div>
         </div>
       </div>
     );

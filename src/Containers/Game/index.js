@@ -134,7 +134,6 @@ export class Game extends Component {
           Hints: 2
         </div>
         { choiceButtons }
-
         { correct &&
           <Results
             status='Correct'
