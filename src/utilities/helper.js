@@ -20,8 +20,9 @@ export const buildQuestion = (correctCountry) => {
   //Adding the multiple coice array to the correctCountry object
 
   //QUESTION FROM ALEX E.  Should we perform the following line of code as is, or should we instead spread the new property into the object?  I seem to remember Will telling us not to assign new properties in this way, but I may be mistaken.
-  correctCountry.multipleChoice = flagOptions
-  return correctCountry
+  // correctCountry.multipleChoice = flagOptions
+  let country = {...correctCountry, multipleChoice: flagOptions}
+  return country
 }
 
 //This function grabs three random countries
