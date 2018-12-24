@@ -21,19 +21,12 @@ export class Game extends Component {
     }
   }
 
-  // async componentDidMount(){
-  //   var req = require.context('../../images/flags', false, /.*\.png$/);
-  //   req.keys().forEach(function(key){
-  //     req(key);
-  //   });
-  // }
-
   checkAnswer = (e) => {
-    const { correctChoice } = this.props;
+    const { currentCountry } = this.props;
     console.log(e.target.innerText)
-    console.log(correctChoice.name)
+    console.log(currentCountry.name)
     const { innerText } = e.target
-    if (innerText === correctChoice.name) {
+    if (innerText === currentCountry.name) {
       this.setState({
         correct: true,
         incorrect: false
@@ -48,29 +41,29 @@ export class Game extends Component {
 
   giveHint = () => {
     let { hintsUsed, pointsPossible } = this.state;
-    const { outline, questions } = this.props.correctChoice;
+    const { outline, questions } = this.props.currentCountry;
 
     this.setState({
       showHint: true
     });
     
-    // if (hintsUsed === 0) {
-    //   this.setState({
-    //     hint: questions[0]
-    //   });
-    // } 
+    if (hintsUsed === 0) {
+      this.setState({
+        hint: 'question'
+      });
+    } 
     
-    // if (hintsUsed === 1) {
-    //   this.setState({
-    //     hint: outline
-    //   });
-    // }
+    if (hintsUsed === 1) {
+      this.setState({
+        hint: 'outline'
+      });
+    }
 
-    // if (hintsUsed >= 2) {
-    //   this.setState({
-    //     hintsExhausted: true
-    //   })
-    // }
+    if (hintsUsed >= 2) {
+      this.setState({
+        hintsExhausted: true
+      })
+    }
 
     this.setState({
       hintsUsed: hintsUsed + 1,
@@ -80,16 +73,20 @@ export class Game extends Component {
 
   showButtons = () => {
     const { multipleChoice } = this.props.currentCountry
-    return multipleChoice.map(choice => {
-      return (<div 
-                className='option-button button' 
-                key={choice}
-                name={choice}
-                onClick={this.checkAnswer}
-              >
-                {choice}
-              </div>)  
-    })
+    const sampleChoices = ['Sweden', 'Georgia', 'Sudan', 'Australia']
+
+    if(multipleChoice !== undefined) {
+      return multipleChoice.map(choice => {
+        return (<div 
+                  className='option-button button' 
+                  key={choice}
+                  name={choice}
+                  onClick={this.checkAnswer}
+                >
+                  {choice}
+                </div>)  
+      })
+    }
   }
 
   closeResults = () => {
@@ -108,17 +105,17 @@ export class Game extends Component {
     });
   }
 
-  getImagePath = () => {
+ getCountryFlagPath = () => {
     const { flag } = this.props.currentCountry;
     const flagUrl = `https://flagz4u.herokuapp.com${flag}`
     return flagUrl
   }
 
   render() {
-    // const choiceButtons = this.showButtons();
-    const flagImage = this.getImagePath()
+    const choiceButtons = this.showButtons();
+    const flagImage = this.getCountryFlagPath();
 
-    const { correct, incorrect, pointsPossible, showHint } = this.state;
+    const { correct, incorrect, pointsPossible, showHint, hint } = this.state;
     const { name } = this.props.currentCountry;
 
     return (
@@ -156,7 +153,10 @@ export class Game extends Component {
           />
         }
         {showHint && 
-          <Hint hideHint={this.hideHint} />
+          <Hint 
+            hideHint={this.hideHint} 
+            hint={hint}
+          />
         }
         {/* <Hint /> */}
       </div>

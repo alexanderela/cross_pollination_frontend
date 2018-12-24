@@ -11,9 +11,18 @@ export const fetchCorrectCountry = async (randomId, usedCountries) => {
     let randomNumber = Math.floor(Math.random() * (149 - 1) + 1);
     fetchCorrectCountry(randomNumber, usedCountries)
   } else {
-    return buildQuestion(correctCountry) 
+  	const countryFacts = await fetchCountryFacts(randomId)
+    return buildQuestion(correctCountry, countryFacts) 
   }
 }
+
+export const fetchCountryFacts = async (countryId) => {
+const url = `https://flagz4u.herokuapp.com/api/v1/facts/${countryId}`;
+
+  const countryFacts = await API.fetchData(url);
+  return countryFacts;
+}
+
 
 
 //would this ever be used?
