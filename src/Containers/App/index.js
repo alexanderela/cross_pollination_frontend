@@ -5,15 +5,17 @@ import Account from '../Account';
 import Login from '../Login';
 import './App.scss';
 import mockData from '../../mockData/mockData';
-import * as API from '../../utilities/API';
+import * as Fetch from '../../utilities/Fetch';
 import { connect } from 'react-redux';
-import { setCountryNames } from '../../actions/countryActions';
+import { setCurrentCountry } from '../../actions/countryActions';
+import { updateUsedCountries } from '../../actions/usedCountryActions';
 import countryNames from '../../utilities/countryNames';
 // import allCountries from '../../utilities/allCountriesImagesObject.js'
 
 export class App extends Component {
   constructor() {
     super();
+//i'd argue that we don't need any of this state if we are going to have redux
     this.state = {
       totalPoints: 0,
       usedCountries: [],
@@ -22,71 +24,20 @@ export class App extends Component {
     };
   };
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.getCountry()
+  };
 
-    let randomNumber = Math.floor(Math.random() * (162 - 86) + 86);
-    const correctCountry = await API.fetchCorrectCountry(randomNumber);
-    const { usedCountries } = this.state;
-      
-    this.props.setCountryNames(countryNames);
-    const usedCountriesUpdated = [...usedCountries, correctCountry[0].name]
-
-     this.setState({
-       correctCountry: correctCountry[0],
-       usedCountries: usedCountriesUpdated
-     }, () => this.createOptions());
-   };
-
-   //change createOptions above to checkForUsedCountries, so that first, checks used countries
-
-  // checkForUsedCountries = () => {
-  //   let unusedCountries = [];
-  //   const { usedCountries } = this.state;
-
-  //   if(usedCountries.length) {
-  //     unusedCountries = usedCountries.reduce((filteredCountries, country) => {
-  //       if (!usedCountries.includes(country)) {
-  //         filteredCountries.push(country);
-  //       }
-  //       return filteredCountries;
-  //     }, []);   
-  //   }
+  getCountry = async () => {
+    const { usedCountries, setCurrentCountry, updateUsedCountries } = this.props
+    let randomNumber = Math.floor(Math.random() * (149 - 1) + 1);
+    const currentCountry = await Fetch.fetchCorrectCountry(randomNumber, usedCountries); //sending this array to use in a check
     
-  //   this.createOptions();
-  //   return unusedCountries;
-  // };
-
-  createOptions = () => {
-    let countryOptionsPrelim = [];
-    const { correctCountry } = this.state;
-    const { countryNames } = this.props
-
-    countryOptionsPrelim.push(correctCountry.name)
-    
-    while(countryOptionsPrelim.length < 4) {
-      countryOptionsPrelim.push(countryNames[Math.floor(Math.random() * countryNames.length - 1)]);
-    };
-
-    const countryOptions = this.shuffleArray(countryOptionsPrelim)
-
-    this.setState({
-      countryOptions
-    });
-   };
-
-shuffleArray = (array) => {
-  let m = array.length, t, i;
-
-  while (m) {
-    i = Math.floor(Math.random() * m--);
-    t = array[m];
-    array[m] = array[i];
-    array[i] = t;
+    setCurrentCountry(currentCountry)
+    updateUsedCountries(currentCountry.name)
   }
 
-  return array;
-}
-
+//didn't touch point system...
   compilePoints = (newPoints) => {
     const totalPoints = this.state.totalPoints + newPoints
     this.setState({ totalPoints });
@@ -117,10 +68,16 @@ shuffleArray = (array) => {
   }
 }
 
-export const mapStateToProps = ({ user, countryNames }) => ({ user, countryNames });
+export const mapStateToProps = ({ user, currentCountry, usedCountries }) => ({ 
+  user, 
+  currentCountry, 
+  usedCountries, 
+});
 
 export const mapDispatchToProps = (dispatch) => ({
-  setCountryNames: (countryNames) => dispatch(setCountryNames(countryNames))
+  setCurrentCountry: country => dispatch(setCurrentCountry(country)),
+  updateUsedCountries: country => dispatch(updateUsedCountries(country)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+

@@ -1,4 +1,8 @@
-export const setCountryNames = (countryNames) => ({
-  type: 'SET_COUNTRY_NAMES',
-  countryNames
-});
+export const setCurrentCountry = (country) => {
+  return {
+    type: 'SET_CURRENT_COUNTRY',
+    country
+  }
+};
+
+
