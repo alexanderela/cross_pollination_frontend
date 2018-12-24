@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { setCurrentCountry } from '../../actions/countryActions';
 import { updateUsedCountries } from '../../actions/usedCountryActions';
 import countryNames from '../../utilities/countryNames';
+import { getCurrentCountry } from '../../Thunks/countries.js';
 // import allCountries from '../../utilities/allCountriesImagesObject.js'
 
 export class App extends Component {
@@ -77,6 +78,7 @@ export const mapStateToProps = ({ user, currentCountry, usedCountries }) => ({
 export const mapDispatchToProps = (dispatch) => ({
   setCurrentCountry: country => dispatch(setCurrentCountry(country)),
   updateUsedCountries: country => dispatch(updateUsedCountries(country)),
+  getCurrentCountry: (randomNumber, usedCountries) => dispatch(getCurrentCountry(randomNumber, usedCountries))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
