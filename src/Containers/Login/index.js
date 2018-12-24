@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import * as API from '../../utilities/API';
 import './Login.scss';
-import city1 from '../../images/intros/city1.jpg'
+// import city1 from '../../images/intros/b.png'
 
 class Login extends Component {
   constructor() {
@@ -14,6 +14,7 @@ class Login extends Component {
       createUser: false,
       error: '',
       emailCredentials: false,
+      formLogin: true,
     }
   }
 
@@ -28,6 +29,19 @@ class Login extends Component {
   expandCredentials = () => {
     this.setState({
       emailCredentials: true
+    });
+  }
+
+  closeCredentials = () => {
+    this.setState({
+      emailCredentials: false
+    });
+  }
+
+  changeFormPurpose = () => {
+    const { formLogin } = this.state;
+    this.setState({
+      formLogin: !formLogin
     })
   }
 
@@ -45,10 +59,9 @@ class Login extends Component {
   }
 ;
   render() {
-    const { emailCredentials } = this.state;
+    const { emailCredentials, formLogin } = this.state;
     return (
-      <div className='Login' style={{
-        backgroundImage: `url(${city1})`}}>
+      <div className='Login'>
         <div className='login-background-color'>
         <h1 className={!emailCredentials ? 'login-title' : 'login-title-small'}>Flagship</h1>
           {
@@ -69,12 +82,23 @@ class Login extends Component {
             emailCredentials &&
             <form className='login-form'>
               <div className='form-instructions'>press return to submit</div>
-              <input className='login-input login-name' name='name' />
-              <div className='login-input-placeholder name-placeholder'>name</div>
+              <div className='login-signup-slider' onClick={this.changeFormPurpose}>
+                <div className='form-slider-login'>login</div>
+                <div className={formLogin ? 'form-slider form-slider-login' : 'form-slider form-slider-signup'}></div>
+                <div className='form-slider-signup'>sign up</div>
+              </div>
+              {
+                !formLogin &&
+                <div>
+                  <input className='login-input login-name' name='name' />
+                  <div className='login-input-placeholder name-placeholder'>name</div>
+                </div>
+              }
               <input className='login-input login-email' name='email' />
               <div className='login-input-placeholder email-placeholder'>email</div>
               <input className='login-input login-password' name='password' />
               <div className='login-input-placeholder password-placeholder'>password</div>
+              <button className='login-back' onClick={this.closeCredentials}>go back</button>
             </form>
           }
 
