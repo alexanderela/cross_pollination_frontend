@@ -1,7 +1,7 @@
-export const countryReducer = (state = [], action) => {
+export const countryReducer = (state = {}, action) => {
   switch (action.type) {
-    case 'SET_COUNTRY_NAMES':
-      return action.countryNames;
+    case 'SET_CURRENT_COUNTRY':
+      return action.country;
     default: 
       return state;
   };

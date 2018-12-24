@@ -4,7 +4,25 @@ exports[`App should render like the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <App
-    countryNames={
+    currentCountry={
+      Object {
+        "country_outline": "/images/outlines/turkmenistan.png",
+        "created_at": "2018-12-23T16:48:16.005Z",
+        "flag": "/images/flags/turkmenistan.png",
+        "id": 79,
+        "multipleChoice": Array [
+          "France",
+          "Nigeria",
+          "Turkmenistan",
+          "Japan",
+        ],
+        "name": "Turkmenistan",
+        "updated_at": "2018-12-23T16:48:16.005Z",
+      }
+    }
+    setCurrentCountry={[MockFunction]}
+    updateUsedCountries={[MockFunction]}
+    usedCountries={
       Array [
         "Mexico",
         "Hungary",
@@ -12,7 +30,6 @@ ShallowWrapper {
         "Sweden",
       ]
     }
-    setCountryNames={[Function]}
     user={
       Object {
         "id": 1,
