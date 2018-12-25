@@ -156,7 +156,7 @@ export class Game extends Component {
             hideHint={this.hideHint} 
             hint={hint}
             outline={country_outline}
-            fact={facts[0].country_fact}
+            fact={facts.country_fact}
           />
         }
         {/* <Hint /> */}
