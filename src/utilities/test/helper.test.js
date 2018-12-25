@@ -1,4 +1,5 @@
 import * as helper from '../helper';
+import countryNames from '../countryNames'; 
 
 describe('helper', () => {
 	describe('checkCountry', () => {
