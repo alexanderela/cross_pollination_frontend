@@ -50,12 +50,12 @@ describe('helper', () => {
                           "created_at": "2018-12-23T16:48:16.005Z",
                           "updated_at": "2018-12-23T16:48:16.005Z",
                           "facts": {
-													  "id": 133,
-													  "country_fact": "Alpacas are bred for wool there; Singani is a favorite drink; the National Museum of Arts is in La Paz",
-													  "country_id": 66,
-													  "created_at": "2018-12-23T16:48:16.331Z",
-													  "updated_at": "2018-12-23T16:48:16.331Z"
-													},
+												    "id": 150,
+												    "country_fact": "Oral epics are sung by poets & composers known as bakhashi in this central Asian \"stan\" nation",
+												    "country_id": 79,
+												    "created_at": "2018-12-23T16:48:16.353Z",
+												    "updated_at": "2018-12-23T16:48:16.353Z"
+												  },
                           "multipleChoice": [
                             "France",
                             "Nigeria",
@@ -84,6 +84,13 @@ describe('helper', () => {
 			result = Object.values(returnedCountryObject)
 			expected = 'Turkmenistan'
 			expect(result[7]).toContain(expected)
+		})
+
+		it('should return an object with a facts property whose value is an object containing country fact', () => {
+			returnedCountryObject = helper.buildQuestion(mockCorrectCountry, mockCountryFacts);
+			result = Object.values(returnedCountryObject)
+			expected = "Oral epics are sung by poets & composers known as bakhashi in this central Asian \"stan\" nation"
+			expect(result[6].country_fact).toContain(expected)
 		})
 	})
 
