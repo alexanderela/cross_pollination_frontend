@@ -19,7 +19,7 @@ export const buildQuestion = (correctCountry, countryFacts) => {
   const flagOptions = shuffleMultipleChoice(multipleChoices)
   //Adding the multiple coice array to the correctCountry object
   let country = {...correctCountry, multipleChoice: flagOptions, facts: countryFacts[0]}
-  console.log(country.facts)
+
   return country
 }
 
