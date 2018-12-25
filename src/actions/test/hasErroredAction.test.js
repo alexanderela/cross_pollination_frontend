@@ -10,4 +10,3 @@ describe('hasErroredAction', () => {
     expect(result).toEqual(expected);
   });
 });
-d
