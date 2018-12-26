@@ -11,17 +11,15 @@ export const checkCountry = (country, usedCountries) => {
 }
 
 //this function is building the object for the current question that will ultimately be sent to the global store. 
-export const buildQuestion = (correctCountry) => {
+export const buildQuestion = (correctCountry, countryFacts) => {
   const questionOptions = getRandomOptions()
 
   checkOptions(correctCountry, questionOptions)
   const multipleChoices = [...questionOptions, correctCountry.name]
   const flagOptions = shuffleMultipleChoice(multipleChoices)
   //Adding the multiple coice array to the correctCountry object
+  let country = {...correctCountry, multipleChoice: flagOptions, facts: countryFacts[0]}
 
-  //QUESTION FROM ALEX E.  Should we perform the following line of code as is, or should we instead spread the new property into the object?  I seem to remember Will telling us not to assign new properties in this way, but I may be mistaken.
-  // correctCountry.multipleChoice = flagOptions
-  let country = {...correctCountry, multipleChoice: flagOptions}
   return country
 }
 

@@ -21,19 +21,12 @@ export class Game extends Component {
     }
   }
 
-  // async componentDidMount(){
-  //   var req = require.context('../../images/flags', false, /.*\.png$/);
-  //   req.keys().forEach(function(key){
-  //     req(key);
-  //   });
-  // }
-
   checkAnswer = (e) => {
-    const { correctChoice } = this.props;
+    const { currentCountry } = this.props;
     console.log(e.target.innerText)
-    console.log(correctChoice.name)
+    console.log(currentCountry.name)
     const { innerText } = e.target
-    if (innerText === correctChoice.name) {
+    if (innerText === currentCountry.name) {
       this.setState({
         correct: true,
         incorrect: false
@@ -48,29 +41,29 @@ export class Game extends Component {
 
   giveHint = () => {
     let { hintsUsed, pointsPossible } = this.state;
-    const { outline, questions } = this.props.correctChoice;
+    const { outline, questions } = this.props.currentCountry;
 
     this.setState({
       showHint: true
     });
     
-    // if (hintsUsed === 0) {
-    //   this.setState({
-    //     hint: questions[0]
-    //   });
-    // } 
+    if (hintsUsed === 0) {
+      this.setState({
+        hint: 'fact'
+      });
+    } 
     
-    // if (hintsUsed === 1) {
-    //   this.setState({
-    //     hint: outline
-    //   });
-    // }
+    if (hintsUsed === 1) {
+      this.setState({
+        hint: 'outline'
+      });
+    }
 
-    // if (hintsUsed >= 2) {
-    //   this.setState({
-    //     hintsExhausted: true
-    //   })
-    // }
+    if (hintsUsed >= 2) {
+      this.setState({
+        hint: 'out of hints'
+      })
+    }
 
     this.setState({
       hintsUsed: hintsUsed + 1,
@@ -79,17 +72,20 @@ export class Game extends Component {
   }
 
   showButtons = () => {
-    const { choices } = this.props
-    return choices.map(choice => {
-      return (<div 
-                className='option-button button' 
-                key={choice}
-                name={choice}
-                onClick={this.checkAnswer}
-              >
-                {choice}
-              </div>)  
-    })
+    const { multipleChoice } = this.props.currentCountry
+
+    if(multipleChoice !== undefined) {
+      return multipleChoice.map(choice => {
+        return (<div 
+                  className='option-button button' 
+                  key={choice}
+                  name={choice}
+                  onClick={this.checkAnswer}
+                >
+                  {choice}
+                </div>)  
+      })
+    }
   }
 
   closeResults = () => {
@@ -108,15 +104,18 @@ export class Game extends Component {
     });
   }
 
-  getImagePath = () => {
-    const { flag } = this.props.currgetImagePathentCountry;
-    return `https://flagz4u.herokuapp.com${flag}`
+ getCountryFlagPath = () => {
+    const { flag } = this.props.currentCountry;
+    const flagUrl = `https://flagz4u.herokuapp.com${flag}`
+    return flagUrl
   }
 
   render() {
     const choiceButtons = this.showButtons();
-    const { correct, incorrect, pointsPossible, showHint } = this.state;
-    const { name } = this.props.correctChoice;
+    const flagImage = this.getCountryFlagPath();
+
+    const { correct, incorrect, pointsPossible, showHint, hint } = this.state;
+    const { name, facts, country_outline } = this.props.currentCountry;
 
     return (
       <div className='Game'>
@@ -128,12 +127,14 @@ export class Game extends Component {
           </div>
         </div>
         <div className='flag-main'>
-          <img src={() => this.getImagePath}/>
+          <img src={flagImage} className='flag-image'/>
         </div>
         <div className='hint-button' onClick={this.giveHint}>
           Hints: 2
         </div>
+        
         { choiceButtons }
+
         { correct &&
           <Results
             status='Correct'
@@ -151,7 +152,12 @@ export class Game extends Component {
           />
         }
         {showHint && 
-          <Hint hideHint={this.hideHint} />
+          <Hint 
+            hideHint={this.hideHint} 
+            hint={hint}
+            outline={country_outline}
+            fact={facts.country_fact}
+          />
         }
         {/* <Hint /> */}
       </div>

@@ -92,6 +92,44 @@ describe('Fetch', () => {
     })
 	})
 
+  describe('fetchCountryFacts', () => {
+    let mockId;
+    let mockCountryFacts;
+    let url;
+
+    beforeEach(() => {
+      mockId = 79;
+      mockCountryFacts = [
+                          {
+                            "country_outline": "/images/outlines/turkmenistan.png", 
+                            "created_at": "2018-12-23T16:48:16.005Z", 
+                            "flag": "/images/flags/turkmenistan.png", 
+                            "id": 79, 
+                            "name": "Turkmenistan", 
+                            "updated_at": "2018-12-23T16:48:16.005Z"
+                          }
+                        ]
+                        
+      url = `https://flagz4u.herokuapp.com/api/v1/facts/${mockId}`;
+    })
+
+    API.fetchData = jest.fn()
+        .mockImplementation(() => {
+          return mockCountryFacts
+        }
+      );
+
+    it('should call fetchData with the correct URL', async () => {
+      Fetch.fetchCountryFacts(mockId);
+      expect(API.fetchData).toHaveBeenCalledWith(url);
+    })
+
+    it('fetchData should return an array', () => {
+      Fetch.fetchCountryFacts(mockId);
+      expect(API.fetchData).toHaveReturnedWith(mockCountryFacts);
+    })    
+  })
+
  //  describe('fetchAllCountries', () => {
  // 		let url;
  //     beforeEach(() => {
