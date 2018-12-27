@@ -31,7 +31,7 @@ export class App extends Component {
 
   getCountry = async () => {
     const { usedCountries, setCurrentCountry, updateUsedCountries } = this.props
-    let randomNumber = Math.floor(Math.random() * (149 - 1) + 1);
+    let randomNumber = Math.floor(Math.random() * (196 - 1) + 1);
     const currentCountry = await Fetch.fetchCorrectCountry(randomNumber, usedCountries); //sending this array to use in a check
     
     setCurrentCountry(currentCountry)
