@@ -11,12 +11,13 @@ class Results extends Component {
   }
 
   handleClick = () => {
-    const { closeResults } = this.props;
+    const { closeResults, addPoints } = this.props;
+    addPoints();    
     closeResults();
   }
 
   render() {
-    const { status, correctCountry, points } = this.props;
+    const { status, correctCountry, points, totalPoints } = this.props;
     return (
       <div className='Results'>
         <p className='results-title'>{ status }!</p>
@@ -24,7 +25,7 @@ class Results extends Component {
         <p className='points-gained'><strong>+{points}</strong> pts</p>
         <div className='results-divider'></div>
         <p>Total</p>
-        <p className='total-points-count'>25</p>
+        <p className='total-points-count'>{ totalPoints }</p>
         <div className='button results-continue' onClick={this.handleClick}>Continue</div>
       </div>
     );
