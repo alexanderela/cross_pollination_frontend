@@ -17,7 +17,8 @@ export class Game extends Component {
       hint: '',
       hintsUsed: 0,
       hintsExhausted: false,
-      pointsPossible: 3
+      pointsPossible: 3,
+      totalPoints: 0
     }
   }
 
@@ -98,6 +99,18 @@ export class Game extends Component {
     });
   }
 
+  addPoints = () => {
+    if(this.state.correct === true){
+      const points = this.state.pointsPossible
+      const totalPoints = this.state.totalPoints + points
+      this.setState({ totalPoints })
+    }
+    else {
+      const points = this.state.totalPoints
+      this.setState({totalPoints: points})
+    }
+  }
+
   hideHint = () => {
     this.setState({
       showHint: false
@@ -114,7 +127,7 @@ export class Game extends Component {
     const choiceButtons = this.showButtons();
     const flagImage = this.getCountryFlagPath();
 
-    const { correct, incorrect, pointsPossible, showHint, hint } = this.state;
+    const { correct, incorrect, pointsPossible, showHint, hint, totalPoints } = this.state;
     const { name, facts, country_outline } = this.props.currentCountry;
 
     return (
@@ -141,6 +154,8 @@ export class Game extends Component {
             closeResults={this.closeResults}
             correctCountry={name}
             points={pointsPossible}
+            addPoints={this.addPoints}
+            totalPoints={totalPoints}
           />
         }
         { incorrect &&
@@ -149,6 +164,8 @@ export class Game extends Component {
             closeResults={this.closeResults}
             correctCountry={name}
             points={pointsPossible}
+            addPoints={this.addPoints}
+            totalPoints={this.totalPoints}
           />
         }
         {showHint && 
