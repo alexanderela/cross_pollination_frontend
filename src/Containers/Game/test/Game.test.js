@@ -1,11 +1,13 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Game from '../index';
+import { wrap } from 'module';
 
 describe('Game', () => {
   let wrapper;
   let mockCountries;
   let mockCorrectCountry;
+  let addPoints;
 
   beforeEach(() => {
     mockCountries = [
@@ -59,6 +61,7 @@ describe('Game', () => {
                         correctChoice={mockCorrectCountry} 
                         choices={mockCountries} 
                         totalPoints={10}
+                        addPoints={jest.fn()}
                       />);
   });
 
@@ -97,6 +100,13 @@ describe('Game', () => {
       expect(wrapper.state().hintsExhausted).toEqual(true);
     });
   });
+
+  describe('addPoints', () => {
+    it.skip('should add 3 points if the answer was correct on the first try', () => {
+      wrapper.instance().addPoints();
+      expect(wrapper.state()).toEqual({totalPoints: 13})
+    })
+  })
 
   describe('mapStateToProps', () => {
     it('should create the correct props object', () => {
