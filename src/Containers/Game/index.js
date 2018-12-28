@@ -4,8 +4,6 @@ import './Game.scss';
 import Hint from '../../Components/Hint';
 import Results from '../../Components/Results';
 import { connect } from 'react-redux';
-// import flag from '../../images/flags/mexico.png';
-
 
 export class Game extends Component {
   constructor(props) {
@@ -29,7 +27,6 @@ export class Game extends Component {
       this.setState({
         status: 'Correct'
       })
-      console.log(this.state.status)
     } else {
       this.setState({
         status: 'Wrong'
