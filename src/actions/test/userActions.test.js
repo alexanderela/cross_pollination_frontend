@@ -19,6 +19,17 @@ describe('userActions', () => {
 
       expect(result).toEqual(expected);
     });
+
+    it('should have a type of CONTENT_STATUS', () => {
+      const status = '';
+      const expected = {
+        type: 'CONTENT_STATUS',
+        status
+      }
+      const result = userActions.contentStatus(status);
+      expect(result).toEqual(expected);
+    });
+
   });
   describe('signOut', () => {
     it('should have a type of SIGN_OUT and userData', () => {
