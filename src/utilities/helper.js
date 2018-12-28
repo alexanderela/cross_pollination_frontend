@@ -26,9 +26,9 @@ export const buildQuestion = (correctCountry, countryFacts) => {
 //This function grabs three random countries
 export const getRandomOptions = () => {
   //update as number of countries in database increases
-  const optionA = countryNames[Math.floor(Math.random() * 149)]
-  const optionB = countryNames[Math.floor(Math.random() * 149)]
-  const optionC = countryNames[Math.floor(Math.random() * 149)]
+  const optionA = countryNames[Math.floor(Math.random() * 196)]
+  const optionB = countryNames[Math.floor(Math.random() * 196)]
+  const optionC = countryNames[Math.floor(Math.random() * 196)]
 
   if (optionA === optionB || optionA === optionC || optionB === optionC ){
     getRandomOptions()

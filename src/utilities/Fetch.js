@@ -8,7 +8,7 @@ export const fetchCorrectCountry = async (randomId, usedCountries) => {
   const correctCountry = countryArray[0]
 
   if (checkCountry(correctCountry, usedCountries)) {
-    let randomNumber = Math.floor(Math.random() * (149 - 1) + 1);
+    let randomNumber = Math.floor(Math.random() * (196 - 1) + 1);
     fetchCorrectCountry(randomNumber, usedCountries)
   } else {
   	const countryFacts = await fetchCountryFacts(randomId)

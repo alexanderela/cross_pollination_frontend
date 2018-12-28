@@ -62,7 +62,7 @@ describe('App', () => {
       wrapper.instance().getCountry()
 
       expect(Fetch.fetchCorrectCountry).toHaveBeenCalled()
-      expect(Fetch.fetchCorrectCountry).toHaveBeenCalledWith(60, mockUsedCountries)
+      expect(Fetch.fetchCorrectCountry).toHaveBeenCalledWith(79, mockUsedCountries)
       expect(Fetch.fetchCorrectCountry).toHaveReturnedWith(mockCountry)
     })
 
