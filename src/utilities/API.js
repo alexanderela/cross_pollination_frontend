@@ -22,3 +22,15 @@ export const addUser = async (name, email, password) => {
     throw new Error()
   }
 }
+
+export const getUser = async (email, password) => {
+  const url = 'https://flagz4u.herokuapp.com/sigin'
+  const response = await fetchData(url);
+  const matchingUser = response.data.find(user => user.email === email && user.password === password)
+  if(matchingUser) {
+    const user = {...matchingUser}
+    return user
+  } else {
+    throw new Error()
+  }
+} 
