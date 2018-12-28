@@ -26,7 +26,8 @@ export class Game extends Component {
     if (innerText === currentCountry.name) {
       this.setState({
         status: 'Correct'
-      })
+      }, () => this.addPoints())
+
     } else {
       this.setState({
         status: 'Wrong'
@@ -42,23 +43,19 @@ export class Game extends Component {
       showHint: true
     });
     
-    if (hintsUsed === 0) {
-      this.setState({
-        hint: 'fact'
-      });
-    } 
-    
-    if (hintsUsed === 1) {
-      this.setState({
-        hint: 'outline'
-      });
-    }
-
-    if (hintsUsed >= 2) {
-      this.setState({
-        hint: 'out of hints',
-        hintsExhausted: true,
-      })
+    switch(true) {
+      case (hintsUsed === 0):
+        this.setState({ hint: 'fact' });
+        break;      
+      case (hintsUsed === 1):
+        this.setState({ hint: 'outline'});
+        break;     
+      case (hintsUsed >= 2):
+        this.setState({
+          hint: 'out of hints',
+          hintsExhausted: true,
+        })
+        break;
     }
 
     this.setState({
@@ -94,15 +91,15 @@ export class Game extends Component {
   }
 
   addPoints = () => {
-    const { status, pointsPossible, totalPoints } = this.state
+    const { status, pointsPossible } = this.state
 
     if(status === 'Correct'){
       const points = pointsPossible
-      const totalPoints = totalPoints + points
+      const totalPoints = this.state.totalPoints + points
       this.setState({ totalPoints })
     }
     else if(status === 'Wrong') {
-      const points = totalPoints
+      const points = this.state.totalPoints
       this.setState({totalPoints: points})
     }
   }
@@ -145,13 +142,12 @@ export class Game extends Component {
         
         { choiceButtons }
 
-        { (status === 'Correct' || status === 'Wrong') &&
+        { status !== '' &&
           <Results
             status={status}
             closeResults={this.closeResults}
             correctCountry={name}
             points={pointsPossible}
-            addPoints={this.addPoints}
             totalPoints={totalPoints}
             getCountry={getCountry}
           />
