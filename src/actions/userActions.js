@@ -6,3 +6,8 @@ export const successfulLogin = (user) => ({
 export const signOut = () => ({
   type: 'SIGN_OUT'
 });
+
+export const contentStatus = (string) => ({
+  type: 'CONTENT_STATUS',
+  status: string
+})
