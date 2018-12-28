@@ -133,4 +133,13 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export const mapStateToProps = (state) => ({
+  user: state.user,
+  loading: state.loading
+})
+
+export const mapDispatchToProps = (dispatch) => ({
+  fetchUser:(name, email, password) => dispatch(fetchUser(name, email, password))
+})
+
+export default connect (mapStateToProps, mapDispatchToProps)(Login);
