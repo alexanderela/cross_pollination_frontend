@@ -67,7 +67,7 @@ class Login extends Component {
   handleSubmit = async (event) => {
     await this.loginUser(event)
     if (this.props.loading !== `Email & password don't match`) {
-      this.props.activateLogin();
+      this.changeFormPurpose();
     }
   }
 
@@ -116,6 +116,7 @@ class Login extends Component {
               {
                 !formLogin &&
                 <div>
+                  <h4 className='error'>{showError}</h4>
                   <input className='login-input login-name' name='name' />
                   <div className='login-input-placeholder name-placeholder'>name</div>
                 </div>
