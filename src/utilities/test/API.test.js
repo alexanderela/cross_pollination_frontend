@@ -23,17 +23,23 @@ describe('API', () => {
    });
  });
 
- describe('loginUser', () => {
+ describe('addUser', () => {
  		let mockUser;
      beforeEach(() => {
-     		mockUser = { email: 'email@email.com', password: 'password' };
+     		mockUser = { name: 'bob', email: 'email@email.com', password: 'password' };
      		window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
      			json: () => Promise.resolve(
-     				{ data: { email: 'email@email.com', password: 'password' }}
+     				{ data: { name: 'bob', email: 'email@email.com', password: 'password' }}
      			)
      		}))
      })
-     it.skip('should call fetch on path /api/users', () => {})
+     it('should call fetch on path /api/signup', () => {
+		const url = 'https://flagz4u.herokuapp.com/signup';
+		const body = {"body": "{\"name\":\"https://flagz4u.herokuapp.com/signup\"}", "headers": {"Content-Type": "application/json"}, "method": "POST"}
+		const expected = {"body": "{\"name\":\"https://flagz4u.herokuapp.com/signup\",\"email\":{\"body\":\"{\\\"name\\\":\\\"https://flagz4u.herokuapp.com/signup\\\"}\",\"headers\":{\"Content-Type\":\"application/json\"},\"method\":\"POST\"}}", "headers": {"Content-Type": "application/json"}, "method": "POST"}
+		API.addUser(url, body);
+		expect(window.fetch).toHaveBeenCalledWith(url, expected);	 
+	 })
      it.skip('should pass an options object with stringified user data to fetch', () => {})
      it.skip('Should return json\'d response from response', () => {})
  })
