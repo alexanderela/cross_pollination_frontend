@@ -3,7 +3,7 @@
 exports[`Login should render like the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Login
+  Symbol(enzyme.__unrendered__): <Connect(Login)
     loginUser={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -17,463 +17,60 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": <div
-        className="login-background-color"
-      >
-        <h1
-          className="login-title"
-        >
-          World
-          <br />
-          Of Flags
-        </h1>
-        <div
-          className="login-divider"
-        >
-          <div
-            className="divider"
-          />
-          <div
-            className="login-divider-text"
-          >
-            login / sign up
-          </div>
-          <div
-            className="divider"
-          />
-        </div>
-        <div
-          className="login-button-facebook"
-        >
-          Facebook
-        </div>
-        <div
-          className="login-button-twitter"
-        >
-          Twitter
-        </div>
-        <div
-          className="login-button-email"
-          onClick={[Function]}
-        >
-          Email
-        </div>
-      </div>,
-      "className": "Login",
+      "children": [Function],
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <h1
-            className="login-title"
-          >
-            World
-            <br />
-            Of Flags
-          </h1>,
-          <div
-            className="login-divider"
-          >
-            <div
-              className="divider"
-            />
-            <div
-              className="login-divider-text"
-            >
-              login / sign up
-            </div>
-            <div
-              className="divider"
-            />
-          </div>,
-          <div
-            className="login-button-facebook"
-          >
-            Facebook
-          </div>,
-          <div
-            className="login-button-twitter"
-          >
-            Twitter
-          </div>,
-          <div
-            className="login-button-email"
-            onClick={[Function]}
-          >
-            Email
-          </div>,
-          false,
-        ],
-        "className": "login-background-color",
+    "rendered": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.context),
+      "_calculateChangedBits": null,
+      "_context": Object {
+        "$$typeof": Symbol(react.context),
+        "Consumer": [Circular],
+        "Provider": Object {
+          "$$typeof": Symbol(react.provider),
+          "_context": [Circular],
+>>>>>>> Skip tests that changed because of new format
+        },
+        "_calculateChangedBits": null,
+        "_currentRenderer": null,
+        "_currentRenderer2": null,
+        "_currentValue": null,
+        "_currentValue2": null,
+        "_threadCount": 0,
       },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "World",
-              <br />,
-              "Of Flags",
-            ],
-            "className": "login-title",
-          },
-          "ref": null,
-          "rendered": Array [
-            "World",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": "br",
-            },
-            "Of Flags",
-          ],
-          "type": "h1",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <div
-                className="divider"
-              />,
-              <div
-                className="login-divider-text"
-              >
-                login / sign up
-              </div>,
-              <div
-                className="divider"
-              />,
-            ],
-            "className": "login-divider",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "className": "divider",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "login / sign up",
-                "className": "login-divider-text",
-              },
-              "ref": null,
-              "rendered": "login / sign up",
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "className": "divider",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "div",
-            },
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Facebook",
-            "className": "login-button-facebook",
-          },
-          "ref": null,
-          "rendered": "Facebook",
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Twitter",
-            "className": "login-button-twitter",
-          },
-          "ref": null,
-          "rendered": "Twitter",
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Email",
-            "className": "login-button-email",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Email",
-          "type": "div",
-        },
-        false,
-      ],
-      "type": "div",
     },
-    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
-        "children": <div
-          className="login-background-color"
-        >
-          <h1
-            className="login-title"
-          >
-            World
-            <br />
-            Of Flags
-          </h1>
-          <div
-            className="login-divider"
-          >
-            <div
-              className="divider"
-            />
-            <div
-              className="login-divider-text"
-            >
-              login / sign up
-            </div>
-            <div
-              className="divider"
-            />
-          </div>
-          <div
-            className="login-button-facebook"
-          >
-            Facebook
-          </div>
-          <div
-            className="login-button-twitter"
-          >
-            Twitter
-          </div>
-          <div
-            className="login-button-email"
-            onClick={[Function]}
-          >
-            Email
-          </div>
-        </div>,
-        "className": "Login",
+        "children": [Function],
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <h1
-              className="login-title"
-            >
-              World
-              <br />
-              Of Flags
-            </h1>,
-            <div
-              className="login-divider"
-            >
-              <div
-                className="divider"
-              />
-              <div
-                className="login-divider-text"
-              >
-                login / sign up
-              </div>
-              <div
-                className="divider"
-              />
-            </div>,
-            <div
-              className="login-button-facebook"
-            >
-              Facebook
-            </div>,
-            <div
-              className="login-button-twitter"
-            >
-              Twitter
-            </div>,
-            <div
-              className="login-button-email"
-              onClick={[Function]}
-            >
-              Email
-            </div>,
-            false,
-          ],
-          "className": "login-background-color",
+      "rendered": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": Object {
+          "$$typeof": Symbol(react.context),
+          "Consumer": [Circular],
+          "Provider": Object {
+            "$$typeof": Symbol(react.provider),
+            "_context": [Circular],
+          },
+          "_calculateChangedBits": null,
+          "_currentRenderer": null,
+          "_currentRenderer2": null,
+          "_currentValue": null,
+          "_currentValue2": null,
+          "_threadCount": 0,
         },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                "World",
-                <br />,
-                "Of Flags",
-              ],
-              "className": "login-title",
-            },
-            "ref": null,
-            "rendered": Array [
-              "World",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": "br",
-              },
-              "Of Flags",
-            ],
-            "type": "h1",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <div
-                  className="divider"
-                />,
-                <div
-                  className="login-divider-text"
-                >
-                  login / sign up
-                </div>,
-                <div
-                  className="divider"
-                />,
-              ],
-              "className": "login-divider",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "divider",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "login / sign up",
-                  "className": "login-divider-text",
-                },
-                "ref": null,
-                "rendered": "login / sign up",
-                "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "divider",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "div",
-              },
-            ],
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Facebook",
-              "className": "login-button-facebook",
-            },
-            "ref": null,
-            "rendered": "Facebook",
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Twitter",
-              "className": "login-button-twitter",
-            },
-            "ref": null,
-            "rendered": "Twitter",
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Email",
-              "className": "login-button-email",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Email",
-            "type": "div",
-          },
-          false,
-        ],
-        "type": "div",
       },
-      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
