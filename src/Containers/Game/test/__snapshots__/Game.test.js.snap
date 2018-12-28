@@ -4,6 +4,7 @@ exports[`Game should render like the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Connect(Game)
+    addPoints={[MockFunction]}
     choices={
       Array [
         Object {

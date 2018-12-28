@@ -44,9 +44,7 @@ ShallowWrapper {
         </p>,
         <p
           className="total-points-count"
-        >
-          25
-        </p>,
+        />,
         <div
           className="button results-continue"
           onClick={[Function]}
@@ -157,11 +155,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "25",
+          "children": undefined,
           "className": "total-points-count",
         },
         "ref": null,
-        "rendered": "25",
+        "rendered": null,
         "type": "p",
       },
       Object {
@@ -213,9 +211,7 @@ ShallowWrapper {
           </p>,
           <p
             className="total-points-count"
-          >
-            25
-          </p>,
+          />,
           <div
             className="button results-continue"
             onClick={[Function]}
@@ -326,11 +322,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "25",
+            "children": undefined,
             "className": "total-points-count",
           },
           "ref": null,
-          "rendered": "25",
+          "rendered": null,
           "type": "p",
         },
         Object {
