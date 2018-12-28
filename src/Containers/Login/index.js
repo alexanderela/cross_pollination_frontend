@@ -82,10 +82,10 @@ class Login extends Component {
   render() {
     const { emailCredentials, formLogin, name, email, password } = this.state;
     const { loading } = this.props;
-    const showError = loading === `Email & password don't match` || loading === `Login to add Favorites`
+    const showError = loading === `Email & password don't match` || loading === `Login to save score`
       ? loading
       : ''
-      
+
     return (
       <div className='Login'>
         <div className='login-background-color'>
