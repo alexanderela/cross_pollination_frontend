@@ -48,13 +48,33 @@ describe('API', () => {
 		const response = await API.fetchData(url)
 		expect(response).toEqual(expected);
 	});
-	
+
 	it.skip('should pass an options object with stringified user data to fetch', () => {})
  })
 
- describe('createUser', () => {
-     beforeEach(() => {
-     })
-     it.skip('should call fetch with the correct arguments', () => {})    
+ describe('signIn', () => {
+	let mockUser;
+	beforeEach(() => {
+			mockUser = { email: 'email@email.com', password: 'password' };
+			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+				json: () => Promise.resolve(
+					{ data: { email: 'email@email.com', password: 'password' }}
+				)
+			}))
+	})
+	
+	it('should call fetch on path /api/signin', () => {
+	   const url = 'https://flagz4u.herokuapp.com/signin';
+	   const expected = "https://flagz4u.herokuapp.com/sigin"
+	   API.getUser(url);
+	   expect(window.fetch).toHaveBeenCalledWith(expected);	 
+	})
+
+	it('Should return json\'d response from fetch', async () => {
+	   const url = 'https://flagz4u.herokuapp.com/signin';
+	   const expected = { data: mockUser }
+	   const response = await API.fetchData(url)
+	   expect(response).toEqual(expected);
+   });   
  })
 })
