@@ -123,7 +123,7 @@ export class Game extends Component {
     const choiceButtons = this.showButtons();
     const flagImage = this.getCountryFlagPath();
 
-    const { correct, incorrect, pointsPossible, showHint, hint, totalPoints, status } = this.state;
+    const { pointsPossible, showHint, hint, totalPoints, status } = this.state;
     const { getCountry } = this.props;   
     const { name, facts, country_outline } = this.props.currentCountry;
 
