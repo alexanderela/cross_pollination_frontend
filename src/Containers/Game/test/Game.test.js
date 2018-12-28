@@ -62,6 +62,7 @@ describe('Game', () => {
                         choices={mockCountries} 
                         totalPoints={10}
                         addPoints={jest.fn()}
+                        getCountry={jest.fn()}
                       />);
   });
 

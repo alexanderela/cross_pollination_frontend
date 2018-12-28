@@ -59,6 +59,7 @@ ShallowWrapper {
         ],
       }
     }
+    getCountry={[MockFunction]}
     totalPoints={10}
   />,
   Symbol(enzyme.__renderer__): Object {
