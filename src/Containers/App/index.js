@@ -55,6 +55,7 @@ export class App extends Component {
                       correctChoice={correctCountry}
                       choices={countryOptions}
                       totalPoints={totalPoints}
+                      getCountry={this.getCountry}
                     />
           }} />
           <Route path='/login' render={() => {

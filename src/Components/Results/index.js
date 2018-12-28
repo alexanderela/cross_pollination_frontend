@@ -11,8 +11,10 @@ class Results extends Component {
   }
 
   handleClick = () => {
-    const { closeResults, addPoints } = this.props;
-    addPoints();    
+    const { closeResults, addPoints, getCountry } = this.props;
+    
+    getCountry()
+    addPoints(); 
     closeResults();
   }
 
