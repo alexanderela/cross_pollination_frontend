@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import * as API from '../../utilities/API';
+import { connect } from 'react-redux';
+import { fetchUser } from '../../Thunks/user';
 import './Login.scss';
 // import city1 from '../../images/intros/b.png'
 
@@ -16,6 +18,18 @@ class Login extends Component {
       emailCredentials: false,
       formLogin: true,
     }
+  }
+
+  createUser = () => {
+    this.setState({createUser: !this.state.createUser});
+  }
+
+  loginUser = async (event) => {
+    const { createUser, name, email, password } = this.state;
+    event.preventDefault();
+    return createUser
+      ? this.props.fetchUser(name, email, password)
+      : this.props.fetchUser(null, email, password) 
   }
 
   handleChange = (e) => {
@@ -50,6 +64,13 @@ class Login extends Component {
   //   const { email, password } = this.state;
   // };
 
+  handleSubmit = async (event) => {
+    await this.loginUser(event)
+    if (this.props.loading !== `Email & password don't match`) {
+      this.props.activateLogin();
+    }
+  }
+
   clearInputs = () => {
     this.setState({
       name: '',
@@ -59,7 +80,12 @@ class Login extends Component {
   }
 ;
   render() {
-    const { emailCredentials, formLogin } = this.state;
+    const { emailCredentials, formLogin, name, email, password } = this.state;
+    const { loading } = this.props;
+    const showError = loading === `Email & password don't match` || loading === `Login to add Favorites`
+      ? loading
+      : ''
+      
     return (
       <div className='Login'>
         <div className='login-background-color'>
