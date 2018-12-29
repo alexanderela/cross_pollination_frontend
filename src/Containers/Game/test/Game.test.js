@@ -63,26 +63,40 @@ describe('Game', () => {
   });
 
   describe('giveHint', () => {
+    it.skip('should set state to show a hint', () => {
+      wrapper.setState({ showHint: false });
+      wrapper.instance().giveHint()
+      expect(wrapper.state().showHint).toEqual(true)     
+    })
+
     it.skip('should set state if user requests a hint', () => {
-      wrapper.instance().giveHint();
-      expect(wrapper.state().hint).toEqual(mockCorrectCountry.questions[0]);
+      wrapper.setState({ hint: '', hintsUsed: 0 });
+      wrapper.instance().giveHint()
+      expect(wrapper.state().hint).toEqual('fact')
     });
 
     it.skip('should set state if user requests a second hint', () => {
-      wrapper.instance().giveHint();
-      wrapper.instance().giveHint();
-      expect(wrapper.state().hint).toEqual(mockCorrectCountry.outline);
+      wrapper.setState({ hint: '', hintsUsed: 1 });
+      wrapper.instance().giveHint()
+      expect(wrapper.state().hint).toEqual('outline')
     });
 
     it.skip('should exhaust all hints after 2 hints are given', () => {
-      wrapper.instance().giveHint();
-      wrapper.instance().giveHint();
-      wrapper.instance().giveHint();
-      expect(wrapper.state().hintsExhausted).toEqual(true);
+      wrapper.setState({ hint: '', hintsUsed: 2 });
+      wrapper.instance().giveHint()
+      expect(wrapper.state().hint).toEqual('out of hints')
     });
 
-    it.skip('should set new state with updated hinsUsed and pointsPossible counts', () => {
+    it.skip('should set new state with updated hintsUsed and pointsPossible counts', () => {
+      wrapper.setState({ 
+                         hint: '', 
+                         hintsUsed: 0, 
+                         pointsPossible: 3 
+                       });
 
+      wrapper.instance().giveHint()
+      expect(wrapper.state().hintsUsed).toEqual(1)
+      expect(wrapper.state().pointsPossible).toEqual(2)
     })
   });
 

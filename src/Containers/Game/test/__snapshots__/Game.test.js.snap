@@ -4,59 +4,28 @@ exports[`Game should render like the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Connect(Game)
-    addPoints={[MockFunction]}
-    choices={
-      Array [
-        Object {
-          "flag": "./images/flags/Mexico.png",
-          "name": "Mexico",
-          "outline": "./images/outlines/Mexico.png",
-          "questions": Array [
-            "Tabasco Hoy",
-            "El Financiero & The Oaxaca Times",
-            "Oaxaca,Durango,Nayarit",
-          ],
-        },
-        Object {
-          "flag": "./images/flags/Hungary.png",
-          "name": "Hungary",
-          "outline": "./images/outlines/Hungary.png",
-          "questions": Array [
-            "Magyar Nemzet",
-            "Its first king is known in English as St. Stephen & locally as Szent Istvan",
-            "Nograd,Pest,Somogy",
-          ],
-        },
-        Object {
-          "flag": "./images/flags/Ireland.png",
-          "name": "Ireland",
-          "outline": "./images/outlines/Ireland.png",
-          "questions": Array [
-            "The Connaught Telegraph & The Galway Advertiser",
-            "In this country's parliament, the Dail has 166 seats, the Seanad, 60",
-          ],
-        },
-        Object {
-          "flag": "./images/flags/Sweden.png",
-          "name": "Sweden",
-          "outline": "./images/outlines/Sweden.png",
-          "questions": Array [
-            "Svenska Dagbladet & Sundsvalls Tidning",
-            "Ostergotland,Vasterbotten,Uppsala",
-          ],
-        },
-      ]
-    }
     compilePoints={[MockFunction]}
-    correctChoice={
+    currentCountry={
       Object {
-        "flag": "./images/flags/Sweden.png",
-        "name": "Sweden",
-        "outline": "./images/outlines/Sweden.png",
-        "questions": Array [
-          "Svenska Dagbladet & Sundsvalls Tidning",
-          "Ostergotland,Vasterbotten,Uppsala",
+        "country_outline": "/images/outlines/netherlands.png",
+        "created_at": "2018-12-28T12:02:21.458Z",
+        "facts": Object {
+          "country_fact": "Numerous dikes cover the coast of Ijsselmeer in this country",
+          "country_id": 46,
+          "created_at": "2018-12-28T12:02:21.951Z",
+          "id": 106,
+          "updated_at": "2018-12-28T12:02:21.951Z",
+        },
+        "flag": "/images/flags/netherlands.png",
+        "id": 46,
+        "multipleChoice": Array [
+          "Seychelles",
+          "Malawi",
+          "Cambodia",
+          "The Netherlands",
         ],
+        "name": "The Netherlands",
+        "updated_at": "2018-12-28T12:02:21.458Z",
       }
     }
     getCountry={[MockFunction]}
