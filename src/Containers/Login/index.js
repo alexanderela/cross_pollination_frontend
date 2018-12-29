@@ -26,10 +26,11 @@ class Login extends Component {
 
   loginUser = async (event) => {
     const { createUser, name, email, password } = this.state;
+    console.log(name, email, password)
     event.preventDefault();
     return createUser
-      ? this.props.fetchUser(name, email, password)
-      : this.props.fetchUser(null, email, password) 
+      ? this.props.fetchUser(null, email, password)
+      : this.props.fetchUser(name, email, password) 
   }
 
   handleChange = (e) => {
@@ -65,6 +66,7 @@ class Login extends Component {
   // };
 
   handleSubmit = async (event) => {
+    console.log('works')
     await this.loginUser(event)
     if (this.props.loading !== `Email & password don't match`) {
       this.changeFormPurpose();
@@ -106,7 +108,7 @@ class Login extends Component {
           }
           {
             emailCredentials &&
-            <form className='login-form'>
+            <form className='login-form' onChange={this.handleChange}>
               <div className='form-instructions'>press return to submit</div>
               <div className='login-signup-slider' onClick={this.changeFormPurpose}>
                 <div className='form-slider-login'>login</div>
@@ -117,14 +119,15 @@ class Login extends Component {
                 !formLogin &&
                 <div>
                   <h4 className='error'>{showError}</h4>
-                  <input className='login-input login-name' name='name' />
+                  <input className='login-input login-name' value={this.state.name} name='name' />
                   <div className='login-input-placeholder name-placeholder'>name</div>
                 </div>
               }
-              <input className='login-input login-email' name='email' />
+              <input className='login-input login-email' value={this.state.email} name='email' />
               <div className='login-input-placeholder email-placeholder'>email</div>
-              <input className='login-input login-password' name='password' />
+              <input className='login-input login-password' value={this.state.password} name='password' />
               <div className='login-input-placeholder password-placeholder'>password</div>
+              <button onClick={this.handleSubmit}>login</button>
               <button className='login-back' onClick={this.closeCredentials}>go back</button>
             </form>
           }
