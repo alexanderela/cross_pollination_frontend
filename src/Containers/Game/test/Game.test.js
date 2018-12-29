@@ -80,25 +80,26 @@ describe('Game', () => {
       expect(wrapper.state().showHint).toEqual(true)     
     })
 
-    it.skip('should set state if user requests a hint', () => {
+    it('should set state if user requests a hint', () => {
       wrapper.setState({ hint: '', hintsUsed: 0 });
       wrapper.instance().giveHint()
       expect(wrapper.state().hint).toEqual('fact')
     });
 
-    it.skip('should set state if user requests a second hint', () => {
+    it('should set state if user requests a second hint', () => {
       wrapper.setState({ hint: '', hintsUsed: 1 });
       wrapper.instance().giveHint()
       expect(wrapper.state().hint).toEqual('outline')
     });
 
-    it.skip('should exhaust all hints after 2 hints are given', () => {
+    it('should exhaust all hints after 2 hints are given', () => {
       wrapper.setState({ hint: '', hintsUsed: 2 });
       wrapper.instance().giveHint()
       expect(wrapper.state().hint).toEqual('out of hints')
+      expect(wrapper.state().hintsExhausted).toEqual(true)
     });
 
-    it.skip('should set new state with updated hintsUsed and pointsPossible counts', () => {
+    it('should set new state with updated hintsUsed and pointsPossible counts', () => {
       wrapper.setState({ 
                          hint: '', 
                          hintsUsed: 0, 
