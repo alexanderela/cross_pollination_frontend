@@ -12,7 +12,7 @@ describe('helper', () => {
 		beforeEach(() => {
 			mockCountry = 'Sweden'
 		})
-
+            
 		it('should return true if country has already been used', () => {
 			mockUsedCountries = ['Sweden', 'Denmark', 'Nigeria', 'Australia']
 			result = helper.checkCountry(mockCountry, mockUsedCountries)			

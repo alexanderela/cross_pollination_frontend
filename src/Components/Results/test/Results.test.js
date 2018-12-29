@@ -5,6 +5,7 @@ import Results from '../index';
 describe('Results', () => {
   let wrapper;
   let mockCorrectCountry;
+  let status;
 
   beforeEach(() => {
     mockCorrectCountry = {
@@ -40,14 +41,22 @@ describe('Results', () => {
   });
   
   describe('handleClick', () => {
-    it.skip('should render like the snapshot', () => {
+    it('should render like the snapshot', () => {
       expect(wrapper).toMatchSnapshot();
     });
     
-    it.skip('should should invoke getCountry', () => {
+    it('should should invoke getCountry', () => {
+      const props = wrapper.instance().props
+      const spy = jest.spyOn(props, 'getCountry');
+      wrapper.instance().handleClick();
+      expect(spy).toHaveBeenCalled();
     });
 
-    it.skip('should should invoke closeResults', () => {
+    it('should should invoke closeResults', () => {
+      const props = wrapper.instance().props
+      const spy = jest.spyOn(props, 'closeResults');
+      wrapper.instance().handleClick();
+      expect(spy).toHaveBeenCalled();
     });
   })
 });
