@@ -26,7 +26,7 @@ class Hint extends Component {
         const outline = this.getCountryOutlinePath()
         return <img src={outline} className='hint-outline'/>
     } else if(hint === 'out of hints') {
-        return <p className='hint-fact'>You are out of hints!</p>
+        return <p className='hint-fact out-of-hints'>You are out of hints!</p>
     }
   }
   render() {
