@@ -6,6 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Hint
     fact="Numerous dikes cover the coast of Ijsselmeer in this country"
     hideHint={[MockFunction]}
+    hint="fact"
     outline="/images/outlines/netherlands.png"
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -27,7 +28,11 @@ ShallowWrapper {
         >
           Hint
         </p>,
-        undefined,
+        <p
+          className="hint-fact"
+        >
+          Numerous dikes cover the coast of Ijsselmeer in this country
+        </p>,
         <div
           className="button hint-continue"
           onClick={[Function]}
@@ -51,7 +56,18 @@ ShallowWrapper {
         "rendered": "Hint",
         "type": "p",
       },
-      undefined,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Numerous dikes cover the coast of Ijsselmeer in this country",
+          "className": "hint-fact",
+        },
+        "ref": null,
+        "rendered": "Numerous dikes cover the coast of Ijsselmeer in this country",
+        "type": "p",
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -80,7 +96,11 @@ ShallowWrapper {
           >
             Hint
           </p>,
-          undefined,
+          <p
+            className="hint-fact"
+          >
+            Numerous dikes cover the coast of Ijsselmeer in this country
+          </p>,
           <div
             className="button hint-continue"
             onClick={[Function]}
@@ -104,7 +124,18 @@ ShallowWrapper {
           "rendered": "Hint",
           "type": "p",
         },
-        undefined,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Numerous dikes cover the coast of Ijsselmeer in this country",
+            "className": "hint-fact",
+          },
+          "ref": null,
+          "rendered": "Numerous dikes cover the coast of Ijsselmeer in this country",
+          "type": "p",
+        },
         Object {
           "instance": null,
           "key": undefined,

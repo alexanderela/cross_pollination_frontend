@@ -29,7 +29,7 @@ describe('Hint', () => {
                             "updated_at": "2018-12-28T12:02:21.951Z"
                           }
                         };
-
+    mockHint = 'fact'                    
     wrapper = shallow(<Hint 
                         hideHint={jest.fn()} 
                         hint={mockHint}
@@ -43,24 +43,47 @@ describe('Hint', () => {
   });
 
   describe('handleClick', () => {
-    it.skip('should invoke hideHint', () => {})
+    it('should invoke hideHint', () => {
+      const props = wrapper.instance().props;
+      wrapper.instance().handleClick();
+      const spy = jest.spyOn(props, 'hideHint');
+      expect(spy).toHaveBeenCalled();
+    })
   })
 
   describe('getCountryOutlinePath', () => {
-    it.skip('should create complete path for country outline', () => {})
+    it('should create complete path for country outline', () => {
+      const expected = 'https://flagz4u.herokuapp.com/images/outlines/netherlands.png';
+      const result = wrapper.instance().getCountryOutlinePath();
+      expect(result).toEqual(expected)
+    })
   })
 
   describe('showHint', () => {
-    it.skip('should show a country fact as a first hint', () => {
-
+    it('should show a country fact as a first hint', () => {
+      expect(wrapper.exists('.hint-fact')).toEqual(true)
     })
    
-    it.skip('should invoke getCountryOutlinePath as a second hint', () => {
+    it('should invoke getCountryOutlinePath as a second hint', () => {
       mockHint = 'outline';
+      wrapper = shallow(<Hint 
+                          hideHint={jest.fn()} 
+                          hint={mockHint}
+                          outline={mockCurrentCountry.country_outline}
+                          fact={mockCurrentCountry.facts.country_fact}                
+                        />)
+      expect(wrapper.exists('.hint-outline')).toEqual(true)
     })
    
-    it.skip('should notify user that they are out of hints after 2nd hint', () => {
+    it('should notify user that they are out of hints after 2nd hint', () => {
       mockHint = 'out of hints';
+      wrapper = shallow(<Hint 
+                          hideHint={jest.fn()} 
+                          hint={mockHint}
+                          outline={mockCurrentCountry.country_outline}
+                          fact={mockCurrentCountry.facts.country_fact}                
+                        />)
+      expect(wrapper.exists('.out-of-hints')).toEqual(true)
     })
   })
 });
