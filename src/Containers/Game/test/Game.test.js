@@ -118,6 +118,33 @@ describe('Game', () => {
 
       expect(wrapper.find('.option-button')).toHaveLength(4);
     })
+    it('should not show buttons if there are no country choice options', () => {
+      mockCorrectCountry = {
+                        "id": 46,
+                        "name": "The Netherlands",
+                        "flag": "/images/flags/netherlands.png",
+                        "country_outline": "/images/outlines/netherlands.png",
+                        "created_at": "2018-12-28T12:02:21.458Z",
+                        "updated_at": "2018-12-28T12:02:21.458Z",
+                        "facts": {
+                          "id": 106,
+                          "country_fact": "Numerous dikes cover the coast of Ijsselmeer in this country",
+                          "country_id": 46,
+                          "created_at": "2018-12-28T12:02:21.951Z",
+                          "updated_at": "2018-12-28T12:02:21.951Z"
+                        }
+                      };
+
+        wrapper = shallow(<Game 
+                            compilePoints={jest.fn()}  
+                            totalPoints={10}
+                            getCountry={jest.fn()}
+                            currentCountry={mockCorrectCountry}
+                          />);
+
+      wrapper.instance().showButtons()
+      expect(wrapper.find('.option-button')).toHaveLength(0);
+    })
   })
 
   describe('closeResults', () => {
@@ -192,7 +219,7 @@ describe('Game', () => {
       },
       usedCountries: ['Mexico', 'Hungary', 'Ireland', 'Sweden'],
     }
-    
+
     it("should return a currentCountry in the props object", () => {
       const expected = {
         "id": 79,
