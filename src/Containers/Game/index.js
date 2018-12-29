@@ -21,14 +21,12 @@ export class Game extends Component {
 
   checkAnswer = (e) => {
     const { currentCountry } = this.props;
-    console.log(currentCountry)
-
     const { innerText } = e.target
+
     if (innerText === currentCountry.name) {
       this.setState({
         status: 'Correct'
       }, () => this.addPoints())
-
     } else {
       this.setState({ status: 'Wrong' })
     }
