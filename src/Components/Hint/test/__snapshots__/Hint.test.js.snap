@@ -3,7 +3,11 @@
 exports[`Hint should render like the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Hint />,
+  Symbol(enzyme.__unrendered__): <Hint
+    fact="Numerous dikes cover the coast of Ijsselmeer in this country"
+    hideHint={[MockFunction]}
+    outline="/images/outlines/netherlands.png"
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],

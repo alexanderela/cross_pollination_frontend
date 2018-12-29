@@ -5,64 +5,40 @@ import { wrap } from 'module';
 
 describe('Game', () => {
   let wrapper;
-  let mockCountries;
   let mockCorrectCountry;
   let addPoints;
+  let mockEvent;
 
   beforeEach(() => {
-    mockCountries = [
-      {
-        name: 'Mexico',
-        flag: './images/flags/Mexico.png',
-        outline: './images/outlines/Mexico.png',
-        questions:
-          ['Tabasco Hoy',
-            'El Financiero & The Oaxaca Times',
-            'Oaxaca,Durango,Nayarit']
-      },
-      {
-        name: 'Hungary',
-        flag: './images/flags/Hungary.png',
-        outline: './images/outlines/Hungary.png',
-        questions:
-          ['Magyar Nemzet',
-            'Its first king is known in English as St. Stephen & locally as Szent Istvan',
-            'Nograd,Pest,Somogy']
-      },
-      {
-        name: 'Ireland',
-        flag: './images/flags/Ireland.png',
-        outline: './images/outlines/Ireland.png',
-        questions:
-          ['The Connaught Telegraph & The Galway Advertiser',
-            'In this country\'s parliament, the Dail has 166 seats, the Seanad, 60']
-      },
-      {
-        name: 'Sweden',
-        flag: './images/flags/Sweden.png',
-        outline: './images/outlines/Sweden.png',
-        questions:
-          ['Svenska Dagbladet & Sundsvalls Tidning',
-            'Ostergotland,Vasterbotten,Uppsala']
-      }
-    ];
-
     mockCorrectCountry = {
-      name: 'Sweden',
-      flag: './images/flags/Sweden.png',
-      outline: './images/outlines/Sweden.png',
-      questions:
-        ['Svenska Dagbladet & Sundsvalls Tidning',
-          'Ostergotland,Vasterbotten,Uppsala']
-    };
+                            "id": 46,
+                            "name": "The Netherlands",
+                            "flag": "/images/flags/netherlands.png",
+                            "country_outline": "/images/outlines/netherlands.png",
+                            "created_at": "2018-12-28T12:02:21.458Z",
+                            "updated_at": "2018-12-28T12:02:21.458Z",
+                            "multipleChoice": [
+                              "Seychelles",
+                              "Malawi",
+                              "Cambodia",
+                              "The Netherlands"
+                            ],
+                            "facts": {
+                              "id": 106,
+                              "country_fact": "Numerous dikes cover the coast of Ijsselmeer in this country",
+                              "country_id": 46,
+                              "created_at": "2018-12-28T12:02:21.951Z",
+                              "updated_at": "2018-12-28T12:02:21.951Z"
+                            }
+                          };
 
     wrapper = shallow(<Game 
-                        compilePoints={jest.fn()} 
-                        correctChoice={mockCorrectCountry} 
-                        choices={mockCountries} 
+                        compilePoints={jest.fn()}  
                         totalPoints={10}
-                        addPoints={jest.fn()}
+                        getCountry={jest.fn()}
+                        currentCountry={mockCorrectCountry}
                       />);
+    
   });
 
   it('should render like the snapshot', () => {
@@ -71,9 +47,14 @@ describe('Game', () => {
 
   describe('checkAnswer', () => {
     it.skip('should set state if the answer is correct', () => {
+      mockEvent = { target: { innerText: 'home' } };
       wrapper.instance().checkAnswer('Sweden');
       expect(wrapper.state().correct).toEqual(true);
     });
+
+    it.skip('should invoke addPoints if answer is correct', () => {
+
+    })
 
     it.skip('should set state if the answer is incorrect', () => {
       wrapper.instance().checkAnswer('Hungary');
@@ -82,30 +63,66 @@ describe('Game', () => {
   });
 
   describe('giveHint', () => {
+    it.skip('should set state to show a hint', () => {
+      wrapper.setState({ showHint: false });
+      wrapper.instance().giveHint()
+      expect(wrapper.state().showHint).toEqual(true)     
+    })
+
     it.skip('should set state if user requests a hint', () => {
-      wrapper.instance().giveHint();
-      expect(wrapper.state().hint).toEqual(mockCorrectCountry.questions[0]);
+      wrapper.setState({ hint: '', hintsUsed: 0 });
+      wrapper.instance().giveHint()
+      expect(wrapper.state().hint).toEqual('fact')
     });
 
     it.skip('should set state if user requests a second hint', () => {
-      wrapper.instance().giveHint();
-      wrapper.instance().giveHint();
-      expect(wrapper.state().hint).toEqual(mockCorrectCountry.outline);
+      wrapper.setState({ hint: '', hintsUsed: 1 });
+      wrapper.instance().giveHint()
+      expect(wrapper.state().hint).toEqual('outline')
     });
 
     it.skip('should exhaust all hints after 2 hints are given', () => {
-      wrapper.instance().giveHint();
-      wrapper.instance().giveHint();
-      wrapper.instance().giveHint();
-      expect(wrapper.state().hintsExhausted).toEqual(true);
+      wrapper.setState({ hint: '', hintsUsed: 2 });
+      wrapper.instance().giveHint()
+      expect(wrapper.state().hint).toEqual('out of hints')
     });
+
+    it.skip('should set new state with updated hintsUsed and pointsPossible counts', () => {
+      wrapper.setState({ 
+                         hint: '', 
+                         hintsUsed: 0, 
+                         pointsPossible: 3 
+                       });
+
+      wrapper.instance().giveHint()
+      expect(wrapper.state().hintsUsed).toEqual(1)
+      expect(wrapper.state().pointsPossible).toEqual(2)
+    })
   });
 
+  describe('showButtons', () => {
+    it.skip('should show buttons if there are country choice options', () => {})
+  })
+
+  describe('closeResults', () => {
+    it.skip('should close results and reset for next country', () => {})
+  })  
+
   describe('addPoints', () => {
-    it.skip('should add 3 points if the answer was correct on the first try', () => {
+    it.skip('should set state upon correct guess', () => {
       wrapper.instance().addPoints();
       expect(wrapper.state()).toEqual({totalPoints: 13})
     })
+
+    it.skip('should set state upon incorrect guess', () => {})
+  })
+
+  describe('hideHint', () => {
+    it.skip('should hide each hint', () => {})
+  })
+  
+ describe('getCountryFlagPath', () => {
+    it.skip('should create complete path for country flag', () => {})
   })
 
   describe('mapStateToProps', () => {

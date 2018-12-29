@@ -17,9 +17,9 @@ const Hint = ({ hideHint, hint, outline, fact }) => {
   		return <p className='hint-fact'>{fact}</p>
   	} else if (hint === 'outline') {
   			const outline = getCountryOutlinePath()
-  		return <img src={outline} className='hint-outline'/>
+  		  return <img src={outline} className='hint-outline'/>
   	} else if(hint === 'out of hints') {
-  		return <p className='hint-fact'>You are out of hints!</p>
+  		  return <p className='hint-fact'>You are out of hints!</p>
   	}
   }
 

@@ -5,14 +5,12 @@ import './Results.scss';
 class Results extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      
-    }
   }
 
   handleClick = () => {
-    const { closeResults, addPoints } = this.props;
-    addPoints();    
+    const { getCountry, closeResults } = this.props;
+
+    getCountry()
     closeResults();
   }
 
@@ -22,7 +20,7 @@ class Results extends Component {
       <div className='Results'>
         <p className='results-title'>{ status }!</p>
         <p className='results-correct-country'>{ correctCountry } was the correct answer</p>
-        <p className='points-gained'><strong>+{points}</strong> pts</p>
+        <p className='points-gained'><strong>+{ points }</strong> pts</p>
         <div className='results-divider'></div>
         <p>Total</p>
         <p className='total-points-count'>{ totalPoints }</p>

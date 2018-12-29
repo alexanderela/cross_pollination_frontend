@@ -4,39 +4,33 @@ import './Game.scss';
 import Hint from '../../Components/Hint';
 import Results from '../../Components/Results';
 import { connect } from 'react-redux';
-// import flag from '../../images/flags/mexico.png';
-
 
 export class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      correct: false,
-      incorrect: false,
       showHint: false,
       hint: '',
       hintsUsed: 0,
       hintsExhausted: false,
       pointsPossible: 3,
-      totalPoints: 0
+      totalPoints: 0,
+      status: ''
     }
   }
 
   checkAnswer = (e) => {
     const { currentCountry } = this.props;
-    console.log(e.target.innerText)
-    console.log(currentCountry.name)
+    console.log(currentCountry)
+
     const { innerText } = e.target
     if (innerText === currentCountry.name) {
       this.setState({
-        correct: true,
-        incorrect: false
-      })
+        status: 'Correct'
+      }, () => this.addPoints())
+
     } else {
-      this.setState({
-        incorrect: true,
-        correct: false
-      })
+      this.setState({ status: 'Wrong' })
     }
   }
 
@@ -44,26 +38,21 @@ export class Game extends Component {
     let { hintsUsed, pointsPossible } = this.state;
     const { outline, questions } = this.props.currentCountry;
 
-    this.setState({
-      showHint: true
-    });
+    this.setState({ showHint: true });
     
-    if (hintsUsed === 0) {
-      this.setState({
-        hint: 'fact'
-      });
-    } 
-    
-    if (hintsUsed === 1) {
-      this.setState({
-        hint: 'outline'
-      });
-    }
-
-    if (hintsUsed >= 2) {
-      this.setState({
-        hint: 'out of hints'
-      })
+    switch(true) {
+      case (hintsUsed === 0):
+        this.setState({ hint: 'fact' });
+        break;      
+      case (hintsUsed === 1):
+        this.setState({ hint: 'outline'});
+        break;     
+      case (hintsUsed >= 2):
+        this.setState({
+          hint: 'out of hints',
+          hintsExhausted: true,
+        })
+        break;
     }
 
     this.setState({
@@ -91,30 +80,29 @@ export class Game extends Component {
 
   closeResults = () => {
     this.setState({
-      incorrect: false,
-      correct: false,
       hintsExhausted: false,
       hintsUsed: 0,
       pointsPossible: 3,
+      status: ''
     });
   }
 
   addPoints = () => {
-    if(this.state.correct === true){
-      const points = this.state.pointsPossible
+    const { status, pointsPossible } = this.state
+
+    if(status === 'Correct'){
+      const points = pointsPossible
       const totalPoints = this.state.totalPoints + points
       this.setState({ totalPoints })
     }
-    else {
+    else if(status === 'Wrong') {
       const points = this.state.totalPoints
-      this.setState({totalPoints: points})
+      this.setState({ totalPoints: points })
     }
   }
 
   hideHint = () => {
-    this.setState({
-      showHint: false
-    });
+    this.setState({ showHint: false });
   }
 
  getCountryFlagPath = () => {
@@ -127,7 +115,8 @@ export class Game extends Component {
     const choiceButtons = this.showButtons();
     const flagImage = this.getCountryFlagPath();
 
-    const { correct, incorrect, pointsPossible, showHint, hint, totalPoints } = this.state;
+    const { pointsPossible, showHint, hint, totalPoints, status } = this.state;
+    const { getCountry } = this.props;   
     const { name, facts, country_outline } = this.props.currentCountry;
 
     return (
@@ -148,26 +137,17 @@ export class Game extends Component {
         
         { choiceButtons }
 
-        { correct &&
+        { status !== '' &&
           <Results
-            status='Correct'
+            status={status}
             closeResults={this.closeResults}
             correctCountry={name}
             points={pointsPossible}
-            addPoints={this.addPoints}
             totalPoints={totalPoints}
+            getCountry={getCountry}
           />
         }
-        { incorrect &&
-          <Results
-            status='Wrong'
-            closeResults={this.closeResults}
-            correctCountry={name}
-            points={pointsPossible}
-            addPoints={this.addPoints}
-            totalPoints={this.totalPoints}
-          />
-        }
+        
         {showHint && 
           <Hint 
             hideHint={this.hideHint} 
@@ -176,7 +156,6 @@ export class Game extends Component {
             fact={facts.country_fact}
           />
         }
-        {/* <Hint /> */}
       </div>
     );
   }

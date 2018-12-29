@@ -18,10 +18,7 @@ export class App extends Component {
     super();
 //i'd argue that we don't need any of this state if we are going to have redux
     this.state = {
-      totalPoints: 0,
-      usedCountries: [],
-      countryOptions: [],
-      correctCountry: {},
+      totalPoints: 0
     };
   };
 
@@ -38,23 +35,22 @@ export class App extends Component {
     updateUsedCountries(currentCountry.name)
   }
 
-//didn't touch point system...
+//WHAT IS THIS FUNCTION DOING?  ALEX E
   compilePoints = (newPoints) => {
     const totalPoints = this.state.totalPoints + newPoints
     this.setState({ totalPoints });
   };
 
   render() {
-    const { totalPoints, countryOptions, correctCountry } = this.state;
+    const { totalPoints } = this.state;
     return (
       <div className='App'>
         <Switch>
           <Route exact path='/' render={() => {
             return <Game 
                       compilePoints={this.compilePoints} 
-                      correctChoice={correctCountry}
-                      choices={countryOptions}
                       totalPoints={totalPoints}
+                      getCountry={this.getCountry}
                     />
           }} />
           <Route path='/login' render={() => {
