@@ -3,7 +3,7 @@
 exports[`Game should render like the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(Game)
+  Symbol(enzyme.__unrendered__): <Game
     compilePoints={[MockFunction]}
     currentCountry={
       Object {
@@ -42,59 +42,537 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "host",
     "props": Object {
-      "children": [Function],
+      "children": Array [
+        <div
+          className="top-container"
+        >
+          <div
+            className="account-area"
+          >
+            <div
+              className="back-button"
+            />
+            <h5
+              className="account-text"
+            >
+              Alex 
+              <strong>
+                0
+              </strong>
+            </h5>
+          </div>
+        </div>,
+        <div
+          className="flag-main"
+        >
+          <img
+            className="flag-image"
+            src="https://flagz4u.herokuapp.com/images/flags/netherlands.png"
+          />
+        </div>,
+        <div
+          className="hint-button"
+          onClick={[Function]}
+        >
+          Hints: 2
+        </div>,
+        Array [
+          <div
+            className="option-button button"
+            name="Seychelles"
+            onClick={[Function]}
+          >
+            Seychelles
+          </div>,
+          <div
+            className="option-button button"
+            name="Malawi"
+            onClick={[Function]}
+          >
+            Malawi
+          </div>,
+          <div
+            className="option-button button"
+            name="Cambodia"
+            onClick={[Function]}
+          >
+            Cambodia
+          </div>,
+          <div
+            className="option-button button"
+            name="The Netherlands"
+            onClick={[Function]}
+          >
+            The Netherlands
+          </div>,
+        ],
+        false,
+        false,
+      ],
+      "className": "Game",
     },
     "ref": null,
-    "rendered": [Function],
-    "type": Object {
-      "$$typeof": Symbol(react.context),
-      "_calculateChangedBits": null,
-      "_context": Object {
-        "$$typeof": Symbol(react.context),
-        "Consumer": [Circular],
-        "Provider": Object {
-          "$$typeof": Symbol(react.provider),
-          "_context": [Circular],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="account-area"
+          >
+            <div
+              className="back-button"
+            />
+            <h5
+              className="account-text"
+            >
+              Alex 
+              <strong>
+                0
+              </strong>
+            </h5>
+          </div>,
+          "className": "top-container",
         },
-        "_calculateChangedBits": null,
-        "_currentRenderer": null,
-        "_currentRenderer2": null,
-        "_currentValue": null,
-        "_currentValue2": null,
-        "_threadCount": 0,
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="back-button"
+              />,
+              <h5
+                className="account-text"
+              >
+                Alex 
+                <strong>
+                  0
+                </strong>
+              </h5>,
+            ],
+            "className": "account-area",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "back-button",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Alex ",
+                  <strong>
+                    0
+                  </strong>,
+                ],
+                "className": "account-text",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Alex ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": 0,
+                  },
+                  "ref": null,
+                  "rendered": 0,
+                  "type": "strong",
+                },
+              ],
+              "type": "h5",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
       },
-    },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <img
+            className="flag-image"
+            src="https://flagz4u.herokuapp.com/images/flags/netherlands.png"
+          />,
+          "className": "flag-main",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "flag-image",
+            "src": "https://flagz4u.herokuapp.com/images/flags/netherlands.png",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Hints: 2",
+          "className": "hint-button",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Hints: 2",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "Seychelles",
+        "nodeType": "host",
+        "props": Object {
+          "children": "Seychelles",
+          "className": "option-button button",
+          "name": "Seychelles",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Seychelles",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "Malawi",
+        "nodeType": "host",
+        "props": Object {
+          "children": "Malawi",
+          "className": "option-button button",
+          "name": "Malawi",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Malawi",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "Cambodia",
+        "nodeType": "host",
+        "props": Object {
+          "children": "Cambodia",
+          "className": "option-button button",
+          "name": "Cambodia",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Cambodia",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "The Netherlands",
+        "nodeType": "host",
+        "props": Object {
+          "children": "The Netherlands",
+          "className": "option-button button",
+          "name": "The Netherlands",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "The Netherlands",
+        "type": "div",
+      },
+      false,
+      false,
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "host",
       "props": Object {
-        "children": [Function],
+        "children": Array [
+          <div
+            className="top-container"
+          >
+            <div
+              className="account-area"
+            >
+              <div
+                className="back-button"
+              />
+              <h5
+                className="account-text"
+              >
+                Alex 
+                <strong>
+                  0
+                </strong>
+              </h5>
+            </div>
+          </div>,
+          <div
+            className="flag-main"
+          >
+            <img
+              className="flag-image"
+              src="https://flagz4u.herokuapp.com/images/flags/netherlands.png"
+            />
+          </div>,
+          <div
+            className="hint-button"
+            onClick={[Function]}
+          >
+            Hints: 2
+          </div>,
+          Array [
+            <div
+              className="option-button button"
+              name="Seychelles"
+              onClick={[Function]}
+            >
+              Seychelles
+            </div>,
+            <div
+              className="option-button button"
+              name="Malawi"
+              onClick={[Function]}
+            >
+              Malawi
+            </div>,
+            <div
+              className="option-button button"
+              name="Cambodia"
+              onClick={[Function]}
+            >
+              Cambodia
+            </div>,
+            <div
+              className="option-button button"
+              name="The Netherlands"
+              onClick={[Function]}
+            >
+              The Netherlands
+            </div>,
+          ],
+          false,
+          false,
+        ],
+        "className": "Game",
       },
       "ref": null,
-      "rendered": [Function],
-      "type": Object {
-        "$$typeof": Symbol(react.context),
-        "_calculateChangedBits": null,
-        "_context": Object {
-          "$$typeof": Symbol(react.context),
-          "Consumer": [Circular],
-          "Provider": Object {
-            "$$typeof": Symbol(react.provider),
-            "_context": [Circular],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="account-area"
+            >
+              <div
+                className="back-button"
+              />
+              <h5
+                className="account-text"
+              >
+                Alex 
+                <strong>
+                  0
+                </strong>
+              </h5>
+            </div>,
+            "className": "top-container",
           },
-          "_calculateChangedBits": null,
-          "_currentRenderer": null,
-          "_currentRenderer2": null,
-          "_currentValue": null,
-          "_currentValue2": null,
-          "_threadCount": 0,
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="back-button"
+                />,
+                <h5
+                  className="account-text"
+                >
+                  Alex 
+                  <strong>
+                    0
+                  </strong>
+                </h5>,
+              ],
+              "className": "account-area",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "back-button",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Alex ",
+                    <strong>
+                      0
+                    </strong>,
+                  ],
+                  "className": "account-text",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Alex ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": 0,
+                    },
+                    "ref": null,
+                    "rendered": 0,
+                    "type": "strong",
+                  },
+                ],
+                "type": "h5",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
         },
-      },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <img
+              className="flag-image"
+              src="https://flagz4u.herokuapp.com/images/flags/netherlands.png"
+            />,
+            "className": "flag-main",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "flag-image",
+              "src": "https://flagz4u.herokuapp.com/images/flags/netherlands.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Hints: 2",
+            "className": "hint-button",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Hints: 2",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "Seychelles",
+          "nodeType": "host",
+          "props": Object {
+            "children": "Seychelles",
+            "className": "option-button button",
+            "name": "Seychelles",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Seychelles",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "Malawi",
+          "nodeType": "host",
+          "props": Object {
+            "children": "Malawi",
+            "className": "option-button button",
+            "name": "Malawi",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Malawi",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "Cambodia",
+          "nodeType": "host",
+          "props": Object {
+            "children": "Cambodia",
+            "className": "option-button button",
+            "name": "Cambodia",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Cambodia",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "The Netherlands",
+          "nodeType": "host",
+          "props": Object {
+            "children": "The Netherlands",
+            "className": "option-button button",
+            "name": "The Netherlands",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "The Netherlands",
+          "type": "div",
+        },
+        false,
+        false,
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

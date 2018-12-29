@@ -1,7 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
-import Game from '../index';
-import { wrap } from 'module';
+import {Game, mapStateToProps, mapDispatchToProps} from '../index';
+// import { wrap } from 'module';
 
 describe('Game', () => {
   let wrapper;
@@ -32,6 +33,8 @@ describe('Game', () => {
                             }
                           };
 
+    mockEvent = { target: { innerText: 'The Netherlands' } };
+
     wrapper = shallow(<Game 
                         compilePoints={jest.fn()}  
                         totalPoints={10}
@@ -46,24 +49,32 @@ describe('Game', () => {
   });
 
   describe('checkAnswer', () => {
-    it.skip('should set state if the answer is correct', () => {
-      mockEvent = { target: { innerText: 'home' } };
-      wrapper.instance().checkAnswer('Sweden');
-      expect(wrapper.state().correct).toEqual(true);
+    it('should set state if the answer is correct', () => {
+      wrapper.setState({ status: '' });
+      wrapper.instance().addPoints = jest.fn()
+
+      wrapper.instance().checkAnswer(mockEvent);
+      expect(wrapper.state().status).toEqual('Correct');
     });
 
-    it.skip('should invoke addPoints if answer is correct', () => {
+    it('should invoke addPoints if answer is correct', () => {
+      wrapper.instance().addPoints = jest.fn()
 
+      wrapper.instance().checkAnswer(mockEvent);
+      expect(wrapper.instance().addPoints).toHaveBeenCalled
     })
 
-    it.skip('should set state if the answer is incorrect', () => {
-      wrapper.instance().checkAnswer('Hungary');
-      expect(wrapper.state().incorrect).toEqual(true);
+    it('should set state if the answer is incorrect', () => {
+      wrapper.setState({ status: '' });
+      mockEvent = { target: { innerText: 'France' } };
+
+      wrapper.instance().checkAnswer(mockEvent);
+      expect(wrapper.state().status).toEqual('Wrong');
     });
   });
 
   describe('giveHint', () => {
-    it.skip('should set state to show a hint', () => {
+    it('should set state to show a hint', () => {
       wrapper.setState({ showHint: false });
       wrapper.instance().giveHint()
       expect(wrapper.state().showHint).toEqual(true)     
