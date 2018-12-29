@@ -169,7 +169,10 @@ describe('Game', () => {
   })
   
  describe('getCountryFlagPath', () => {
-    it.skip('should create complete path for country flag', () => {})
+    it('should create complete path for country flag', () => {
+      let result = wrapper.instance().getCountryFlagPath()
+      expect(result).toEqual('https://flagz4u.herokuapp.com/images/flags/netherlands.png')
+    })
   })
 
   describe('mapStateToProps', () => {
