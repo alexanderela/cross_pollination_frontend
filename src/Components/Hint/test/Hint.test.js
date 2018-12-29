@@ -8,7 +8,7 @@ describe('Hint', () => {
   let mockHint;
 
   beforeEach(() => {
-    mockCorrectCountry = {
+    mockCurrentCountry = {
                           "id": 46,
                           "name": "The Netherlands",
                           "flag": "/images/flags/netherlands.png",
@@ -33,8 +33,8 @@ describe('Hint', () => {
     wrapper = shallow(<Hint 
                         hideHint={jest.fn()} 
                         hint={mockHint}
-                        outline={mockCorrectCountry.country_outline}
-                        fact={mockCorrectCountry.facts.country_fact}                
+                        outline={mockCurrentCountry.country_outline}
+                        fact={mockCurrentCountry.facts.country_fact}                
                       />)
   });
   
@@ -51,10 +51,16 @@ describe('Hint', () => {
   })
 
   describe('showHint', () => {
-    it.skip('should show a country fact as a first hint', () => {})
+    it.skip('should show a country fact as a first hint', () => {
+
+    })
    
-    it.skip('should invoke getCountryOutlinePath as a second hint', () => {})
+    it.skip('should invoke getCountryOutlinePath as a second hint', () => {
+      mockHint = 'outline';
+    })
    
-    it.skip('should notify user that they are out of hints after 2nd hint', () => {})
+    it.skip('should notify user that they are out of hints after 2nd hint', () => {
+      mockHint = 'out of hints';
+    })
   })
 });
