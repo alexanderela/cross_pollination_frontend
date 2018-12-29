@@ -176,21 +176,40 @@ describe('Game', () => {
   })
 
   describe('mapStateToProps', () => {
-    it('should create the correct props object', () => {
-    });
-  });
-
-  describe('mapDispatchToProps', () => {
-    it('should map a key of successfulLogin', () => {
-    });
-
-    it('should map a key of signOut', () => {
-    });
-
-    it('successfulLogin should call dispatch', () => {
-    });
-
-    it('signOut should call dispatch', () => {
-    });
+    let mockState = {
+      user: {user: 'Bob', email: "bob@bob.com"},
+      currentCountry: {
+        "id": 79,
+        "name": "Turkmenistan",
+        "flag": "/images/flags/turkmenistan.png",
+        "country_outline": "/images/outlines/turkmenistan.png",
+        "multipleChoice": [
+          "France",
+          "Nigeria",
+          "Turkmenistan",
+          "Japan"
+        ]
+      },
+      usedCountries: ['Mexico', 'Hungary', 'Ireland', 'Sweden'],
+    }
+    
+    it("should return a currentCountry in the props object", () => {
+      const expected = {
+        "id": 79,
+        "name": "Turkmenistan",
+        "flag": "/images/flags/turkmenistan.png",
+        "country_outline": "/images/outlines/turkmenistan.png",
+        "multipleChoice": [
+          "France",
+          "Nigeria",
+          "Turkmenistan",
+          "Japan"
+        ]
+      }
+        
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps.currentCountry).toEqual(expected)
+    })
   });
 });
+

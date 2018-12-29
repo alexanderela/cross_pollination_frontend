@@ -154,10 +154,8 @@ export class Game extends Component {
   }
 }
 
-export const mapStateToProps = ({ user, currentCountry, usedCountries  }) => ({
-  user, 
-  currentCountry, 
-  usedCountries,   
+export const mapStateToProps = ({ currentCountry }) => ({
+  currentCountry    
 });
 
 export const mapDispatchToProps = (dispatch) => ({
