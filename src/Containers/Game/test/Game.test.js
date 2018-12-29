@@ -160,7 +160,12 @@ describe('Game', () => {
   })
 
   describe('hideHint', () => {
-    it.skip('should hide each hint', () => {})
+    it('should hide each hint', () => {
+      wrapper.setState({ showHint: true })
+
+      wrapper.instance().hideHint()
+      expect(wrapper.state().showHint).toEqual(false)   
+    })
   })
   
  describe('getCountryFlagPath', () => {
