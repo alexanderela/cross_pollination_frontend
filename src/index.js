@@ -19,7 +19,7 @@ const router = (
       <App />
     </BrowserRouter>
   </Provider>
-)
+);
 
 ReactDOM.render(router, document.getElementById('root'));
 
