@@ -43,7 +43,12 @@ describe('Hint', () => {
   });
 
   describe('handleClick', () => {
-    it.skip('should invoke hideHint', () => {})
+    it('should invoke hideHint', () => {
+      const props = wrapper.instance().props;
+      wrapper.instance().handleClick();
+      const spy = jest.spyOn(props, 'hideHint');
+      expect(spy).toHaveBeenCalled();
+    })
   })
 
   describe('getCountryOutlinePath', () => {

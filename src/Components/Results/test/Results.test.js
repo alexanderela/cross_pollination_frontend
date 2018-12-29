@@ -46,14 +46,14 @@ describe('Results', () => {
     });
     
     it('should should invoke getCountry', () => {
-      const props = wrapper.instance().props
+      const props = wrapper.instance().props;
       const spy = jest.spyOn(props, 'getCountry');
       wrapper.instance().handleClick();
       expect(spy).toHaveBeenCalled();
     });
 
     it('should should invoke closeResults', () => {
-      const props = wrapper.instance().props
+      const props = wrapper.instance().props;
       const spy = jest.spyOn(props, 'closeResults');
       wrapper.instance().handleClick();
       expect(spy).toHaveBeenCalled();
