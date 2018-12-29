@@ -2,6 +2,7 @@ import { getUser, addUser } from '../utilities/API';
 import { contentStatus, successfulLogin } from '../actions/userActions'
 
 export const fetchUser = (name, email, password) => {
+  console.log(name, email, password)
     return async dispatch => {
       dispatch(contentStatus('loading'))
       try {
