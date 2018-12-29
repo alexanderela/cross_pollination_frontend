@@ -10,7 +10,7 @@ export const addUser = async (name, email, password) => {
     const url = 'https://flagz4u.herokuapp.com/signup'
     const response = await fetch(url, {
       method: 'POST',
-      body: JSON.stringify({name: name, email: email, password: password}),
+      body: JSON.stringify({username: name, email: email, password: password}),
       headers: {
         "Content-Type": "application/json"
       }
