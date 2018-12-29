@@ -86,16 +86,11 @@ export class Game extends Component {
   }
 
   addPoints = () => {
-    const { status, pointsPossible } = this.state
+    const { status, pointsPossible, totalPoints } = this.state
 
     if(status === 'Correct'){
-      const points = pointsPossible
-      const totalPoints = this.state.totalPoints + points
-      this.setState({ totalPoints })
-    }
-    else if(status === 'Wrong') {
-      const points = this.state.totalPoints
-      this.setState({ totalPoints: points })
+      const updatedTotal = totalPoints + pointsPossible
+      this.setState({ totalPoints: updatedTotal })
     }
   }
 

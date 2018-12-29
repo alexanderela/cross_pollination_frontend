@@ -138,12 +138,25 @@ describe('Game', () => {
   })  
 
   describe('addPoints', () => {
-    it.skip('should set state upon correct guess', () => {
+    it('should set state upon correct guess', () => {
+      wrapper.setState({
+        pointsPossible: 3,
+        totalPoints: 0,
+        status: 'Correct'
+      })
       wrapper.instance().addPoints();
-      expect(wrapper.state()).toEqual({totalPoints: 13})
+      expect(wrapper.state().totalPoints).toEqual(3)
     })
 
-    it.skip('should set state upon incorrect guess', () => {})
+    it('should set state upon incorrect guess', () => {
+      wrapper.setState({
+        pointsPossible: 3,
+        totalPoints: 0,
+        status: 'Wrong'
+      })
+      wrapper.instance().addPoints();
+      expect(wrapper.state().totalPoints).toEqual(0)
+    })
   })
 
   describe('hideHint', () => {
