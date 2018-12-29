@@ -113,11 +113,28 @@ describe('Game', () => {
   });
 
   describe('showButtons', () => {
-    it.skip('should show buttons if there are country choice options', () => {})
+    it('should show buttons if there are country choice options', () => {
+      wrapper.instance().showButtons()
+
+      expect(wrapper.find('.option-button')).toHaveLength(4);
+    })
   })
 
   describe('closeResults', () => {
-    it.skip('should close results and reset for next country', () => {})
+    it('should close results and reset for next country', () => {
+      wrapper.setState({
+        hintsExhausted: true,
+        hintsUsed: 1,
+        pointsPossible: 2,
+        status: 'Wrong'
+      })
+
+      wrapper.instance().closeResults()
+      expect(wrapper.state().hintsExhausted).toEqual(false)
+      expect(wrapper.state().hintsUsed).toEqual(0)
+      expect(wrapper.state().pointsPossible).toEqual(3)
+      expect(wrapper.state().status).toEqual('')
+    })
   })  
 
   describe('addPoints', () => {
