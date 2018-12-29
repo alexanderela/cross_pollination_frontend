@@ -23,14 +23,21 @@ export const addUser = async (name, email, password) => {
   }
 }
 
-export const getUser = async (email, password) => {
-  const url = 'https://flagz4u.herokuapp.com/sigin'
-  const response = await fetchData(url);
-  const matchingUser = response.data.find(user => user.email === email && user.password === password)
-  if(matchingUser) {
-    const user = {...matchingUser}
+export const getUser = async (name, password) => {
+  try {
+    const url = 'https://flagz4u.herokuapp.com/signin'
+    const response = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({username: name, password: password}),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    const result = await response.json();
+    const user = {id: result.id}
     return user
-  } else {
+  } catch(error) {
     throw new Error()
   }
-} 
+}
+
