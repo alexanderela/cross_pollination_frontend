@@ -1,7 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
-import Game from '../index';
-import { wrap } from 'module';
+import {Game, mapStateToProps, mapDispatchToProps} from '../index';
+// import { wrap } from 'module';
 
 describe('Game', () => {
   let wrapper;
@@ -32,6 +33,8 @@ describe('Game', () => {
                             }
                           };
 
+    mockEvent = { target: { innerText: 'The Netherlands' } };
+
     wrapper = shallow(<Game 
                         compilePoints={jest.fn()}  
                         totalPoints={10}
@@ -46,48 +49,57 @@ describe('Game', () => {
   });
 
   describe('checkAnswer', () => {
-    it.skip('should set state if the answer is correct', () => {
-      mockEvent = { target: { innerText: 'home' } };
-      wrapper.instance().checkAnswer('Sweden');
-      expect(wrapper.state().correct).toEqual(true);
+    it('should set state if the answer is correct', () => {
+      wrapper.setState({ status: '' });
+      wrapper.instance().addPoints = jest.fn()
+
+      wrapper.instance().checkAnswer(mockEvent);
+      expect(wrapper.state().status).toEqual('Correct');
     });
 
-    it.skip('should invoke addPoints if answer is correct', () => {
+    it('should invoke addPoints if answer is correct', () => {
+      wrapper.instance().addPoints = jest.fn()
 
+      wrapper.instance().checkAnswer(mockEvent);
+      expect(wrapper.instance().addPoints).toHaveBeenCalled
     })
 
-    it.skip('should set state if the answer is incorrect', () => {
-      wrapper.instance().checkAnswer('Hungary');
-      expect(wrapper.state().incorrect).toEqual(true);
+    it('should set state if the answer is incorrect', () => {
+      wrapper.setState({ status: '' });
+      mockEvent = { target: { innerText: 'France' } };
+
+      wrapper.instance().checkAnswer(mockEvent);
+      expect(wrapper.state().status).toEqual('Wrong');
     });
   });
 
   describe('giveHint', () => {
-    it.skip('should set state to show a hint', () => {
+    it('should set state to show a hint', () => {
       wrapper.setState({ showHint: false });
       wrapper.instance().giveHint()
       expect(wrapper.state().showHint).toEqual(true)     
     })
 
-    it.skip('should set state if user requests a hint', () => {
+    it('should set state if user requests a hint', () => {
       wrapper.setState({ hint: '', hintsUsed: 0 });
       wrapper.instance().giveHint()
       expect(wrapper.state().hint).toEqual('fact')
     });
 
-    it.skip('should set state if user requests a second hint', () => {
+    it('should set state if user requests a second hint', () => {
       wrapper.setState({ hint: '', hintsUsed: 1 });
       wrapper.instance().giveHint()
       expect(wrapper.state().hint).toEqual('outline')
     });
 
-    it.skip('should exhaust all hints after 2 hints are given', () => {
+    it('should exhaust all hints after 2 hints are given', () => {
       wrapper.setState({ hint: '', hintsUsed: 2 });
       wrapper.instance().giveHint()
       expect(wrapper.state().hint).toEqual('out of hints')
+      expect(wrapper.state().hintsExhausted).toEqual(true)
     });
 
-    it.skip('should set new state with updated hintsUsed and pointsPossible counts', () => {
+    it('should set new state with updated hintsUsed and pointsPossible counts', () => {
       wrapper.setState({ 
                          hint: '', 
                          hintsUsed: 0, 
@@ -101,46 +113,130 @@ describe('Game', () => {
   });
 
   describe('showButtons', () => {
-    it.skip('should show buttons if there are country choice options', () => {})
+    it('should show buttons if there are country choice options', () => {
+      wrapper.instance().showButtons()
+
+      expect(wrapper.find('.option-button')).toHaveLength(4);
+    })
+    it('should not show buttons if there are no country choice options', () => {
+      mockCorrectCountry = {
+                        "id": 46,
+                        "name": "The Netherlands",
+                        "flag": "/images/flags/netherlands.png",
+                        "country_outline": "/images/outlines/netherlands.png",
+                        "created_at": "2018-12-28T12:02:21.458Z",
+                        "updated_at": "2018-12-28T12:02:21.458Z",
+                        "facts": {
+                          "id": 106,
+                          "country_fact": "Numerous dikes cover the coast of Ijsselmeer in this country",
+                          "country_id": 46,
+                          "created_at": "2018-12-28T12:02:21.951Z",
+                          "updated_at": "2018-12-28T12:02:21.951Z"
+                        }
+                      };
+
+        wrapper = shallow(<Game 
+                            compilePoints={jest.fn()}  
+                            totalPoints={10}
+                            getCountry={jest.fn()}
+                            currentCountry={mockCorrectCountry}
+                          />);
+
+      wrapper.instance().showButtons()
+      expect(wrapper.find('.option-button')).toHaveLength(0);
+    })
   })
 
   describe('closeResults', () => {
-    it.skip('should close results and reset for next country', () => {})
+    it('should close results and reset for next country', () => {
+      wrapper.setState({
+        hintsExhausted: true,
+        hintsUsed: 1,
+        pointsPossible: 2,
+        status: 'Wrong'
+      })
+
+      wrapper.instance().closeResults()
+      expect(wrapper.state().hintsExhausted).toEqual(false)
+      expect(wrapper.state().hintsUsed).toEqual(0)
+      expect(wrapper.state().pointsPossible).toEqual(3)
+      expect(wrapper.state().status).toEqual('')
+    })
   })  
 
   describe('addPoints', () => {
-    it.skip('should set state upon correct guess', () => {
+    it('should set state upon correct guess', () => {
+      wrapper.setState({
+        pointsPossible: 3,
+        totalPoints: 0,
+        status: 'Correct'
+      })
       wrapper.instance().addPoints();
-      expect(wrapper.state()).toEqual({totalPoints: 13})
+      expect(wrapper.state().totalPoints).toEqual(3)
     })
 
-    it.skip('should set state upon incorrect guess', () => {})
+    it('should set state upon incorrect guess', () => {
+      wrapper.setState({
+        pointsPossible: 3,
+        totalPoints: 0,
+        status: 'Wrong'
+      })
+      wrapper.instance().addPoints();
+      expect(wrapper.state().totalPoints).toEqual(0)
+    })
   })
 
   describe('hideHint', () => {
-    it.skip('should hide each hint', () => {})
+    it('should hide each hint', () => {
+      wrapper.setState({ showHint: true })
+
+      wrapper.instance().hideHint()
+      expect(wrapper.state().showHint).toEqual(false)   
+    })
   })
   
  describe('getCountryFlagPath', () => {
-    it.skip('should create complete path for country flag', () => {})
+    it('should create complete path for country flag', () => {
+      let result = wrapper.instance().getCountryFlagPath()
+      expect(result).toEqual('https://flagz4u.herokuapp.com/images/flags/netherlands.png')
+    })
   })
 
   describe('mapStateToProps', () => {
-    it('should create the correct props object', () => {
-    });
-  });
+    let mockState = {
+      user: {user: 'Bob', email: "bob@bob.com"},
+      currentCountry: {
+        "id": 79,
+        "name": "Turkmenistan",
+        "flag": "/images/flags/turkmenistan.png",
+        "country_outline": "/images/outlines/turkmenistan.png",
+        "multipleChoice": [
+          "France",
+          "Nigeria",
+          "Turkmenistan",
+          "Japan"
+        ]
+      },
+      usedCountries: ['Mexico', 'Hungary', 'Ireland', 'Sweden'],
+    }
 
-  describe('mapDispatchToProps', () => {
-    it('should map a key of successfulLogin', () => {
-    });
-
-    it('should map a key of signOut', () => {
-    });
-
-    it('successfulLogin should call dispatch', () => {
-    });
-
-    it('signOut should call dispatch', () => {
-    });
+    it("should return a currentCountry in the props object", () => {
+      const expected = {
+        "id": 79,
+        "name": "Turkmenistan",
+        "flag": "/images/flags/turkmenistan.png",
+        "country_outline": "/images/outlines/turkmenistan.png",
+        "multipleChoice": [
+          "France",
+          "Nigeria",
+          "Turkmenistan",
+          "Japan"
+        ]
+      }
+        
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps.currentCountry).toEqual(expected)
+    })
   });
 });
+

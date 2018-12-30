@@ -21,14 +21,12 @@ export class Game extends Component {
 
   checkAnswer = (e) => {
     const { currentCountry } = this.props;
-    console.log(currentCountry)
-
     const { innerText } = e.target
+
     if (innerText === currentCountry.name) {
       this.setState({
         status: 'Correct'
       }, () => this.addPoints())
-
     } else {
       this.setState({ status: 'Wrong' })
     }
@@ -88,16 +86,11 @@ export class Game extends Component {
   }
 
   addPoints = () => {
-    const { status, pointsPossible } = this.state
+    const { status, pointsPossible, totalPoints } = this.state
 
     if(status === 'Correct'){
-      const points = pointsPossible
-      const totalPoints = this.state.totalPoints + points
-      this.setState({ totalPoints })
-    }
-    else if(status === 'Wrong') {
-      const points = this.state.totalPoints
-      this.setState({ totalPoints: points })
+      const updatedTotal = totalPoints + pointsPossible
+      this.setState({ totalPoints: updatedTotal })
     }
   }
 
@@ -161,10 +154,8 @@ export class Game extends Component {
   }
 }
 
-export const mapStateToProps = ({ user, currentCountry, usedCountries  }) => ({
-  user, 
-  currentCountry, 
-  usedCountries,   
+export const mapStateToProps = ({ currentCountry }) => ({
+  currentCountry    
 });
 
 export const mapDispatchToProps = (dispatch) => ({
