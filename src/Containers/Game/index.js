@@ -120,7 +120,6 @@ export class Game extends Component {
         <div className='top-container'>
           <div className='account-area'>
             <div className='back-button'>
-              <button className='login-btn'>Click Here to Login</button>
             </div>
             <h5 className='account-text'>{user.name ? user.name : 'Login to save score'} <strong>{totalPoints}</strong></h5>
           </div>
