@@ -42,7 +42,7 @@ export class App extends Component {
   };
 
   render() {
-    const { totalPoints } = this.state;
+    const { totalPoints, countryOptions, correctCountry, user } = this.state;
     return (
       <div className='App'>
         <Switch>
@@ -51,6 +51,7 @@ export class App extends Component {
                       compilePoints={this.compilePoints} 
                       totalPoints={totalPoints}
                       getCountry={this.getCountry}
+                      user={user}
                     />
           }} />
           <Route path='/login' render={() => {
