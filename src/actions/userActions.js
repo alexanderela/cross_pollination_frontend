@@ -1,6 +1,7 @@
 export const successfulLogin = (user) => ({
   type: 'SUCCESSFUL_LOGIN',
   id: user.id,
+  user: user
 });
 
 export const signOut = () => ({
