@@ -9,6 +9,7 @@ describe('Game', () => {
   let mockCorrectCountry;
   let addPoints;
   let mockEvent;
+  let mockUser;
 
   beforeEach(() => {
     mockCorrectCountry = {
@@ -35,11 +36,14 @@ describe('Game', () => {
 
     mockEvent = { target: { innerText: 'The Netherlands' } };
 
+    mockUser = { id: 1, name: 'Ben', loggedIn: true}
+
     wrapper = shallow(<Game 
                         compilePoints={jest.fn()}  
                         totalPoints={10}
                         getCountry={jest.fn()}
                         currentCountry={mockCorrectCountry}
+                        user={mockUser}
                       />);
     
   });
@@ -135,11 +139,15 @@ describe('Game', () => {
                         }
                       };
 
+      mockUser = { id: 1, name: 'Ben', loggedIn: true}
+        
+
         wrapper = shallow(<Game 
                             compilePoints={jest.fn()}  
                             totalPoints={10}
                             getCountry={jest.fn()}
                             currentCountry={mockCorrectCountry}
+                            user={mockUser}
                           />);
 
       wrapper.instance().showButtons()

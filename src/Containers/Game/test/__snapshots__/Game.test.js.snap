@@ -30,6 +30,13 @@ ShallowWrapper {
     }
     getCountry={[MockFunction]}
     totalPoints={10}
+    user={
+      Object {
+        "id": 1,
+        "loggedIn": true,
+        "name": "Ben",
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -63,7 +70,8 @@ ShallowWrapper {
               to="/account"
             >
               <h5>
-                Alex 
+                Ben
+                 
                 <strong>
                   0
                 </strong>
@@ -143,7 +151,8 @@ ShallowWrapper {
               to="/account"
             >
               <h5>
-                Alex 
+                Ben
+                 
                 <strong>
                   0
                 </strong>
@@ -171,7 +180,8 @@ ShallowWrapper {
                 to="/account"
               >
                 <h5>
-                  Alex 
+                  Ben
+                   
                   <strong>
                     0
                   </strong>
@@ -201,7 +211,8 @@ ShallowWrapper {
                 "activeClassName": "active",
                 "aria-current": "page",
                 "children": <h5>
-                  Alex 
+                  Ben
+                   
                   <strong>
                     0
                   </strong>
@@ -218,7 +229,8 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    "Alex ",
+                    "Ben",
+                    " ",
                     <strong>
                       0
                     </strong>,
@@ -226,7 +238,8 @@ ShallowWrapper {
                 },
                 "ref": null,
                 "rendered": Array [
-                  "Alex ",
+                  "Ben",
+                  " ",
                   Object {
                     "instance": null,
                     "key": undefined,
@@ -375,7 +388,8 @@ ShallowWrapper {
                 to="/account"
               >
                 <h5>
-                  Alex 
+                  Ben
+                   
                   <strong>
                     0
                   </strong>
@@ -455,7 +469,8 @@ ShallowWrapper {
                 to="/account"
               >
                 <h5>
-                  Alex 
+                  Ben
+                   
                   <strong>
                     0
                   </strong>
@@ -483,7 +498,8 @@ ShallowWrapper {
                   to="/account"
                 >
                   <h5>
-                    Alex 
+                    Ben
+                     
                     <strong>
                       0
                     </strong>
@@ -513,7 +529,8 @@ ShallowWrapper {
                   "activeClassName": "active",
                   "aria-current": "page",
                   "children": <h5>
-                    Alex 
+                    Ben
+                     
                     <strong>
                       0
                     </strong>
@@ -530,7 +547,8 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": Array [
-                      "Alex ",
+                      "Ben",
+                      " ",
                       <strong>
                         0
                       </strong>,
@@ -538,7 +556,8 @@ ShallowWrapper {
                   },
                   "ref": null,
                   "rendered": Array [
-                    "Alex ",
+                    "Ben",
+                    " ",
                     Object {
                       "instance": null,
                       "key": undefined,

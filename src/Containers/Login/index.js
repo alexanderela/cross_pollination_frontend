@@ -26,7 +26,6 @@ class Login extends Component {
 
   loginUser = async (event) => {
     const { createUser, name, email, password } = this.state;
-    console.log(name, email, password)
     event.preventDefault();
     return createUser
       ? this.props.fetchUser(null, email, password)
