@@ -42,13 +42,18 @@ export class App extends Component {
   };
 
   render() {
+<<<<<<< HEAD
     const { totalPoints, countryOptions, correctCountry} = this.state;
     const { user } = this.props
     
+=======
+    const { totalPoints, countryOptions, correctCountry, user } = this.state;
+>>>>>>> Add title to login to save score
     return (
       <div className='App'>
         <Switch>
           <Route exact path='/' render={() => {
+<<<<<<< HEAD
             if(user.loggedIn) {
               return <Game 
                 compilePoints={this.compilePoints} 
@@ -62,6 +67,19 @@ export class App extends Component {
           }}/>
 
           <Route exact path='/account' render={() => {
+=======
+            return <Game 
+                      compilePoints={this.compilePoints} 
+                      totalPoints={totalPoints}
+                      getCountry={this.getCountry}
+                      user={user}
+                    />
+          }} />
+          <Route path='/login' render={() => {
+            return <Login />
+          }} />
+          <Route path='/account' render={() => {
+>>>>>>> Add title to login to save score
             return <Account totalPoints={totalPoints} />
           }} />
         </Switch>

@@ -62,9 +62,6 @@ export class Game extends Component {
 
   showButtons = () => {
     const { multipleChoice } = this.props.currentCountry
-    const { user } = this.props.user
-
-    console.log('user', user)
 
     if(multipleChoice !== undefined) {
       return multipleChoice.map(choice => {
@@ -119,7 +116,7 @@ export class Game extends Component {
     const { pointsPossible, showHint, hint, totalPoints, status } = this.state;
     const { getCountry, user } = this.props;   
     const { name, facts, country_outline } = this.props.currentCountry;
-    const { user } = this.props.user
+    const { user } = this.props
 
 
 
