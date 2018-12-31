@@ -66,7 +66,6 @@ class Login extends Component {
   // };
 
   handleSubmit = async (event) => {
-    console.log('works')
     await this.loginUser(event)
     if (this.props.loading !== `Email & password don't match`) {
       this.changeFormPurpose();
