@@ -23,12 +23,12 @@ export const addUser = async (name, email, password) => {
   }
 }
 
-export const getUser = async (name, password) => {
+export const getUser = async (email, password) => {
   try {
     const url = 'https://flagz4u.herokuapp.com/signin'
     const response = await fetch(url, {
       method: 'POST',
-      body: JSON.stringify({username: name, password: password}),
+      body: JSON.stringify({email: email, password: password}),
       headers: {
         "Content-Type": "application/json"
       }
