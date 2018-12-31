@@ -125,7 +125,7 @@ class Login extends Component {
               <div className='login-input-placeholder email-placeholder'>email</div>
               <input className='login-input login-password' value={this.state.password} name='password' />
               <div className='login-input-placeholder password-placeholder'>password</div>
-              <button onClick={this.handleSubmit}>login</button>
+              <button className='login-back' onClick={this.handleSubmit}>login</button>
               <button className='login-back' onClick={this.closeCredentials}>go back</button>
             </form>
           }
