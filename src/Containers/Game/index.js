@@ -124,7 +124,7 @@ export class Game extends Component {
           <div className='account-area'>
             <div className='back-button'>
             </div>
-            <h5 className='account-text'>{user.name} <strong>{totalPoints}</strong></h5>
+            <h5 className='account-text'>Alex <strong>{totalPoints}</strong></h5>
           </div>
         </div>
         <div className='flag-main'>
