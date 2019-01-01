@@ -9,7 +9,7 @@ $tw-blue: #1dcaff;
 }
 
 .Login {
-  background: left / cover url(../../Images/intros/flagGrid.png);
+  background: left / cover url(../../images/intros/flagGrid.png);
   background-repeat: repeat;
   background-position: center;
   height: 100vh;
@@ -136,26 +136,27 @@ $tw-blue: #1dcaff;
     position: relative;
     transition-duration: .2s;
     width: 35%;
-    .form-slider-login {
-      right: 27%;
-    }
-    
-    .form-slider-signup {
-      left: 31.5%;
-    }
-    
-    .form-slider-login,
-    .form-slider-signup {
-      width: 30%;
-    }
-    
-    .form-slider-login {
-      text-align: right;
-    }
-    
-    .form-slider-signup {
-      text-align: left;
-    }
+  }
+  
+  .form-slider-login {
+    right: 27%;
+  }
+  
+  .form-slider-signup {
+    left: 30%;
+  }
+  
+  .form-slider-login,
+  .form-slider-signup {
+    width: 30%;
+  }
+  
+  .form-slider-login {
+    text-align: right;
+  }
+  
+  .form-slider-signup {
+    text-align: left;
   }
   
   .login-input {

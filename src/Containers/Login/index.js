@@ -63,7 +63,7 @@ class Login extends Component {
     return (
       <div className='Login'>
         <div className='login-background-color'>
-        <h1 className={!emailCredentials ? 'login-title' : 'login-title-small'}>Flagship</h1>
+        <h1 className={!emailCredentials ? 'login-title' : 'login-title-small'}>World <br/> Of Flags</h1>
           {
             !emailCredentials &&
             <div className='login-divider'>
