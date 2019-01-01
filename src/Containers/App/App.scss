@@ -17,38 +17,8 @@ html {
   width: 100vw;
 }
 
-.account-area {
-  color: $blue-accent;
-  display: inline-flex;
-  justify-content: space-between;
-  padding: 1rem 8px;
-  text-shadow: 0 0 1rem black;
-  width: calc(100% - 1rem);
-  .back-button {
-    height: 2rem;
-    width: 2rem;
-  }
-  .account-text {
-    font-weight: 300;
-    font-size: 1.5rem;
-    margin: 0;
-    text-align: right;
-  }
-}
-
 strong {
   text-shadow: none;
-}
-
-.hint-button {
-  background-color: $btn-gray;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
-  color: $blue-accent;
-  margin: 1.25rem auto;
-  padding: 12px 0;
-  text-align: center;
-  text-shadow: 0 0 1rem black;
-  width: 40%;
 }
 
 .button {

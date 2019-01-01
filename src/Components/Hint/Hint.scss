@@ -16,21 +16,20 @@ $blue-accent: #59DBE6;
   top: 8rem;
   width: 96%;
   z-index: 2;
-}
-
-p {
-  font-size: 2rem;
-  margin: 0;
-}
-
-.hint-title {
-  font-size: 3rem;
-}
-
-.hint-fact {
-  padding: 0 1rem;
-}
-
-.hint-outline {
-  padding: 0 1rem;
+  p {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  .hint-title {
+    font-size: 3rem;
+  }
+  
+  .hint-fact {
+    padding: 0 1rem;
+  }
+  
+  .hint-outline {
+    padding: 0 1rem;
+  }
 }

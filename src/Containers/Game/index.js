@@ -122,7 +122,7 @@ export class Game extends Component {
           </div>
         </div>
         <div className='flag-main'>
-          <img src={flagImage} className='flag-image'/>
+          <img src={flagImage} alt='' className='flag-image'/>
         </div>
         <div className='hint-button' onClick={this.giveHint}>
           Hints: 2
