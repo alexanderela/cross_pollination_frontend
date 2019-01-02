@@ -61,16 +61,8 @@ class Login extends Component {
     })
   }
 
-  // submitLogin = async (e) => {
-  //   e.preventDefault();
-  //   const { email, password } = this.state;
-  // };
-
   handleSubmit = async (event) => {
     await this.loginUser(event)
-    // if (this.props.loading !== `Email & password don't match`) {
-    //   this.changeFormPurpose();
-    // }
   }
 
   clearInputs = () => {
