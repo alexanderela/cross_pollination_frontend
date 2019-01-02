@@ -26,18 +26,18 @@ describe('API', () => {
  describe('addUser', () => {
  		let mockUser;
      beforeEach(() => {
-     		mockUser = { name: 'bob', email: 'email@email.com', password: 'password' };
+     		mockUser = { username: 'bob', email: 'email@email.com', password: 'password' };
      		window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
      			json: () => Promise.resolve(
-     				{ data: { name: 'bob', email: 'email@email.com', password: 'password' }}
+     				{ data: { username: 'bob', email: 'email@email.com', password: 'password' }}
      			)
      		}))
 	 })
 	 
      it('should call fetch on path /api/signup', () => {
 		const url = 'https://flagz4u.herokuapp.com/signup';
-		const body = {"body": "{\"name\":\"https://flagz4u.herokuapp.com/signup\"}", "headers": {"Content-Type": "application/json"}, "method": "POST"}
-		const expected = {"body": "{\"name\":\"https://flagz4u.herokuapp.com/signup\",\"email\":{\"body\":\"{\\\"name\\\":\\\"https://flagz4u.herokuapp.com/signup\\\"}\",\"headers\":{\"Content-Type\":\"application/json\"},\"method\":\"POST\"}}", "headers": {"Content-Type": "application/json"}, "method": "POST"}
+		const body = {"body": "{\"username\":\"https://flagz4u.herokuapp.com/signup\"}", "headers": {"Content-Type": "application/json"}, "method": "POST"}
+		const expected = {"body": "{\"username\":\"https://flagz4u.herokuapp.com/signup\",\"email\":{\"body\":\"{\\\"username\\\":\\\"https://flagz4u.herokuapp.com/signup\\\"}\",\"headers\":{\"Content-Type\":\"application/json\"},\"method\":\"POST\"}}", "headers": {"Content-Type": "application/json"}, "method": "POST"}
 		API.addUser(url, body);
 		expect(window.fetch).toHaveBeenCalledWith(url, expected);	 
 	 })
@@ -55,18 +55,19 @@ describe('API', () => {
  describe('signIn', () => {
 	let mockUser;
 	beforeEach(() => {
-			mockUser = { email: 'email@email.com', password: 'password' };
+			mockUser = { email: 'email@email.com', password: 'password', id: 31, username: 'dave' };
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				json: () => Promise.resolve(
-					{ data: { email: 'email@email.com', password: 'password' }}
+					{ data: { email: 'email@email.com', password: 'password', id: 31, username: 'dave' }}
 				)
 			}))
 	})
 	
-	it('should call fetch on path /api/signin', () => {
+	it.skip('should call fetch on path /api/signin', () => {
+		const { email, password, id, username } = mockUser
 	   const url = 'https://flagz4u.herokuapp.com/signin';
-	   const expected = "https://flagz4u.herokuapp.com/sigin"
-	   API.getUser(url);
+	   const expected = 'https://flagz4u.herokuapp.com/signin';
+	   API.getUser(email, password, id, username);
 	   expect(window.fetch).toHaveBeenCalledWith(expected);	 
 	})
 
