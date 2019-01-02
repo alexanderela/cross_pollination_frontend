@@ -48,7 +48,7 @@ export class App extends Component {
         <Switch>
           <Route exact path='/' render={() => {
             return <Game 
-                      compilePoints={this.compilePoints} 
+                     compilePoints={this.compilePoints} 
                       totalPoints={totalPoints}
                       getCountry={this.getCountry}
                     />

@@ -104,6 +104,10 @@ export class Game extends Component {
     return flagUrl
   }
 
+  changeRoute = () => {
+    this.forceUpdate();
+  }
+
   render() {
     const choiceButtons = this.showButtons();
     const flagImage = this.getCountryFlagPath();
@@ -116,9 +120,9 @@ export class Game extends Component {
       <div className='Game'>
         <div className='top-container'>
           <div className='account-area'>
-            <div className='back-button'>
+            <div className='back-button-blank'>
             </div>
-            <h5 className='account-text'>Alex <strong>{totalPoints}</strong></h5>
+            <NavLink className='account-text' exact to='/account' onClick={this.changeRoute}><h5 >Alex <strong>{totalPoints}</strong></h5></NavLink>
           </div>
         </div>
         <div className='flag-main'>

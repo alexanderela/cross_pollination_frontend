@@ -2,6 +2,16 @@ $blue-accent: rgba(89, 219, 230, 1);
 $btn-white: #e2e2e2;
 $btn-gray: #40404B;
 
+h5 {
+  margin: 0;
+}
+
+.account-text {
+  color: $btn-white;
+  margin: 0;
+  text-decoration: none;
+}
+
 .flag-main {
   // background: darkslategrey;
   height: 210px;

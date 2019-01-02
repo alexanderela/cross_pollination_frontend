@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import './Account.scss';
 
-
 class Account extends Component {
+  changeRoute = () => {
+    this.forceUpdate();
+  }
+
   render() {
     return (
       <div className='Account'>
         <div className='account-area'>
-          <div className='back-button'>
-          </div>
+          <NavLink to='/' onClick={this.changeRoute} className='back-button'></NavLink>
         </div>
         <div className='profile-image-container'>
           {/* <img alt='' className='profile-image' /> */}
