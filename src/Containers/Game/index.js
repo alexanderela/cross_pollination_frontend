@@ -114,9 +114,8 @@ export class Game extends Component {
     const flagImage = this.getCountryFlagPath();
 
     const { pointsPossible, showHint, hint, totalPoints, status } = this.state;
-    const { getCountry } = this.props;   
+    const { getCountry, user } = this.props;   
     const { name, facts, country_outline } = this.props.currentCountry;
-    const { user } = this.props
 
 
     return (

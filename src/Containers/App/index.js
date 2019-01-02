@@ -48,17 +48,19 @@ export class App extends Component {
       <div className='App'>
         <Switch>
           <Route exact path='/' render={() => {
-            return <Game 
-                     compilePoints={this.compilePoints} 
-                      totalPoints={totalPoints}
-                      getCountry={this.getCountry}
-                      user={user}
-                    />
-          }} />
-          <Route path='/login' render={() => {
-            return <Login />
-          }} />
-          <Route path='/account' render={() => {
+            if(user.loggedIn) {
+              return <Game 
+                compilePoints={this.compilePoints} 
+                totalPoints={totalPoints}
+                getCountry={this.getCountry}
+                user={user}
+              /> 
+            } else {
+                return <Login />
+            }
+          }}/>
+
+          <Route exact path='/account' render={() => {
             return <Account totalPoints={totalPoints} />
           }} />
         </Switch>
