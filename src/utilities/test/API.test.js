@@ -52,7 +52,7 @@ describe('API', () => {
 	it.skip('should pass an options object with stringified user data to fetch', () => {})
  })
 
- describe('signIn', () => {
+ describe('getUser', () => {
 	let mockUser;
 	beforeEach(() => {
 			mockUser = { email: 'email@email.com', password: 'password', id: 31, username: 'dave' };
