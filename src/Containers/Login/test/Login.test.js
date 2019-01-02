@@ -35,9 +35,6 @@ describe('Login', () => {
       await wrapper.instance().submitLogin(mockEvent);
       expect(wrapper.instance().props.loginUser).toHaveBeenCalled();
     });
-
-    it('should set errorState if loginAttempt fails', async () => {
-    });
   });
 
   describe('createNewUser', () => {
