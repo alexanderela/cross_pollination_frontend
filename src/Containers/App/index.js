@@ -44,6 +44,7 @@ export class App extends Component {
   render() {
     const { totalPoints, countryOptions, correctCountry} = this.state;
     const { user } = this.props
+    
     return (
       <div className='App'>
         <Switch>
@@ -54,7 +55,7 @@ export class App extends Component {
                 totalPoints={totalPoints}
                 getCountry={this.getCountry}
                 user={user}
-              /> 
+              />
             } else {
                 return <Login />
             }
