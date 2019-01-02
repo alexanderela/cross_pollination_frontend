@@ -32,7 +32,6 @@ ShallowWrapper {
         "Provider": Object {
           "$$typeof": Symbol(react.provider),
           "_context": [Circular],
->>>>>>> Skip tests that changed because of new format
         },
         "_calculateChangedBits": null,
         "_currentRenderer": null,
