@@ -68,9 +68,9 @@ class Login extends Component {
 
   handleSubmit = async (event) => {
     await this.loginUser(event)
-    if (this.props.loading !== `Email & password don't match`) {
-      this.changeFormPurpose();
-    }
+    // if (this.props.loading !== `Email & password don't match`) {
+    //   this.changeFormPurpose();
+    // }
   }
 
   clearInputs = () => {
@@ -82,7 +82,7 @@ class Login extends Component {
   }
 ;
   render() {
-    const { emailCredentials, formLogin, name, email, password } = this.state;
+    const { emailCredentials, formLogin, name, email, password, error } = this.state;
     const { loading } = this.props;
     const showError = loading === `Email & password don't match` || loading === `Login to save score`
       ? loading
@@ -110,6 +110,7 @@ class Login extends Component {
             emailCredentials &&
             <form className='login-form'>
               <div className='form-instructions'>press return to submit</div>
+              <div className='login-error'>{error}</div>
               <div className='login-signup-slider' onClick={this.changeFormPurpose}>
                 <div className='form-slider-login'>login</div>
                 <div className={formLogin ? 'form-slider form-slider-login' : 'form-slider form-slider-signup'}></div>
