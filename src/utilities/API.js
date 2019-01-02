@@ -34,7 +34,6 @@ export const getUser = async (email, password, id, username) => {
       }
     })
     const result = await response.json();
-    console.log(result)
     const user = {id: result[0].id, name: result[0].username}
     return user
   } catch(error) {
