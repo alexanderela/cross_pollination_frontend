@@ -12,7 +12,8 @@ describe('userActions', () => {
 
       const expected = {
         type: 'SUCCESSFUL_LOGIN',
-        id: 1
+        id: 1,
+        user: mockUser
       }
 
       const result = userActions.successfulLogin(mockUser);
