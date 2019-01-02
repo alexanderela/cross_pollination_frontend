@@ -108,6 +108,21 @@ $tw-blue: #1dcaff;
   width: 100%;
 }
 
+.error {
+  color: white;
+  height: 2em;
+  width: 10em;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1.25rem auto;
+  outline: none;
+  padding: 12px 0;
+  text-align: center;
+  transition-duration: .05s;
+  width: 100%;
+}
+
 .login-form {
   padding: 0 10%;
   width: 80%;
