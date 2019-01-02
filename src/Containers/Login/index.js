@@ -63,7 +63,7 @@ class Login extends Component {
     return (
       <div className='Login'>
         <div className='login-background-color'>
-        <h1 className={!emailCredentials ? 'login-title' : 'login-title-small'}>Flagship</h1>
+        <h1 className={!emailCredentials ? 'login-title' : 'login-title-small'}>World<br/>Of Flags</h1>
           {
             !emailCredentials &&
             <div className='login-divider'>
@@ -84,7 +84,7 @@ class Login extends Component {
               <div className='form-instructions'>press return to submit</div>
               <div className='login-signup-slider' onClick={this.changeFormPurpose}>
                 <div className='form-slider-login'>login</div>
-                <div className={formLogin ? 'form-slider form-slider-login' : 'form-slider form-slider-signup'}></div>
+                <div className={formLogin ? 'form-slider form-slider-left' : 'form-slider form-slider-right'}></div>
                 <div className='form-slider-signup'>sign up</div>
               </div>
               {

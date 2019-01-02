@@ -1,7 +1,9 @@
+$blue-accent: rgba(89, 219, 230, 1);
 $btn-white: #e2e2e2;
+$btn-gray: #40404B;
 
 .flag-main {
-  background: darkslategrey;
+  // background: darkslategrey;
   height: 210px;
   margin: 4.5rem auto;
   width: 350px;
@@ -9,6 +11,17 @@ $btn-white: #e2e2e2;
 
 .flag-image {
   width: 100%;
+}
+
+.hint-button {
+  background-color: $btn-gray;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  color: $blue-accent;
+  margin: 1.25rem auto;
+  padding: 12px 0;
+  text-align: center;
+  text-shadow: 0 0 1rem black;
+  width: 40%;
 }
 
 .option-button {

@@ -25,7 +25,9 @@ ShallowWrapper {
         <h1
           className="login-title"
         >
-          Flagship
+          World
+          <br />
+          Of Flags
         </h1>
         <div
           className="login-divider"
@@ -71,7 +73,9 @@ ShallowWrapper {
           <h1
             className="login-title"
           >
-            Flagship
+            World
+            <br />
+            Of Flags
           </h1>,
           <div
             className="login-divider"
@@ -115,11 +119,27 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Flagship",
+            "children": Array [
+              "World",
+              <br />,
+              "Of Flags",
+            ],
             "className": "login-title",
           },
           "ref": null,
-          "rendered": "Flagship",
+          "rendered": Array [
+            "World",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            "Of Flags",
+          ],
           "type": "h1",
         },
         Object {
@@ -236,7 +256,9 @@ ShallowWrapper {
           <h1
             className="login-title"
           >
-            Flagship
+            World
+            <br />
+            Of Flags
           </h1>
           <div
             className="login-divider"
@@ -282,7 +304,9 @@ ShallowWrapper {
             <h1
               className="login-title"
             >
-              Flagship
+              World
+              <br />
+              Of Flags
             </h1>,
             <div
               className="login-divider"
@@ -326,11 +350,27 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Flagship",
+              "children": Array [
+                "World",
+                <br />,
+                "Of Flags",
+              ],
               "className": "login-title",
             },
             "ref": null,
-            "rendered": "Flagship",
+            "rendered": Array [
+              "World",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              "Of Flags",
+            ],
             "type": "h1",
           },
           Object {
