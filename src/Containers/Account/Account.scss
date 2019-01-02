@@ -17,6 +17,9 @@ $blue-accent: #59DBE6;
     height: 2rem;
     width: 2rem;
   }
+  .account-logout {
+    font-size: 1.25rem;
+  }
   .account-text {
     font-weight: 300;
     font-size: 1.5rem;
@@ -27,7 +30,7 @@ $blue-accent: #59DBE6;
 
 .profile-image-container {
   background: left / cover url(../../images/intros/flagGrid.png);
-  box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
   border-radius: 50%;
   border: none;
   height: 10rem;

@@ -20,6 +20,7 @@ h5 {
 }
 
 .flag-image {
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.3));
   max-height: 250px;
   max-width: 100%;
 }
