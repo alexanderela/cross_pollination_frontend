@@ -12,8 +12,13 @@ $blue-accent: #59DBE6;
   text-shadow: 0 0 1rem black;
   width: calc(100% - 1rem);
   .back-button {
+    background: url(../../images/back.svg);
+    filter: invert(80%);
     height: 2rem;
     width: 2rem;
+  }
+  .account-logout {
+    font-size: 1.25rem;
   }
   .account-text {
     font-weight: 300;
@@ -24,7 +29,8 @@ $blue-accent: #59DBE6;
 }
 
 .profile-image-container {
-  box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+  background: left / cover url(../../images/intros/flagGrid.png);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
   border-radius: 50%;
   border: none;
   height: 10rem;

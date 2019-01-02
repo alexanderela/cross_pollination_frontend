@@ -21,9 +21,18 @@ ShallowWrapper {
         <div
           className="account-area"
         >
-          <div
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
             className="back-button"
+            onClick={[Function]}
+            to="/"
           />
+          <div
+            className="account-logout"
+          >
+            log out
+          </div>
         </div>,
         <div
           className="profile-image-container"
@@ -78,23 +87,52 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <div
-            className="back-button"
-          />,
+          "children": Array [
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              className="back-button"
+              onClick={[Function]}
+              to="/"
+            />,
+            <div
+              className="account-logout"
+            >
+              log out
+            </div>,
+          ],
           "className": "account-area",
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "back-button",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "aria-current": "page",
+              "className": "back-button",
+              "onClick": [Function],
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
           },
-          "ref": null,
-          "rendered": null,
-          "type": "div",
-        },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "log out",
+              "className": "account-logout",
+            },
+            "ref": null,
+            "rendered": "log out",
+            "type": "div",
+          },
+        ],
         "type": "div",
       },
       Object {
@@ -290,9 +328,18 @@ ShallowWrapper {
           <div
             className="account-area"
           >
-            <div
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
               className="back-button"
+              onClick={[Function]}
+              to="/"
             />
+            <div
+              className="account-logout"
+            >
+              log out
+            </div>
           </div>,
           <div
             className="profile-image-container"
@@ -347,23 +394,52 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <div
-              className="back-button"
-            />,
+            "children": Array [
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                className="back-button"
+                onClick={[Function]}
+                to="/"
+              />,
+              <div
+                className="account-logout"
+              >
+                log out
+              </div>,
+            ],
             "className": "account-area",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "className": "back-button",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "aria-current": "page",
+                "className": "back-button",
+                "onClick": [Function],
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
             },
-            "ref": null,
-            "rendered": null,
-            "type": "div",
-          },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "log out",
+                "className": "account-logout",
+              },
+              "ref": null,
+              "rendered": "log out",
+              "type": "div",
+            },
+          ],
           "type": "div",
         },
         Object {

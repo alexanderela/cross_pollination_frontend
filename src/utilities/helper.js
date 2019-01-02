@@ -12,9 +12,13 @@ export const checkCountry = (country, usedCountries) => {
 
 //this function is building the object for the current question that will ultimately be sent to the global store. 
 export const buildQuestion = (correctCountry, countryFacts) => {
-  const questionOptions = getRandomOptions()
+  let questionOptions = getRandomOptions(correctCountry.name)
 
-  checkOptions(correctCountry, questionOptions)
+  if (questionOptions.includes(correctCountry.name)) {
+    questionOptions = getRandomOptions(correctCountry.name)
+  }
+
+  checkOptions(correctCountry.name, questionOptions)
   const multipleChoices = [...questionOptions, correctCountry.name]
   const flagOptions = shuffleMultipleChoice(multipleChoices)
   //Adding the multiple coice array to the correctCountry object
@@ -24,14 +28,15 @@ export const buildQuestion = (correctCountry, countryFacts) => {
 }
 
 //This function grabs three random countries
-export const getRandomOptions = () => {
+export const getRandomOptions = (correctCountry) => {
   //update as number of countries in database increases
-  const optionA = countryNames[Math.floor(Math.random() * 196)]
-  const optionB = countryNames[Math.floor(Math.random() * 196)]
-  const optionC = countryNames[Math.floor(Math.random() * 196)]
-
-  if (optionA === optionB || optionA === optionC || optionB === optionC ){
-    getRandomOptions()
+  
+  const optionA = countryNames[Math.floor(Math.random() * 193)]
+  const optionB = countryNames[Math.floor(Math.random() * 193)]
+  const optionC = countryNames[Math.floor(Math.random() * 193)]
+  
+  if (optionA === optionB || optionA === optionC || optionB === optionC || optionA === correctCountry || optionB === correctCountry || optionC === correctCountry){
+    return getRandomOptions(correctCountry)
   } else {
     const countryOptionsPrelim = [optionA, optionB, optionC]
     return countryOptionsPrelim
@@ -40,8 +45,9 @@ export const getRandomOptions = () => {
 
 //This function checks if any of the 'wrong' options are the corrct answer
 export const checkOptions = (countryName, questionOptions) => {
-  if(questionOptions.includes(countryName)){
-    getRandomOptions()
+  
+  if (questionOptions.includes(countryName)){
+    getRandomOptions(countryName)
   } else {
     return
   }

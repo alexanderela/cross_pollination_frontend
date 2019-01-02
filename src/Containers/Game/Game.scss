@@ -2,15 +2,27 @@ $blue-accent: rgba(89, 219, 230, 1);
 $btn-white: #e2e2e2;
 $btn-gray: #40404B;
 
+h5 {
+  margin: 0;
+}
+
+.account-text {
+  color: $btn-white;
+  margin: 0;
+  text-decoration: none;
+}
+
 .flag-main {
-  // background: darkslategrey;
   height: 210px;
   margin: 4.5rem auto;
+  text-align: center;
   width: 350px;
 }
 
 .flag-image {
-  width: 100%;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.3));
+  max-height: 250px;
+  max-width: 100%;
 }
 
 .hint-button {
