@@ -4,6 +4,25 @@ $blue-accent: #59DBE6;
   color: $blue-accent;
 }
 
+.account-area {
+  color: $blue-accent;
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 1rem 8px;
+  text-shadow: 0 0 1rem black;
+  width: calc(100% - 1rem);
+  .back-button {
+    height: 2rem;
+    width: 2rem;
+  }
+  .account-text {
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: right;
+  }
+}
+
 .profile-image-container {
   box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
   border-radius: 50%;
@@ -11,29 +30,27 @@ $blue-accent: #59DBE6;
   height: 10rem;
   margin: 4rem auto;
   width: 10rem;
-}
-
-.profile-image {
-  border-radius: 50%;
-  height: 100%;
-  width: 100%;
+  .profile-image {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .user-data {
   margin: 0 5%;
   width: 90%;
-}
-
-.profile-name {
-  margin: 1rem;
-  text-align: center;
-}
-
-.points-container,
-.account-data {
-  display: inline-flex;
-  font-size: 1.5rem;
-  justify-content: space-between;
-  margin: 10px 0;
-  width: 100%;
+  .profile-name {
+    margin: 1rem;
+    text-align: center;
+  }
+  
+  .points-container,
+  .account-data {
+    display: inline-flex;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    margin: 10px 0;
+    width: 100%;
+  }
 }

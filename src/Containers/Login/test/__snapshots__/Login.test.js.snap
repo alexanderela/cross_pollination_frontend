@@ -32,6 +32,7 @@ ShallowWrapper {
         "Provider": Object {
           "$$typeof": Symbol(react.provider),
           "_context": [Circular],
+
         },
         "_calculateChangedBits": null,
         "_currentRenderer": null,
@@ -61,6 +62,7 @@ ShallowWrapper {
           "Provider": Object {
             "$$typeof": Symbol(react.provider),
             "_context": [Circular],
+
           },
           "_calculateChangedBits": null,
           "_currentRenderer": null,
