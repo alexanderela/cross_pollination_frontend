@@ -18,10 +18,7 @@ describe('Login', () => {
     }
     wrapper = shallow(<Login loginUser={jest.fn()} />);
   });
-  
-    it('should render like the snapshot', () => {
-      expect(wrapper).toMatchSnapshot();
-    });
+
   
   describe('handleChange', () => {
     it.skip('should set state upon invocaton of handleChange', () => {
