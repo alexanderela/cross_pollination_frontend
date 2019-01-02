@@ -44,6 +44,7 @@ export class App extends Component {
   render() {
     const { totalPoints, countryOptions, correctCountry} = this.state;
     const { user } = this.props
+    
     return (
       <div className='App'>
         <Switch>
@@ -54,20 +55,12 @@ export class App extends Component {
                 totalPoints={totalPoints}
                 getCountry={this.getCountry}
                 user={user}
-              /> 
+              />
             } else {
-                return <Redirect to='/login'/> }
-            }
-          }/>
-          <Route exact path='/login' render={() => {
-            if(!user.loggedIn) {
                 return <Login /> 
-            } else {
-                return <Redirect to='/'/>
+              }
             }
-          }
           }/>
-
           <Route exact path='/account' render={() => {
             return <Account totalPoints={totalPoints} />
           }} />
