@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Login from '../index';
-import { mapStateToProps, mapDispatchToProps } from '../index';
+import { Login, mapStateToProps, mapDispatchToProps } from '../index';
 import { fetchUser } from '../../../thunks/user'
 
 describe('Login', () => {
   let wrapper;
   let mockEvent;
   let mockFunc;
+  let mockUser;
   
   beforeEach(() => {
     mockFunc = jest.fn();
@@ -18,7 +18,19 @@ describe('Login', () => {
         value: 'Alex'
       }
     }
-    wrapper = shallow(<Login loginUser={jest.fn()} />);
+
+    mockUser = {
+                id: 2,
+                name: 'rtg',
+                loggedIn: true,
+                email: 'alex@turing.com'
+               }
+
+    wrapper = shallow(<Login
+                        fetchUser={jest.fn()}
+                        loading={'true'}
+                        user={mockUser}
+                      />);
   });
   
     it('should render like the snapshot', () => {
@@ -26,23 +38,20 @@ describe('Login', () => {
     });
   
   describe('handleChange', () => {
-    it.skip('should set state upon invocaton of handleChange', () => {
+    it('should set state upon invocaton of handleChange', () => {
       wrapper.instance().handleChange(mockEvent);
       expect(wrapper.state().name).toEqual('Alex')
     });
   });
 
-  describe('submitLogin', () => {
+  describe('handleSubmit', () => {
     it.skip('should invoke loginUser if loginAttempt is successful', async () => {
-      await wrapper.instance().submitLogin(mockEvent);
-      expect(wrapper.instance().props.loginUser).toHaveBeenCalled();
+      await wrapper.instance().handleSubmit(mockEvent);
+      expect(wrapper.instance().loginUser).toHaveBeenCalled();
     });
   });
 
-  describe('createNewUser', () => {
-    it('should alert the user if the account already exists', () => {
-    });
-
+  describe('createUser', () => {
     it('should set state for "create" or "error" if create state is false and fetchResponse is successful', () => {
     });
 
