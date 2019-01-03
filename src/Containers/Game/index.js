@@ -116,8 +116,6 @@ export class Game extends Component {
     const { pointsPossible, showHint, hint, totalPoints, status } = this.state;
     const { getCountry, user } = this.props;   
     const { name, facts, country_outline } = this.props.currentCountry;
-    const { user } = this.props
-
 
 
     return (

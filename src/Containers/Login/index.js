@@ -112,7 +112,6 @@ class Login extends Component {
               {
                 !formLogin &&
                 <div>
-<<<<<<< HEAD
                   <h4 className='error'>{showError}</h4>
                   <input 
                     className='login-input login-name' 
@@ -123,20 +122,13 @@ class Login extends Component {
                   <div className='login-input-placeholder name-placeholder'>name</div>
                 </div>
               }
+              <h4 className='error'>{showError}</h4>
               <input 
                 className='login-input login-email' 
                 value={email} 
                 name='email' 
                 onChange={this.handleChange}
               />
-=======
-                  <input className='login-input login-name' value={this.state.name} name='name' />
-                  <div className='login-input-placeholder name-placeholder'>name</div>
-                </div>
-              }
-              <h4 className='error'>{showError}</h4>
-              <input className='login-input login-email' value={this.state.email} name='email' />
->>>>>>> Add error for wrong email/ password
               <div className='login-input-placeholder email-placeholder'>email</div>
               <input 
                 className='login-input login-password' 
