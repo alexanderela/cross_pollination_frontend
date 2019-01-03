@@ -7,20 +7,14 @@ import './Account.scss';
 import { connect } from 'react-redux';
 
 class Account extends Component {
-  constructor() {
-    super();
-  };
-
   changeRoute = () => {
     this.forceUpdate();
   }
 
   returnGuessedCountries = () => {
-    this.props.usedCountries.map(country => {
-      return(
-        <li key={country} className='correct-guess'>{country}</li>
-      )
-    })
+    return this.props.usedCountries.map(country => {
+      return <li key={country} className='correct-guess'>{country}</li>
+    });
   }
 
   logoutUser = () => {
@@ -59,7 +53,7 @@ class Account extends Component {
             <p className='user-correct-guesses'>guessed countries</p>
             <div className='user-data'>
               <ul className='correct-guesses-list'>
-                { this.returnGuessedCountries }
+                { this.returnGuessedCountries() }
               </ul>
             </div>
           </div>
