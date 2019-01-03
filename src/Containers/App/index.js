@@ -16,7 +16,6 @@ import { getCurrentCountry } from '../../Thunks/countries.js';
 export class App extends Component {
   constructor() {
     super();
-//i'd argue that we don't need any of this state if we are going to have redux
     this.state = {
       totalPoints: 0
     };
@@ -29,7 +28,7 @@ export class App extends Component {
   getCountry = async () => {
     const { usedCountries, setCurrentCountry, updateUsedCountries } = this.props
     let randomNumber = Math.floor(Math.random() * (196 - 1) + 1);
-    const currentCountry = await Fetch.fetchCorrectCountry(randomNumber, usedCountries); //sending this array to use in a check
+    const currentCountry = await Fetch.fetchCorrectCountry(randomNumber, usedCountries);
     
     setCurrentCountry(currentCountry)
     updateUsedCountries(currentCountry.name)

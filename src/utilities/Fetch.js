@@ -6,10 +6,11 @@ export const fetchCorrectCountry = async (randomId, usedCountries) => {
 
   const countryArray = await API.fetchData(url);
   const correctCountry = countryArray[0]
+  const countryAlreadyExists = checkCountry(correctCountry.name, usedCountries)
 
-  if (checkCountry(correctCountry, usedCountries)) {
+  if (countryAlreadyExists) {
     let randomNumber = Math.floor(Math.random() * (196 - 1) + 1);
-    fetchCorrectCountry(randomNumber, usedCountries)
+    return fetchCorrectCountry(randomNumber, usedCountries)
   } else {
   	const countryFacts = await fetchCountryFacts(randomId)
     return buildQuestion(correctCountry, countryFacts) 
@@ -22,12 +23,3 @@ const url = `https://flagz4u.herokuapp.com/api/v1/facts/${countryId}`;
   const countryFacts = await API.fetchData(url);
   return countryFacts;
 }
-
-
-
-//would this ever be used?
-// export const fetchAllCountries = async () => {
-//   const url = 'https://flagz4u.herokuapp.com/api/v1/country';
-//   const allCountries = await API.fetchData(url);
-//   return allCountries
-// }
