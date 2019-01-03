@@ -34,12 +34,6 @@ export class App extends Component {
     updateUsedCountries(currentCountry.name)
   }
 
-//WHAT IS THIS FUNCTION DOING?  ALEX E
-  compilePoints = (newPoints) => {
-    const totalPoints = this.state.totalPoints + newPoints
-    this.setState({ totalPoints });
-  };
-
   render() {
     const { totalPoints } = this.state;
     const { user } = this.props
@@ -49,8 +43,6 @@ export class App extends Component {
           <Route exact path='/' render={() => {
             if(user.loggedIn) {
               return <Game 
-                compilePoints={this.compilePoints} 
-                totalPoints={totalPoints}
                 getCountry={this.getCountry}
                 user={user}
               />

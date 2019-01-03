@@ -17,11 +17,13 @@ class Account extends Component {
   }
 
   logoutUser = () => {
+    localStorage.clear()
     this.props.signOut({});
   }
 
   render() {
-    const { usedCountries, user, totalPoints } = this.props;
+    const { usedCountries, user } = this.props;
+    const currentPoints = JSON.parse(localStorage.getItem('currentPoints'))
 
     return (
       <div className='Account'>
@@ -37,11 +39,11 @@ class Account extends Component {
           <div className='points-container'>
             <p className='profile-name'>{user.name}</p>
             <div className='points-label'>points</div>
-            <div className='points-number'>{ totalPoints }</div>
+            <div className='points-number'>{ currentPoints }</div>
           </div>
           <div className='account-data'>
             <div className='email-label'>email</div>
-            <div className='email-text'>alex@turing.com</div>
+            <div className='email-text'>{user.email}</div>
           </div>
           <div className='extra-data'>
           </div>

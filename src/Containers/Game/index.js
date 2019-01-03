@@ -20,6 +20,19 @@ export class Game extends Component {
     }
   }
 
+  componentDidMount(){
+    if(localStorage.getItem('currentPoints')){
+      this.setState({
+        totalPoints: JSON.parse(localStorage.getItem('currentPoints'))
+      })
+    } else {
+      this.setState({
+        totalPoints: 0
+      })
+    }
+  }
+
+
   checkAnswer = (e) => {
     const { currentCountry } = this.props;
     const { innerText } = e.target
@@ -92,6 +105,7 @@ export class Game extends Component {
 
     if(status === 'Correct'){
       const updatedTotal = totalPoints + pointsPossible
+      localStorage.setItem('currentPoints', JSON.stringify(updatedTotal))
       this.setState({ totalPoints: updatedTotal })
     }
   }
