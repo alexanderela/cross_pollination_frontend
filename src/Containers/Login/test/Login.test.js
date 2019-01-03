@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Login from '../index';
+import { mapStateToProps, mapDispatchToProps } from '../index';
+import { fetchUser } from '../../../thunks/user'
 
 describe('Login', () => {
   let wrapper;
@@ -73,18 +75,35 @@ describe('Login', () => {
   describe('mapStateToProps', () => {
     it('should create the correct props object', () => {
       let mockState = {
-        {user: id: 2, user: 'Bob', email: "bob@bob.com", loggedIn: true},
+        user: {id: 2, user: 'Bob', email: "bob@bob.com", loggedIn: true},
         loading: 'resolved'
       }
+      const  expected = {
+        user: {id: 2, user: 'Bob', email: 'bob@bob.com', loggedIn: true},
+        loading: 'resolved'
+      }
+
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps).toEqual(expected)
     });
 
   });
   
   describe('mapDispatchToProps', () => {
-    it('should map a key of setCountries', () => {
+    const mockDispatch = jest.fn()
+
+    it('should map a key of fetchUser', () => {
+      const dispatchedProps = mapDispatchToProps(mockDispatch)
+      expect(dispatchedProps.fetchUser).toBeDefined()
     });
     
-    it('setCountries should call dispatch', () => {
+    it('should have fetchUser call dispatch', () => {
+      const mockUser = { name: 'Alex', email: 'alex@123.com', password: '123'}
+
+      const dispatchedProps = mapDispatchToProps(mockDispatch)
+      dispatchedProps.fetchUser(mockUser)
+
+      expect(mockDispatch).toHaveBeenCalled();
     });
   });
 });
