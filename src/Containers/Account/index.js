@@ -55,7 +55,7 @@ export const mapDispatchToProps = (dispatch) => ({
 
 Account.propTypes = {
   user: PropTypes.object.isRequired,
-  signOut: PropTypes.function.isRequired
+  signOut: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps) (Account);
