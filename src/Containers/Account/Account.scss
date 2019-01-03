@@ -19,7 +19,9 @@ $blue-accent: #59DBE6;
     width: 2rem;
   }
   .account-logout {
+    color: $blue-accent;
     font-size: 1.25rem;
+    text-decoration: none;
   }
   .account-text {
     font-weight: 300;
