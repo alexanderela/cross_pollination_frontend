@@ -5,6 +5,7 @@ import Hint from '../../Components/Hint';
 import Results from '../../Components/Results';
 import Login from '../Login'
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 export class Game extends Component {
   constructor(props) {
@@ -170,5 +171,12 @@ export const mapStateToProps = ({ currentCountry }) => ({
 export const mapDispatchToProps = (dispatch) => ({
 
 })
+
+Game.propTypes = {
+  user: PropTypes.object.isRequired,
+  currentCountry: PropTypes.object.isRequired,
+  totalPoints: PropTypes.number.isRequired,
+  getCountry: PropTypes.func.isRequired,
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
