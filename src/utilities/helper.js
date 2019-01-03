@@ -8,6 +8,10 @@ export const checkCountry = (country, usedCountries) => {
   }
 }
 
+<<<<<<< HEAD
+=======
+//this function is building the object for the current question that will ultimately be sent to the global store.
+>>>>>>> Add styling for Account and login placeholders
 export const buildQuestion = (correctCountry, countryFacts) => {
   let questionOptions = getRandomOptions(correctCountry.name)
 
@@ -18,15 +22,29 @@ export const buildQuestion = (correctCountry, countryFacts) => {
   checkOptions(correctCountry.name, questionOptions)
   const multipleChoices = [...questionOptions, correctCountry.name]
   const flagOptions = shuffleMultipleChoice(multipleChoices)
+<<<<<<< HEAD
+=======
+  //Adding the multiple coice array to the correctCountry object
+>>>>>>> Add styling for Account and login placeholders
   let country = {
     ...correctCountry,
     multipleChoice: flagOptions,
     facts: countryFacts[0],
   }
+<<<<<<< HEAD
   return country
 }
 
 export const getRandomOptions = (correctCountry) => {
+=======
+
+  return country
+}
+
+//This function grabs three random countries
+export const getRandomOptions = correctCountry => {
+  //update as number of countries in database increases
+>>>>>>> Add styling for Account and login placeholders
 
   const optionA = countryNames[Math.floor(Math.random() * 193)]
   const optionB = countryNames[Math.floor(Math.random() * 193)]
@@ -48,13 +66,21 @@ export const getRandomOptions = (correctCountry) => {
 }
 
 export const checkOptions = (countryName, questionOptions) => {
+<<<<<<< HEAD
   if (questionOptions.includes(countryName)){
+=======
+  if (questionOptions.includes(countryName)) {
+>>>>>>> Add styling for Account and login placeholders
     getRandomOptions(countryName)
   } else {
     return
   }
 }
 
+<<<<<<< HEAD
+=======
+//I don't understand this code, but it works. What's going on with the assignment of m? What is m?
+>>>>>>> Add styling for Account and login placeholders
 export const shuffleMultipleChoice = array => {
   let m = array.length,
     t,

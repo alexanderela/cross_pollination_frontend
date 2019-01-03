@@ -94,7 +94,8 @@ $tw-blue: #1dcaff;
   width: 80%;
 }
 
-.login-back {
+.login-back,
+.login-click {
   border: none;
   border-radius:3rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
@@ -183,8 +184,10 @@ $tw-blue: #1dcaff;
     text-indent: 1.5rem;
     width: 100%;
   }
-  
-  .login-input-placeholder {
+
+.login-name:empty + .name-placeholder,
+.login-email:empty + .email-placeholder,
+.login-password:empty + .password-placeholder {
     bottom: 3.5rem;
     height: 0;
     left: 1.5rem;

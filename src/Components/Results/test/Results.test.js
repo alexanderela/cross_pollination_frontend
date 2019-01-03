@@ -1,35 +1,50 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-import Results from '../index';
+import React from 'react'
+import { shallow, mount } from 'enzyme'
+import Results from '../index'
 
 describe('Results', () => {
+<<<<<<< HEAD
   let wrapper;
   let mockCorrectCountry;
   let mockStatus;
+=======
+  let wrapper
+  let mockCorrectCountry
+  let status
+>>>>>>> Add styling for Account and login placeholders
 
   beforeEach(() => {
     mockCorrectCountry = {
-                            "id": 46,
-                            "name": "The Netherlands",
-                            "flag": "/images/flags/netherlands.png",
-                            "country_outline": "/images/outlines/netherlands.png",
-                            "created_at": "2018-12-28T12:02:21.458Z",
-                            "updated_at": "2018-12-28T12:02:21.458Z",
-                            "multipleChoice": [
-                              "Seychelles",
-                              "Malawi",
-                              "Cambodia",
-                              "The Netherlands"
-                            ],
-                            "facts": {
-                              "id": 106,
-                              "country_fact": "Numerous dikes cover the coast of Ijsselmeer in this country",
-                              "country_id": 46,
-                              "created_at": "2018-12-28T12:02:21.951Z",
-                              "updated_at": "2018-12-28T12:02:21.951Z"
-                            }
-                          };
+      id: 46,
+      name: 'The Netherlands',
+      flag: '/images/flags/netherlands.png',
+      country_outline: '/images/outlines/netherlands.png',
+      created_at: '2018-12-28T12:02:21.458Z',
+      updated_at: '2018-12-28T12:02:21.458Z',
+      multipleChoice: ['Seychelles', 'Malawi', 'Cambodia', 'The Netherlands'],
+      facts: {
+        id: 106,
+        country_fact:
+          'Numerous dikes cover the coast of Ijsselmeer in this country',
+        country_id: 46,
+        created_at: '2018-12-28T12:02:21.951Z',
+        updated_at: '2018-12-28T12:02:21.951Z',
+      },
+    }
 
+    wrapper = shallow(
+      <Results
+        status={status}
+        closeResults={jest.fn()}
+        correctCountry={mockCorrectCountry.name}
+        points={3}
+        totalPoints={8}
+        getCountry={jest.fn()}
+      />
+    )
+  })
+
+<<<<<<< HEAD
     mockStatus = ''
 
     wrapper = shallow(<Results             
@@ -42,23 +57,25 @@ describe('Results', () => {
                       />)
   });
   
+=======
+>>>>>>> Add styling for Account and login placeholders
   describe('handleClick', () => {
     it('should render like the snapshot', () => {
-      expect(wrapper).toMatchSnapshot();
-    });
-    
+      expect(wrapper).toMatchSnapshot()
+    })
+
     it('should should invoke getCountry', () => {
-      const props = wrapper.instance().props;
-      const spy = jest.spyOn(props, 'getCountry');
-      wrapper.instance().handleClick();
-      expect(spy).toHaveBeenCalled();
-    });
+      const props = wrapper.instance().props
+      const spy = jest.spyOn(props, 'getCountry')
+      wrapper.instance().handleClick()
+      expect(spy).toHaveBeenCalled()
+    })
 
     it('should should invoke closeResults', () => {
-      const props = wrapper.instance().props;
-      const spy = jest.spyOn(props, 'closeResults');
-      wrapper.instance().handleClick();
-      expect(spy).toHaveBeenCalled();
-    });
+      const props = wrapper.instance().props
+      const spy = jest.spyOn(props, 'closeResults')
+      wrapper.instance().handleClick()
+      expect(spy).toHaveBeenCalled()
+    })
   })
-});
+})
