@@ -23,10 +23,11 @@ export const buildQuestion = (correctCountry, countryFacts) => {
     multipleChoice: flagOptions,
     facts: countryFacts[0],
   }
+
   return country
 }
 
-export const getRandomOptions = (correctCountry) => {
+export const getRandomOptions = correctCountry => {
 
   const optionA = countryNames[Math.floor(Math.random() * 193)]
   const optionB = countryNames[Math.floor(Math.random() * 193)]
@@ -48,12 +49,12 @@ export const getRandomOptions = (correctCountry) => {
 }
 
 export const checkOptions = (countryName, questionOptions) => {
-  if (questionOptions.includes(countryName)){
+  if (questionOptions.includes(countryName)) {
     getRandomOptions(countryName)
   } else {
-    return
+    return;
   }
-}
+};
 
 export const shuffleMultipleChoice = array => {
   let m = array.length,
@@ -65,7 +66,7 @@ export const shuffleMultipleChoice = array => {
     t = array[m]
     array[m] = array[i]
     array[i] = t
-  }
+  };
 
-  return array
-}
+  return array;
+};

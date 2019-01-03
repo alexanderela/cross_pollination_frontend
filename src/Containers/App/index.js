@@ -25,9 +25,11 @@ export class App extends Component {
 
   getCountry = async () => {
     const { usedCountries, setCurrentCountry, updateUsedCountries } = this.props
-    let randomNumber = Math.floor(Math.random() * (196 - 1) + 1);
-    const currentCountry = await Fetch.fetchCorrectCountry(randomNumber, usedCountries);
-    
+    let randomNumber = Math.floor(Math.random() * (196 - 1) + 1)
+    const currentCountry = await Fetch.fetchCorrectCountry(
+      randomNumber,
+      usedCountries
+    )
     setCurrentCountry(currentCountry)
     updateUsedCountries(currentCountry.name)
   }
@@ -53,10 +55,9 @@ export class App extends Component {
                 user={user}
               />
             } else {
-                return <Login />
+              return <Login />
             }
           }}/>
-
           <Route exact path='/account' render={() => {
             return <Account totalPoints={totalPoints} />
           }} />
@@ -76,7 +77,7 @@ export const mapDispatchToProps = (dispatch) => ({
   setCurrentCountry: country => dispatch(setCurrentCountry(country)),
   updateUsedCountries: country => dispatch(updateUsedCountries(country)),
   getCurrentCountry: (randomNumber, usedCountries) => dispatch(getCurrentCountry(randomNumber, usedCountries))
-})
+});
 
 App.propTypes = {
   user: PropTypes.object.isRequired,
@@ -88,4 +89,3 @@ App.propTypes = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-

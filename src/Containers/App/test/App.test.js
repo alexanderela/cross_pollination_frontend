@@ -1,22 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {App, mapStateToProps, mapDispatchToProps} from '../index';
-import { shallow, mount } from 'enzyme';
-import * as Fetch from '../../../utilities/Fetch';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { App, mapStateToProps, mapDispatchToProps } from '../index'
+import { shallow, mount } from 'enzyme'
+import * as Fetch from '../../../utilities/Fetch'
 import { setCurrentCountry } from '../../../actions/countryActions'
 import { updateUsedCountries } from '../../../actions/usedCountryActions'
 
-
 describe('App', () => {
-  let wrapper;
-  let mockNewPoints;
-  let mockUsedCountries;
-  let mockCountry;
-
+  let wrapper
+  let mockNewPoints
+  let mockUsedCountries
+  let mockCountry
 
   beforeEach(() => {
-    mockNewPoints = 3;
-  
+    mockNewPoints = 3
+
     mockUsedCountries = ['Mexico', 'Hungary', 'Ireland', 'Sweden']
 
     mockCountry = {
@@ -47,23 +45,24 @@ describe('App', () => {
   });
 
   it('should render like the snapshot', () => {
-    expect(wrapper).toMatchSnapshot();
-  });
+    expect(wrapper).toMatchSnapshot()
+  })
 
   describe('getCountry', () => {
     beforeEach(() => {
-      Fetch.fetchCorrectCountry = jest.fn()
-        .mockImplementation(() => {
-          return mockCountry
-        }
-      );
+      Fetch.fetchCorrectCountry = jest.fn().mockImplementation(() => {
+        return mockCountry
+      })
     })
 
     it('should call fetchCorrectCountry and return a country object', () => {
       wrapper.instance().getCountry()
 
       expect(Fetch.fetchCorrectCountry).toHaveBeenCalled()
-      expect(Fetch.fetchCorrectCountry).toHaveBeenCalledWith(79, mockUsedCountries)
+      expect(Fetch.fetchCorrectCountry).toHaveBeenCalledWith(
+        79,
+        mockUsedCountries
+      )
       expect(Fetch.fetchCorrectCountry).toHaveReturnedWith(mockCountry)
     })
 
@@ -83,66 +82,56 @@ describe('App', () => {
 
     //   spy.mockRestore();
     // })
-  })
+  });
 
   describe('compilePoints', () => {
     it('should set points to state', () => {
-      expect(wrapper.state().totalPoints).toEqual(0);
-      wrapper.instance().compilePoints(mockNewPoints);
-      expect(wrapper.state().totalPoints).toEqual(3);
-    });
-  });
+      expect(wrapper.state().totalPoints).toEqual(0)
+      wrapper.instance().compilePoints(mockNewPoints)
+      expect(wrapper.state().totalPoints).toEqual(3)
+    })
+  })
 
   describe('mapStateToProps', () => {
     let mockState = {
-      user: {user: 'Bob', email: "bob@bob.com"},
+      user: { user: 'Bob', email: 'bob@bob.com' },
       currentCountry: {
-        "id": 79,
-        "name": "Turkmenistan",
-        "flag": "/images/flags/turkmenistan.png",
-        "country_outline": "/images/outlines/turkmenistan.png",
-        "multipleChoice": [
-          "France",
-          "Nigeria",
-          "Turkmenistan",
-          "Japan"
-        ]
+        id: 79,
+        name: 'Turkmenistan',
+        flag: '/images/flags/turkmenistan.png',
+        country_outline: '/images/outlines/turkmenistan.png',
+        multipleChoice: ['France', 'Nigeria', 'Turkmenistan', 'Japan'],
       },
       usedCountries: ['Mexico', 'Hungary', 'Ireland', 'Sweden'],
     }
 
     it('should return a user in the props object', () => {
-      const expected = {user: 'Bob', email: "bob@bob.com"}
-        
+      const expected = { user: 'Bob', email: 'bob@bob.com' }
+
       const mappedProps = mapStateToProps(mockState)
       expect(mappedProps.user).toEqual(expected)
-    });
+    })
 
-    it("should return a currentCountry in the props object", () => {
+    it('should return a currentCountry in the props object', () => {
       const expected = {
-        "id": 79,
-        "name": "Turkmenistan",
-        "flag": "/images/flags/turkmenistan.png",
-        "country_outline": "/images/outlines/turkmenistan.png",
-        "multipleChoice": [
-          "France",
-          "Nigeria",
-          "Turkmenistan",
-          "Japan"
-        ]
+        id: 79,
+        name: 'Turkmenistan',
+        flag: '/images/flags/turkmenistan.png',
+        country_outline: '/images/outlines/turkmenistan.png',
+        multipleChoice: ['France', 'Nigeria', 'Turkmenistan', 'Japan'],
       }
-        
+
       const mappedProps = mapStateToProps(mockState)
       expect(mappedProps.currentCountry).toEqual(expected)
     })
-    it("should return a usedCountries array in the props object", () => {
+    it('should return a usedCountries array in the props object', () => {
       const expected = ['Mexico', 'Hungary', 'Ireland', 'Sweden']
-        
+
       const mappedProps = mapStateToProps(mockState)
       expect(mappedProps.usedCountries).toEqual(expected)
     })
-  });
-  
+  })
+
   describe('mapDispatchToProps', () => {
     const mockDispatch = jest.fn()
 
@@ -163,6 +152,5 @@ describe('App', () => {
 
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
-  });
-});
-
+  })
+})

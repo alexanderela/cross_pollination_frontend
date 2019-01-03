@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import './Game.scss';
 import Hint from '../../Components/Hint';
 import Results from '../../Components/Results';
@@ -168,9 +168,7 @@ export const mapStateToProps = ({ currentCountry }) => ({
   currentCountry    
 });
 
-export const mapDispatchToProps = (dispatch) => ({
-
-})
+export const mapDispatchToProps = (dispatch) => ({});
 
 Game.propTypes = {
   user: PropTypes.object.isRequired,

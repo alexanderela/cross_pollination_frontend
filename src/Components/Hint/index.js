@@ -9,7 +9,7 @@ class Hint extends Component {
   }
 
   getCountryOutlinePath = () => {
-    const { outline } = this.props;
+    const { outline } = this.props
     const outlineUrl = `https://flagz4u.herokuapp.com${outline}`
     return outlineUrl
   }
@@ -17,8 +17,8 @@ class Hint extends Component {
   showHint = () => {
     const { hint, fact } = this.props;
 
-    if(hint === 'fact') {
-      return <p className='hint-fact'>{fact}</p>
+    if (hint === 'fact') {
+      return <p className="hint-fact">{fact}</p>
     } else if (hint === 'outline') {
         const outline = this.getCountryOutlinePath()
         return <img src={outline} alt='Country Outline' className='hint-outline'/>
@@ -27,13 +27,12 @@ class Hint extends Component {
     }
   }
   render() {
-    return(
-      <div className='Hint'>
-        <p className='hint-title'>Hint</p>
+    return (
+      <div className="Hint">
+        <p className="hint-title">Hint</p>
         {this.showHint()}
-        <div 
-          className='button hint-continue' 
-          onClick={this.handleClick}>Continue
+        <div className="button hint-continue" onClick={this.handleClick}>
+          Continue
         </div>
       </div>
     )
