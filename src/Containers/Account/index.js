@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
 import { signOut } from '../../actions/userActions';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import './Account.scss';
-import PropTypes from 'prop-types';
 
 class Account extends Component {
   constructor(){
@@ -55,6 +54,9 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 Account.propTypes = {
+  user: PropTypes.object.isRequired,
+  signOut: PropTypes.function.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps) (Account);
+
