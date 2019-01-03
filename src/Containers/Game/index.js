@@ -149,7 +149,7 @@ export class Game extends Component {
           <img src={flagImage} alt='' className='flag-image'/>
         </div>
         <div className='hint-button' onClick={this.giveHint}>
-          Hints: 2
+          Hints: {this.state.pointsPossible-1}
         </div>
         
         { choiceButtons }
