@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import { signOut } from '../../actions/userActions';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import './Account.scss';
 
 class Account extends Component {
