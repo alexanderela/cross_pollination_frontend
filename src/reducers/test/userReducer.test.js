@@ -4,7 +4,8 @@ describe('userReducer', () => {
   const defaultState = {
     id: null,
     loggedIn: false,
-    name: ''
+    name: '',
+    email: ''
   }
 
   it('should return default state when no type is given', () => {
@@ -29,7 +30,8 @@ describe('userReducer', () => {
     const expected = {
       id: 1,
       loggedIn: true,
-      name: 'Bruce'
+      name: 'Bruce',
+      email: 'email@email.com'
     }
     const newState = userReducer(undefined, mockAction);
     expect(newState).toEqual(expected);

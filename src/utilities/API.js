@@ -42,8 +42,8 @@ export const getUser = async (email, password, id, username) => {
         'Content-Type': 'application/json',
       },
     })
-    const result = await response.json()
-    const user = { id: result[0].id, name: result[0].username }
+    const result = await response.json();
+    const user = {id: result[0].id, name: result[0].username, email: result[0].email }
     return user
   } catch (error) {
     throw new Error()
