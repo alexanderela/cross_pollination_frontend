@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Game.scss';
 import Hint from '../../Components/Hint';
 import Results from '../../Components/Results';
-import Login from '../Login'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -36,7 +35,6 @@ export class Game extends Component {
 
   giveHint = () => {
     let { hintsUsed, pointsPossible } = this.state;
-    const { outline, questions } = this.props.currentCountry;
 
     this.setState({ showHint: true });
     
@@ -53,6 +51,8 @@ export class Game extends Component {
           hintsExhausted: true,
         })
         break;
+      default:
+        console.log('Sorry, we are out of hints');
     }
 
     this.setState({

@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Game from '../Game';
 import Account from '../Account';
 import Login from '../Login';
 import './App.scss';
-import mockData from '../../mockData/mockData';
 import * as Fetch from '../../utilities/Fetch';
 import { connect } from 'react-redux';
 import { setCurrentCountry } from '../../actions/countryActions';
 import { updateUsedCountries } from '../../actions/usedCountryActions';
-import countryNames from '../../utilities/countryNames';
 import { getCurrentCountry } from '../../Thunks/countries.js';
 import PropTypes from 'prop-types';
 
@@ -41,7 +39,7 @@ export class App extends Component {
   };
 
   render() {
-    const { totalPoints, countryOptions, correctCountry } = this.state;
+    const { totalPoints } = this.state;
     const { user } = this.props
     return (
       <div className='App'>

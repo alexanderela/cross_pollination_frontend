@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
 import './Hint.scss';
 import PropTypes from 'prop-types';
 
 class Hint extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   handleClick = () => {
     this.props.hideHint()
@@ -19,13 +15,13 @@ class Hint extends Component {
   }
 
   showHint = () => {
-    const { hint, outline, fact } = this.props;
+    const { hint, fact } = this.props;
 
     if(hint === 'fact') {
       return <p className='hint-fact'>{fact}</p>
     } else if (hint === 'outline') {
         const outline = this.getCountryOutlinePath()
-        return <img src={outline} className='hint-outline'/>
+        return <img src={outline} alt='Country Outline' className='hint-outline'/>
     } else if(hint === 'out of hints') {
         return <p className='hint-fact out-of-hints'>You are out of hints!</p>
     }

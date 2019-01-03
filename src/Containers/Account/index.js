@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Account.scss';
-import PropTypes from 'prop-types';
 
 class Account extends Component {
   changeRoute = () => {
@@ -34,9 +33,6 @@ class Account extends Component {
       </div>
     );
   }
-}
-
-Account.propTypes = {
 }
 
 export default Account;

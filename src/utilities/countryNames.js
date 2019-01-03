@@ -32,7 +32,7 @@ const countryNames = [
   'Cameroon',
   'Canada',
   'Cape Verde',
-  'Central African- Republic',
+  'Central African Republic',
   'Chad',
   'Chile',
   'China',
