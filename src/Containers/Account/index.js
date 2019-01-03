@@ -19,7 +19,6 @@ class Account extends Component {
 
   render() {
     const { user, totalPoints } = this.props
-    console.log(user)
     return (
       <div className='Account'>
         <div className='account-area'>
