@@ -4,7 +4,6 @@ import { signOut } from '../../actions/userActions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Account.scss';
-import { connect } from 'react-redux';
 
 class Account extends Component {
   changeRoute = () => {

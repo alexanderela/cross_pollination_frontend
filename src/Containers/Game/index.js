@@ -1,30 +1,10 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import './Game.scss';
-import Hint from '../../Components/Hint';
-import Results from '../../Components/Results';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-=======
-import React, { Component } from 'react'
-import { Route, NavLink } from 'react-router-dom'
-import './Game.scss'
-import Hint from '../../Components/Hint'
-import Results from '../../Components/Results'
-import Login from '../Login'
-import { connect } from 'react-redux'
->>>>>>> Add styling for Account and login placeholders
-=======
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import './Game.scss';
 import Hint from '../../Components/Hint';
 import Results from '../../Components/Results';
-import Login from '../Login'
 import { connect } from 'react-redux';
->>>>>>> Add styling and logic to Axxount component
+import PropTypes from 'prop-types';
 
 export class Game extends Component {
   constructor(props) {
@@ -54,13 +34,7 @@ export class Game extends Component {
   }
 
   giveHint = () => {
-<<<<<<< HEAD
-<<<<<<< HEAD
     let { hintsUsed, pointsPossible } = this.state;
-=======
-    let { hintsUsed, pointsPossible } = this.state;
-    const { outline, questions } = this.props.currentCountry;
->>>>>>> Add styling and logic to Axxount component
 
     this.setState({ showHint: true });
     
@@ -72,39 +46,13 @@ export class Game extends Component {
         this.setState({ hint: 'outline'});
         break;     
       case (hintsUsed >= 2):
-<<<<<<< HEAD
-=======
-    let { hintsUsed, pointsPossible } = this.state
-    const { outline, questions } = this.props.currentCountry
-
-    this.setState({ showHint: true })
-
-    switch (true) {
-      case hintsUsed === 0:
-        this.setState({ hint: 'fact' })
-        break
-      case hintsUsed === 1:
-        this.setState({ hint: 'outline' })
-        break
-      case hintsUsed >= 2:
->>>>>>> Add styling for Account and login placeholders
-=======
->>>>>>> Add styling and logic to Axxount component
         this.setState({
           hint: 'out of hints',
           hintsExhausted: true,
         })
-<<<<<<< HEAD
-<<<<<<< HEAD
         break;
       default:
         console.log('Sorry, we are out of hints');
-=======
-        break
->>>>>>> Add styling for Account and login placeholders
-=======
-        break;
->>>>>>> Add styling and logic to Axxount component
     }
 
     this.setState({
@@ -220,10 +168,8 @@ export const mapStateToProps = ({ currentCountry }) => ({
   currentCountry    
 });
 
-export const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({});
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Game.propTypes = {
   user: PropTypes.object.isRequired,
   currentCountry: PropTypes.object.isRequired,
@@ -232,16 +178,3 @@ Game.propTypes = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
-=======
-export const mapDispatchToProps = dispatch => ({})
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Game)
->>>>>>> Add styling for Account and login placeholders
-=======
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Game);
->>>>>>> Add styling and logic to Axxount component

@@ -1,20 +1,9 @@
-<<<<<<< HEAD
 import React, { Component } from 'react';
 import './Results.scss';
 import PropTypes from 'prop-types';
 
 
 class Results extends Component {
-=======
-import React, { Component } from 'react'
-import { Route, NavLink } from 'react-router-dom'
-import './Results.scss'
-
-class Results extends Component {
-  constructor(props) {
-    super(props)
-  }
->>>>>>> Add styling for Account and login placeholders
 
   handleClick = () => {
     const { getCountry, closeResults } = this.props
@@ -45,7 +34,6 @@ class Results extends Component {
   }
 }
 
-<<<<<<< HEAD
 Results.propTypes = {
   getCountry: PropTypes.func.isRequired,
   closeResults: PropTypes.func.isRequired,
@@ -56,6 +44,3 @@ Results.propTypes = {
 }
 
 export default Results;
-=======
-export default Results
->>>>>>> Add styling for Account and login placeholders
