@@ -35,6 +35,10 @@ class Results extends Component {
 Results.propTypes = {
   getCountry: PropTypes.func.isRequired,
   closeResults: PropTypes.func.isRequired,
+  status: PropTypes.string.isRequired,
+  correctCountry: PropTypes.string.isRequired,
+  points: PropTypes.number.isRequired,
+  totalPoints: PropTypes.number.isRequired,
 }
 
 export default Results;
