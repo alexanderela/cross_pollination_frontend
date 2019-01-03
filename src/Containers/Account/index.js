@@ -18,7 +18,7 @@ class Account extends Component {
   }
 
   render() {
-    const { user } = this.props
+    const { user, totalPoints } = this.props
     console.log(user)
     return (
       <div className='Account'>
@@ -33,7 +33,7 @@ class Account extends Component {
           <p className='profile-name'>{user.name}</p>
           <div className='points-container'>
             <div className='points-label'>points</div>
-            <div className='points-number'>25</div>
+            <div className='points-number'>{totalPoints}</div>
           </div>
           <div className='account-data'>
             <div className='email-label'>email</div>
