@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
+import { successfulLogin } from '../../actions/userActions';
+import { connect } from 'react-redux';
 import './Account.scss';
 import PropTypes from 'prop-types';
 
 class Account extends Component {
+  constructor(){
+    super()
+  }
   changeRoute = () => {
     this.forceUpdate();
+  }
+
+  logoutUser = () => {
+    this.props.successfulLogin({});
   }
 
   render() {
