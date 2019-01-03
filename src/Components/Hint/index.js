@@ -43,4 +43,11 @@ class Hint extends Component {
   }
 }
 
+Hint.propTypes = {
+  hint: PropTypes.string.isRequired,
+  outline: PropTypes.string.isRequired,
+  fact: PropTypes.string.isRequired,
+  hideHint: PropTypes.func.isRequired,
+}
+
 export default Hint;
