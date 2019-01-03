@@ -37,11 +37,18 @@ export class Game extends Component {
     let { hintsUsed, pointsPossible } = this.state;
 
     if (hintsUsed === 2) {
+      this.giveHintSwitch();
       return;
     }
-
+    
     this.setState({ showHint: true });
     
+    this.giveHintSwitch();
+  }
+  
+  giveHintSwitch = () => {
+    let { hintsUsed, pointsPossible } = this.state;
+
     switch(true) {
       case (hintsUsed === 0):
         this.setState({ hint: 'fact' });
@@ -55,8 +62,6 @@ export class Game extends Component {
           hintsExhausted: true,
         })
         break;
-      default:
-        console.log('Sorry, we are out of hints');
     }
 
     this.setState({
@@ -118,7 +123,7 @@ export class Game extends Component {
     const choiceButtons = this.showButtons();
     const flagImage = this.getCountryFlagPath();
 
-    const { pointsPossible, showHint, hint, hintsUsed, hintsExhausted, totalPoints, status } = this.state;
+    const { pointsPossible, showHint, hint, hintsUsed, totalPoints, status } = this.state;
     const { getCountry, user } = this.props;   
     const { name, facts, country_outline } = this.props.currentCountry;
 
