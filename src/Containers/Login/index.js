@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
-import * as API from '../../utilities/API';
 import { connect } from 'react-redux';
 import { fetchUser } from '../../Thunks/user';
 import './Login.scss';
@@ -160,7 +158,7 @@ export const mapDispatchToProps = (dispatch) => ({
 
 Login.propTypes = {
   user: PropTypes.object.isRequired,
-  loading: PropTypes.bool.isRequired,
+  loading: PropTypes.string.isRequired,
   fetchUser: PropTypes.func.isRequired,
 }
 

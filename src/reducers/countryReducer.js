@@ -4,5 +4,5 @@ export const countryReducer = (state = {}, action) => {
       return action.country;
     default: 
       return state;
-  };
+  }
 };

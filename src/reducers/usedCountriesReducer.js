@@ -4,5 +4,5 @@ export const usedCountriesReducer = (state = [], action) => {
       return [...state, action.country];
     default: 
       return state;
-  };
+  }
 };
