@@ -63,6 +63,7 @@ class Login extends Component {
 
   handleSubmit = async (event) => {
     await this.loginUser(event)
+    this.clearInputs()
   }
 
   clearInputs = () => {
@@ -121,6 +122,7 @@ class Login extends Component {
                   <div className='login-input-placeholder name-placeholder'>name</div>
                 </div>
               }
+              <h4 className='error'>{showError}</h4>
               <input 
                 className='login-input login-email' 
                 value={email} 
