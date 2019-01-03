@@ -28,6 +28,7 @@ export const buildQuestion = (correctCountry, countryFacts) => {
 }
 
 export const getRandomOptions = correctCountry => {
+
   const optionA = countryNames[Math.floor(Math.random() * 193)]
   const optionB = countryNames[Math.floor(Math.random() * 193)]
   const optionC = countryNames[Math.floor(Math.random() * 193)]
