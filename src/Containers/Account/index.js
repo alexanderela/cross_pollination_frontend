@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
-import { successfulLogin } from '../../actions/userActions';
+import { signOut } from '../../actions/userActions';
 import { connect } from 'react-redux';
 import './Account.scss';
 import PropTypes from 'prop-types';
@@ -14,15 +14,16 @@ class Account extends Component {
   }
 
   logoutUser = () => {
-    this.props.successfulLogin({});
+    this.props.signOut({});
   }
 
   render() {
+    const { user } = this.props
     return (
       <div className='Account'>
         <div className='account-area'>
           <NavLink to='/' onClick={this.changeRoute} className='back-button'></NavLink>
-          <div className='account-logout'>log out</div>
+          <div className='account-logout' onClick={this.logoutUser} >log out</div>
         </div>
         <div className='profile-image-container'>
           {/* <img alt='' className='profile-image' /> */}
@@ -45,7 +46,15 @@ class Account extends Component {
   }
 }
 
+export const mapStateToProps = (state) => ({
+  user: state.user
+})
+
+export const mapDispatchToProps = (dispatch) => ({
+  signOut: (user) => dispatch(signOut(user))
+})
+
 Account.propTypes = {
 }
 
-export default Account;
+export default connect(mapStateToProps, mapDispatchToProps) (Account);
