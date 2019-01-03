@@ -95,7 +95,7 @@ describe('App', () => {
 
   describe('mapStateToProps', () => {
     let mockState = {
-      user: {user: 'Bob', email: "bob@bob.com"},
+      user: {id: 2, user: 'Bob', email: "bob@bob.com", loggedIn: true},
       currentCountry: {
         "id": 79,
         "name": "Turkmenistan",
@@ -112,7 +112,7 @@ describe('App', () => {
     }
 
     it('should return a user in the props object', () => {
-      const expected = {user: 'Bob', email: "bob@bob.com"}
+      const expected = {id: 2, user: 'Bob', email: "bob@bob.com", loggedIn: true}
         
       const mappedProps = mapStateToProps(mockState)
       expect(mappedProps.user).toEqual(expected)

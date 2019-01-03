@@ -72,6 +72,10 @@ describe('Login', () => {
 
   describe('mapStateToProps', () => {
     it('should create the correct props object', () => {
+      let mockState = {
+        {user: id: 2, user: 'Bob', email: "bob@bob.com", loggedIn: true},
+        loading: 'resolved'
+      }
     });
 
   });
@@ -84,5 +88,3 @@ describe('Login', () => {
     });
   });
 });
-
-it('should', () => {});

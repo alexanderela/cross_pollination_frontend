@@ -158,9 +158,9 @@ class Login extends Component {
   }
 }
 
-export const mapStateToProps = (state) => ({
-  user: state.user,
-  loading: state.loading
+export const mapStateToProps = ({ user, loading }) => ({
+  user: user,
+  loading: loading
 })
 
 export const mapDispatchToProps = (dispatch) => ({
