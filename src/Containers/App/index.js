@@ -11,12 +11,13 @@ import { setCurrentCountry } from '../../actions/countryActions';
 import { updateUsedCountries } from '../../actions/usedCountryActions';
 import countryNames from '../../utilities/countryNames';
 import { getCurrentCountry } from '../../Thunks/countries.js';
+import PropTypes from 'prop-types';
+
 // import allCountries from '../../utilities/allCountriesImagesObject.js'
 
 export class App extends Component {
   constructor() {
     super();
-//i'd argue that we don't need any of this state if we are going to have redux
     this.state = {
       totalPoints: 0
     };
@@ -29,7 +30,7 @@ export class App extends Component {
   getCountry = async () => {
     const { usedCountries, setCurrentCountry, updateUsedCountries } = this.props
     let randomNumber = Math.floor(Math.random() * (196 - 1) + 1);
-    const currentCountry = await Fetch.fetchCorrectCountry(randomNumber, usedCountries); //sending this array to use in a check
+    const currentCountry = await Fetch.fetchCorrectCountry(randomNumber, usedCountries);
     
     setCurrentCountry(currentCountry)
     updateUsedCountries(currentCountry.name)
@@ -81,6 +82,15 @@ export const mapDispatchToProps = (dispatch) => ({
   updateUsedCountries: country => dispatch(updateUsedCountries(country)),
   getCurrentCountry: (randomNumber, usedCountries) => dispatch(getCurrentCountry(randomNumber, usedCountries))
 })
+
+App.propTypes = {
+  user: PropTypes.object.isRequired,
+  currentCountry: PropTypes.object.isRequired,
+  usedCountries: PropTypes.array.isRequired,
+  setCurrentCountry: PropTypes.func.isRequired,
+  updateUsedCountries: PropTypes.func.isRequired,
+  getCurrentCountry: PropTypes.func.isRequired,
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
