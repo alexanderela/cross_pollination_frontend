@@ -29,7 +29,9 @@ class Account extends Component {
       <div className='Account'>
         <div className='account-area'>
           <NavLink to='/' onClick={this.changeRoute} className='back-button'></NavLink>
-          <div className='account-logout' onClick={this.logoutUser} >log out</div>
+          <NavLink className='account-logout' to='/' onClick={this.logoutUser}>
+            <div className='account-logout' >log out</div>
+          </NavLink>
         </div>
         <div className='profile-image-container'>
           {/* <img alt='' className='profile-image' /> */}

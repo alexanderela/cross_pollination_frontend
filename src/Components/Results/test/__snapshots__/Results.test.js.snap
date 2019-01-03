@@ -41,10 +41,10 @@ ShallowWrapper {
           className="points-gained"
         >
           <strong>
-            +
-            3
+            + 3
           </strong>
-           pts
+           
+          pts
         </p>,
         <div
           className="results-divider"
@@ -111,10 +111,10 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <strong>
-              +
-              3
+              + 3
             </strong>,
-            " pts",
+            " ",
+            "pts",
           ],
           "className": "points-gained",
         },
@@ -125,19 +125,14 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": Array [
-                "+",
-                3,
-              ],
+              "children": "+ 3",
             },
             "ref": null,
-            "rendered": Array [
-              "+",
-              3,
-            ],
+            "rendered": "+ 3",
             "type": "strong",
           },
-          " pts",
+          " ",
+          "pts",
         ],
         "type": "p",
       },
@@ -214,10 +209,10 @@ ShallowWrapper {
             className="points-gained"
           >
             <strong>
-              +
-              3
+              + 3
             </strong>
-             pts
+             
+            pts
           </p>,
           <div
             className="results-divider"
@@ -284,10 +279,10 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <strong>
-                +
-                3
+                + 3
               </strong>,
-              " pts",
+              " ",
+              "pts",
             ],
             "className": "points-gained",
           },
@@ -298,19 +293,14 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  "+",
-                  3,
-                ],
+                "children": "+ 3",
               },
               "ref": null,
-              "rendered": Array [
-                "+",
-                3,
-              ],
+              "rendered": "+ 3",
               "type": "strong",
             },
-            " pts",
+            " ",
+            "pts",
           ],
           "type": "p",
         },
