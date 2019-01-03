@@ -1,4 +1,4 @@
-import countryNames from './countryNames' 
+import countryNames from './countryNames'
 
 export const checkCountry = (country, usedCountries) => {
   if (usedCountries.includes(country)) {
@@ -18,17 +18,28 @@ export const buildQuestion = (correctCountry, countryFacts) => {
   checkOptions(correctCountry.name, questionOptions)
   const multipleChoices = [...questionOptions, correctCountry.name]
   const flagOptions = shuffleMultipleChoice(multipleChoices)
-  let country = {...correctCountry, multipleChoice: flagOptions, facts: countryFacts[0]}
-
+  let country = {
+    ...correctCountry,
+    multipleChoice: flagOptions,
+    facts: countryFacts[0],
+  }
   return country
 }
 
 export const getRandomOptions = (correctCountry) => {
+
   const optionA = countryNames[Math.floor(Math.random() * 193)]
   const optionB = countryNames[Math.floor(Math.random() * 193)]
   const optionC = countryNames[Math.floor(Math.random() * 193)]
-  
-  if (optionA === optionB || optionA === optionC || optionB === optionC || optionA === correctCountry || optionB === correctCountry || optionC === correctCountry){
+
+  if (
+    optionA === optionB ||
+    optionA === optionC ||
+    optionB === optionC ||
+    optionA === correctCountry ||
+    optionB === correctCountry ||
+    optionC === correctCountry
+  ) {
     return getRandomOptions(correctCountry)
   } else {
     const countryOptionsPrelim = [optionA, optionB, optionC]
@@ -44,15 +55,17 @@ export const checkOptions = (countryName, questionOptions) => {
   }
 }
 
-export const shuffleMultipleChoice = (array) => {
-  let m = array.length, t, i;
+export const shuffleMultipleChoice = array => {
+  let m = array.length,
+    t,
+    i
 
   while (m) {
-    i = Math.floor(Math.random() * m--);
-    t = array[m];
-    array[m] = array[i];
-    array[i] = t;
+    i = Math.floor(Math.random() * m--)
+    t = array[m]
+    array[m] = array[i]
+    array[i] = t
   }
 
-  return array;
+  return array
 }

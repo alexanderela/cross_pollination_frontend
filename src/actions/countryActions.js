@@ -1,8 +1,6 @@
-export const setCurrentCountry = (country) => {
+export const setCurrentCountry = country => {
   return {
     type: 'SET_CURRENT_COUNTRY',
-    country
+    country,
   }
-};
-
-
+}

@@ -11,8 +11,6 @@ import { updateUsedCountries } from '../../actions/usedCountryActions';
 import { getCurrentCountry } from '../../Thunks/countries.js';
 import PropTypes from 'prop-types';
 
-// import allCountries from '../../utilities/allCountriesImagesObject.js'
-
 export class App extends Component {
   constructor() {
     super();
