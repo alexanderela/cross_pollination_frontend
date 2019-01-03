@@ -4,6 +4,8 @@ import * as API from '../../utilities/API';
 import { connect } from 'react-redux';
 import { fetchUser } from '../../Thunks/user';
 import './Login.scss';
+import PropTypes from 'prop-types';
+
 // import city1 from '../../images/intros/b.png'
 
 class Login extends Component {
@@ -155,5 +157,11 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = (dispatch) => ({
   fetchUser:(name, email, password) => dispatch(fetchUser(name, email, password))
 })
+
+Login.propTypes = {
+  user: PropTypes.object.isRequired,
+  loading: PropTypes.bool.isRequired,
+  fetchUser: PropTypes.func.isRequired,
+}
 
 export default connect (mapStateToProps, mapDispatchToProps)(Login);

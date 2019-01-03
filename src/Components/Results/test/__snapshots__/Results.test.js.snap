@@ -8,6 +8,7 @@ ShallowWrapper {
     correctCountry="The Netherlands"
     getCountry={[MockFunction]}
     points={3}
+    status=""
     totalPoints={8}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -27,6 +28,7 @@ ShallowWrapper {
         <p
           className="results-title"
         >
+          
           !
         </p>,
         <p
@@ -72,14 +74,14 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            undefined,
+            "",
             "!",
           ],
           "className": "results-title",
         },
         "ref": null,
         "rendered": Array [
-          undefined,
+          "",
           "!",
         ],
         "type": "p",
@@ -199,6 +201,7 @@ ShallowWrapper {
           <p
             className="results-title"
           >
+            
             !
           </p>,
           <p
@@ -244,14 +247,14 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              undefined,
+              "",
               "!",
             ],
             "className": "results-title",
           },
           "ref": null,
           "rendered": Array [
-            undefined,
+            "",
             "!",
           ],
           "type": "p",

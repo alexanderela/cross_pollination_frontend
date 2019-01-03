@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import './Results.scss';
+import PropTypes from 'prop-types';
+
 
 class Results extends Component {
   constructor(props) {
@@ -28,6 +30,15 @@ class Results extends Component {
       </div>
     );
   }
+}
+
+Results.propTypes = {
+  getCountry: PropTypes.func.isRequired,
+  closeResults: PropTypes.func.isRequired,
+  status: PropTypes.string.isRequired,
+  correctCountry: PropTypes.string.isRequired,
+  points: PropTypes.number.isRequired,
+  totalPoints: PropTypes.number.isRequired,
 }
 
 export default Results;

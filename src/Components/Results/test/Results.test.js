@@ -5,7 +5,7 @@ import Results from '../index';
 describe('Results', () => {
   let wrapper;
   let mockCorrectCountry;
-  let status;
+  let mockStatus;
 
   beforeEach(() => {
     mockCorrectCountry = {
@@ -30,8 +30,10 @@ describe('Results', () => {
                             }
                           };
 
+    mockStatus = ''
+
     wrapper = shallow(<Results             
-                        status={status}
+                        status={mockStatus}
                         closeResults={jest.fn()}
                         correctCountry={mockCorrectCountry.name}
                         points={3}
