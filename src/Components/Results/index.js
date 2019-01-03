@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import './Results.scss';
+import PropTypes from 'prop-types';
+
 
 class Results extends Component {
   constructor(props) {
@@ -28,6 +30,11 @@ class Results extends Component {
       </div>
     );
   }
+}
+
+Results.propTypes = {
+  getCountry: PropTypes.func.isRequired,
+  closeResults: PropTypes.func.isRequired,
 }
 
 export default Results;
