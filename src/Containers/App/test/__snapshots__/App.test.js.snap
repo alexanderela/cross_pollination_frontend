@@ -20,6 +20,7 @@ ShallowWrapper {
         "updated_at": "2018-12-23T16:48:16.005Z",
       }
     }
+    getCurrentCountry={[MockFunction]}
     setCurrentCountry={[MockFunction]}
     updateUsedCountries={[MockFunction]}
     usedCountries={
