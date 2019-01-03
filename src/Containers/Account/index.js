@@ -17,6 +17,7 @@ class Account extends Component {
   }
 
   logoutUser = () => {
+    localStorage.clear()
     this.props.signOut({});
   }
 
