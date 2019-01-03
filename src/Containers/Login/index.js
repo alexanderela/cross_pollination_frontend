@@ -17,7 +17,16 @@ class Login extends Component {
       error: '',
       emailCredentials: false,
       formLogin: true,
+      _isMounted: false
     }
+  }
+
+  componentDidMount() {
+    this._isMounted = true
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false
   }
 
   createUser = () => {
@@ -62,8 +71,12 @@ class Login extends Component {
   }
 
   handleSubmit = async (event) => {
-    await this.loginUser(event)
-    this.clearInputs()
+    const user = await this.loginUser(event)
+    if (this.state._isMounted === true) {
+      return user
+    } else {
+      return null
+    }
   }
 
   clearInputs = () => {
