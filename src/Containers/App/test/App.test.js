@@ -18,7 +18,6 @@ describe('App', () => {
     mockUsedCountries = ['Mexico', 'Hungary', 'Ireland', 'Sweden']
 
     mockCountry = {
-<<<<<<< HEAD
       "id": 79,
       "name": "Turkmenistan",
       "flag": "/images/flags/turkmenistan.png",
@@ -44,31 +43,6 @@ describe('App', () => {
 
     Math.random = jest.fn().mockImplementation(() => { return .4})
   });
-=======
-      id: 79,
-      name: 'Turkmenistan',
-      flag: '/images/flags/turkmenistan.png',
-      country_outline: '/images/outlines/turkmenistan.png',
-      created_at: '2018-12-23T16:48:16.005Z',
-      updated_at: '2018-12-23T16:48:16.005Z',
-      multipleChoice: ['France', 'Nigeria', 'Turkmenistan', 'Japan'],
-    }
-
-    wrapper = shallow(
-      <App
-        currentCountry={mockCountry}
-        user={{ id: 1, loggedIn: true }}
-        usedCountries={mockUsedCountries}
-        setCurrentCountry={jest.fn().mockImplementation(() => {})}
-        updateUsedCountries={jest.fn().mockImplementation(() => {})}
-      />
-    )
-
-    Math.random = jest.fn().mockImplementation(() => {
-      return 0.4
-    })
-  })
->>>>>>> Add styling for Account and login placeholders
 
   it('should render like the snapshot', () => {
     expect(wrapper).toMatchSnapshot()
@@ -108,7 +82,7 @@ describe('App', () => {
 
     //   spy.mockRestore();
     // })
-  })
+  });
 
   describe('compilePoints', () => {
     it('should set points to state', () => {

@@ -3,15 +3,9 @@ import { shallow, mount } from 'enzyme'
 import Results from '../index'
 
 describe('Results', () => {
-<<<<<<< HEAD
   let wrapper;
   let mockCorrectCountry;
   let mockStatus;
-=======
-  let wrapper
-  let mockCorrectCountry
-  let status
->>>>>>> Add styling for Account and login placeholders
 
   beforeEach(() => {
     mockCorrectCountry = {
@@ -30,23 +24,9 @@ describe('Results', () => {
         created_at: '2018-12-28T12:02:21.951Z',
         updated_at: '2018-12-28T12:02:21.951Z',
       },
-    }
-
-    wrapper = shallow(
-      <Results
-        status={status}
-        closeResults={jest.fn()}
-        correctCountry={mockCorrectCountry.name}
-        points={3}
-        totalPoints={8}
-        getCountry={jest.fn()}
-      />
-    )
-  })
-
-<<<<<<< HEAD
-    mockStatus = ''
-
+    };
+    mockStatus = '';
+  
     wrapper = shallow(<Results             
                         status={mockStatus}
                         closeResults={jest.fn()}
@@ -54,11 +34,10 @@ describe('Results', () => {
                         points={3}
                         totalPoints={8}
                         getCountry={jest.fn()}
-                      />)
+    />)
   });
+
   
-=======
->>>>>>> Add styling for Account and login placeholders
   describe('handleClick', () => {
     it('should render like the snapshot', () => {
       expect(wrapper).toMatchSnapshot()

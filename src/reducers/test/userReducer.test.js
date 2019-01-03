@@ -5,10 +5,7 @@ describe('userReducer', () => {
     id: null,
     loggedIn: false,
     name: '',
-<<<<<<< HEAD
     email: ''
-=======
->>>>>>> Add styling for Account and login placeholders
   }
 
   it('should return default state when no type is given', () => {
@@ -34,10 +31,7 @@ describe('userReducer', () => {
       id: 1,
       loggedIn: true,
       name: 'Bruce',
-<<<<<<< HEAD
       email: 'email@email.com'
-=======
->>>>>>> Add styling for Account and login placeholders
     }
     const newState = userReducer(undefined, mockAction)
     expect(newState).toEqual(expected)

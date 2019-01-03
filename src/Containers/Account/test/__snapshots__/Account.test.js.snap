@@ -3,7 +3,6 @@
 exports[`Account should render like the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-<<<<<<< HEAD
   Symbol(enzyme.__unrendered__): <Connect(Account)
     signOut={[MockFunction]}
     user={
@@ -12,9 +11,6 @@ ShallowWrapper {
       }
     }
   />,
-=======
-  Symbol(enzyme.__unrendered__): <Connect(Account) />,
->>>>>>> Add styling for Account and login placeholders
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
