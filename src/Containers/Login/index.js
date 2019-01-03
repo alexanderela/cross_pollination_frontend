@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import * as API from '../../utilities/API';
+import { connect } from 'react-redux';
+import { fetchUser } from '../../Thunks/user';
 import './Login.scss';
 // import city1 from '../../images/intros/b.png'
 
@@ -16,6 +18,20 @@ class Login extends Component {
       emailCredentials: false,
       formLogin: true,
     }
+  }
+
+  createUser = () => {
+    this.setState({createUser: !this.state.createUser});
+  }
+
+  loginUser = async (event) => {
+    const { createUser, name, email, password } = this.state;
+    const { fetchUser } = this.props;
+
+    event.preventDefault();
+    return createUser
+      ? fetchUser(null, email, password)
+      : fetchUser(name, email, password) 
   }
 
   handleChange = (e) => {
@@ -45,10 +61,9 @@ class Login extends Component {
     })
   }
 
-  // submitLogin = async (e) => {
-  //   e.preventDefault();
-  //   const { email, password } = this.state;
-  // };
+  handleSubmit = async (event) => {
+    await this.loginUser(event)
+  }
 
   clearInputs = () => {
     this.setState({
@@ -59,7 +74,12 @@ class Login extends Component {
   }
 ;
   render() {
-    const { emailCredentials, formLogin } = this.state;
+    const { emailCredentials, formLogin, name, email, password, error } = this.state;
+    const { loading } = this.props;
+    const showError = loading === `Email & password don't match` || loading === `Login to save score`
+      ? loading
+      : ''
+
     return (
       <div className='Login'>
         <div className='login-background-color'>
@@ -82,6 +102,7 @@ class Login extends Component {
             emailCredentials &&
             <form className='login-form'>
               <div className='form-instructions'>press return to submit</div>
+              <div className='login-error'>{error}</div>
               <div className='login-signup-slider' onClick={this.changeFormPurpose}>
                 <div className='form-slider-login'>login</div>
                 <div className={formLogin ? 'form-slider form-slider-left' : 'form-slider form-slider-right'}></div>
@@ -90,14 +111,31 @@ class Login extends Component {
               {
                 !formLogin &&
                 <div>
-                  <input className='login-input login-name' name='name' />
+                  <h4 className='error'>{showError}</h4>
+                  <input 
+                    className='login-input login-name' 
+                    value={name} 
+                    name='name' 
+                    onChange={this.handleChange}
+                  />
                   <div className='login-input-placeholder name-placeholder'>name</div>
                 </div>
               }
-              <input className='login-input login-email' name='email' />
+              <input 
+                className='login-input login-email' 
+                value={email} 
+                name='email' 
+                onChange={this.handleChange}
+              />
               <div className='login-input-placeholder email-placeholder'>email</div>
-              <input className='login-input login-password' name='password' />
+              <input 
+                className='login-input login-password' 
+                value={password} 
+                name='password' 
+                onChange={this.handleChange}
+              />
               <div className='login-input-placeholder password-placeholder'>password</div>
+              <button className='login-back' onClick={this.handleSubmit}>login</button>
               <button className='login-back' onClick={this.closeCredentials}>go back</button>
             </form>
           }
@@ -107,4 +145,13 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export const mapStateToProps = (state) => ({
+  user: state.user,
+  loading: state.loading
+})
+
+export const mapDispatchToProps = (dispatch) => ({
+  fetchUser:(name, email, password) => dispatch(fetchUser(name, email, password))
+})
+
+export default connect (mapStateToProps, mapDispatchToProps)(Login);

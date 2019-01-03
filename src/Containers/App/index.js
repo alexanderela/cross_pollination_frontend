@@ -42,21 +42,26 @@ export class App extends Component {
   };
 
   render() {
-    const { totalPoints } = this.state;
+    const { totalPoints, countryOptions, correctCountry} = this.state;
+    const { user } = this.props
+    
     return (
       <div className='App'>
         <Switch>
           <Route exact path='/' render={() => {
-            return <Game 
-                     compilePoints={this.compilePoints} 
-                      totalPoints={totalPoints}
-                      getCountry={this.getCountry}
-                    />
-          }} />
-          <Route path='/login' render={() => {
-            return <Login />
-          }} />
-          <Route path='/account' render={() => {
+            if(user.loggedIn) {
+              return <Game 
+                compilePoints={this.compilePoints} 
+                totalPoints={totalPoints}
+                getCountry={this.getCountry}
+                user={user}
+              />
+            } else {
+                return <Login />
+            }
+          }}/>
+
+          <Route exact path='/account' render={() => {
             return <Account totalPoints={totalPoints} />
           }} />
         </Switch>

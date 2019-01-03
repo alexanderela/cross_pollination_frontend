@@ -3,6 +3,7 @@ import { Route, NavLink } from 'react-router-dom';
 import './Game.scss';
 import Hint from '../../Components/Hint';
 import Results from '../../Components/Results';
+import Login from '../Login'
 import { connect } from 'react-redux';
 
 export class Game extends Component {
@@ -113,8 +114,9 @@ export class Game extends Component {
     const flagImage = this.getCountryFlagPath();
 
     const { pointsPossible, showHint, hint, totalPoints, status } = this.state;
-    const { getCountry } = this.props;   
+    const { getCountry, user } = this.props;   
     const { name, facts, country_outline } = this.props.currentCountry;
+
 
     return (
       <div className='Game'>
@@ -122,7 +124,10 @@ export class Game extends Component {
           <div className='account-area'>
             <div className='back-button-blank'>
             </div>
-            <NavLink className='account-text' exact to='/account' onClick={this.changeRoute}><h5 >Alex <strong>{totalPoints}</strong></h5></NavLink>
+            <NavLink className='account-text' exact to='/account' onClick={this.changeRoute}>
+              <h5 >{user.name} <strong>{totalPoints}</strong>
+              </h5>
+            </NavLink>
           </div>
         </div>
         <div className='flag-main'>
