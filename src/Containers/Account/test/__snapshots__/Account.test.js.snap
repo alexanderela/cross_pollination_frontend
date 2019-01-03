@@ -3,7 +3,14 @@
 exports[`Account should render like the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(Account) />,
+  Symbol(enzyme.__unrendered__): <Connect(Account)
+    signOut={[MockFunction]}
+    user={
+      Object {
+        "name": "doug",
+      }
+    }
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
