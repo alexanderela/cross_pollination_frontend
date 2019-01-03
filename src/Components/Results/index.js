@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
 import './Results.scss';
 import PropTypes from 'prop-types';
 
 
 class Results extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   handleClick = () => {
     const { getCountry, closeResults } = this.props;
