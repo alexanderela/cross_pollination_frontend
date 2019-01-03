@@ -36,6 +36,12 @@ h5 {
   width: 40%;
 }
 
+.hint-button-disabled {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  color: #11111D;
+  text-shadow: none;
+}
+
 .option-button {
   background: $btn-white;
 }
