@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import './Hint.scss';
+import PropTypes from 'prop-types';
 
 class Hint extends Component {
   constructor(props) {
