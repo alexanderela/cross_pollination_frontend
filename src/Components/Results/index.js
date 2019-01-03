@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
 
 class Results extends Component {
 
+  componentDidMount() {
+    console.log(this.props.status)
+  }
+
   handleClick = () => {
     const { getCountry, closeResults } = this.props
 
@@ -21,7 +25,7 @@ class Results extends Component {
           {correctCountry} was the correct answer
         </p>
         <p className="points-gained">
-          <strong>+{points}</strong> pts
+          <strong>{status === 'Wrong' ? 0 : `+ ${points}`}</strong> {points !== 1 ? 'pts' : 'pt'}
         </p>
         <div className="results-divider" />
         <p>Total</p>
