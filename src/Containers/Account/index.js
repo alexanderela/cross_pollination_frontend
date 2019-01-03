@@ -19,6 +19,7 @@ class Account extends Component {
 
   render() {
     const { user } = this.props
+    console.log(user)
     return (
       <div className='Account'>
         <div className='account-area'>
@@ -29,14 +30,14 @@ class Account extends Component {
           {/* <img alt='' className='profile-image' /> */}
         </div>
         <div className='user-data'>
-          <p className='profile-name'>Alex Ela</p>
+          <p className='profile-name'>{user.name}</p>
           <div className='points-container'>
             <div className='points-label'>points</div>
             <div className='points-number'>25</div>
           </div>
           <div className='account-data'>
             <div className='email-label'>email</div>
-            <div className='email-text'>email@email.com</div>
+            <div className='email-text'>{user.email}</div>
           </div>
           <div className='extra-data'>
           </div>
