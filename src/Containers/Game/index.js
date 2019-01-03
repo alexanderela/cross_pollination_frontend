@@ -49,8 +49,19 @@ export class Game extends Component {
   giveHint = () => {
     let { hintsUsed, pointsPossible } = this.state;
 
+    if (hintsUsed === 2) {
+      this.giveHintSwitch();
+      return;
+    }
+    
     this.setState({ showHint: true });
     
+    this.giveHintSwitch();
+  }
+  
+  giveHintSwitch = () => {
+    let { hintsUsed, pointsPossible } = this.state;
+
     switch(true) {
       case (hintsUsed === 0):
         this.setState({ hint: 'fact' });
@@ -64,8 +75,6 @@ export class Game extends Component {
           hintsExhausted: true,
         })
         break;
-      default:
-        console.log('Sorry, we are out of hints');
     }
 
     this.setState({
@@ -117,7 +126,7 @@ export class Game extends Component {
  getCountryFlagPath = () => {
     const { flag } = this.props.currentCountry;
     const flagUrl = `https://flagz4u.herokuapp.com${flag}`
-    return flagUrl
+    return flagUrl;
   }
 
   changeRoute = () => {
@@ -128,7 +137,7 @@ export class Game extends Component {
     const choiceButtons = this.showButtons();
     const flagImage = this.getCountryFlagPath();
 
-    const { pointsPossible, showHint, hint, totalPoints, status } = this.state;
+    const { pointsPossible, showHint, hint, hintsUsed, totalPoints, status } = this.state;
     const { getCountry, user } = this.props;   
     const { name, facts, country_outline } = this.props.currentCountry;
 
@@ -148,8 +157,8 @@ export class Game extends Component {
         <div className='flag-main'>
           <img src={flagImage} alt='' className='flag-image'/>
         </div>
-        <div className='hint-button' onClick={this.giveHint}>
-          Hints: 2
+        <div className={hintsUsed < 2 ? 'hint-button' : 'hint-button hint-button-disabled'} onClick={this.giveHint}>
+          {hintsUsed < 2 ? `hints: ${2 - hintsUsed}` : 'no more hints'}
         </div>
         
         { choiceButtons }
