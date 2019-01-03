@@ -1,14 +1,14 @@
-export const successfulLogin = (user) => ({
+export const successfulLogin = user => ({
   type: 'SUCCESSFUL_LOGIN',
   id: user.id,
-  user: user
-});
+  user: user,
+})
 
 export const signOut = () => ({
-  type: 'SIGN_OUT'
-});
+  type: 'SIGN_OUT',
+})
 
-export const contentStatus = (string) => ({
+export const contentStatus = string => ({
   type: 'CONTENT_STATUS',
-  status: string
+  status: string,
 })

@@ -1,4 +1,5 @@
-const countryNames = [ 'Afghanistan',
+const countryNames = [
+  'Afghanistan',
   'Albania',
   'Algeria',
   'Andorra',
@@ -194,6 +195,7 @@ const countryNames = [ 'Afghanistan',
   'Vietnam',
   'Yemen',
   'Zambia',
-  'Zimbabwe' ]
+  'Zimbabwe',
+]
 
-export default countryNames;
+export default countryNames

@@ -4,8 +4,6 @@ import { fetchUser } from '../../Thunks/user';
 import './Login.scss';
 import PropTypes from 'prop-types';
 
-// import city1 from '../../images/intros/b.png'
-
 class Login extends Component {
   constructor() {
     super();
