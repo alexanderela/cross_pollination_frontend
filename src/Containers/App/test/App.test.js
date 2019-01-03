@@ -40,6 +40,7 @@ describe('App', () => {
                         usedCountries={mockUsedCountries}
                         setCurrentCountry = {jest.fn().mockImplementation(() => {})}
                         updateUsedCountries = {jest.fn().mockImplementation(() => {})}
+                        getCurrentCountry = {jest.fn().mockImplementation(() => {})}
                       />)
 
     Math.random = jest.fn().mockImplementation(() => { return .4})
