@@ -144,7 +144,6 @@ describe('Login', () => {
       const mappedProps = mapStateToProps(mockState)
       expect(mappedProps).toEqual(expected)
     });
-
   });
   
   describe('mapDispatchToProps', () => {
