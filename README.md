@@ -14,16 +14,16 @@ As users correctly guess different flags, they will accumulate points.  In this 
 
 ## Images
 ### Main Game Page
-![Main Game Page image](./src/images/app-images/main-game.png "Main Game Page")
+![Main Game Page image](./src/images/app/main.png "Main Game Page")
 
 ### Landing Page
-![Landing Page image](./src/images/app-images/landing.png "Landing Page")
+![Landing Page image](./src/images/app/landing.png "Landing Page")
 
 ### Login Page
-![Login Page image](./src/images/app-images/login.png "Login Page")
+![Login Page image](./src/images/app/login.png "Login Page")
 
 ### Account Page
-![Account Page image](./src/images/app-images/account.png "Account Page")
+![Account Page image](./src/images/app/account.png "Account Page")
 
 ## How to Use
 World of Flags on Heroku: [https://flagz4u-frontend.herokuapp.com/](https://flagz4u-frontend.herokuapp.com/).
