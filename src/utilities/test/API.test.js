@@ -98,12 +98,11 @@ describe('API', () => {
       )
     })
 
-    it.skip('should call fetch on path /api/signin', () => {
-      const { email, password, id, username } = mockUser
+    it('should call fetch on path /api/signin with correct params', () => {
+      const expected = {"body": "{\"email\":\"https://flagz4u.herokuapp.com/signin\"}", "headers": {"Content-Type": "application/json"}, "method": "POST"}
       const url = 'https://flagz4u.herokuapp.com/signin'
-      const expected = 'https://flagz4u.herokuapp.com/signin'
-      API.getUser(email, password, id, username)
-      expect(window.fetch).toHaveBeenCalledWith(expected)
+      API.getUser(url)
+      expect(window.fetch).toHaveBeenCalledWith(url, expected)
     })
 
     it("Should return json'd response from fetch", async () => {
