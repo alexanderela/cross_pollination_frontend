@@ -12,18 +12,18 @@ If they get stuck, users can request up to 2 hints about the country whose flag 
 
 As users correctly guess different flags, they will accumulate points.  In this way, World of Flags aims to make learning about the world a fun and enjoyable process.
 
-## Images
+## Images:
 ### Main Game Page
-![Main Game Page image](./src/images/app/main.png "Main Game Page")
+![Main Game Page image](./src/Images/app/main.png "Main Game Page")
 
 ### Landing Page
-![Landing Page image](./src/images/app/landing.png "Landing Page")
+![Landing Page image](./src/Images/app/landing.png "Landing Page")
 
 ### Login Page
-![Login Page image](./src/images/app/login.png "Login Page")
+![Login Page image](./src/Images/app/login.png "Login Page")
 
 ### Account Page
-![Account Page image](./src/images/app/account.png "Account Page")
+![Account Page image](./src/Images/app/account.png "Account Page")
 
 ## How to Use
 World of Flags on Heroku: [https://flagz4u-frontend.herokuapp.com/](https://flagz4u-frontend.herokuapp.com/).
@@ -36,14 +36,14 @@ World of Flags on Heroku: [https://flagz4u-frontend.herokuapp.com/](https://flag
 
 * `npm start`
 
-#### Create Postgres Database and Run Migrations
+#### Create Postgres Database and Run Migrations:
 * `psql CREATE DATABASE rechargeables`
 
 * `knex migrate:latest`
 
 * `knex seed:run`
 
-## Technologies Used
+## Technologies Used:
 - React.js
 - Redux
 - Sass
@@ -52,7 +52,7 @@ World of Flags on Heroku: [https://flagz4u-frontend.herokuapp.com/](https://flag
 - Knex.js
 - Heroku
 
-## Project Requirements
+## Project Requirements:
 Project spec can be found [here](http://frontend.turing.io/projects/capstone.html).
 
 ## This is a partenered project designed and coded by Alex Bruce, Alexander Ela, Ben Hayek, and Tobin Nelson.
