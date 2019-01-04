@@ -108,6 +108,12 @@ describe('Login', () => {
       await wrapper.instance().handleSubmit(mockEvent);
       expect(wrapper.instance().loginUser).toHaveBeenCalled();
     });
+
+    it('should return a user if component is mounted', () => {
+      wrapper.setState({ _isMounted: true })
+      const submit = wrapper.instance().handleSubmit(mockEvent)
+      expect(submit).toBeDefined()
+    })
   });
   
   describe('clearInputs', () => {

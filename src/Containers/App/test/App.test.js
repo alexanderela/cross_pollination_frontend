@@ -5,6 +5,7 @@ import { shallow, mount } from 'enzyme';
 import * as Fetch from '../../../utilities/Fetch';
 import { setCurrentCountry } from '../../../actions/countryActions'
 import { updateUsedCountries } from '../../../actions/usedCountryActions'
+import { getCurrentCountry } from '../../../Thunks/countries.js';
 
 
 describe('App', () => {
@@ -145,6 +146,16 @@ describe('App', () => {
 
       const mappedProps = mapDispatchToProps(mockDispatch)
       mappedProps.updateUsedCountries(mockCountry.name)
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
+
+    it.skip('should call dispatch with getCurrentCountry action when getCurrentCountry is called', () => {
+
+      const actionToDispatch = getCurrentCountry(79, mockUsedCountries)
+
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.getCurrentCountry(79, mockUsedCountries)
 
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
