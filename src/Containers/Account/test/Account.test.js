@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { Account } from '../index';
+import { Account, mapStateToProps, mapDispatchToProps } from '../index';
 
 describe('Account', () => {
   let wrapper;
@@ -38,6 +38,36 @@ describe('Account', () => {
     it('should invoke signOut', () => {
       wrapper.instance().logoutUser()
       expect(wrapper.instance().props.signOut).toHaveBeenCalledWith({})
+    })
+  })
+
+  describe('mapStateToProps', () => {
+    it('should create the correct props object', () => {
+      let mockState = {
+        user: {id: 2, user: 'Bob', email: "bob@bob.com", loggedIn: true}
+      }
+      const  expected = {
+        user: {id: 2, user: 'Bob', email: 'bob@bob.com', loggedIn: true}
+      }
+
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps).toEqual(expected)      
+    })
+  })
+
+  describe('mapDispatchToProps', () => {
+    const mockDispatch = jest.fn()
+
+    it('should map a key of signOut', () => {
+      const dispatchedProps = mapDispatchToProps(mockDispatch)
+      expect(dispatchedProps.signOut).toBeDefined()
+    })
+
+    it('should have signOut call dispatch', () => {
+      const mockUser = {id: 2, user: 'Bob', email: 'bob@bob.com', loggedIn: true}
+      const dispatchedProps = mapDispatchToProps(mockDispatch)
+      dispatchedProps.signOut(mockUser)
+      expect(mockDispatch).toHaveBeenCalled()
     })
   })
 });
