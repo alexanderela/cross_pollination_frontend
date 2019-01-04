@@ -5,6 +5,7 @@ import { shallow, mount } from 'enzyme'
 import * as Fetch from '../../../utilities/Fetch'
 import { setCurrentCountry } from '../../../actions/countryActions'
 import { updateUsedCountries } from '../../../actions/usedCountryActions'
+import { getCurrentCountry } from '../../../Thunks/countries.js';
 
 describe('App', () => {
   let wrapper
@@ -65,11 +66,21 @@ describe('App', () => {
       )
       expect(Fetch.fetchCorrectCountry).toHaveReturnedWith(mockCountry)
     })
-  });
+
+    it('should call setCurrentCountry', () => {
+      wrapper.instance().getCountry()
+      expect(wrapper.instance().props.setCurrentCountry).toHaveBeenCalledWith(mockCountry)
+    })
+
+    it('should call updateUsedCountries', () => {
+      wrapper.instance().getCountry()
+      expect(wrapper.instance().props.updateUsedCountries).toHaveBeenCalledWith(mockCountry.name)
+    })
+  })
 
   describe('mapStateToProps', () => {
     let mockState = {
-      user: { user: 'Bob', email: 'bob@bob.com' },
+      user: {id: 2, user: 'Bob', email: "bob@bob.com", loggedIn: true},
       currentCountry: {
         id: 79,
         name: 'Turkmenistan',
@@ -81,8 +92,8 @@ describe('App', () => {
     }
 
     it('should return a user in the props object', () => {
-      const expected = { user: 'Bob', email: 'bob@bob.com' }
-
+      const expected = {id: 2, user: 'Bob', email: "bob@bob.com", loggedIn: true}
+        
       const mappedProps = mapStateToProps(mockState)
       expect(mappedProps.user).toEqual(expected)
     })
@@ -127,5 +138,15 @@ describe('App', () => {
 
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
-  })
-})
+
+    it.skip('should call dispatch with getCurrentCountry action when getCurrentCountry is called', () => {
+
+      const actionToDispatch = getCurrentCountry(79, mockUsedCountries)
+
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.getCurrentCountry(79, mockUsedCountries)
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
+  });
+});

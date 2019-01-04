@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import './Account.scss';
 
 export class Account extends Component {
+
   changeRoute = () => {
     this.forceUpdate();
   }

@@ -18,6 +18,7 @@ export const buildQuestion = (correctCountry, countryFacts) => {
   checkOptions(correctCountry.name, questionOptions)
   const multipleChoices = [...questionOptions, correctCountry.name]
   const flagOptions = shuffleMultipleChoice(multipleChoices)
+
   let country = {
     ...correctCountry,
     multipleChoice: flagOptions,
