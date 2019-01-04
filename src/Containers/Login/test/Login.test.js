@@ -4,6 +4,7 @@ import { Login, mapStateToProps, mapDispatchToProps } from '../index';
 import { fetchUser } from '../../../thunks/user'
 
 describe('Login', () => {
+  let alex;
   let wrapper;
   let mockEvent;
   let mockFunc;
