@@ -16,6 +16,20 @@
     "redux-devtools-extension": "^2.13.7",
     "redux-thunk": "^2.3.0"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js",
+      "!src/serviceWorker.js",
+      "!src/setupTests.js",
+      "!src/history.js",
+      "!src/reducers/index.js",
+      "!src/mockData/mockData.js",
+      "!src/utilities/allCountries.js",
+      "!src/utilities/allCountriesImagesObject.js",
+      "!src/utilities/allCountriesObjects.js"
+    ]
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
