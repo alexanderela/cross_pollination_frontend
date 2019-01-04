@@ -115,7 +115,6 @@ class Login extends Component {
           {
             emailCredentials &&
             <form className='login-form'>
-              <div className='form-instructions'>press return to submit</div>
               <div className='login-error'>{error}</div>
               <div className='login-signup-slider' onClick={this.changeFormPurpose}>
                 <div className='form-slider-login'>login</div>
@@ -149,8 +148,9 @@ class Login extends Component {
               }
               <input 
                 className='login-input login-password' 
-                value={password} 
-                name='password' 
+                value={password}
+                type='password'
+                name='password'
                 onChange={this.handleChange}
               />
               {!password &&

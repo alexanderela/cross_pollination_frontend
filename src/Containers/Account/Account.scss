@@ -3,13 +3,18 @@ $blue-accent: #59DBE6;
 .Account {
   background: linear-gradient(#44444D, #33333D);
   color: $blue-accent;
+  padding: 4rem 0 0 0;
 }
 
 .account-area {
+  background: transparent;
   color: $blue-accent;
   display: inline-flex;
   justify-content: space-between;
+  left: 0;
   padding: 1rem 8px;
+  position: fixed;
+  top: 0;
   text-shadow: 0 0 1rem black;
   width: calc(100% - 1rem);
   .back-button {
@@ -47,7 +52,8 @@ $blue-accent: #59DBE6;
 }
 
 .profile-name,
-.user-correct-guesses {
+.user-correct-guesses,
+.user-points-label {
   font-size: 1.75rem;
   margin: 1rem;
   text-align: center;
@@ -61,7 +67,8 @@ $blue-accent: #59DBE6;
   padding: 0 5%;
   width: 80%;
   .points-container,
-  .account-data {
+  .account-data,
+  .points-data {
     display: inline-flex;
     font-size: 1.5rem;
     justify-content: space-between;

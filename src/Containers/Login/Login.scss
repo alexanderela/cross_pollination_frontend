@@ -122,7 +122,8 @@ $tw-blue: #1dcaff;
   position: absolute;
   text-align: center;
   transition-duration: .05s;
-  width: 100%;
+  width: 80%;
+  z-index: -1;
 }
 
 .login-form {
