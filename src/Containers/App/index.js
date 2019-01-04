@@ -32,12 +32,6 @@ export class App extends Component {
     updateUsedCountries(currentCountry.name)
   }
 
-//WHAT IS THIS FUNCTION DOING?  ALEX E
-  compilePoints = (newPoints) => {
-    const totalPoints = this.state.totalPoints + newPoints
-    this.setState({ totalPoints });
-  };
-
   render() {
     const { totalPoints } = this.state;
     const { user } = this.props

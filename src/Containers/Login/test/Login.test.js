@@ -8,6 +8,7 @@ describe('Login', () => {
   let mockEvent;
   let mockFunc;
   let mockUser;
+  let expected;
   
   beforeEach(() => {
     mockFunc = jest.fn();
@@ -36,7 +37,28 @@ describe('Login', () => {
     it('should render like the snapshot', () => {
       expect(wrapper).toMatchSnapshot();
     });
+
+  describe('createUser', () => {
+    it('should should set state upon invocaton of createUser', () => {
+      wrapper.setState({ createUser: false })
+      wrapper.instance().createUser()
+      expect(wrapper.state().createUser).toEqual(true)
+    });
+  });
   
+  describe('loginUser', () => {
+    it('should call fetchUser with the correct parameters if createUser is truthy', () => {
+      wrapper.setState({ createUser: true })
+      wrapper.instance().expandCredentials()
+    });
+
+    it.skip('should call fetchUser with the correct parameters if createUser is falsy', () => {
+      wrapper.setState({ createUser: false })
+      wrapper.instance().expandCredentials()
+    });
+
+  });
+
   describe('handleChange', () => {
     it('should set state upon invocaton of handleChange', () => {
       wrapper.instance().handleChange(mockEvent);
@@ -44,31 +66,40 @@ describe('Login', () => {
     });
   });
 
+  describe('expandCredentials', () => {
+    it('should should set state upon invocaton of expandCredentials', () => {
+      wrapper.setState({ emailCredentials: false })
+      wrapper.instance().expandCredentials()
+      expect(wrapper.state().emailCredentials).toEqual(true)
+    });
+  });
+
+  describe('closeCredentials', () => {
+    it('should should set state upon invocaton of closeCredentials', () => {
+      wrapper.setState({ emailCredentials: true })
+      wrapper.instance().closeCredentials()
+      expect(wrapper.state().emailCredentials).toEqual(false)
+    });
+  });
+  
+  describe('changeFormPurpose', () => {
+    it('should should set state upon invocaton of changeFormPurpose', () => {
+      wrapper.setState({ formLogin: true })
+      wrapper.instance().changeFormPurpose()
+      expect(wrapper.state().formLogin).toEqual(false)
+    });
+  });
+
   describe('handleSubmit', () => {
-    it.skip('should invoke loginUser if loginAttempt is successful', async () => {
+    it('should invoke loginUser if loginAttempt is successful', async () => {
+      wrapper.instance().loginUser = jest.fn()
       await wrapper.instance().handleSubmit(mockEvent);
       expect(wrapper.instance().loginUser).toHaveBeenCalled();
     });
   });
-
-  describe('createUser', () => {
-    it('should set state for "create" or "error" if create state is false and fetchResponse is successful', () => {
-    });
-
-    it('should should set "error" state if "create" state is true and fetch response fails', () => {
-    });
-
-    it('should clear inputs if "create" state is true and fetch response fails', () => {
-    });
-  });
-  
-  describe('newUserResponse', () => {
-    it('should invoke API.createUser upon invocation', () => {
-    });
-  });
   
   describe('clearInputs', () => {
-    it.skip('should clear inputs on submit', () => {
+    it('should clear inputs on submit', () => {
       wrapper.setState({
         name: 'Bruce',
         email: 'Ela',

@@ -3,11 +3,14 @@
 exports[`Account should render like the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(Account)
+  Symbol(enzyme.__unrendered__): <Account
     signOut={[MockFunction]}
     user={
       Object {
-        "name": "doug",
+        "email": "alex@turing.com",
+        "id": 2,
+        "loggedIn": true,
+        "name": "rtg",
       }
     }
   />,
@@ -22,59 +25,609 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "host",
     "props": Object {
-      "children": [Function],
+      "children": Array [
+        <div
+          className="account-area"
+        >
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            className="back-button"
+            onClick={[Function]}
+            to="/"
+          />
+          <div
+            className="account-logout"
+            onClick={[Function]}
+          >
+            log out
+          </div>
+        </div>,
+        <div
+          className="profile-image-container"
+        />,
+        <div
+          className="user-data"
+        >
+          <p
+            className="profile-name"
+          >
+            rtg
+          </p>
+          <div
+            className="points-container"
+          >
+            <div
+              className="points-label"
+            >
+              points
+            </div>
+            <div
+              className="points-number"
+            />
+          </div>
+          <div
+            className="account-data"
+          >
+            <div
+              className="email-label"
+            >
+              email
+            </div>
+            <div
+              className="email-text"
+            >
+              alex@turing.com
+            </div>
+          </div>
+          <div
+            className="extra-data"
+          />
+        </div>,
+      ],
+      "className": "Account",
     },
     "ref": null,
-    "rendered": [Function],
-    "type": Object {
-      "$$typeof": Symbol(react.context),
-      "_calculateChangedBits": null,
-      "_context": Object {
-        "$$typeof": Symbol(react.context),
-        "Consumer": [Circular],
-        "Provider": Object {
-          "$$typeof": Symbol(react.provider),
-          "_context": [Circular],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              className="back-button"
+              onClick={[Function]}
+              to="/"
+            />,
+            <div
+              className="account-logout"
+              onClick={[Function]}
+            >
+              log out
+            </div>,
+          ],
+          "className": "account-area",
         },
-        "_calculateChangedBits": null,
-        "_currentRenderer": null,
-        "_currentRenderer2": null,
-        "_currentValue": null,
-        "_currentValue2": null,
-        "_threadCount": 0,
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "aria-current": "page",
+              "className": "back-button",
+              "onClick": [Function],
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "log out",
+              "className": "account-logout",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "log out",
+            "type": "div",
+          },
+        ],
+        "type": "div",
       },
-    },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "profile-image-container",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p
+              className="profile-name"
+            >
+              rtg
+            </p>,
+            <div
+              className="points-container"
+            >
+              <div
+                className="points-label"
+              >
+                points
+              </div>
+              <div
+                className="points-number"
+              />
+            </div>,
+            <div
+              className="account-data"
+            >
+              <div
+                className="email-label"
+              >
+                email
+              </div>
+              <div
+                className="email-text"
+              >
+                alex@turing.com
+              </div>
+            </div>,
+            <div
+              className="extra-data"
+            />,
+          ],
+          "className": "user-data",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "rtg",
+              "className": "profile-name",
+            },
+            "ref": null,
+            "rendered": "rtg",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="points-label"
+                >
+                  points
+                </div>,
+                <div
+                  className="points-number"
+                />,
+              ],
+              "className": "points-container",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "points",
+                  "className": "points-label",
+                },
+                "ref": null,
+                "rendered": "points",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                  "className": "points-number",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="email-label"
+                >
+                  email
+                </div>,
+                <div
+                  className="email-text"
+                >
+                  alex@turing.com
+                </div>,
+              ],
+              "className": "account-data",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "email",
+                  "className": "email-label",
+                },
+                "ref": null,
+                "rendered": "email",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "alex@turing.com",
+                  "className": "email-text",
+                },
+                "ref": null,
+                "rendered": "alex@turing.com",
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "extra-data",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "host",
       "props": Object {
-        "children": [Function],
+        "children": Array [
+          <div
+            className="account-area"
+          >
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              className="back-button"
+              onClick={[Function]}
+              to="/"
+            />
+            <div
+              className="account-logout"
+              onClick={[Function]}
+            >
+              log out
+            </div>
+          </div>,
+          <div
+            className="profile-image-container"
+          />,
+          <div
+            className="user-data"
+          >
+            <p
+              className="profile-name"
+            >
+              rtg
+            </p>
+            <div
+              className="points-container"
+            >
+              <div
+                className="points-label"
+              >
+                points
+              </div>
+              <div
+                className="points-number"
+              />
+            </div>
+            <div
+              className="account-data"
+            >
+              <div
+                className="email-label"
+              >
+                email
+              </div>
+              <div
+                className="email-text"
+              >
+                alex@turing.com
+              </div>
+            </div>
+            <div
+              className="extra-data"
+            />
+          </div>,
+        ],
+        "className": "Account",
       },
       "ref": null,
-      "rendered": [Function],
-      "type": Object {
-        "$$typeof": Symbol(react.context),
-        "_calculateChangedBits": null,
-        "_context": Object {
-          "$$typeof": Symbol(react.context),
-          "Consumer": [Circular],
-          "Provider": Object {
-            "$$typeof": Symbol(react.provider),
-            "_context": [Circular],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                className="back-button"
+                onClick={[Function]}
+                to="/"
+              />,
+              <div
+                className="account-logout"
+                onClick={[Function]}
+              >
+                log out
+              </div>,
+            ],
+            "className": "account-area",
           },
-          "_calculateChangedBits": null,
-          "_currentRenderer": null,
-          "_currentRenderer2": null,
-          "_currentValue": null,
-          "_currentValue2": null,
-          "_threadCount": 0,
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "aria-current": "page",
+                "className": "back-button",
+                "onClick": [Function],
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "log out",
+                "className": "account-logout",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "log out",
+              "type": "div",
+            },
+          ],
+          "type": "div",
         },
-      },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "profile-image-container",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p
+                className="profile-name"
+              >
+                rtg
+              </p>,
+              <div
+                className="points-container"
+              >
+                <div
+                  className="points-label"
+                >
+                  points
+                </div>
+                <div
+                  className="points-number"
+                />
+              </div>,
+              <div
+                className="account-data"
+              >
+                <div
+                  className="email-label"
+                >
+                  email
+                </div>
+                <div
+                  className="email-text"
+                >
+                  alex@turing.com
+                </div>
+              </div>,
+              <div
+                className="extra-data"
+              />,
+            ],
+            "className": "user-data",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "rtg",
+                "className": "profile-name",
+              },
+              "ref": null,
+              "rendered": "rtg",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="points-label"
+                  >
+                    points
+                  </div>,
+                  <div
+                    className="points-number"
+                  />,
+                ],
+                "className": "points-container",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "points",
+                    "className": "points-label",
+                  },
+                  "ref": null,
+                  "rendered": "points",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                    "className": "points-number",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="email-label"
+                  >
+                    email
+                  </div>,
+                  <div
+                    className="email-text"
+                  >
+                    alex@turing.com
+                  </div>,
+                ],
+                "className": "account-data",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "email",
+                    "className": "email-label",
+                  },
+                  "ref": null,
+                  "rendered": "email",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "alex@turing.com",
+                    "className": "email-text",
+                  },
+                  "ref": null,
+                  "rendered": "alex@turing.com",
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "extra-data",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

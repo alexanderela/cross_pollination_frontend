@@ -67,31 +67,22 @@ describe('App', () => {
       expect(Fetch.fetchCorrectCountry).toHaveReturnedWith(mockCountry)
     })
 
-    // it('should call a setCurrentCountry', () => {
-    //   wrapper.instance().getCountry()
+    it.skip('should call a setCurrentCountry', () => {
+      wrapper.instance().getCountry()
 
-    //   expect(wrapper.props().setCurrentCountry).toHaveBeenCalledWith(mockCountry)
-    // })
+      expect(wrapper.props().setCurrentCountry).toHaveBeenCalledWith(mockCountry)
+    })
 
-    // it('should call a updateUsedCountries', () => {
+    it.skip('should call a updateUsedCountries', () => {
+      const spy = jest.spyOn(wrapper.props(), 'updateUsedCountries');
+      const isCalled = wrapper.props().updateUsedCountries;
+      wrapper.instance().getCountry()
 
-    //   const spy = jest.spyOn(wrapper.props(), 'updateUsedCountries');
-    //   const isCalled = wrapper.props().updateUsedCountries;
-    //   wrapper.instance().getCountry()
+      expect(wrapper.props().updateUsedCountries).toHaveBeenCalled()
 
-    //   expect(wrapper.props().updateUsedCountries).toHaveBeenCalled()
-
-    //   spy.mockRestore();
-    // })
+      spy.mockRestore();
+    })
   })
-
-  describe('compilePoints', () => {
-    it('should set points to state', () => {
-      expect(wrapper.state().totalPoints).toEqual(0);
-      wrapper.instance().compilePoints(mockNewPoints);
-      expect(wrapper.state().totalPoints).toEqual(3);
-    });
-  });
 
   describe('mapStateToProps', () => {
     let mockState = {

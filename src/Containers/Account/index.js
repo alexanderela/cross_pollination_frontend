@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Account.scss';
 
-class Account extends Component {
+export class Account extends Component {
   constructor(){
     super()
   }
@@ -26,7 +26,6 @@ class Account extends Component {
           <div className='account-logout' onClick={this.logoutUser} >log out</div>
         </div>
         <div className='profile-image-container'>
-          {/* <img alt='' className='profile-image' /> */}
         </div>
         <div className='user-data'>
           <p className='profile-name'>{user.name}</p>
