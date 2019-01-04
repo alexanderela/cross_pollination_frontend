@@ -67,20 +67,14 @@ describe('App', () => {
       expect(Fetch.fetchCorrectCountry).toHaveReturnedWith(mockCountry)
     })
 
-    it.skip('should call a setCurrentCountry', () => {
+    it('should call setCurrentCountry', () => {
       wrapper.instance().getCountry()
-
-      expect(wrapper.props().setCurrentCountry).toHaveBeenCalledWith(mockCountry)
+      expect(wrapper.instance().props.setCurrentCountry).toHaveBeenCalledWith(mockCountry)
     })
 
-    it.skip('should call a updateUsedCountries', () => {
-      const spy = jest.spyOn(wrapper.props(), 'updateUsedCountries');
-      const isCalled = wrapper.props().updateUsedCountries;
+    it('should call updateUsedCountries', () => {
       wrapper.instance().getCountry()
-
-      expect(wrapper.props().updateUsedCountries).toHaveBeenCalled()
-
-      spy.mockRestore();
+      expect(wrapper.instance().props.updateUsedCountries).toHaveBeenCalledWith(mockCountry.name)
     })
   })
 
