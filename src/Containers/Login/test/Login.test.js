@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { Login, mapStateToProps, mapDispatchToProps } from '../index';
-import { fetchUser } from '../../../thunks/user'
+import { fetchUser } from '../../../Thunks/user'
 
 describe('Login', () => {
   let wrapper;
