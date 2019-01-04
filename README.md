@@ -53,7 +53,7 @@ World of Flags on Heroku: [https://flagz4u-frontend.herokuapp.com/](https://flag
 ## Project Requirements:
 Project spec can be found [here](http://frontend.turing.io/projects/capstone.html).
 
-Project Trello board can be found [here](https://trello.com/b/ppUdNp6Q/cross-pollination-fe)
+Project Trello board can be found [here](https://trello.com/b/ppUdNp6Q/cross-pollination-fe).
 
 
 ## This is a partenered project designed and coded by Alex Bruce, Alexander Ela, Ben Hayek, and Tobin Nelson.
