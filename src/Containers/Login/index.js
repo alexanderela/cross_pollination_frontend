@@ -4,9 +4,7 @@ import { fetchUser } from '../../Thunks/user';
 import './Login.scss';
 import PropTypes from 'prop-types';
 
-const ReactDOM = require('react-dom')
-
-class Login extends Component {
+export class Login extends Component {
   constructor() {
     super();
     this.state = {
@@ -166,10 +164,10 @@ class Login extends Component {
   }
 }
 
-export const mapStateToProps = (state) => ({
-  user: state.user,
-  loading: state.loading
-});
+export const mapStateToProps = ({ user, loading }) => ({
+  user: user,
+  loading: loading
+})
 
 export const mapDispatchToProps = (dispatch) => ({
   fetchUser:(name, email, password) => dispatch(fetchUser(name, email, password))

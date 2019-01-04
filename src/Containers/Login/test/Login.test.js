@@ -1,12 +1,15 @@
-import React from 'react'
-import { shallow, mount } from 'enzyme'
-import Login from '../index'
+import React from 'react';
+import { shallow, mount } from 'enzyme';
+import { Login, mapStateToProps, mapDispatchToProps } from '../index';
+import { fetchUser } from '../../../Thunks/user'
 
 describe('Login', () => {
-  let wrapper
-  let mockEvent
-  let mockFunc
-
+  let wrapper;
+  let mockEvent;
+  let mockFunc;
+  let mockUser;
+  let expected;
+  
   beforeEach(() => {
     mockFunc = jest.fn()
     mockEvent = {
@@ -16,43 +19,105 @@ describe('Login', () => {
         value: 'Alex',
       },
     }
-    wrapper = shallow(<Login loginUser={jest.fn()} />)
-  })
 
-  it('should render like the snapshot', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
+    mockUser = {
+                id: 2,
+                name: 'rtg',
+                loggedIn: true,
+                email: 'alex@turing.com'
+               }
+
+    wrapper = shallow(<Login
+                        fetchUser={jest.fn()}
+                        loading={'true'}
+                        user={mockUser}
+                      />);
+  });
+  
+    it('should render like the snapshot', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+
+  describe('createUser', () => {
+    it('should should set state upon invocaton of createUser', () => {
+      wrapper.setState({ createUser: false })
+      wrapper.instance().createUser()
+      expect(wrapper.state().createUser).toEqual(true)
+    });
+  });
+  
+  describe('loginUser', () => {
+    it('should call fetchUser with the correct parameters if createUser is truthy', () => {
+      wrapper.setState({ 
+                          createUser: true,
+                          name: 'Alex',
+                          email: 'alex@123.com',
+                          password: '123' 
+                        })
+      wrapper.instance().loginUser(mockEvent)
+      expect(wrapper.instance().props.fetchUser).toHaveBeenCalledWith(null, 'alex@123.com', '123')
+    });
+
+    it('should call fetchUser with the correct parameters if createUser is falsy', () => {
+      wrapper.setState({ 
+                          createUser: false,
+                          name: 'Alex',
+                          email: 'alex@123.com',
+                          password: '123' 
+                        })
+      wrapper.instance().loginUser(mockEvent)
+      expect(wrapper.instance().props.fetchUser).toHaveBeenCalledWith('Alex', 'alex@123.com', '123')
+    });
+
+  });
 
   describe('handleChange', () => {
-    it.skip('should set state upon invocaton of handleChange', () => {
-      wrapper.instance().handleChange(mockEvent)
+    it('should set state upon invocaton of handleChange', () => {
+      wrapper.instance().handleChange(mockEvent);
       expect(wrapper.state().name).toEqual('Alex')
     })
   })
 
-  describe('submitLogin', () => {
-    it.skip('should invoke loginUser if loginAttempt is successful', async () => {
-      await wrapper.instance().submitLogin(mockEvent)
-      expect(wrapper.instance().props.loginUser).toHaveBeenCalled()
+  describe('expandCredentials', () => {
+    it('should should set state upon invocaton of expandCredentials', () => {
+      wrapper.setState({ emailCredentials: false })
+      wrapper.instance().expandCredentials()
+      expect(wrapper.state().emailCredentials).toEqual(true)
+    });
+  });
+
+  describe('closeCredentials', () => {
+    it('should should set state upon invocaton of closeCredentials', () => {
+      wrapper.setState({ emailCredentials: true })
+      wrapper.instance().closeCredentials()
+      expect(wrapper.state().emailCredentials).toEqual(false)
+    });
+  });
+  
+  describe('changeFormPurpose', () => {
+    it('should should set state upon invocaton of changeFormPurpose', () => {
+      wrapper.setState({ formLogin: true })
+      wrapper.instance().changeFormPurpose()
+      expect(wrapper.state().formLogin).toEqual(false)
+    });
+  });
+
+  describe('handleSubmit', () => {
+    it('should invoke loginUser if loginAttempt is successful', async () => {
+      wrapper.instance().loginUser = jest.fn()
+      await wrapper.instance().handleSubmit(mockEvent);
+      expect(wrapper.instance().loginUser).toHaveBeenCalled();
+    });
+
+    it('should return a user if component is mounted', () => {
+      wrapper.setState({ _isMounted: true })
+      const submit = wrapper.instance().handleSubmit(mockEvent)
+      expect(submit).toBeDefined()
     })
-  })
-
-  describe('createNewUser', () => {
-    it('should alert the user if the account already exists', () => {})
-
-    it('should set state for "create" or "error" if create state is false and fetchResponse is successful', () => {})
-
-    it('should should set "error" state if "create" state is true and fetch response fails', () => {})
-
-    it('should clear inputs if "create" state is true and fetch response fails', () => {})
-  })
-
-  describe('newUserResponse', () => {
-    it('should invoke API.createUser upon invocation', () => {})
-  })
-
+  });
+  
   describe('clearInputs', () => {
-    it.skip('should clear inputs on submit', () => {
+    it('should clear inputs on submit', () => {
       wrapper.setState({
         name: 'Bruce',
         email: 'Ela',
@@ -66,14 +131,36 @@ describe('Login', () => {
   })
 
   describe('mapStateToProps', () => {
-    it('should create the correct props object', () => {})
-  })
+    it('should create the correct props object', () => {
+      let mockState = {
+        user: {id: 2, user: 'Bob', email: "bob@bob.com", loggedIn: true},
+        loading: 'resolved'
+      }
+      const  expected = {
+        user: {id: 2, user: 'Bob', email: 'bob@bob.com', loggedIn: true},
+        loading: 'resolved'
+      }
+
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps).toEqual(expected)
+    });
+  });
 
   describe('mapDispatchToProps', () => {
-    it('should map a key of setCountries', () => {})
+    const mockDispatch = jest.fn()
 
-    it('setCountries should call dispatch', () => {})
-  })
-})
+    it('should map a key of fetchUser', () => {
+      const dispatchedProps = mapDispatchToProps(mockDispatch)
+      expect(dispatchedProps.fetchUser).toBeDefined()
+    });
+    
+    it('should have fetchUser call dispatch', () => {
+      const mockUser = { name: 'Alex', email: 'alex@123.com', password: '123'}
 
-it('should', () => {})
+      const dispatchedProps = mapDispatchToProps(mockDispatch)
+      dispatchedProps.fetchUser(mockUser)
+
+      expect(mockDispatch).toHaveBeenCalled();
+    });
+  });
+});
