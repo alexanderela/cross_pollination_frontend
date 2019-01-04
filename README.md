@@ -44,11 +44,13 @@ World of Flags on Heroku: [https://flagz4u-frontend.herokuapp.com/](https://flag
 ## Technologies Used:
 - React.js
 - Redux
+- React Router
 - Sass
 - Node.js
 - Express
 - Knex.js
 - Heroku
+- Travis CI
 
 ## Project Requirements:
 Project spec can be found [here](http://frontend.turing.io/projects/capstone.html).
