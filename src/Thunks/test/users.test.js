@@ -10,6 +10,10 @@ jest.mock('../../utilities/API', () => ({
   addUser: jest.fn().mockImplementation(() => Promise.resolve([])),
 }))
 
+jest.mock('../../utilities/API', () => ({
+  loading: jest.fn().mockImplementation(() => Promise.resolve([])),
+}))
+
 describe('Thunks', () => {
   describe('fetchUser', () => {
     let mockUrl
@@ -20,7 +24,7 @@ describe('Thunks', () => {
       mockDispatch = jest.fn()
     })
 
-    it.skip('should dispatch contentStatus error if the response is not ok', async () => {
+    it('should dispatch contentStatus error if the response is not ok', async () => {
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.reject({
           status: 500,
@@ -31,7 +35,7 @@ describe('Thunks', () => {
 
       await thunk(mockDispatch)
 
-      expect(mockDispatch).toHaveBeenCalledWith(contentStatus('error'))
+      expect(mockDispatch).toHaveBeenCalledWith(contentStatus("Email & password don't match"))
     })
 
     it('calls dispatch with the contentStatus action', () => {
