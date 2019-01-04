@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Account.scss';
 
-class Account extends Component {
+export class Account extends Component {
   changeRoute = () => {
     this.forceUpdate();
   }
@@ -34,7 +34,6 @@ class Account extends Component {
           </NavLink>
         </div>
         <div className='profile-image-container'>
-          {/* <img alt='' className='profile-image' /> */}
         </div>
         <p className='profile-name'>{ user.name }</p>
         <div className='user-data'>

@@ -3,11 +3,20 @@
 exports[`Account should render like the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(Account)
+  Symbol(enzyme.__unrendered__): <Account
     signOut={[MockFunction]}
+    usedCountries={
+      Array [
+        "france",
+        "mexico",
+      ]
+    }
     user={
       Object {
-        "name": "doug",
+        "email": "alex@turing.com",
+        "id": 2,
+        "loggedIn": true,
+        "name": "rtg",
       }
     }
   />,
@@ -22,59 +31,987 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "host",
     "props": Object {
-      "children": [Function],
+      "children": Array [
+        <div
+          className="account-area"
+        >
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            className="back-button"
+            onClick={[Function]}
+            to="/"
+          />
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            className="account-logout"
+            onClick={[Function]}
+            to="/"
+          >
+            <div
+              className="account-logout"
+            >
+              log out
+            </div>
+          </NavLink>
+        </div>,
+        <div
+          className="profile-image-container"
+        />,
+        <p
+          className="profile-name"
+        >
+          rtg
+        </p>,
+        <div
+          className="user-data"
+        >
+          <div
+            className="account-data"
+          >
+            <div
+              className="email-label"
+            >
+              email
+            </div>
+            <div
+              className="email-text"
+            >
+              alex@turing.com
+            </div>
+          </div>
+          <div
+            className="extra-data"
+          />
+        </div>,
+        <p
+          className="user-points-label"
+        >
+          points
+        </p>,
+        <div
+          className="user-data"
+        >
+          <div
+            className="points-data"
+          >
+            <div>
+              total points
+            </div>
+            <div />
+          </div>
+        </div>,
+        <div>
+          <p
+            className="user-correct-guesses"
+          >
+            guessed countries
+          </p>
+          <div
+            className="user-data"
+          >
+            <ul
+              className="correct-guesses-list"
+            >
+              <li
+                className="correct-guess"
+              >
+                france
+              </li>
+              <li
+                className="correct-guess"
+              >
+                mexico
+              </li>
+            </ul>
+          </div>
+        </div>,
+      ],
+      "className": "Account",
     },
     "ref": null,
-    "rendered": [Function],
-    "type": Object {
-      "$$typeof": Symbol(react.context),
-      "_calculateChangedBits": null,
-      "_context": Object {
-        "$$typeof": Symbol(react.context),
-        "Consumer": [Circular],
-        "Provider": Object {
-          "$$typeof": Symbol(react.provider),
-          "_context": [Circular],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              className="back-button"
+              onClick={[Function]}
+              to="/"
+            />,
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              className="account-logout"
+              onClick={[Function]}
+              to="/"
+            >
+              <div
+                className="account-logout"
+              >
+                log out
+              </div>
+            </NavLink>,
+          ],
+          "className": "account-area",
         },
-        "_calculateChangedBits": null,
-        "_currentRenderer": null,
-        "_currentRenderer2": null,
-        "_currentValue": null,
-        "_currentValue2": null,
-        "_threadCount": 0,
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "aria-current": "page",
+              "className": "back-button",
+              "onClick": [Function],
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "aria-current": "page",
+              "children": <div
+                className="account-logout"
+              >
+                log out
+              </div>,
+              "className": "account-logout",
+              "onClick": [Function],
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "log out",
+                "className": "account-logout",
+              },
+              "ref": null,
+              "rendered": "log out",
+              "type": "div",
+            },
+            "type": [Function],
+          },
+        ],
+        "type": "div",
       },
-    },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "profile-image-container",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "rtg",
+          "className": "profile-name",
+        },
+        "ref": null,
+        "rendered": "rtg",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="account-data"
+            >
+              <div
+                className="email-label"
+              >
+                email
+              </div>
+              <div
+                className="email-text"
+              >
+                alex@turing.com
+              </div>
+            </div>,
+            <div
+              className="extra-data"
+            />,
+          ],
+          "className": "user-data",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="email-label"
+                >
+                  email
+                </div>,
+                <div
+                  className="email-text"
+                >
+                  alex@turing.com
+                </div>,
+              ],
+              "className": "account-data",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "email",
+                  "className": "email-label",
+                },
+                "ref": null,
+                "rendered": "email",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "alex@turing.com",
+                  "className": "email-text",
+                },
+                "ref": null,
+                "rendered": "alex@turing.com",
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "extra-data",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "points",
+          "className": "user-points-label",
+        },
+        "ref": null,
+        "rendered": "points",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="points-data"
+          >
+            <div>
+              total points
+            </div>
+            <div />
+          </div>,
+          "className": "user-data",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div>
+                total points
+              </div>,
+              <div />,
+            ],
+            "className": "points-data",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "total points",
+              },
+              "ref": null,
+              "rendered": "total points",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": null,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p
+              className="user-correct-guesses"
+            >
+              guessed countries
+            </p>,
+            <div
+              className="user-data"
+            >
+              <ul
+                className="correct-guesses-list"
+              >
+                <li
+                  className="correct-guess"
+                >
+                  france
+                </li>
+                <li
+                  className="correct-guess"
+                >
+                  mexico
+                </li>
+              </ul>
+            </div>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "guessed countries",
+              "className": "user-correct-guesses",
+            },
+            "ref": null,
+            "rendered": "guessed countries",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <ul
+                className="correct-guesses-list"
+              >
+                <li
+                  className="correct-guess"
+                >
+                  france
+                </li>
+                <li
+                  className="correct-guess"
+                >
+                  mexico
+                </li>
+              </ul>,
+              "className": "user-data",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <li
+                    className="correct-guess"
+                  >
+                    france
+                  </li>,
+                  <li
+                    className="correct-guess"
+                  >
+                    mexico
+                  </li>,
+                ],
+                "className": "correct-guesses-list",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": "france",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "france",
+                    "className": "correct-guess",
+                  },
+                  "ref": null,
+                  "rendered": "france",
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": "mexico",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "mexico",
+                    "className": "correct-guess",
+                  },
+                  "ref": null,
+                  "rendered": "mexico",
+                  "type": "li",
+                },
+              ],
+              "type": "ul",
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "host",
       "props": Object {
-        "children": [Function],
+        "children": Array [
+          <div
+            className="account-area"
+          >
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              className="back-button"
+              onClick={[Function]}
+              to="/"
+            />
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              className="account-logout"
+              onClick={[Function]}
+              to="/"
+            >
+              <div
+                className="account-logout"
+              >
+                log out
+              </div>
+            </NavLink>
+          </div>,
+          <div
+            className="profile-image-container"
+          />,
+          <p
+            className="profile-name"
+          >
+            rtg
+          </p>,
+          <div
+            className="user-data"
+          >
+            <div
+              className="account-data"
+            >
+              <div
+                className="email-label"
+              >
+                email
+              </div>
+              <div
+                className="email-text"
+              >
+                alex@turing.com
+              </div>
+            </div>
+            <div
+              className="extra-data"
+            />
+          </div>,
+          <p
+            className="user-points-label"
+          >
+            points
+          </p>,
+          <div
+            className="user-data"
+          >
+            <div
+              className="points-data"
+            >
+              <div>
+                total points
+              </div>
+              <div />
+            </div>
+          </div>,
+          <div>
+            <p
+              className="user-correct-guesses"
+            >
+              guessed countries
+            </p>
+            <div
+              className="user-data"
+            >
+              <ul
+                className="correct-guesses-list"
+              >
+                <li
+                  className="correct-guess"
+                >
+                  france
+                </li>
+                <li
+                  className="correct-guess"
+                >
+                  mexico
+                </li>
+              </ul>
+            </div>
+          </div>,
+        ],
+        "className": "Account",
       },
       "ref": null,
-      "rendered": [Function],
-      "type": Object {
-        "$$typeof": Symbol(react.context),
-        "_calculateChangedBits": null,
-        "_context": Object {
-          "$$typeof": Symbol(react.context),
-          "Consumer": [Circular],
-          "Provider": Object {
-            "$$typeof": Symbol(react.provider),
-            "_context": [Circular],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                className="back-button"
+                onClick={[Function]}
+                to="/"
+              />,
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                className="account-logout"
+                onClick={[Function]}
+                to="/"
+              >
+                <div
+                  className="account-logout"
+                >
+                  log out
+                </div>
+              </NavLink>,
+            ],
+            "className": "account-area",
           },
-          "_calculateChangedBits": null,
-          "_currentRenderer": null,
-          "_currentRenderer2": null,
-          "_currentValue": null,
-          "_currentValue2": null,
-          "_threadCount": 0,
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "aria-current": "page",
+                "className": "back-button",
+                "onClick": [Function],
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "aria-current": "page",
+                "children": <div
+                  className="account-logout"
+                >
+                  log out
+                </div>,
+                "className": "account-logout",
+                "onClick": [Function],
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "log out",
+                  "className": "account-logout",
+                },
+                "ref": null,
+                "rendered": "log out",
+                "type": "div",
+              },
+              "type": [Function],
+            },
+          ],
+          "type": "div",
         },
-      },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "profile-image-container",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "rtg",
+            "className": "profile-name",
+          },
+          "ref": null,
+          "rendered": "rtg",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="account-data"
+              >
+                <div
+                  className="email-label"
+                >
+                  email
+                </div>
+                <div
+                  className="email-text"
+                >
+                  alex@turing.com
+                </div>
+              </div>,
+              <div
+                className="extra-data"
+              />,
+            ],
+            "className": "user-data",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="email-label"
+                  >
+                    email
+                  </div>,
+                  <div
+                    className="email-text"
+                  >
+                    alex@turing.com
+                  </div>,
+                ],
+                "className": "account-data",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "email",
+                    "className": "email-label",
+                  },
+                  "ref": null,
+                  "rendered": "email",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "alex@turing.com",
+                    "className": "email-text",
+                  },
+                  "ref": null,
+                  "rendered": "alex@turing.com",
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "extra-data",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "points",
+            "className": "user-points-label",
+          },
+          "ref": null,
+          "rendered": "points",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="points-data"
+            >
+              <div>
+                total points
+              </div>
+              <div />
+            </div>,
+            "className": "user-data",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div>
+                  total points
+                </div>,
+                <div />,
+              ],
+              "className": "points-data",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "total points",
+                },
+                "ref": null,
+                "rendered": "total points",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": null,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p
+                className="user-correct-guesses"
+              >
+                guessed countries
+              </p>,
+              <div
+                className="user-data"
+              >
+                <ul
+                  className="correct-guesses-list"
+                >
+                  <li
+                    className="correct-guess"
+                  >
+                    france
+                  </li>
+                  <li
+                    className="correct-guess"
+                  >
+                    mexico
+                  </li>
+                </ul>
+              </div>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "guessed countries",
+                "className": "user-correct-guesses",
+              },
+              "ref": null,
+              "rendered": "guessed countries",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <ul
+                  className="correct-guesses-list"
+                >
+                  <li
+                    className="correct-guess"
+                  >
+                    france
+                  </li>
+                  <li
+                    className="correct-guess"
+                  >
+                    mexico
+                  </li>
+                </ul>,
+                "className": "user-data",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <li
+                      className="correct-guess"
+                    >
+                      france
+                    </li>,
+                    <li
+                      className="correct-guess"
+                    >
+                      mexico
+                    </li>,
+                  ],
+                  "className": "correct-guesses-list",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": "france",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "france",
+                      "className": "correct-guess",
+                    },
+                    "ref": null,
+                    "rendered": "france",
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": "mexico",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "mexico",
+                      "className": "correct-guess",
+                    },
+                    "ref": null,
+                    "rendered": "mexico",
+                    "type": "li",
+                  },
+                ],
+                "type": "ul",
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
