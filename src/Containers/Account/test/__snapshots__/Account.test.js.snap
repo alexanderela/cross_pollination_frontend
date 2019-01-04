@@ -70,23 +70,6 @@ ShallowWrapper {
           className="user-data"
         >
           <div
-            className="points-container"
-          >
-            <p
-              className="profile-name"
-            >
-              rtg
-            </p>
-            <div
-              className="points-label"
-            >
-              points
-            </div>
-            <div
-              className="points-number"
-            />
-          </div>
-          <div
             className="account-data"
           >
             <div
@@ -103,6 +86,23 @@ ShallowWrapper {
           <div
             className="extra-data"
           />
+        </div>,
+        <p
+          className="user-points-label"
+        >
+          points
+        </p>,
+        <div
+          className="user-data"
+        >
+          <div
+            className="points-data"
+          >
+            <div>
+              total points
+            </div>
+            <div />
+          </div>
         </div>,
         <div>
           <p
@@ -244,23 +244,6 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <div
-              className="points-container"
-            >
-              <p
-                className="profile-name"
-              >
-                rtg
-              </p>
-              <div
-                className="points-label"
-              >
-                points
-              </div>
-              <div
-                className="points-number"
-              />
-            </div>,
-            <div
               className="account-data"
             >
               <div
@@ -282,69 +265,6 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <p
-                  className="profile-name"
-                >
-                  rtg
-                </p>,
-                <div
-                  className="points-label"
-                >
-                  points
-                </div>,
-                <div
-                  className="points-number"
-                />,
-              ],
-              "className": "points-container",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "rtg",
-                  "className": "profile-name",
-                },
-                "ref": null,
-                "rendered": "rtg",
-                "type": "p",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "points",
-                  "className": "points-label",
-                },
-                "ref": null,
-                "rendered": "points",
-                "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": null,
-                  "className": "points-number",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "div",
-              },
-            ],
-            "type": "div",
-          },
           Object {
             "instance": null,
             "key": undefined,
@@ -405,6 +325,76 @@ ShallowWrapper {
             "type": "div",
           },
         ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "points",
+          "className": "user-points-label",
+        },
+        "ref": null,
+        "rendered": "points",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="points-data"
+          >
+            <div>
+              total points
+            </div>
+            <div />
+          </div>,
+          "className": "user-data",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div>
+                total points
+              </div>,
+              <div />,
+            ],
+            "className": "points-data",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "total points",
+              },
+              "ref": null,
+              "rendered": "total points",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": null,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
         "type": "div",
       },
       Object {
@@ -573,23 +563,6 @@ ShallowWrapper {
             className="user-data"
           >
             <div
-              className="points-container"
-            >
-              <p
-                className="profile-name"
-              >
-                rtg
-              </p>
-              <div
-                className="points-label"
-              >
-                points
-              </div>
-              <div
-                className="points-number"
-              />
-            </div>
-            <div
               className="account-data"
             >
               <div
@@ -606,6 +579,23 @@ ShallowWrapper {
             <div
               className="extra-data"
             />
+          </div>,
+          <p
+            className="user-points-label"
+          >
+            points
+          </p>,
+          <div
+            className="user-data"
+          >
+            <div
+              className="points-data"
+            >
+              <div>
+                total points
+              </div>
+              <div />
+            </div>
           </div>,
           <div>
             <p
@@ -747,23 +737,6 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <div
-                className="points-container"
-              >
-                <p
-                  className="profile-name"
-                >
-                  rtg
-                </p>
-                <div
-                  className="points-label"
-                >
-                  points
-                </div>
-                <div
-                  className="points-number"
-                />
-              </div>,
-              <div
                 className="account-data"
               >
                 <div
@@ -785,69 +758,6 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <p
-                    className="profile-name"
-                  >
-                    rtg
-                  </p>,
-                  <div
-                    className="points-label"
-                  >
-                    points
-                  </div>,
-                  <div
-                    className="points-number"
-                  />,
-                ],
-                "className": "points-container",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "rtg",
-                    "className": "profile-name",
-                  },
-                  "ref": null,
-                  "rendered": "rtg",
-                  "type": "p",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "points",
-                    "className": "points-label",
-                  },
-                  "ref": null,
-                  "rendered": "points",
-                  "type": "div",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": null,
-                    "className": "points-number",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "div",
-                },
-              ],
-              "type": "div",
-            },
             Object {
               "instance": null,
               "key": undefined,
@@ -908,6 +818,76 @@ ShallowWrapper {
               "type": "div",
             },
           ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "points",
+            "className": "user-points-label",
+          },
+          "ref": null,
+          "rendered": "points",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="points-data"
+            >
+              <div>
+                total points
+              </div>
+              <div />
+            </div>,
+            "className": "user-data",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div>
+                  total points
+                </div>,
+                <div />,
+              ],
+              "className": "points-data",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "total points",
+                },
+                "ref": null,
+                "rendered": "total points",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": null,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
           "type": "div",
         },
         Object {

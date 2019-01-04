@@ -6,9 +6,6 @@ import PropTypes from 'prop-types';
 import './Account.scss';
 
 export class Account extends Component {
-  constructor(){
-    super()
-  }
 
   changeRoute = () => {
     this.forceUpdate();
@@ -41,16 +38,18 @@ export class Account extends Component {
         </div>
         <p className='profile-name'>{ user.name }</p>
         <div className='user-data'>
-          <div className='points-container'>
-            <p className='profile-name'>{user.name}</p>
-            <div className='points-label'>points</div>
-            <div className='points-number'>{ currentPoints }</div>
-          </div>
           <div className='account-data'>
             <div className='email-label'>email</div>
             <div className='email-text'>{user.email}</div>
           </div>
           <div className='extra-data'>
+          </div>
+        </div>
+        <p className='user-points-label'>points</p>
+        <div className='user-data'>
+          <div className='points-data'>
+            <div>total points</div>
+            <div>{currentPoints}</div>
           </div>
         </div>
         {
