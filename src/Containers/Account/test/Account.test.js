@@ -7,6 +7,7 @@ describe('Account', () => {
   let mockUser;
   let signOut;
   let mockSignOut
+  let mockUsedCounties
 
   beforeEach(() => {
     mockSignOut = jest.fn()
@@ -16,9 +17,11 @@ describe('Account', () => {
             loggedIn: true,
             email: 'alex@turing.com'
            }
+    mockUsedCounties = ['france', 'mexico']
     wrapper = shallow(<Account 
                         user={mockUser} 
                         signOut={mockSignOut}
+                        usedCountries={mockUsedCounties}
                       />)
   });
 
