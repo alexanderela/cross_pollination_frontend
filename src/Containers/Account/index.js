@@ -9,29 +9,42 @@ export class Account extends Component {
   constructor(){
     super()
   }
+
   changeRoute = () => {
     this.forceUpdate();
   }
 
+  returnGuessedCountries = () => {
+    return this.props.usedCountries.map(country => {
+      return <li key={country} className='correct-guess'>{country}</li>
+    });
+  }
+
   logoutUser = () => {
+    localStorage.clear()
     this.props.signOut({});
   }
 
   render() {
-    const { user, totalPoints } = this.props
+    const { usedCountries, user } = this.props;
+    const currentPoints = JSON.parse(localStorage.getItem('currentPoints'))
+
     return (
       <div className='Account'>
         <div className='account-area'>
           <NavLink to='/' onClick={this.changeRoute} className='back-button'></NavLink>
-          <div className='account-logout' onClick={this.logoutUser} >log out</div>
+          <NavLink className='account-logout' to='/' onClick={this.logoutUser}>
+            <div className='account-logout' >log out</div>
+          </NavLink>
         </div>
         <div className='profile-image-container'>
         </div>
+        <p className='profile-name'>{ user.name }</p>
         <div className='user-data'>
-          <p className='profile-name'>{user.name}</p>
           <div className='points-container'>
+            <p className='profile-name'>{user.name}</p>
             <div className='points-label'>points</div>
-            <div className='points-number'>{totalPoints}</div>
+            <div className='points-number'>{ currentPoints }</div>
           </div>
           <div className='account-data'>
             <div className='email-label'>email</div>
@@ -40,14 +53,26 @@ export class Account extends Component {
           <div className='extra-data'>
           </div>
         </div>
+        {
+          usedCountries.length > 1 &&
+          <div>
+            <p className='user-correct-guesses'>guessed countries</p>
+            <div className='user-data'>
+              <ul className='correct-guesses-list'>
+                { this.returnGuessedCountries() }
+              </ul>
+            </div>
+          </div>
+        }
       </div>
     );
   }
 }
 
-export const mapStateToProps = (state) => ({
-  user: state.user
-})
+export const mapStateToProps = ({ usedCountries, user }) => ({
+  usedCountries,
+  user
+});
 
 export const mapDispatchToProps = (dispatch) => ({
   signOut: (user) => dispatch(signOut(user))
@@ -55,8 +80,8 @@ export const mapDispatchToProps = (dispatch) => ({
 
 Account.propTypes = {
   user: PropTypes.object.isRequired,
-  signOut: PropTypes.func.isRequired
+  signOut: PropTypes.func.isRequired,
+  usedCountries: PropTypes.array
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (Account);
-
+export default connect(mapStateToProps, mapDispatchToProps)(Account);

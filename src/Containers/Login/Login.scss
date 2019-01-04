@@ -94,7 +94,8 @@ $tw-blue: #1dcaff;
   width: 80%;
 }
 
-.login-back {
+.login-back,
+.login-submit {
   border: none;
   border-radius:3rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
@@ -118,6 +119,7 @@ $tw-blue: #1dcaff;
   margin: 1.25rem auto;
   outline: none;
   padding: 12px 0;
+  position: absolute;
   text-align: center;
   transition-duration: .05s;
   width: 100%;

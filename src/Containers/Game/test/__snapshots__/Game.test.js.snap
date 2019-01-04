@@ -92,7 +92,7 @@ ShallowWrapper {
           className="hint-button"
           onClick={[Function]}
         >
-          Hints: 2
+          hints: 2
         </div>,
         Array [
           <div
@@ -294,12 +294,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Hints: 2",
+          "children": "hints: 2",
           "className": "hint-button",
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Hints: 2",
+        "rendered": "hints: 2",
         "type": "div",
       },
       Object {
@@ -410,7 +410,7 @@ ShallowWrapper {
             className="hint-button"
             onClick={[Function]}
           >
-            Hints: 2
+            hints: 2
           </div>,
           Array [
             <div
@@ -612,12 +612,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Hints: 2",
+            "children": "hints: 2",
             "className": "hint-button",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Hints: 2",
+          "rendered": "hints: 2",
           "type": "div",
         },
         Object {

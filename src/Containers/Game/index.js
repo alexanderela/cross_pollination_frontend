@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import './Game.scss';
 import Hint from '../../Components/Hint';
 import Results from '../../Components/Results';
@@ -20,6 +20,19 @@ export class Game extends Component {
     }
   }
 
+  componentDidMount(){
+    if(localStorage.getItem('currentPoints')){
+      this.setState({
+        totalPoints: JSON.parse(localStorage.getItem('currentPoints'))
+      })
+    } else {
+      this.setState({
+        totalPoints: 0
+      })
+    }
+  }
+
+
   checkAnswer = (e) => {
     const { currentCountry } = this.props;
     const { innerText } = e.target
@@ -36,8 +49,19 @@ export class Game extends Component {
   giveHint = () => {
     let { hintsUsed, pointsPossible } = this.state;
 
+    if (hintsUsed === 2) {
+      this.giveHintSwitch();
+      return;
+    }
+    
     this.setState({ showHint: true });
     
+    this.giveHintSwitch();
+  }
+  
+  giveHintSwitch = () => {
+    let { hintsUsed, pointsPossible } = this.state;
+
     switch(true) {
       case (hintsUsed === 0):
         this.setState({ hint: 'fact' });
@@ -51,8 +75,6 @@ export class Game extends Component {
           hintsExhausted: true,
         })
         break;
-      default:
-        console.log('Sorry, we are out of hints');
     }
 
     this.setState({
@@ -92,6 +114,7 @@ export class Game extends Component {
 
     if(status === 'Correct'){
       const updatedTotal = totalPoints + pointsPossible
+      localStorage.setItem('currentPoints', JSON.stringify(updatedTotal))
       this.setState({ totalPoints: updatedTotal })
     }
   }
@@ -103,7 +126,7 @@ export class Game extends Component {
  getCountryFlagPath = () => {
     const { flag } = this.props.currentCountry;
     const flagUrl = `https://flagz4u.herokuapp.com${flag}`
-    return flagUrl
+    return flagUrl;
   }
 
   changeRoute = () => {
@@ -114,7 +137,7 @@ export class Game extends Component {
     const choiceButtons = this.showButtons();
     const flagImage = this.getCountryFlagPath();
 
-    const { pointsPossible, showHint, hint, totalPoints, status } = this.state;
+    const { pointsPossible, showHint, hint, hintsUsed, totalPoints, status } = this.state;
     const { getCountry, user } = this.props;   
     const { name, facts, country_outline } = this.props.currentCountry;
 
@@ -134,8 +157,8 @@ export class Game extends Component {
         <div className='flag-main'>
           <img src={flagImage} alt='' className='flag-image'/>
         </div>
-        <div className='hint-button' onClick={this.giveHint}>
-          Hints: 2
+        <div className={hintsUsed < 2 ? 'hint-button' : 'hint-button hint-button-disabled'} onClick={this.giveHint}>
+          {hintsUsed < 2 ? `hints: ${2 - hintsUsed}` : 'no more hints'}
         </div>
         
         { choiceButtons }
@@ -168,9 +191,7 @@ export const mapStateToProps = ({ currentCountry }) => ({
   currentCountry    
 });
 
-export const mapDispatchToProps = (dispatch) => ({
-
-})
+export const mapDispatchToProps = (dispatch) => ({});
 
 Game.propTypes = {
   user: PropTypes.object.isRequired,

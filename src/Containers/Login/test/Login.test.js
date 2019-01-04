@@ -11,13 +11,13 @@ describe('Login', () => {
   let expected;
   
   beforeEach(() => {
-    mockFunc = jest.fn();
+    mockFunc = jest.fn()
     mockEvent = {
       preventDefault: mockFunc,
       target: {
         name: 'name',
-        value: 'Alex'
-      }
+        value: 'Alex',
+      },
     }
 
     mockUser = {
@@ -75,8 +75,8 @@ describe('Login', () => {
     it('should set state upon invocaton of handleChange', () => {
       wrapper.instance().handleChange(mockEvent);
       expect(wrapper.state().name).toEqual('Alex')
-    });
-  });
+    })
+  })
 
   describe('expandCredentials', () => {
     it('should should set state upon invocaton of expandCredentials', () => {
@@ -122,13 +122,13 @@ describe('Login', () => {
         name: 'Bruce',
         email: 'Ela',
         password: 'Rau',
-      });
-      wrapper.instance().clearInputs();
-      expect(wrapper.state().name).toEqual('');
-      expect(wrapper.state().email).toEqual('');
-      expect(wrapper.state().password).toEqual('');
-    });
-  });
+      })
+      wrapper.instance().clearInputs()
+      expect(wrapper.state().name).toEqual('')
+      expect(wrapper.state().email).toEqual('')
+      expect(wrapper.state().password).toEqual('')
+    })
+  })
 
   describe('mapStateToProps', () => {
     it('should create the correct props object', () => {
@@ -145,8 +145,6 @@ describe('Login', () => {
       expect(mappedProps).toEqual(expected)
     });
 
-  });
-  
   describe('mapDispatchToProps', () => {
     const mockDispatch = jest.fn()
 

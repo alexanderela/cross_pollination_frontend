@@ -130,7 +130,9 @@ export class Login extends Component {
                     name='name' 
                     onChange={this.handleChange}
                   />
-                  <div className='login-input-placeholder name-placeholder'>name</div>
+                  {!name &&
+                    <div className='login-input-placeholder name-placeholder'>name</div>
+                  }
                 </div>
               }
               <h4 className='error'>{showError}</h4>
@@ -140,15 +142,19 @@ export class Login extends Component {
                 name='email' 
                 onChange={this.handleChange}
               />
-              <div className='login-input-placeholder email-placeholder'>email</div>
+              {!email &&
+                <div className='login-input-placeholder email-placeholder'>email</div>
+              }
               <input 
                 className='login-input login-password' 
                 value={password} 
                 name='password' 
                 onChange={this.handleChange}
               />
-              <div className='login-input-placeholder password-placeholder'>password</div>
-              <button className='login-back' onClick={this.handleSubmit}>login</button>
+              {!password &&
+                <div className='login-input-placeholder password-placeholder'>password</div>
+              }
+              <button className='login-submit' onClick={this.handleSubmit}>login</button>
               <button className='login-back' onClick={this.closeCredentials}>go back</button>
             </form>
           }
@@ -165,7 +171,7 @@ export const mapStateToProps = ({ user, loading }) => ({
 
 export const mapDispatchToProps = (dispatch) => ({
   fetchUser:(name, email, password) => dispatch(fetchUser(name, email, password))
-})
+});
 
 Login.propTypes = {
   user: PropTypes.object.isRequired,
