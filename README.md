@@ -4,7 +4,26 @@
 
 # World of Flags
 
-## Recharge while you recharge! With World of Flags, you can query a sophisticated API to find Electric Vehicle (EV) charging stations and nearby cafes anywhere in the US or Canada. A Heroku-hosted PostgreSQL relational database and well-documented API built with Node.js, Express, and Knex.js.
+## World of flags is a mobile app designed to help users teach themselves the flags of the world.  Its underlying goal is to stimulate users’ curiosity about the world by familiarizing them  with different countries’ flags.
+
+When interacting with World of Flags, sers are shown  a randomly generated  flag from one of the world’s 193 countries and then can choose between 4 country options.
+
+If they get stuck, users can request up to 2 hints about the country whose flag they are guessing.  These hints consist of facts about the country or an image of the country’s outline.  By viewing these hints, users can grow to associate different flags with facts about their countries.
+
+As users correctly guess different flags, they will accumulate points.  In this way, World of Flags aims to make learning about the world a fun and enjoyable process.
+
+## Images
+### Main Game Page
+![Main Game Page image](./src/images/app-images/main-game.png "Main Game Page")
+
+### Landing Page
+![Landing Page image](./src/images/app-images/landing.png "Landing Page")
+
+### Login Page
+![Login Page image](./src/images/app-images/login.png "Login Page")
+
+### Account Page
+![Account Page image](./src/images/app-images/account.png "Account Page")
 
 ## How to Use
 World of Flags on Heroku: [https://flagz4u-frontend.herokuapp.com/](https://flagz4u-frontend.herokuapp.com/).
