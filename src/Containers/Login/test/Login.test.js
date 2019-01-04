@@ -48,13 +48,25 @@ describe('Login', () => {
   
   describe('loginUser', () => {
     it('should call fetchUser with the correct parameters if createUser is truthy', () => {
-      wrapper.setState({ createUser: true })
-      wrapper.instance().expandCredentials()
+      wrapper.setState({ 
+                          createUser: true,
+                          name: 'Alex',
+                          email: 'alex@123.com',
+                          password: '123' 
+                        })
+      wrapper.instance().loginUser(mockEvent)
+      expect(wrapper.instance().props.fetchUser).toHaveBeenCalledWith(null, 'alex@123.com', '123')
     });
 
-    it.skip('should call fetchUser with the correct parameters if createUser is falsy', () => {
-      wrapper.setState({ createUser: false })
-      wrapper.instance().expandCredentials()
+    it('should call fetchUser with the correct parameters if createUser is falsy', () => {
+      wrapper.setState({ 
+                          createUser: false,
+                          name: 'Alex',
+                          email: 'alex@123.com',
+                          password: '123' 
+                        })
+      wrapper.instance().loginUser(mockEvent)
+      expect(wrapper.instance().props.fetchUser).toHaveBeenCalledWith('Alex', 'alex@123.com', '123')
     });
 
   });
