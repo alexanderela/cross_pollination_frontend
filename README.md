@@ -1,44 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Build Status](https://travis-ci.org/alexanderela/cross_pollination_frontend.svg?branch=master)](https://travis-ci.org/alexanderela/cross_pollination_frontend)
 
-## Available Scripts
+# World of Flags
 
-In the project directory, you can run:
+## World of flags is a mobile app designed to help users teach themselves the flags of the world.  Its underlying goal is to stimulate users’ curiosity about the world by familiarizing them  with different countries’ flags.
 
-### `npm start`
+When interacting with World of Flags, sers are shown  a randomly generated  flag from one of the world’s 193 countries and then can choose between 4 country options.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+If they get stuck, users can request up to 2 hints about the country whose flag they are guessing.  These hints consist of facts about the country or an image of the country’s outline.  By viewing these hints, users can grow to associate different flags with facts about their countries.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+As users correctly guess different flags, they will accumulate points.  In this way, World of Flags aims to make learning about the world a fun and enjoyable process.
 
-### `npm test`
+## Images:
+### Main Game Page
+![Main Game Page image](./src/Images/app/main.png "Main Game Page")
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Landing Page
+![Landing Page image](./src/Images/app/landing.png "Landing Page")
 
-### `npm run build`
+### Login Page
+![Login Page image](./src/Images/app/login.png "Login Page")
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Account Page
+![Account Page image](./src/Images/app/account.png "Account Page")
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## How to Use
+World of Flags on Heroku: [https://flagz4u-frontend.herokuapp.com/](https://flagz4u-frontend.herokuapp.com/).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Developers:
+#### Install and Start Server
+* Clone this repo.
 
-### `npm run eject`
+* `npm install`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* `npm start`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Create Postgres Database and Run Migrations:
+* `psql CREATE DATABASE rechargeables`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* `knex migrate:latest`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* `knex seed:run`
 
-## Learn More
+## Technologies Used:
+- React.js
+- Redux
+- Sass
+- Node.js
+- Express
+- Knex.js
+- Heroku
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Requirements:
+Project spec can be found [here](http://frontend.turing.io/projects/capstone.html).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Project Trello board can be found [here](https://trello.com/b/ppUdNp6Q/cross-pollination-fe).
+
+
+## This is a partenered project designed and coded by Alex Bruce, Alexander Ela, Ben Hayek, and Tobin Nelson.
