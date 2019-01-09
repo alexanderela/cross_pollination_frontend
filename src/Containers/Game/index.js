@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Game.scss';
 import Hint from '../../Components/Hint';
 import Results from '../../Components/Results';
@@ -47,7 +47,7 @@ export class Game extends Component {
   }
 
   giveHint = () => {
-    let { hintsUsed, pointsPossible } = this.state;
+    let { hintsUsed } = this.state;
 
     if (hintsUsed === 2) {
       this.giveHintSwitch();
@@ -75,6 +75,8 @@ export class Game extends Component {
           hintsExhausted: true,
         })
         break;
+      default:
+        return
     }
 
     this.setState({
@@ -196,7 +198,6 @@ export const mapDispatchToProps = (dispatch) => ({});
 Game.propTypes = {
   user: PropTypes.object.isRequired,
   currentCountry: PropTypes.object.isRequired,
-  totalPoints: PropTypes.number.isRequired,
   getCountry: PropTypes.func.isRequired,
 }
 
