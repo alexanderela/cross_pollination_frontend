@@ -58,4 +58,8 @@ Project spec can be found [here](http://frontend.turing.io/projects/capstone.htm
 Project Trello board can be found [here](https://trello.com/b/ppUdNp6Q/cross-pollination-fe).
 
 
-## This is a partenered project designed and coded by Alex Bruce, Alexander Ela, Ben Hayek, and Tobin Nelson.
+## This is a partenered project designed and coded by: 
+Alex Bruce - [Github.com/Alexbruce1](https://github.com/Alexbruce1)
+Alexander Ela - [Github.com/alexanderela](https://github.com/alexanderela)
+Ben Hayek - [Github.com/benjaminhayek](https://github.com/benjaminhayek)
+Tobin Nelson - [Github.com/Tobin-jn](https://github.com/Tobin-jn)
