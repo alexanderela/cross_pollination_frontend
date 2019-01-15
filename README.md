@@ -59,7 +59,7 @@ Project Trello board can be found [here](https://trello.com/b/ppUdNp6Q/cross-pol
 
 
 ## This is a partenered project designed and coded by: 
-Alex Bruce - [Github.com/Alexbruce1](https://github.com/Alexbruce1)
-Alexander Ela - [Github.com/alexanderela](https://github.com/alexanderela)
-Ben Hayek - [Github.com/benjaminhayek](https://github.com/benjaminhayek)
-Tobin Nelson - [Github.com/Tobin-jn](https://github.com/Tobin-jn)
+* Alex Bruce - [Github.com/Alexbruce1](https://github.com/Alexbruce1)
+* Alexander Ela - [Github.com/alexanderela](https://github.com/alexanderela)
+* Ben Hayek - [Github.com/benjaminhayek](https://github.com/benjaminhayek)
+* Tobin Nelson - [Github.com/Tobin-jn](https://github.com/Tobin-jn)
