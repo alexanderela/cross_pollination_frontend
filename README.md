@@ -3,6 +3,7 @@
 # World of Flags
 
 ## World of flags is a mobile app designed to help users teach themselves the flags of the world.  Its underlying goal is to stimulate users’ curiosity about the world by familiarizing them  with different countries’ flags.
+## Deployed App: [World of Flags](https://world-of-flags.herokuapp.com/).
 
 When interacting with World of Flags, users are shown  a randomly generated  flag from one of the world’s 193 countries and then can choose between 4 country options.
 
@@ -24,7 +25,6 @@ As users correctly guess different flags, they will accumulate points.  In this 
 ![Account Page image](./src/images/app/account.png "Account Page")
 
 ## How to Use
-Deployed App: [World of Flags](https://world-of-flags.herokuapp.com/).
 
 ### Developers:
 #### Install and Start Server
