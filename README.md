@@ -1,8 +1,7 @@
 [![Build Status](https://travis-ci.org/alexanderela/cross_pollination_frontend.svg?branch=master)](https://travis-ci.org/alexanderela/cross_pollination_frontend)
 
 # World of Flags
-
-## World of flags is a mobile app designed to help users teach themselves the flags of the world.  Its underlying goal is to stimulate users’ curiosity about the world by familiarizing them  with different countries’ flags.
+World of flags is a mobile app designed to help users teach themselves the flags of the world.  Its underlying goal is to stimulate users’ curiosity about the world by familiarizing them  with different countries’ flags.
 ## Deployed App: [World of Flags](https://world-of-flags.herokuapp.com/).
 
 When interacting with World of Flags, users are shown  a randomly generated  flag from one of the world’s 193 countries and then can choose between 4 country options.
