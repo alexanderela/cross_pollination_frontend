@@ -24,7 +24,7 @@ As users correctly guess different flags, they will accumulate points.  In this 
 ![Account Page image](./src/images/app/account.png "Account Page")
 
 ## How to Use
-World of Flags on Heroku: [https://flagz4u-frontend.herokuapp.com/](https://flagz4u-frontend.herokuapp.com/).
+Deployed App: [World of Flags](https://world-of-flags.herokuapp.com/).
 
 ### Developers:
 #### Install and Start Server
