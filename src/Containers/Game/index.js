@@ -127,7 +127,7 @@ export class Game extends Component {
 
  getCountryFlagPath = () => {
     const { flag } = this.props.currentCountry;
-    const flagUrl = `https://flagz4u.herokuapp.com${flag}`
+    const flagUrl = `https://world-of-flags-backend.herokuapp.com${flag}`
     return flagUrl;
   }
 

@@ -2,7 +2,7 @@ import * as API from './API'
 import { buildQuestion, checkCountry } from './helper'
 
 export const fetchCorrectCountry = async (randomId, usedCountries) => {
-  const url = `https://flagz4u.herokuapp.com/api/v1/country/${randomId}`
+  const url = `https://world-of-flags-backend.herokuapp.com/api/v1/country/${randomId}`
 
   const countryArray = await API.fetchData(url)
   const correctCountry = countryArray[0]
@@ -18,7 +18,7 @@ export const fetchCorrectCountry = async (randomId, usedCountries) => {
 }
 
 export const fetchCountryFacts = async countryId => {
-  const url = `https://flagz4u.herokuapp.com/api/v1/facts/${countryId}`
+  const url = `https://world-of-flags-backend.herokuapp.com/api/v1/facts/${countryId}`
 
   const countryFacts = await API.fetchData(url)
   return countryFacts
