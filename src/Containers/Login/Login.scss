@@ -206,6 +206,7 @@ $tw-blue: #1dcaff;
   font-size: 10px;
 }
 
+
 @keyframes flag-grid-slider {
   0% {
     background-position: 0 0;
@@ -214,4 +215,40 @@ $tw-blue: #1dcaff;
   100% {
     background-position: 1000% 0;
   }
+}
+
+@media screen and (min-width: 535px) {
+  .Login,
+  .login-background-color {
+    background-attachment: fixed;
+  }
+
+  .login-title {
+    margin: auto;
+    padding: 2rem;
+    width: 20rem;
+  }
+
+  .login-divider {
+    margin: 50px calc(50% - 7.5rem);
+    width: 15rem;
+  }
+
+  .login-button-email,
+  .login-button-facebook,
+  .login-button-twitter,
+  .login-input {
+    width: 375px;
+  }
+
+  .login-form {
+    // bottom: 0;
+    left: calc(50% - 187.5px);
+    margin: 0 auto;
+    padding: 0;
+    position: absolute;
+    top: calc();
+    width: 375px;
+  }
+
 }

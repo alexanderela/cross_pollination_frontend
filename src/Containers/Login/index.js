@@ -1,182 +1,254 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchUser } from '../../Thunks/user';
-import './Login.scss';
-import PropTypes from 'prop-types';
+$blue-accent: rgba(89, 219, 230, 1);
+// blue-accent HEX: #59DBE6
+$btn-white: #e2e2e2;
+$fb-blue: #3b5998;
+$tw-blue: #1dcaff;
 
-export class Login extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: '',
-      email: '',
-      password: '',
-      createUser: false,
-      error: '',
-      emailCredentials: false,
-      formLogin: true,
-      _isMounted: false
-    }
-  }
+* {
+  transition-duration: .2s;
+}
 
-  componentDidMount() {
-    this._isMounted = true
-  }
-
-  componentWillUnmount() {
-    this._isMounted = false
-  }
-
-  createUser = () => {
-    this.setState({createUser: !this.state.createUser});
-  }
-
-  loginUser = async (event) => {
-    const { createUser, name, email, password } = this.state;
-    const { fetchUser } = this.props;
-
-    event.preventDefault();
-    return createUser
-      ? fetchUser(null, email, password)
-      : fetchUser(name, email, password) 
-  }
-
-  handleChange = (e) => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value
-    });
-  }
-
-  expandCredentials = () => {
-    this.setState({
-      emailCredentials: true
-    });
-  }
-
-  closeCredentials = () => {
-    this.setState({
-      emailCredentials: false
-    });
-  }
-
-  changeFormPurpose = () => {
-    const { formLogin } = this.state;
-    this.setState({
-      formLogin: !formLogin
-    })
-  }
-
-  handleSubmit = async (event) => {
-    const user = await this.loginUser(event)
-    if (this.state._isMounted === true) {
-      return user
-    } else {
-      return null
-    }
-  }
-
-  clearInputs = () => {
-    this.setState({
-      name: '',
-      email: '',
-      password: '',
-    });
-  }
-;
-  render() {
-    const { emailCredentials, formLogin, name, email, password, error } = this.state;
-    const { loading } = this.props;
-    const showError = loading === `Email & password don't match` || loading === `Login to save score`
-      ? loading
-      : ''
-
-    return (
-      <div className='Login'>
-        <div className='login-background-color'>
-        <h1 className={!emailCredentials ? 'login-title' : 'login-title-small'}>World<br/>Of Flags</h1>
-          {
-            !emailCredentials &&
-            <div className='login-divider'>
-              <div className='divider'></div>
-              <div className='login-divider-text'>login / sign up</div>
-              <div className='divider'></div>
-            </div>
-          }
-          <div className='login-button-facebook'>Facebook</div>
-          <div className='login-button-twitter'>Twitter</div>
-          {
-            !emailCredentials &&
-            <div className='login-button-email' onClick={this.expandCredentials}>Email</div>
-          }
-          {
-            emailCredentials &&
-            <form className='login-form'>
-              <div className='login-error'>{error}</div>
-              <div className='login-signup-slider' onClick={this.changeFormPurpose}>
-                <div className='form-slider-login'>login</div>
-                <div className={formLogin ? 'form-slider form-slider-left' : 'form-slider form-slider-right'}></div>
-                <div className='form-slider-signup'>sign up</div>
-              </div>
-              {
-                !formLogin &&
-                <div>
-                  <h4 className='error'>{showError}</h4>
-                  <input 
-                    className='login-input login-name' 
-                    value={name} 
-                    name='name' 
-                    onChange={this.handleChange}
-                  />
-                  {!name &&
-                    <div className='login-input-placeholder name-placeholder'>name</div>
-                  }
-                </div>
-              }
-              <h4 className='error'>{showError}</h4>
-              <input 
-                className='login-input login-email' 
-                value={email} 
-                name='email' 
-                onChange={this.handleChange}
-              />
-              {!email &&
-                <div className='login-input-placeholder email-placeholder'>email</div>
-              }
-              <input 
-                className='login-input login-password' 
-                value={password}
-                type='password'
-                name='password'
-                onChange={this.handleChange}
-              />
-              {!password &&
-                <div className='login-input-placeholder password-placeholder'>password</div>
-              }
-              <button className='login-submit' onClick={this.handleSubmit}>login</button>
-              <button className='login-back' onClick={this.closeCredentials}>go back</button>
-            </form>
-          }
-        </div>
-      </div>
-    );
+.Login {
+  background: left / cover url(../../images/intros/flagGrid.png);
+  background-repeat: repeat;
+  background-position: center;
+  height: 100vh;
+  animation: flag-grid-slider 420s linear infinite;
+  .login-background-color {
+    background: linear-gradient(rgba(12, 0, 254, .90) 3%, rgba(0, 0, 0, .90));
+    height: 100%;
+    width: 100%;
   }
 }
 
-export const mapStateToProps = ({ user, loading }) => ({
-  user: user,
-  loading: loading
-})
-
-export const mapDispatchToProps = (dispatch) => ({
-  fetchUser:(name, email, password) => dispatch(fetchUser(name, email, password))
-});
-
-Login.propTypes = {
-  user: PropTypes.object.isRequired,
-  loading: PropTypes.string.isRequired,
-  fetchUser: PropTypes.func.isRequired,
+.login-title {
+  color: #e2e2e2;
+  font-family: 'Lobster';
+  font-size: 4rem;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 40% 0 20%;
+  text-align: center;
+  text-decoration: underline;
+  width: 100%;
 }
 
-export default connect (mapStateToProps, mapDispatchToProps)(Login);
+.login-title-small {
+  color: #e2e2e2;
+  font-family: 'Lobster';
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 1.5rem 0;
+  text-align: center;
+  text-decoration: underline;
+  width: 100%;
+}
+
+.login-divider {
+  display: inline-flex;
+  justify-content: space-between;
+  height: 5rem;
+  margin: 2rem 20%;
+  text-align: center;
+  width: 60%;
+  .divider {
+    background-color: #59DBE6;
+    height: 1px;
+    margin: 2.5rem 0;
+    width: 3rem;
+  }
+  
+  .login-divider-text {
+    color: #59DBE6;
+    font-size: 1.5rem;
+    letter-spacing: -2px;
+    margin: 1.5rem 0;
+  }
+}
+
+.login-button-facebook {
+  background-color: $fb-blue;
+  color: $btn-white;
+}
+
+.login-button-twitter {
+  background-color: $tw-blue;
+}
+
+.login-button-email {
+  background-color: $btn-white;
+}
+
+.login-button-email,
+.login-button-facebook,
+.login-button-twitter,
+.login-input {
+  border-radius:3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+  font-weight: 700;
+  margin: 1.25rem auto;
+  padding: 12px 0;
+  text-align: center;
+  transition-duration: .05s;
+  width: 80%;
+}
+
+.login-back,
+.login-submit {
+  border: none;
+  border-radius:3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1.25rem auto;
+  outline: none;
+  padding: 12px 0;
+  text-align: center;
+  transition-duration: .05s;
+  width: 100%;
+}
+
+.error {
+  color: white;
+  height: 2em;
+  width: 10em;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1.25rem auto;
+  outline: none;
+  padding: 12px 0;
+  position: absolute;
+  text-align: center;
+  transition-duration: .05s;
+  width: 80%;
+  z-index: -1;
+}
+
+.login-form {
+  padding: 0 10%;
+  width: 80%;
+  .form-instructions {
+    color: $blue-accent;
+    font-weight: 700;
+    margin: 1rem 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .login-signup-slider {
+    color: $blue-accent;
+    display: inline-flex;
+    font-size: 1.5rem;
+    justify-content: space-around;
+    margin: 1rem auto;
+    width: 100%;
+  }
+  
+  .form-slider {
+    border: 2px solid $blue-accent;
+    border-radius: 1rem;
+    bottom: 2px;
+    height: 2rem;
+    position: relative;
+    transition-duration: .2s;
+    width: 35%;
+  }
+  
+  .form-slider-left {
+    right: 27%;
+  }
+  
+  .form-slider-right {
+    left: 30%;
+  }
+  
+  .form-slider-login,
+  .form-slider-signup {
+    width: 30%;
+  }
+  
+  .form-slider-login {
+    text-align: right;
+  }
+  
+  .form-slider-signup {
+    text-align: left;
+  }
+  
+  .login-input {
+    border: none;
+    font-size: 1rem;
+    margin: 0 0 1.5rem 0;
+    outline: none;
+    text-align: left;
+    text-indent: 1.5rem;
+    width: 100%;
+  }
+  
+  .login-input-placeholder {
+    bottom: 3.5rem;
+    height: 0;
+    left: 1.5rem;
+    color: black;
+    position: relative;
+    transition-duration: .2s;
+  }
+}
+
+.login-name:focus + .name-placeholder,
+.login-email:focus + .email-placeholder,
+.login-password:focus + .password-placeholder {
+  bottom: 4.25rem;
+  color: $fb-blue;
+  font-weight: 700;
+  font-size: 10px;
+}
+
+
+@keyframes flag-grid-slider {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 1000% 0;
+  }
+}
+
+@media screen and (min-width: 535px) {
+  .Login,
+  .login-background-color {
+    background-attachment: fixed;
+  }
+
+  .login-title {
+    margin: auto;
+    padding: 2rem;
+    width: 20rem;
+  }
+
+  .login-divider {
+    margin: 50px calc(50% - 7.5rem);
+    width: 15rem;
+  }
+
+  .login-button-email,
+  .login-button-facebook,
+  .login-button-twitter,
+  .login-input {
+    width: 375px;
+  }
+
+  .login-form {
+    // bottom: 0;
+    left: calc(50% - 187.5px);
+    margin: 0 auto;
+    padding: 0;
+    position: absolute;
+    top: calc();
+    width: 375px;
+  }
+
+}

@@ -49,3 +49,26 @@ h5 {
 .option-button {
   background: $btn-white;
 }
+
+
+
+.hint-button {
+  background-color: $btn-gray;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  color: $blue-accent;
+  margin: 1.25rem auto;
+  padding: 12px 0;
+  text-align: center;
+  text-shadow: 0 0 1rem black;
+  width: 40%;
+}
+
+.hint-button-disabled {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  color: #11111D;
+  text-shadow: none;
+}
+
+.option-button {
+  background: $btn-white;
+}
