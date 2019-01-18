@@ -31,3 +31,11 @@ strong {
   text-align: center;
   width: 80%;
 }
+
+@media screen and (min-width: 535px) {
+  .button:hover {
+    background-color: $blue-accent;
+    color: $btn-gray;
+    cursor: pointer;
+  }
+}

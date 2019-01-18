@@ -72,3 +72,40 @@ h5 {
 .option-button {
   background: $btn-white;
 }
+
+@media screen and (min-width: 535px) {
+  .Game {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .account-area {
+    background: $btn-gray;
+  }
+
+  .flag-main {
+    height: unset;
+    margin: 5rem auto 0;
+    max-height: 450px;
+    max-width: 600px;
+    width: unset;
+  }
+  
+  .flag-image {
+    max-height: unset;
+    max-width: unset;
+    width: 100%;
+  }
+
+  .hint-button:hover {
+    background-color: $blue-accent;
+    color: $btn-gray;
+    cursor: pointer;
+    text-shadow: none;
+  }
+
+  .option-button {
+    max-width: 500px;
+    width: 60%
+  }
+}
