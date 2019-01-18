@@ -1,5 +1,4 @@
 import * as API from '../API'
-// jest.mock('../API');
 
 describe('API', () => {
   describe('fetchData', () => {
@@ -48,15 +47,15 @@ describe('API', () => {
     })
 
     it('should call fetch on path /api/signup', () => {
-      const url = 'https://flagz4u.herokuapp.com/signup'
+      const url = 'https://world-of-flags-backend.herokuapp.com/signup'
       const body = {
-        body: '{"username":"https://flagz4u.herokuapp.com/signup"}',
+        body: '{"username":"https://world-of-flags-backend.herokuapp.com/signup"}',
         headers: { 'Content-Type': 'application/json' },
         method: 'POST',
       }
       const expected = {
         body:
-          '{"username":"https://flagz4u.herokuapp.com/signup","email":{"body":"{\\"username\\":\\"https://flagz4u.herokuapp.com/signup\\"}","headers":{"Content-Type":"application/json"},"method":"POST"}}',
+          '{"username":"https://world-of-flags-backend.herokuapp.com/signup","email":{"body":"{\\"username\\":\\"https://world-of-flags-backend.herokuapp.com/signup\\"}","headers":{"Content-Type":"application/json"},"method":"POST"}}',
         headers: { 'Content-Type': 'application/json' },
         method: 'POST',
       }
@@ -65,7 +64,7 @@ describe('API', () => {
     })
 
     it("Should return json'd response from fetch", async () => {
-      const url = 'https://flagz4u.herokuapp.com/signup'
+      const url = 'https://world-of-flags-backend.herokuapp.com/signup'
       const expected = { data: mockUser }
       const response = await API.fetchData(url)
       expect(response).toEqual(expected)
@@ -99,14 +98,14 @@ describe('API', () => {
     })
 
     it('should call fetch on path /api/signin with correct params', () => {
-      const expected = {"body": "{\"email\":\"https://flagz4u.herokuapp.com/signin\"}", "headers": {"Content-Type": "application/json"}, "method": "POST"}
-      const url = 'https://flagz4u.herokuapp.com/signin'
+      const expected = {"body": "{\"email\":\"https://world-of-flags-backend.herokuapp.com/signin\"}", "headers": {"Content-Type": "application/json"}, "method": "POST"}
+      const url = 'https://world-of-flags-backend.herokuapp.com/signin'
       API.getUser(url)
       expect(window.fetch).toHaveBeenCalledWith(url, expected)
     })
 
     it("Should return json'd response from fetch", async () => {
-      const url = 'https://flagz4u.herokuapp.com/signin'
+      const url = 'https://world-of-flags-backend.herokuapp.com/signin'
       const expected = { data: mockUser }
       const response = await API.fetchData(url)
       expect(response).toEqual(expected)
