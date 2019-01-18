@@ -15,7 +15,7 @@ describe('Fetch', () => {
     beforeEach(() => {
       mockId = 79
       mockUsedCountries = ['Sweden', 'Denmark', 'Nigeria', 'Australia']
-      url = `https://flagz4u.herokuapp.com/api/v1/country/${mockId}`
+      url = `https://world-of-flags-backend.herokuapp.com/api/v1/country/${mockId}`
       helper.checkCountry = jest.fn().mockImplementation(() => {
         return false
       })
@@ -104,7 +104,7 @@ describe('Fetch', () => {
         },
       ]
 
-      url = `https://flagz4u.herokuapp.com/api/v1/facts/${mockId}`
+      url = `https://world-of-flags-backend.herokuapp.com/api/v1/facts/${mockId}`
     })
 
     API.fetchData = jest.fn().mockImplementation(() => {
@@ -121,21 +121,4 @@ describe('Fetch', () => {
       expect(API.fetchData).toHaveReturnedWith(mockCountryFacts)
     })
   })
-
-  //  describe('fetchAllCountries', () => {
-  // 		let url;
-  //     beforeEach(() => {
-  // 			url = 'https://flagz4u.herokuapp.com/api/v1/country';
-  //     })
-
-  //     it('should call fetchCountries with the correct URL', async () => {
-  //     		Fetch.fetchAllCountries();
-  //     		expect(API.fetchData).toHaveBeenCalledWith(url)
-  //     })
-
-  //     it('should return a resolved array', async () => {
-  //     		const countries = await Fetch.fetchAllCountries();
-  //     		expect(countries.results).toEqual([])
-  //   })
-  // })
 })

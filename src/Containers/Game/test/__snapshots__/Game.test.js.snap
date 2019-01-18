@@ -85,7 +85,7 @@ ShallowWrapper {
           <img
             alt=""
             className="flag-image"
-            src="https://flagz4u.herokuapp.com/images/flags/netherlands.png"
+            src="https://world-of-flags-backend.herokuapp.com/images/flags/netherlands.png"
           />
         </div>,
         <div
@@ -269,7 +269,7 @@ ShallowWrapper {
           "children": <img
             alt=""
             className="flag-image"
-            src="https://flagz4u.herokuapp.com/images/flags/netherlands.png"
+            src="https://world-of-flags-backend.herokuapp.com/images/flags/netherlands.png"
           />,
           "className": "flag-main",
         },
@@ -281,7 +281,7 @@ ShallowWrapper {
           "props": Object {
             "alt": "",
             "className": "flag-image",
-            "src": "https://flagz4u.herokuapp.com/images/flags/netherlands.png",
+            "src": "https://world-of-flags-backend.herokuapp.com/images/flags/netherlands.png",
           },
           "ref": null,
           "rendered": null,
@@ -403,7 +403,7 @@ ShallowWrapper {
             <img
               alt=""
               className="flag-image"
-              src="https://flagz4u.herokuapp.com/images/flags/netherlands.png"
+              src="https://world-of-flags-backend.herokuapp.com/images/flags/netherlands.png"
             />
           </div>,
           <div
@@ -587,7 +587,7 @@ ShallowWrapper {
             "children": <img
               alt=""
               className="flag-image"
-              src="https://flagz4u.herokuapp.com/images/flags/netherlands.png"
+              src="https://world-of-flags-backend.herokuapp.com/images/flags/netherlands.png"
             />,
             "className": "flag-main",
           },
@@ -599,7 +599,7 @@ ShallowWrapper {
             "props": Object {
               "alt": "",
               "className": "flag-image",
-              "src": "https://flagz4u.herokuapp.com/images/flags/netherlands.png",
+              "src": "https://world-of-flags-backend.herokuapp.com/images/flags/netherlands.png",
             },
             "ref": null,
             "rendered": null,

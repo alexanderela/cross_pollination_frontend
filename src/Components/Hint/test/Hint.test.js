@@ -52,7 +52,7 @@ describe('Hint', () => {
   describe('getCountryOutlinePath', () => {
     it('should create complete path for country outline', () => {
       const expected =
-        'https://flagz4u.herokuapp.com/images/outlines/netherlands.png'
+        'https://world-of-flags-backend.herokuapp.com/images/outlines/netherlands.png'
       const result = wrapper.instance().getCountryOutlinePath()
       expect(result).toEqual(expected)
     })

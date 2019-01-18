@@ -6,7 +6,7 @@ export const fetchData = async url => {
 
 export const addUser = async (name, email, password) => {
   try {
-    const url = 'https://flagz4u.herokuapp.com/signup'
+    const url = 'https://world-of-flags-backend.herokuapp.com/signup'
     const response = await fetch(url, {
       method: 'POST',
       body: JSON.stringify({
@@ -28,7 +28,7 @@ export const addUser = async (name, email, password) => {
 
 export const getUser = async (email, password, id, username) => {
   try {
-    const url = 'https://flagz4u.herokuapp.com/signin'
+    const url = 'https://world-of-flags-backend.herokuapp.com/signin'
     const response = await fetch(url, {
       method: 'POST',
       body: JSON.stringify({

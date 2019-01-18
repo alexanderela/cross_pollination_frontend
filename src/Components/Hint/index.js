@@ -10,7 +10,7 @@ class Hint extends Component {
 
   getCountryOutlinePath = () => {
     const { outline } = this.props
-    const outlineUrl = `https://flagz4u.herokuapp.com${outline}`
+    const outlineUrl = `https://world-of-flags-backend.herokuapp.com${outline}`
     return outlineUrl
   }
 

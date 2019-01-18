@@ -4,11 +4,7 @@ import PropTypes from 'prop-types';
 
 
 class Results extends Component {
-
-  componentDidMount() {
-    console.log(this.props.status)
-  }
-
+  
   handleClick = () => {
     const { getCountry, closeResults } = this.props
 

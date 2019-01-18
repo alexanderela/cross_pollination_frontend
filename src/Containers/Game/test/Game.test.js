@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow, mount } from 'enzyme'
 import { Game, mapStateToProps, mapDispatchToProps } from '../index'
-// import { wrap } from 'module';
 
 describe('Game', () => {
   let wrapper
@@ -206,7 +205,7 @@ describe('Game', () => {
     it('should create complete path for country flag', () => {
       let result = wrapper.instance().getCountryFlagPath()
       expect(result).toEqual(
-        'https://flagz4u.herokuapp.com/images/flags/netherlands.png'
+        'https://world-of-flags-backend.herokuapp.com/images/flags/netherlands.png'
       )
     })
   })
