@@ -77,6 +77,7 @@ h5 {
   .Game {
     max-width: 960px;
     margin: 0 auto;
+    overflow: hidden;
   }
 
   .account-area {
@@ -92,7 +93,7 @@ h5 {
   }
   
   .flag-image {
-    max-height: unset;
+    max-height: 425px;
     max-width: unset;
     width: 100%;
   }

@@ -95,5 +95,12 @@ $btn-gray: #40404B;
   .account-area {
     background: $btn-gray;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+  }
+
+  .Account {
+    margin: auto;
+    max-width: 960px;
+    padding-bottom: 3rem;
   }
 }
