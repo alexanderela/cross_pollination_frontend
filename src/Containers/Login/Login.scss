@@ -251,4 +251,25 @@ $tw-blue: #1dcaff;
     width: 375px;
   }
 
+  .login-button-facebook:hover {
+    background: #314470;
+  }
+
+  .login-button-twitter:hover {
+    background: #11aff8;
+  }
+
+  .login-input:hover {
+    background: #e0e0e0;
+  }
+
+  .login-input:focus {
+    background: #d8d8d8;
+  }
+
+  .login-back:hover,
+  .login-submit:hover,
+  .login-button-email:hover {
+    background: #bcbcbc;
+  }
 }
