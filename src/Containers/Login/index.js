@@ -28,7 +28,7 @@ export class Login extends Component {
   }
 
   createUser = () => {
-    this.setState({createUser: !this.state.createUser});
+    this.setState({ createUser: !this.state.createUser });
   }
 
   loginUser = async (event) => {
@@ -38,7 +38,7 @@ export class Login extends Component {
     event.preventDefault();
     return createUser
       ? fetchUser(null, email, password)
-      : fetchUser(name, email, password) 
+      : fetchUser(name, email, password)
   }
 
   handleChange = (e) => {
@@ -84,7 +84,7 @@ export class Login extends Component {
       password: '',
     });
   }
-;
+    ;
   render() {
     const { emailCredentials, formLogin, name, email, password, error } = this.state;
     const { loading } = this.props;
@@ -95,7 +95,7 @@ export class Login extends Component {
     return (
       <div className='Login'>
         <div className='login-background-color'>
-        <h1 className={!emailCredentials ? 'login-title' : 'login-title-small'}>World<br/>Of Flags</h1>
+          <h1 className={!emailCredentials ? 'login-title' : 'login-title-small'}>World<br />Of Flags</h1>
           {
             !emailCredentials &&
             <div className='login-divider'>
@@ -123,10 +123,10 @@ export class Login extends Component {
                 !formLogin &&
                 <div>
                   <h4 className='error'>{showError}</h4>
-                  <input 
-                    className='login-input login-name' 
-                    value={name} 
-                    name='name' 
+                  <input
+                    className='login-input login-name'
+                    value={name}
+                    name='name'
                     onChange={this.handleChange}
                   />
                   {!name &&
@@ -135,17 +135,17 @@ export class Login extends Component {
                 </div>
               }
               <h4 className='error'>{showError}</h4>
-              <input 
-                className='login-input login-email' 
-                value={email} 
-                name='email' 
+              <input
+                className='login-input login-email'
+                value={email}
+                name='email'
                 onChange={this.handleChange}
               />
               {!email &&
                 <div className='login-input-placeholder email-placeholder'>email</div>
               }
-              <input 
-                className='login-input login-password' 
+              <input
+                className='login-input login-password'
                 value={password}
                 type='password'
                 name='password'
@@ -170,7 +170,7 @@ export const mapStateToProps = ({ user, loading }) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  fetchUser:(name, email, password) => dispatch(fetchUser(name, email, password))
+  fetchUser: (name, email, password) => dispatch(fetchUser(name, email, password))
 });
 
 Login.propTypes = {
@@ -179,4 +179,4 @@ Login.propTypes = {
   fetchUser: PropTypes.func.isRequired,
 }
 
-export default connect (mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

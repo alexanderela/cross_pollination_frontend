@@ -49,3 +49,70 @@ h5 {
 .option-button {
   background: $btn-white;
 }
+
+
+
+.hint-button {
+  background-color: $btn-gray;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  color: $blue-accent;
+  margin: 1.25rem auto;
+  padding: 12px 0;
+  text-align: center;
+  text-shadow: 0 0 1rem black;
+  width: 40%;
+}
+
+.hint-button-disabled {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  color: #11111D;
+  text-shadow: none;
+}
+
+.option-button {
+  background: $btn-white;
+}
+
+@media screen and (min-width: 535px) {
+  .Game {
+    max-width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .account-area {
+    background: $btn-gray;
+  }
+
+  .flag-main {
+    height: unset;
+    margin: 5rem auto 0;
+    max-height: 450px;
+    max-width: 600px;
+    width: unset;
+  }
+  
+  .flag-image {
+    max-height: 300px;
+    max-width: unset;
+    width: 80%;
+  }
+
+  .hint-button:hover {
+    background-color: $blue-accent;
+    color: $btn-gray;
+    cursor: pointer;
+    text-shadow: none;
+  }
+
+  .hint-button-disabled:hover {
+    background-color: $btn-gray;
+    color: #11111D;
+    cursor: unset;
+  }
+
+  .option-button {
+    max-width: 500px;
+    width: 60%
+  }
+}
