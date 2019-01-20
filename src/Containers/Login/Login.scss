@@ -217,59 +217,59 @@ $tw-blue: #1dcaff;
   }
 }
 
-// @media screen and (min-width: 535px) {
-//   .Login,
-//   .login-background-color {
-//     background-attachment: fixed;
-//   }
+@media screen and (min-width: 535px) {
+  .Login,
+  .login-background-color {
+    background-attachment: fixed;
+  }
 
-//   .login-title {
-//     margin: auto;
-//     padding: 2rem;
-//     width: 20rem;
-//   }
+  .login-title {
+    margin: auto;
+    padding: 2rem;
+    width: 20rem;
+  }
 
-//   .login-divider {
-//     margin: 50px calc(50% - 7.5rem);
-//     width: 15rem;
-//   }
+  .login-divider {
+    margin: 50px calc(50% - 7.5rem);
+    width: 15rem;
+  }
 
-//   .login-button-email,
-//   .login-button-facebook,
-//   .login-button-twitter,
-//   .login-input {
-//     width: 375px;
-//   }
+  .login-button-email,
+  .login-button-facebook,
+  .login-button-twitter,
+  .login-input {
+    width: 375px;
+  }
 
-//   .login-form {
-//     // bottom: 0;
-//     left: calc(50% - 187.5px);
-//     margin: 0 auto;
-//     padding: 0;
-//     position: absolute;
-//     top: calc();
-//     width: 375px;
-//   }
+  .login-form {
+    // bottom: 0;
+    left: calc(50% - 187.5px);
+    margin: 0 auto;
+    padding: 0;
+    position: absolute;
+    top: calc();
+    width: 375px;
+  }
 
-//   .login-button-facebook:hover {
-//     background: #314470;
-//   }
+  .login-button-facebook:hover {
+    background: #314470;
+  }
 
-//   .login-button-twitter:hover {
-//     background: #11aff8;
-//   }
+  .login-button-twitter:hover {
+    background: #11aff8;
+  }
 
-//   .login-input:hover {
-//     background: #e0e0e0;
-//   }
+  .login-input:hover {
+    background: #e0e0e0;
+  }
 
-//   .login-input:focus {
-//     background: #d8d8d8;
-//   }
+  .login-input:focus {
+    background: #d8d8d8;
+  }
 
-//   .login-back:hover,
-//   .login-submit:hover,
-//   .login-button-email:hover {
-//     background: #bcbcbc;
-//   }
-// }
+  .login-back:hover,
+  .login-submit:hover,
+  .login-button-email:hover {
+    background: #bcbcbc;
+  }
+}
