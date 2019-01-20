@@ -36,8 +36,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "eslint": "./node_modules/eslint/bin/eslint.js ./src/*.js",
-    "postinstall": "npm rebuild"
+    "eslint": "./node_modules/eslint/bin/eslint.js ./src/*.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -54,8 +53,7 @@
     "node-sass": "^4.11.0",
     "prettier": "1.15.3",
     "resolve-url-loader": "^3.0.0",
-    "sass-loader": "^7.1.0",
-    "webpack": "^4.28.4"
+    "sass-loader": "^7.1.0"
   },
   "prettier": {
     "trailingComma": "es5",
