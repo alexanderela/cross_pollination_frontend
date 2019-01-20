@@ -207,15 +207,15 @@ $tw-blue: #1dcaff;
 }
 
 
-// @keyframes flag-grid-slider {
-//   0% {
-//     background-position: 0 0;
-//   }
+@keyframes flag-grid-slider {
+  0% {
+    background-position: 0 0;
+  }
 
-//   100% {
-//     background-position: 1000% 0;
-//   }
-// }
+  100% {
+    background-position: 1000% 0;
+  }
+}
 
 // @media screen and (min-width: 535px) {
 //   .Login,
