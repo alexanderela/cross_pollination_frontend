@@ -73,46 +73,46 @@ h5 {
   background: $btn-white;
 }
 
-// @media screen and (min-width: 535px) {
-//   .Game {
-//     max-width: 960px;
-//     margin: 0 auto;
-//     overflow: hidden;
-//   }
+@media screen and (min-width: 535px) {
+  .Game {
+    max-width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
 
-//   .account-area {
-//     background: $btn-gray;
-//   }
+  .account-area {
+    background: $btn-gray;
+  }
 
-//   .flag-main {
-//     height: unset;
-//     margin: 5rem auto 0;
-//     max-height: 450px;
-//     max-width: 600px;
-//     width: unset;
-//   }
+  .flag-main {
+    height: unset;
+    margin: 5rem auto 0;
+    max-height: 450px;
+    max-width: 600px;
+    width: unset;
+  }
   
-//   .flag-image {
-//     max-height: 300px;
-//     max-width: unset;
-//     width: 80%;
-//   }
+  .flag-image {
+    max-height: 300px;
+    max-width: unset;
+    width: 80%;
+  }
 
-//   .hint-button:hover {
-//     background-color: $blue-accent;
-//     color: $btn-gray;
-//     cursor: pointer;
-//     text-shadow: none;
-//   }
+  .hint-button:hover {
+    background-color: $blue-accent;
+    color: $btn-gray;
+    cursor: pointer;
+    text-shadow: none;
+  }
 
-//   .hint-button-disabled:hover {
-//     background-color: $btn-gray;
-//     color: #11111D;
-//     cursor: unset;
-//   }
+  .hint-button-disabled:hover {
+    background-color: $btn-gray;
+    color: #11111D;
+    cursor: unset;
+  }
 
-//   .option-button {
-//     max-width: 500px;
-//     width: 60%
-//   }
-// }
+  .option-button {
+    max-width: 500px;
+    width: 60%
+  }
+}
