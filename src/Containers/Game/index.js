@@ -32,7 +32,6 @@ export class Game extends Component {
     }
   }
 
-
   checkAnswer = (e) => {
     const { currentCountry } = this.props;
     const { innerText } = e.target
