@@ -35,7 +35,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "eslint": "./node_modules/eslint/bin/eslint.js ./src/*.js",
-    "heroku-postbuild": "cd client && npm install && npm run build remote"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
