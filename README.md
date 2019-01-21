@@ -30,8 +30,6 @@ This is a general guide to setting up a Recharge API development environment on 
 * Jest and Enzyme for testing
 * See package.json for a list of required modules
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 
 ### Developers:
 #### Get the app on your local machine
@@ -112,6 +110,7 @@ git push origin branch-name-here
 - Knex.js
 - Heroku
 - Travis CI
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Project Requirements:
 Project spec can be found [here](http://frontend.turing.io/projects/capstone.html).
