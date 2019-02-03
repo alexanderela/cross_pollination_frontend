@@ -117,8 +117,6 @@ describe('Game', () => {
       wrapper.instance().skipToNextFlag()
       expect(wrapper.instance().props.getCountry).toHaveBeenCalled()
     })
-    
-    it('', () => {})
   })
 
   describe('showButtons', () => {
