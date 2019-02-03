@@ -46,7 +46,7 @@ export class Game extends Component {
   }
 
   giveHint = () => {
-    let { hintsUsed } = this.state;
+    const { hintsUsed } = this.state;
 
     if (hintsUsed === 2) {
       this.giveHintSwitch();
@@ -57,9 +57,13 @@ export class Game extends Component {
     
     this.giveHintSwitch();
   }
+
+  skipToNextFlag = () => {
+    this.props.getCountry()
+  }
   
   giveHintSwitch = () => {
-    let { hintsUsed, pointsPossible } = this.state;
+    const { hintsUsed, pointsPossible } = this.state;
 
     switch(true) {
       case (hintsUsed === 0):
@@ -159,10 +163,12 @@ export class Game extends Component {
           <img src={flagImage} alt='' className='flag-image'/>
         </div>
         <div className='hint-skip-container'>
-          <div className={hintsUsed < 2 ? 'hint-button' : 'hint-button hint-button-disabled'} onClick={this.giveHint}>
+          <div className={hintsUsed < 2 ? 'hint-button' : 'hint-button hint-button-disabled'} 
+                onClick={this.giveHint}
+          >
             {hintsUsed < 2 ? `hints: ${2 - hintsUsed}` : 'no more hints'}
           </div>
-          <div className='skip-button'>
+          <div className='skip-button' onClick={this.skipToNextFlag}>
             Skip
           </div>
         </div>

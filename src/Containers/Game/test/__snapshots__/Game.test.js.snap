@@ -90,10 +90,20 @@ ShallowWrapper {
           />
         </div>,
         <div
-          className="hint-button"
-          onClick={[Function]}
+          className="hint-skip-container"
         >
-          hints: 2
+          <div
+            className="hint-button"
+            onClick={[Function]}
+          >
+            hints: 2
+          </div>
+          <div
+            className="skip-button"
+            onClick={[Function]}
+          >
+            Skip
+          </div>
         </div>,
         Array [
           <div
@@ -295,12 +305,51 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "hints: 2",
-          "className": "hint-button",
-          "onClick": [Function],
+          "children": Array [
+            <div
+              className="hint-button"
+              onClick={[Function]}
+            >
+              hints: 2
+            </div>,
+            <div
+              className="skip-button"
+              onClick={[Function]}
+            >
+              Skip
+            </div>,
+          ],
+          "className": "hint-skip-container",
         },
         "ref": null,
-        "rendered": "hints: 2",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "hints: 2",
+              "className": "hint-button",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "hints: 2",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Skip",
+              "className": "skip-button",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Skip",
+            "type": "div",
+          },
+        ],
         "type": "div",
       },
       Object {
@@ -408,10 +457,20 @@ ShallowWrapper {
             />
           </div>,
           <div
-            className="hint-button"
-            onClick={[Function]}
+            className="hint-skip-container"
           >
-            hints: 2
+            <div
+              className="hint-button"
+              onClick={[Function]}
+            >
+              hints: 2
+            </div>
+            <div
+              className="skip-button"
+              onClick={[Function]}
+            >
+              Skip
+            </div>
           </div>,
           Array [
             <div
@@ -613,12 +672,51 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "hints: 2",
-            "className": "hint-button",
-            "onClick": [Function],
+            "children": Array [
+              <div
+                className="hint-button"
+                onClick={[Function]}
+              >
+                hints: 2
+              </div>,
+              <div
+                className="skip-button"
+                onClick={[Function]}
+              >
+                Skip
+              </div>,
+            ],
+            "className": "hint-skip-container",
           },
           "ref": null,
-          "rendered": "hints: 2",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "hints: 2",
+                "className": "hint-button",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "hints: 2",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Skip",
+                "className": "skip-button",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Skip",
+              "type": "div",
+            },
+          ],
           "type": "div",
         },
         Object {
