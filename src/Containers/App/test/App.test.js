@@ -37,9 +37,7 @@ describe('App', () => {
                         currentCountry={mockCountry}
                         user={{id: 1, loggedIn: true}}
                         usedCountries={mockUsedCountries}
-                        setCurrentCountry = {jest.fn().mockImplementation(() => {})}
-                        updateUsedCountries = {jest.fn().mockImplementation(() => {})}
-                        getCurrentCountry = {jest.fn().mockImplementation(() => {})}
+                        getCurrentCountry = {jest.fn().mockImplementation(() => { return mockCountry })}
                       />)
 
     Math.random = jest.fn().mockImplementation(() => { return .4})
@@ -50,29 +48,23 @@ describe('App', () => {
   })
 
   describe('getCountry', () => {
-    beforeEach(() => {
-      Fetch.fetchCorrectCountry = jest.fn().mockImplementation(() => {
-        return mockCountry
-      })
-    })
+    it('should call getCurrentCountry and return a country object', async () => {
+      await wrapper.instance().getCountry()
 
-    it('should call fetchCorrectCountry and return a country object', () => {
-      wrapper.instance().getCountry()
-
-      expect(Fetch.fetchCorrectCountry).toHaveBeenCalled()
-      expect(Fetch.fetchCorrectCountry).toHaveBeenCalledWith(
+      expect(wrapper.instance().props.getCurrentCountry).toHaveBeenCalled()
+      expect(wrapper.instance().props.getCurrentCountry).toHaveBeenCalledWith(
         79,
         mockUsedCountries
       )
-      expect(Fetch.fetchCorrectCountry).toHaveReturnedWith(mockCountry)
+      expect(wrapper.instance().props.getCurrentCountry).toHaveReturnedWith(mockCountry)
     })
 
-    it('should call setCurrentCountry', () => {
+    xit('should call setCurrentCountry', () => {
       wrapper.instance().getCountry()
       expect(wrapper.instance().props.setCurrentCountry).toHaveBeenCalledWith(mockCountry)
     })
 
-    it('should call updateUsedCountries', () => {
+    xit('should call updateUsedCountries', () => {
       wrapper.instance().getCountry()
       expect(wrapper.instance().props.updateUsedCountries).toHaveBeenCalledWith(mockCountry.name)
     })
