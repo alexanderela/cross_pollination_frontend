@@ -24,7 +24,7 @@ ShallowWrapper {
       [MockFunction] {
         "calls": Array [
           Array [
-            5,
+            75,
             Array [
               "Mexico",
               "Hungary",
@@ -36,20 +36,7 @@ ShallowWrapper {
         "results": Array [
           Object {
             "isThrow": false,
-            "value": Object {
-              "country_outline": "/images/outlines/turkmenistan.png",
-              "created_at": "2018-12-23T16:48:16.005Z",
-              "flag": "/images/flags/turkmenistan.png",
-              "id": 79,
-              "multipleChoice": Array [
-                "France",
-                "Nigeria",
-                "Turkmenistan",
-                "Japan",
-              ],
-              "name": "Turkmenistan",
-              "updated_at": "2018-12-23T16:48:16.005Z",
-            },
+            "value": undefined,
           },
         ],
       }

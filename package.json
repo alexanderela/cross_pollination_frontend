@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "dotenv": "^6.2.0",
-    "enzyme": "^3.8.0",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
@@ -48,7 +47,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.8.0",
     "jshint": "^2.9.7",
     "prettier": "1.15.3",
     "resolve-url-loader": "^3.0.0",
