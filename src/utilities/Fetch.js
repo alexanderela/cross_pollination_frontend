@@ -3,7 +3,6 @@ import { buildQuestion, checkCountry } from './helper'
 
 export const fetchCorrectCountry = async (randomId, usedCountries) => {
   const url = `https://world-of-flags-backend.herokuapp.com/api/v1/country/${randomId}`
-
   const countryArray = await API.fetchData(url)
   const correctCountry = countryArray[0]
   const countryAlreadyExists = checkCountry(correctCountry.name, usedCountries)

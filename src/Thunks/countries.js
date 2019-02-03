@@ -9,11 +9,11 @@ export const getCurrentCountry = (randomId, usedCountries) => {
       const currentCountry = await Fetch.fetchCorrectCountry(
         randomId,
         usedCountries
-      )
-      dispatch(setCurrentCountry(currentCountry))
-      dispatch(updateUsedCountries(currentCountry.name))
+      );
+      dispatch(setCurrentCountry(currentCountry));
+      dispatch(updateUsedCountries(currentCountry.name));
     } catch (error) {
       dispatch(hasErrored(true))
     }
-  }
-}
+  };
+};

@@ -24,14 +24,12 @@ export class App extends Component {
   };
 
   getCountry = async () => {
-    const { usedCountries, setCurrentCountry, updateUsedCountries } = this.props
+    const { usedCountries, getCurrentCountry } = this.props
     let randomNumber = Math.floor(Math.random() * (196 - 1) + 1)
-    const currentCountry = await Fetch.fetchCorrectCountry(
+    const currentCountry = await getCurrentCountry(
       randomNumber,
       usedCountries
     )
-    setCurrentCountry(currentCountry)
-    updateUsedCountries(currentCountry.name)
   }
 
   render() {
