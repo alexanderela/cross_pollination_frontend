@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom'
 import { App, mapStateToProps, mapDispatchToProps } from '../index'
 import { shallow, mount } from 'enzyme'
 import * as Fetch from '../../../utilities/Fetch'
-import { setCurrentCountry } from '../../../actions/countryActions'
-import { updateUsedCountries } from '../../../actions/usedCountryActions'
 import { getCurrentCountry } from '../../../Thunks/countries.js';
 
 describe('App', () => {
@@ -58,16 +56,6 @@ describe('App', () => {
       )
       expect(wrapper.instance().props.getCurrentCountry).toHaveReturnedWith(mockCountry)
     })
-
-    xit('should call setCurrentCountry', () => {
-      wrapper.instance().getCountry()
-      expect(wrapper.instance().props.setCurrentCountry).toHaveBeenCalledWith(mockCountry)
-    })
-
-    xit('should call updateUsedCountries', () => {
-      wrapper.instance().getCountry()
-      expect(wrapper.instance().props.updateUsedCountries).toHaveBeenCalledWith(mockCountry.name)
-    })
   })
 
   describe('mapStateToProps', () => {
@@ -111,34 +99,21 @@ describe('App', () => {
   })
 
   describe('mapDispatchToProps', () => {
-    const mockDispatch = jest.fn()
+    let mockDispatch;
 
-    it('should call dispatch with setCurrentCountry action when setCurrentCountry is called', () => {
-      const actionToDispatch = setCurrentCountry(mockCountry)
-
-      const mappedProps = mapDispatchToProps(mockDispatch)
-      mappedProps.setCurrentCountry(mockCountry)
-
-      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    beforeEach(() => {
+      mockDispatch = jest.fn()
     })
 
-    it('should call dispatch with updateUsedCountries action when updateUsedCountries is called', () => {
-      const actionToDispatch = updateUsedCountries(mockCountry.name)
-
-      const mappedProps = mapDispatchToProps(mockDispatch)
-      mappedProps.updateUsedCountries(mockCountry.name)
-
-      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    it('should map a key of getCurrentCountry', () => {
+      const dispatchProps = mapDispatchToProps(mockDispatch);
+      expect(dispatchProps.getCurrentCountry).toBeDefined();
     })
 
-    it.skip('should call dispatch with getCurrentCountry action when getCurrentCountry is called', () => {
-
-      const actionToDispatch = getCurrentCountry(79, mockUsedCountries)
-
-      const mappedProps = mapDispatchToProps(mockDispatch)
-      mappedProps.getCurrentCountry(79, mockUsedCountries)
-
-      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    it('should have getCurrentCountry call dispatch', () => {
+      const dispatchProps = mapDispatchToProps(mockDispatch);
+      dispatchProps.getCurrentCountry(79, mockUsedCountries);
+      expect(mockDispatch).toHaveBeenCalled();
     })
   });
 });

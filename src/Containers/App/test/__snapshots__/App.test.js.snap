@@ -24,7 +24,7 @@ ShallowWrapper {
       [MockFunction] {
         "calls": Array [
           Array [
-            79,
+            42,
             Array [
               "Mexico",
               "Hungary",

@@ -64,8 +64,6 @@ export const mapStateToProps = ({ user, currentCountry, usedCountries }) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  setCurrentCountry: country => dispatch(setCurrentCountry(country)),
-  updateUsedCountries: country => dispatch(updateUsedCountries(country)),
   getCurrentCountry: (randomNumber, usedCountries) => dispatch(getCurrentCountry(randomNumber, usedCountries))
 });
 
@@ -73,8 +71,6 @@ App.propTypes = {
   user: PropTypes.object.isRequired,
   currentCountry: PropTypes.object.isRequired,
   usedCountries: PropTypes.array.isRequired,
-  setCurrentCountry: PropTypes.func.isRequired,
-  updateUsedCountries: PropTypes.func.isRequired,
   getCurrentCountry: PropTypes.func.isRequired,
 }
 
