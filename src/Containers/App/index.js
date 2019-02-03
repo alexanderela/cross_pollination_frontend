@@ -6,8 +6,6 @@ import Login from '../Login';
 import './App.scss';
 import * as Fetch from '../../utilities/Fetch';
 import { connect } from 'react-redux';
-import { setCurrentCountry } from '../../actions/countryActions';
-import { updateUsedCountries } from '../../actions/usedCountryActions';
 import { getCurrentCountry } from '../../Thunks/countries.js';
 import PropTypes from 'prop-types';
 

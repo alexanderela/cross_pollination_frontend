@@ -7,13 +7,11 @@ import { getCurrentCountry } from '../../../Thunks/countries.js';
 
 describe('App', () => {
   let wrapper
-  let mockNewPoints
   let mockUsedCountries
   let mockCountry
+  let mockGetCurrentCountry
 
   beforeEach(() => {
-    mockNewPoints = 3
-
     mockUsedCountries = ['Mexico', 'Hungary', 'Ireland', 'Sweden']
 
     mockCountry = {
@@ -31,23 +29,26 @@ describe('App', () => {
       ]
     };
 
+    mockGetCurrentCountry = jest.fn()
+
     wrapper = shallow(<App 
                         currentCountry={mockCountry}
                         user={{id: 1, loggedIn: true}}
                         usedCountries={mockUsedCountries}
-                        getCurrentCountry = {jest.fn().mockImplementation(() => {})}
+                        getCurrentCountry={mockGetCurrentCountry}
                       />)
   });
 
-  it.skip('should render like the snapshot', () => {
+  Math.random = jest.fn().mockImplementation(() => { return .4})
+
+  it('should render like the snapshot', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
   describe('getCountry', () => {
     it('should call getCurrentCountry with', async () => {
       await wrapper.instance().getCountry()
-
-      expect(wrapper.instance().props.getCurrentCountry).toHaveBeenCalled()
+      expect(mockGetCurrentCountry).toHaveBeenCalled()
     })
   })
 
