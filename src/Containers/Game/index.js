@@ -158,8 +158,13 @@ export class Game extends Component {
         <div className='flag-main'>
           <img src={flagImage} alt='' className='flag-image'/>
         </div>
-        <div className={hintsUsed < 2 ? 'hint-button' : 'hint-button hint-button-disabled'} onClick={this.giveHint}>
-          {hintsUsed < 2 ? `hints: ${2 - hintsUsed}` : 'no more hints'}
+        <div className='hint-skip-container'>
+          <div className={hintsUsed < 2 ? 'hint-button' : 'hint-button hint-button-disabled'} onClick={this.giveHint}>
+            {hintsUsed < 2 ? `hints: ${2 - hintsUsed}` : 'no more hints'}
+          </div>
+          <div className='skip-button'>
+            Skip
+          </div>
         </div>
         
         { choiceButtons }
