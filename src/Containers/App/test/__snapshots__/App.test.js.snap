@@ -1,0 +1,247 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render like the snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <App
+    currentCountry={
+      Object {
+        "country_outline": "/images/outlines/turkmenistan.png",
+        "created_at": "2018-12-23T16:48:16.005Z",
+        "flag": "/images/flags/turkmenistan.png",
+        "id": 79,
+        "multipleChoice": Array [
+          "France",
+          "Nigeria",
+          "Turkmenistan",
+          "Japan",
+        ],
+        "name": "Turkmenistan",
+        "updated_at": "2018-12-23T16:48:16.005Z",
+      }
+    }
+    getCurrentCountry={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            5,
+            Array [
+              "Mexico",
+              "Hungary",
+              "Ireland",
+              "Sweden",
+            ],
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": Object {
+              "country_outline": "/images/outlines/turkmenistan.png",
+              "created_at": "2018-12-23T16:48:16.005Z",
+              "flag": "/images/flags/turkmenistan.png",
+              "id": 79,
+              "multipleChoice": Array [
+                "France",
+                "Nigeria",
+                "Turkmenistan",
+                "Japan",
+              ],
+              "name": "Turkmenistan",
+              "updated_at": "2018-12-23T16:48:16.005Z",
+            },
+          },
+        ],
+      }
+    }
+    usedCountries={
+      Array [
+        "Mexico",
+        "Hungary",
+        "Ireland",
+        "Sweden",
+      ]
+    }
+    user={
+      Object {
+        "id": 1,
+        "loggedIn": true,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <Switch>
+        <Route
+          exact={true}
+          path="/"
+          render={[Function]}
+        />
+        <Route
+          exact={true}
+          path="/account"
+          render={[Function]}
+        />
+      </Switch>,
+      "className": "App",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Route
+            exact={true}
+            path="/"
+            render={[Function]}
+          />,
+          <Route
+            exact={true}
+            path="/account"
+            render={[Function]}
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/account",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <Switch>
+          <Route
+            exact={true}
+            path="/"
+            render={[Function]}
+          />
+          <Route
+            exact={true}
+            path="/account"
+            render={[Function]}
+          />
+        </Switch>,
+        "className": "App",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Route
+              exact={true}
+              path="/"
+              render={[Function]}
+            />,
+            <Route
+              exact={true}
+              path="/account"
+              render={[Function]}
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/account",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
