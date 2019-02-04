@@ -38,7 +38,7 @@ describe('Thunks', () => {
       expect(mockDispatch).toHaveBeenCalledWith(contentStatus(`Email & password don't match`))
     })
 
-    it('calls dispatch with the contentStatus action', () => {
+    it('calls dispatch with the contentStatus action while status is loading', () => {
       const thunk = fetchUser(mockUrl)
 
       thunk(mockDispatch)
