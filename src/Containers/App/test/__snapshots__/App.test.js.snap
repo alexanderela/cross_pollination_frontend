@@ -20,9 +20,27 @@ ShallowWrapper {
         "updated_at": "2018-12-23T16:48:16.005Z",
       }
     }
-    getCurrentCountry={[MockFunction]}
-    setCurrentCountry={[MockFunction]}
-    updateUsedCountries={[MockFunction]}
+    getCurrentCountry={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            79,
+            Array [
+              "Mexico",
+              "Hungary",
+              "Ireland",
+              "Sweden",
+            ],
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     usedCountries={
       Array [
         "Mexico",
@@ -40,6 +58,7 @@ ShallowWrapper {
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
     "simulateError": [Function],
@@ -194,9 +213,13 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
         "lifecycles": Object {
           "componentDidUpdate": Object {
             "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
           },
           "getDerivedStateFromProps": true,
           "getSnapshotBeforeUpdate": true,

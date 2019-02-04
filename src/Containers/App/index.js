@@ -6,8 +6,6 @@ import Login from '../Login';
 import './App.scss';
 import * as Fetch from '../../utilities/Fetch';
 import { connect } from 'react-redux';
-import { setCurrentCountry } from '../../actions/countryActions';
-import { updateUsedCountries } from '../../actions/usedCountryActions';
 import { getCurrentCountry } from '../../Thunks/countries.js';
 import PropTypes from 'prop-types';
 
@@ -24,14 +22,12 @@ export class App extends Component {
   };
 
   getCountry = async () => {
-    const { usedCountries, setCurrentCountry, updateUsedCountries } = this.props
+    const { usedCountries, getCurrentCountry } = this.props
     let randomNumber = Math.floor(Math.random() * (196 - 1) + 1)
-    const currentCountry = await Fetch.fetchCorrectCountry(
+    const currentCountry = await getCurrentCountry(
       randomNumber,
       usedCountries
     )
-    setCurrentCountry(currentCountry)
-    updateUsedCountries(currentCountry.name)
   }
 
   render() {
@@ -66,8 +62,6 @@ export const mapStateToProps = ({ user, currentCountry, usedCountries }) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  setCurrentCountry: country => dispatch(setCurrentCountry(country)),
-  updateUsedCountries: country => dispatch(updateUsedCountries(country)),
   getCurrentCountry: (randomNumber, usedCountries) => dispatch(getCurrentCountry(randomNumber, usedCountries))
 });
 
@@ -75,8 +69,6 @@ App.propTypes = {
   user: PropTypes.object.isRequired,
   currentCountry: PropTypes.object.isRequired,
   usedCountries: PropTypes.array.isRequired,
-  setCurrentCountry: PropTypes.func.isRequired,
-  updateUsedCountries: PropTypes.func.isRequired,
   getCurrentCountry: PropTypes.func.isRequired,
 }
 
