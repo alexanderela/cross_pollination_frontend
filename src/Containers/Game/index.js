@@ -60,6 +60,7 @@ export class Game extends Component {
 
   skipToNextFlag = () => {
     this.props.getCountry()
+    this.setState({ hintsUsed: 0 })
   }
   
   giveHintSwitch = () => {
