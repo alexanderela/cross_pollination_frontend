@@ -117,6 +117,12 @@ describe('Game', () => {
       wrapper.instance().skipToNextFlag()
       expect(wrapper.instance().props.getCountry).toHaveBeenCalled()
     })
+
+    it('should reset hintsUsed', () => {
+      wrapper.setState({ hintsUsed: 1 })
+      wrapper.instance().skipToNextFlag()
+      expect(wrapper.state().hintsUsed).toEqual(0)
+    })
   })
 
   describe('showButtons', () => {

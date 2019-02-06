@@ -90,51 +90,53 @@ ShallowWrapper {
           />
         </div>,
         <div
-          className="hint-skip-container"
+          className="choice-hint-skip-container"
         >
           <div
-            className="hint-button"
-            onClick={[Function]}
+            className="hint-skip-container"
           >
-            hints: 2
+            <div
+              className="hint-button"
+              onClick={[Function]}
+            >
+              hints: 2
+            </div>
+            <div
+              className="skip-button"
+              onClick={[Function]}
+            >
+              Skip
+            </div>
           </div>
-          <div
-            className="skip-button"
-            onClick={[Function]}
-          >
-            Skip
-          </div>
-        </div>,
-        Array [
           <div
             className="option-button button"
             name="Seychelles"
             onClick={[Function]}
           >
             Seychelles
-          </div>,
+          </div>
           <div
             className="option-button button"
             name="Malawi"
             onClick={[Function]}
           >
             Malawi
-          </div>,
+          </div>
           <div
             className="option-button button"
             name="Cambodia"
             onClick={[Function]}
           >
             Cambodia
-          </div>,
+          </div>
           <div
             className="option-button button"
             name="The Netherlands"
             onClick={[Function]}
           >
             The Netherlands
-          </div>,
-        ],
+          </div>
+        </div>,
         false,
         false,
       ],
@@ -307,19 +309,53 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <div
-              className="hint-button"
-              onClick={[Function]}
+              className="hint-skip-container"
             >
-              hints: 2
+              <div
+                className="hint-button"
+                onClick={[Function]}
+              >
+                hints: 2
+              </div>
+              <div
+                className="skip-button"
+                onClick={[Function]}
+              >
+                Skip
+              </div>
             </div>,
-            <div
-              className="skip-button"
-              onClick={[Function]}
-            >
-              Skip
-            </div>,
+            Array [
+              <div
+                className="option-button button"
+                name="Seychelles"
+                onClick={[Function]}
+              >
+                Seychelles
+              </div>,
+              <div
+                className="option-button button"
+                name="Malawi"
+                onClick={[Function]}
+              >
+                Malawi
+              </div>,
+              <div
+                className="option-button button"
+                name="Cambodia"
+                onClick={[Function]}
+              >
+                Cambodia
+              </div>,
+              <div
+                className="option-button button"
+                name="The Netherlands"
+                onClick={[Function]}
+              >
+                The Netherlands
+              </div>,
+            ],
           ],
-          "className": "hint-skip-container",
+          "className": "choice-hint-skip-container",
         },
         "ref": null,
         "rendered": Array [
@@ -328,84 +364,110 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "hints: 2",
-              "className": "hint-button",
-              "onClick": [Function],
+              "children": Array [
+                <div
+                  className="hint-button"
+                  onClick={[Function]}
+                >
+                  hints: 2
+                </div>,
+                <div
+                  className="skip-button"
+                  onClick={[Function]}
+                >
+                  Skip
+                </div>,
+              ],
+              "className": "hint-skip-container",
             },
             "ref": null,
-            "rendered": "hints: 2",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "hints: 2",
+                  "className": "hint-button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "hints: 2",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Skip",
+                  "className": "skip-button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Skip",
+                "type": "div",
+              },
+            ],
             "type": "div",
           },
           Object {
             "instance": null,
-            "key": undefined,
+            "key": "Seychelles",
             "nodeType": "host",
             "props": Object {
-              "children": "Skip",
-              "className": "skip-button",
+              "children": "Seychelles",
+              "className": "option-button button",
+              "name": "Seychelles",
               "onClick": [Function],
             },
             "ref": null,
-            "rendered": "Skip",
+            "rendered": "Seychelles",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": "Malawi",
+            "nodeType": "host",
+            "props": Object {
+              "children": "Malawi",
+              "className": "option-button button",
+              "name": "Malawi",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Malawi",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": "Cambodia",
+            "nodeType": "host",
+            "props": Object {
+              "children": "Cambodia",
+              "className": "option-button button",
+              "name": "Cambodia",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Cambodia",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": "The Netherlands",
+            "nodeType": "host",
+            "props": Object {
+              "children": "The Netherlands",
+              "className": "option-button button",
+              "name": "The Netherlands",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "The Netherlands",
             "type": "div",
           },
         ],
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": "Seychelles",
-        "nodeType": "host",
-        "props": Object {
-          "children": "Seychelles",
-          "className": "option-button button",
-          "name": "Seychelles",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Seychelles",
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": "Malawi",
-        "nodeType": "host",
-        "props": Object {
-          "children": "Malawi",
-          "className": "option-button button",
-          "name": "Malawi",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Malawi",
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": "Cambodia",
-        "nodeType": "host",
-        "props": Object {
-          "children": "Cambodia",
-          "className": "option-button button",
-          "name": "Cambodia",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Cambodia",
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": "The Netherlands",
-        "nodeType": "host",
-        "props": Object {
-          "children": "The Netherlands",
-          "className": "option-button button",
-          "name": "The Netherlands",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "The Netherlands",
         "type": "div",
       },
       false,
@@ -457,51 +519,53 @@ ShallowWrapper {
             />
           </div>,
           <div
-            className="hint-skip-container"
+            className="choice-hint-skip-container"
           >
             <div
-              className="hint-button"
-              onClick={[Function]}
+              className="hint-skip-container"
             >
-              hints: 2
+              <div
+                className="hint-button"
+                onClick={[Function]}
+              >
+                hints: 2
+              </div>
+              <div
+                className="skip-button"
+                onClick={[Function]}
+              >
+                Skip
+              </div>
             </div>
-            <div
-              className="skip-button"
-              onClick={[Function]}
-            >
-              Skip
-            </div>
-          </div>,
-          Array [
             <div
               className="option-button button"
               name="Seychelles"
               onClick={[Function]}
             >
               Seychelles
-            </div>,
+            </div>
             <div
               className="option-button button"
               name="Malawi"
               onClick={[Function]}
             >
               Malawi
-            </div>,
+            </div>
             <div
               className="option-button button"
               name="Cambodia"
               onClick={[Function]}
             >
               Cambodia
-            </div>,
+            </div>
             <div
               className="option-button button"
               name="The Netherlands"
               onClick={[Function]}
             >
               The Netherlands
-            </div>,
-          ],
+            </div>
+          </div>,
           false,
           false,
         ],
@@ -674,19 +738,53 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <div
-                className="hint-button"
-                onClick={[Function]}
+                className="hint-skip-container"
               >
-                hints: 2
+                <div
+                  className="hint-button"
+                  onClick={[Function]}
+                >
+                  hints: 2
+                </div>
+                <div
+                  className="skip-button"
+                  onClick={[Function]}
+                >
+                  Skip
+                </div>
               </div>,
-              <div
-                className="skip-button"
-                onClick={[Function]}
-              >
-                Skip
-              </div>,
+              Array [
+                <div
+                  className="option-button button"
+                  name="Seychelles"
+                  onClick={[Function]}
+                >
+                  Seychelles
+                </div>,
+                <div
+                  className="option-button button"
+                  name="Malawi"
+                  onClick={[Function]}
+                >
+                  Malawi
+                </div>,
+                <div
+                  className="option-button button"
+                  name="Cambodia"
+                  onClick={[Function]}
+                >
+                  Cambodia
+                </div>,
+                <div
+                  className="option-button button"
+                  name="The Netherlands"
+                  onClick={[Function]}
+                >
+                  The Netherlands
+                </div>,
+              ],
             ],
-            "className": "hint-skip-container",
+            "className": "choice-hint-skip-container",
           },
           "ref": null,
           "rendered": Array [
@@ -695,84 +793,110 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "hints: 2",
-                "className": "hint-button",
-                "onClick": [Function],
+                "children": Array [
+                  <div
+                    className="hint-button"
+                    onClick={[Function]}
+                  >
+                    hints: 2
+                  </div>,
+                  <div
+                    className="skip-button"
+                    onClick={[Function]}
+                  >
+                    Skip
+                  </div>,
+                ],
+                "className": "hint-skip-container",
               },
               "ref": null,
-              "rendered": "hints: 2",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "hints: 2",
+                    "className": "hint-button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "hints: 2",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Skip",
+                    "className": "skip-button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Skip",
+                  "type": "div",
+                },
+              ],
               "type": "div",
             },
             Object {
               "instance": null,
-              "key": undefined,
+              "key": "Seychelles",
               "nodeType": "host",
               "props": Object {
-                "children": "Skip",
-                "className": "skip-button",
+                "children": "Seychelles",
+                "className": "option-button button",
+                "name": "Seychelles",
                 "onClick": [Function],
               },
               "ref": null,
-              "rendered": "Skip",
+              "rendered": "Seychelles",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": "Malawi",
+              "nodeType": "host",
+              "props": Object {
+                "children": "Malawi",
+                "className": "option-button button",
+                "name": "Malawi",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Malawi",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": "Cambodia",
+              "nodeType": "host",
+              "props": Object {
+                "children": "Cambodia",
+                "className": "option-button button",
+                "name": "Cambodia",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Cambodia",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": "The Netherlands",
+              "nodeType": "host",
+              "props": Object {
+                "children": "The Netherlands",
+                "className": "option-button button",
+                "name": "The Netherlands",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "The Netherlands",
               "type": "div",
             },
           ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": "Seychelles",
-          "nodeType": "host",
-          "props": Object {
-            "children": "Seychelles",
-            "className": "option-button button",
-            "name": "Seychelles",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Seychelles",
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": "Malawi",
-          "nodeType": "host",
-          "props": Object {
-            "children": "Malawi",
-            "className": "option-button button",
-            "name": "Malawi",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Malawi",
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": "Cambodia",
-          "nodeType": "host",
-          "props": Object {
-            "children": "Cambodia",
-            "className": "option-button button",
-            "name": "Cambodia",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Cambodia",
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": "The Netherlands",
-          "nodeType": "host",
-          "props": Object {
-            "children": "The Netherlands",
-            "className": "option-button button",
-            "name": "The Netherlands",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "The Netherlands",
           "type": "div",
         },
         false,
