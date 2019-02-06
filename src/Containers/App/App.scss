@@ -20,22 +20,3 @@ html {
 strong {
   text-shadow: none;
 }
-
-.button {
-  background-color: $btn-gray;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
-  color: $blue-accent;
-  font-weight: 700;
-  margin: 1.25rem auto;
-  padding: 12px 0;
-  text-align: center;
-  width: 80%;
-}
-
-@media screen and (min-width: 535px) {
-  .button:hover {
-    background-color: $blue-accent;
-    color: $btn-gray;
-    cursor: pointer;
-  }
-}

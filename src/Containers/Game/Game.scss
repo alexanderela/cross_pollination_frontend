@@ -29,6 +29,11 @@ h5 {
   max-width: 100%;
 }
 
+.choice-hint-skip-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
 .hint-button {
   background-color: $btn-gray;
   box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
@@ -50,12 +55,11 @@ h5 {
   background: $btn-white;
 }
 
-
-
 .hint-button {
   background-color: $btn-gray;
   box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
   color: $blue-accent;
+  cursor: pointer;
   margin: 1.25rem auto;
   padding: 12px 0;
   text-align: center;
@@ -66,7 +70,7 @@ h5 {
 .hint-skip-container {
   display: flex;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -81,6 +85,13 @@ h5 {
   width: 40%;
 }
 
+.skip-button:hover {
+  background-color: $blue-accent;
+  color: $btn-gray;
+  cursor: pointer;
+  text-shadow: none;
+}
+
 .hint-button-disabled {
   box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
   color: #11111D;
@@ -89,6 +100,18 @@ h5 {
 
 .option-button {
   background: $btn-white;
+}
+
+
+.button {
+  background-color: $btn-gray;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+  color: $blue-accent;
+  font-weight: 700;
+  margin: 1.25rem 0;
+  padding: 12px 0;
+  text-align: center;
+  width: 100%;
 }
 
 @media screen and (min-width: 535px) {
@@ -132,5 +155,11 @@ h5 {
   .option-button {
     max-width: 500px;
     width: 60%
+  }
+
+  .button:hover {
+    background-color: $blue-accent;
+    color: $btn-gray;
+    cursor: pointer;
   }
 }
