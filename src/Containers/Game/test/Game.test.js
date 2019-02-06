@@ -112,6 +112,13 @@ describe('Game', () => {
     })
   })
 
+  describe('skipToNextFlag', () => {
+    it('should invoke getCountry', () => {
+      wrapper.instance().skipToNextFlag()
+      expect(wrapper.instance().props.getCountry).toHaveBeenCalled()
+    })
+  })
+
   describe('showButtons', () => {
     it('should show buttons if there are country choice options', () => {
       wrapper.instance().showButtons()

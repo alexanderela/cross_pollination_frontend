@@ -12,9 +12,17 @@ export const fetchUser = (name, email, password) => {
         response = await addUser(name, email, password);
       }
       dispatch(successfulLogin(response));
+      console.log(response)
       dispatch(contentStatus('resolved'));
     } catch (error) {
       dispatch(contentStatus(`Email & password don't match`));
     }
   };
 };
+
+
+
+
+
+
+

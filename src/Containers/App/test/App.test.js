@@ -93,21 +93,17 @@ describe('App', () => {
   })
 
   describe('mapDispatchToProps', () => {
-    let mockDispatch;
-
-    beforeEach(() => {
-      mockDispatch = jest.fn()
-    })
+    const mockDispatch = jest.fn()
 
     it('should map a key of getCurrentCountry', () => {
-      const dispatchProps = mapDispatchToProps(mockDispatch);
-      expect(dispatchProps.getCurrentCountry).toBeDefined();
+      const dispatchedProps = mapDispatchToProps(mockDispatch);
+      expect(dispatchedProps.getCurrentCountry).toBeDefined();
     })
 
-    it('should have getCurrentCountry call dispatch', () => {
-      const dispatchProps = mapDispatchToProps(mockDispatch);
-      dispatchProps.getCurrentCountry(79, mockUsedCountries);
-      expect(mockDispatch).toHaveBeenCalled();
+    it('should call dispatch with getCurrentCountry action when getCurrentCountry is called', () => {
+      const dispatchProps = mapDispatchToProps(mockDispatch)
+      dispatchProps.getCurrentCountry(79, mockUsedCountries)
+      expect(mockDispatch).toHaveBeenCalled()
     })
   });
 });
